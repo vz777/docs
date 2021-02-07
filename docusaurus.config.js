@@ -2,7 +2,7 @@ module.exports = {
   title: 'Thelia documentation',
   tagline: 'Your OpenSource E-commerce tool',
   url: 'https://thelia.net',
-  baseUrl: '/',
+  baseUrl: '/thelia_doc',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.jpg',
