@@ -5,15 +5,24 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.jpg',
   organizationName: 'thelia', // Usually your GitHub org/user name.
   projectName: 'thelia', // Usually your repo name.
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
+    colorMode: {
+      respectPrefersColorScheme: true,
+      switchConfig: {
+        // Icon for the switch while in dark mode
+        darkIcon: '🌙',
+        lightIcon: '☀'
+      }
+    },
     navbar: {
-      title: 'Thelia',
+      title: '',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -22,10 +31,11 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'modules', label: 'Modules', position: 'left'},
         {
           href: 'https://github.com/thelia/thelia',
-          label: 'GitHub',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],
@@ -96,7 +106,7 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./src/css/custom.scss')]
         },
       },
     ],

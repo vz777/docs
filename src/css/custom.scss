@@ -1,0 +1,127 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #ef7427;
+  --ifm-color-primary-dark: #e96411;
+  --ifm-color-primary-darker: #dc5f10;
+  --ifm-color-primary-darkest: #b54e0d;
+  --ifm-color-primary-light: #f18541;
+  --ifm-color-primary-lighter: #f28d4e;
+  --ifm-color-primary-lightest: #f5a675;
+  --ifm-code-font-size: 95%;
+  --ifm-container-width: 1600px;
+}
+
+::selection {
+  color: white !important;
+  background-color: #ef7427 !important;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(0, 0, 0);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+.searchInput {
+  height: 2em;
+  margin: 2em;
+  font-size: 1.2em;
+  border-radius: 0.2em;
+  outline: none;
+  -webkit-appearance: none;
+  line-height: 1.21428571em;
+  padding: .67857143em 1em;
+  background: whitesmoke;
+  border: 1px solid whitesmoke;
+  transition: color .1s ease,border-color .1s ease;
+  &:focus{
+    //border: 2px solid #ef7427;
+    box-shadow: 0 0 0 1px #ef7427, 0 0 0 2px #ef7427;
+  }
+}
+
+.theliaModule {
+  box-shadow: 0 0 0 0px #4d4d4d, 0 2px 0 0 #ef7427, 0 0 1px 0 #252731;
+  h2 {
+    color: #ef7427;
+  }
+  .abandoned {
+    text-align: center;
+    color: crimson;
+  }
+  .composerCommand {
+    background-color: whitesmoke;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    text-align: center;
+  }
+  .buttonCopy {
+    color: white;
+    border-radius: 50%;
+    background-color: #ef7427;
+    height: 2.5em;
+    width: 2.5em;
+    padding-top: 0.3em;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease;
+    &:hover {
+      background-color: #b54e0d;
+    }
+  }
+}
+
+.footer {
+  margin-top: 2em;
+}
+
+html[data-theme='dark'] {
+  .searchInput {
+    box-shadow: inset -2px -2px 5px #4d4d4d;
+    background: rgb(99, 99, 99);
+    border: 1px solid #4d4d4d;
+    &:focus{
+      //border: 2px solid #ef7427;
+      box-shadow: 0 0 0 1px #ef7427, 0 0 0 2px #ef7427;
+    }
+  }
+  .header-github-link:before {
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+      no-repeat;
+  }
+  .theliaModule {
+    .composerCommand {
+      background-color: #18191a;
+    }
+  }
+  .buttonCopy {
+    color: #18191a;
+    background-color: whitesmoke;
+    &:hover {
+      background-color: #c7c4c2;
+    }
+  }
+}
+
