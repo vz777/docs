@@ -6,8 +6,8 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.jpg',
-  organizationName: 'thelia', // Usually your GitHub org/user name.
-  projectName: 'thelia', // Usually your repo name.
+  organizationName: 'real-goatoo', // Usually your GitHub org/user name.
+  projectName: 'thelia_doc', // Usually your repo name.
   plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
     colorMode: {
