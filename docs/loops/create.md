@@ -14,15 +14,14 @@ title: Create your own
 You have to create as many loop node as loop you have into the loops node. In this example there is 2 loops. Name and
 class properties are mandatory. The name is the loop name used into the template ( like in Thelia v1 : ```<THELIA_name
 type="MyModule_Product">...</THELIA_name>```), class property is the class executed by the template engine. This
-class must extends the [Thelia\Core\Template\Element\BaseLoop](/api/master/Thelia/Core/Template/Element/BaseLoop.html)
-abstract class, if not an exception is thrown.
+class must extends the Thelia\Core\Template\Element\BaseLoop abstract class, if not an exception is thrown.
 **If you name your loop like a default loop (eg : product), your loop will replace the default loop.**
 
 ## Implement your loops
 
 Your loop can be anywhere (Thanks to namespace) in your module but it's better to create a Loop directory and put all your loops in this directory.
 
-You have to extends the [Thelia\Core\Template\Element\BaseLoop](/api/master/Thelia/Core/Template/Element/BaseLoop.html) abstract class and implement either Thelia\Core\Template\Element\PropelSearchLoopInterface or Thelia\Core\Template\Element\ArraySearchLoopInterface. Therefore you will have to create *getArgDefinitions*, *parseResults* and either *buildModelCriteria* or *buildArray* methods.
+You have to extends the Thelia\Core\Template\Element\BaseLoop abstract class and implement either Thelia\Core\Template\Element\PropelSearchLoopInterface or Thelia\Core\Template\Element\ArraySearchLoopInterface. Therefore you will have to create *getArgDefinitions*, *parseResults* and either *buildModelCriteria* or *buildArray* methods.
 
 NB : You can also extend BaseI18nLoop which itself extends BaseLoop. This will provide tools to manage i18n in your loop.
 
@@ -30,9 +29,9 @@ NB : You can also extend BaseI18nLoop which itself extends BaseLoop. This will p
 
 It's a matter of data type. If the data your loop returns come from the database you must implement *PropelSearchLoopInterface* and create *buildModelCriteria* method which return a *Propel\Runtime\ActiveQuery\ModelCriteria*. Conversely if your loop displays data from an array you must implement *ArraySearchLoopInterface* and create *buildArray* method which return an array.
 
-The *parseResults* method is used to render the template. It must return a [Thelia\Core\Template\Element\LoopResult](/api/master/Thelia/Core/Template/Element/LoopResult.html) instance.
+The *parseResults* method is used to render the template. It must return a Thelia\Core\Template\Element\LoopResult instance.
 
-The getArgDefinitions method defines all args used in your loop. Args can be mandatory, optional, with default value, etc. This method must return an [Thelia\Core\Template\Loop\Argument\ArgumentCollection](/api/master/Thelia/Core/Template/Loop/Argument/ArgumentCollection.html). ArgumentCollection contains [Thelia\Core\Template\Loop\Argument](/api/master/Thelia/Core/Template/Loop/Argument.html) which contains a [Thelia\Type\TypeCollection](/api/master/Thelia/Type/TypeCollection.html). Types in the collection must implement [Thelia\Type\TypeInterface](/api/master/Thelia/Type/TypeInterface.html). You can check here the [available types](../development/types).
+The getArgDefinitions method defines all args used in your loop. Args can be mandatory, optional, with default value, etc. This method must return an Thelia\Core\Template\Loop\Argument\ArgumentCollection. ArgumentCollection contains Thelia\Core\Template\Loop\Argument which contains a Thelia\Type\TypeCollection. Types in the collection must implement Thelia\Type\TypeInterface.
 
 If you don't define your arguments here, you can't use them in your new loop. All arguments are accessible in the ```parseResults``` method.
 

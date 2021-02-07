@@ -63,7 +63,8 @@ export default class Module extends Component {
         }
 
         const copyIcon = this.state.copied ? faCheck : faCopy;
-        const moduleName= this.props.package.charAt(0).toUpperCase() + this.props.package.slice(1).replace('-module', '').replaceAll('-', ' ');
+
+        const moduleName = this.props.package ? this.props.package.charAt(0).toUpperCase() + this.props.package.slice(1).replace('-module', '').replaceAll('-', ' ') : "";
 
         return (
             <div className="col col--6" style={{ marginBottom: 40 }}>

@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Thelia',
+  title: 'Thelia documentation',
   tagline: 'Your OpenSource E-commerce tool',
   url: 'https://thelia.net',
   baseUrl: '/',
@@ -43,19 +43,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
         {
           title: 'Community',
           items: [

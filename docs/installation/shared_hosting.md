@@ -10,8 +10,6 @@ Then unzip the file.
 
 Installing thelia with the web install wizard allow to create an administrator, add some informations about your shop, etc
 
-First of all, you have to configure a vhost as describe in [configuration](/en/documentation/configuration/server.html) section.
-
 The install wizard in accessible with your favorite browser :
 
 ```bash
@@ -61,7 +59,7 @@ You have three options to update Thelia files :
 
 - download the new version archive at [http://thelia.net/#download](http://thelia.net/#download) and replace all your files with those from the archive.
 - copy all files from the Thelia new distribution (including local/modules/* files)
-- using git, you can ```git checkout``` to the current version to switch to your target version. (see also: [Advanced installation with composer](/en/documentation/installation/advanced.html))
+- using git, you can ```git checkout``` to the current version to switch to your target version.
 
 
 Note: if you've moved your admin/install directories, your index_dev.php or any other

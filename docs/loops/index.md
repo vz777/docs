@@ -40,7 +40,7 @@ Here is a piece of html code which intends to list 4 random products from your s
 
 How to make this piece of code dynamic ? Gathering the products you set up in your Thelia v2 back-office ?
 
-Just use a Thelia <a href="product.html" target="_blank">product loop</a> :
+Just use a Thelia product loop :
 
 ```smarty
 <div>

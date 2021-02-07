@@ -29,8 +29,7 @@ module.exports = {
         }
     ],
     "Events": [
-      'events/index',
-      'events/thelia'
+      'events/index'
     ],
     "Loops": [
       'loops/index',
