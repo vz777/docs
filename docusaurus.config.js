@@ -8,7 +8,9 @@ module.exports = {
   favicon: 'img/favicon.jpg',
   organizationName: 'real-goatoo', // Usually your GitHub org/user name.
   projectName: 'thelia_doc', // Usually your repo name.
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass'
+  ],
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
@@ -18,10 +20,18 @@ module.exports = {
         lightIcon: '☀'
       }
     },
+    algolia: {
+      apiKey: '4fc5100cca8dc75708da13ec6d76050a',
+      indexName: 'thelia',
+      contextualSearch: false,
+      searchParameters: {
+        'facetFilters': [['type:content', 'type:lvl1']]
+      },
+    },
     navbar: {
       title: '',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Thelia',
         src: 'img/logo.png',
       },
       items: [
@@ -48,31 +58,35 @@ module.exports = {
           items: [
             {
               label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              href: 'https://stackoverflow.com/questions/tagged/thelia',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Forum',
+              href: 'https://forum.thelia.net/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/theliaecommerce',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Github',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: 'Thelia',
+              href: 'https://github.com/thelia/thelia',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Thelia project',
+              href: 'https://github.com/thelia/thelia-project',
+            },
+            {
+              label: 'Modules',
+              href: 'https://github.com/thelia-modules/',
             },
           ],
-        },
+        }
       ],
     },
   },
@@ -84,13 +98,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/real-goatoo/thelia_doc/edit/master/',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.scss')]
