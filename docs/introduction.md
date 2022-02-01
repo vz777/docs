@@ -1,6 +1,7 @@
 ---
 title: Introduction
 slug: /
+sidebar_position: 1
 ---
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/thelia/thelia/test?style=flat-square)
