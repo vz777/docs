@@ -2,10 +2,6 @@
 title: Dockerize your Thelia
 ---
 
-<div class="page-header">
-    <h1>Dockerize your Thelia</h1>
-</div>
-
 Since version 2.2, a docker configuration is provided in the repository of Thelia. It uses docker-compose. You can copy it for older version of Thelia it will works exactly.
 You can also copy it in thelia-project.
 

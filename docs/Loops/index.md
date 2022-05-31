@@ -1,5 +1,8 @@
 ---
 title: Introduction to loops
+sidebar_position: 2
+sidebar_label: Easy
+sidebar_class_name: green
 ---
 
 Loops are the most convenient feature in Thelia for front developers. Already there in Thelia's first version, they deserved a makeover for Thelia v2.
@@ -347,10 +350,6 @@ namespace Thelia\Model
 So if I want to add some search in my DB and return results from product table I can use something like this :
 
  ```php
-/**
-*
-* return Thelia\Core\Template\Element\LoopResult
-*/
 public function buildModelCriteria()
 {
     return ProductQuery::create();

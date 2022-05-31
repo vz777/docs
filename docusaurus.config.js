@@ -1,3 +1,5 @@
+const remarkTooltip = require('remark-tooltip');
+
 module.exports = {
   title: 'Thelia documentation',
   tagline: 'Your OpenSource E-commerce tool',
@@ -89,6 +91,9 @@ module.exports = {
         }
       ],
     },
+    prism: {
+      additionalLanguages: ['bash', 'php', 'smarty'],
+    }
   },
   presets: [
     [
@@ -99,6 +104,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/real-goatoo/thelia_doc/edit/master/',
+          remarkPlugins: [remarkTooltip]
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.scss')]

@@ -61,6 +61,30 @@
   }
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  .tooltip-popup {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  }
+  &:hover .tooltip-popup {
+    visibility: visible;
+  }
+}
+
 .theliaModule {
   box-shadow: 0 0 0 0px #4d4d4d, 0 2px 0 0 #ef7427, 0 0 1px 0 #252731;
   h2 {

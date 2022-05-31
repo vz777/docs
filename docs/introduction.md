@@ -17,8 +17,29 @@ Thelia is an open source tool for creating e-business websites and managing onli
 Compatibility
 ------------
 
-|  | Thelia 2.1 | Thelia 2.2 | Thelia 2.3 | Thelia 2.4 |
-| ------------- |:-------------:| -----:| -----:| -----:|
-| PHP      | 5.4 5.5 5.6 | 5.4 5.5 5.6 | 5.5 5.6 7.0 7.1 | 5.6 7.0 7.1 7.2 7.3 |
-| MySQL    | 5.5 5.6 | 5.5 5.6 | 5.5 5.6 | 5.5 5.6 5.7 |
-| Symfony  | 2.3 | 2.3 | 2.8 | 2.8 |
+
+| Thelia version | 2.3 |         2.4         |     2.5      |
+|----------------|:-----:|:-------------------:|:------------:|
+| PHP            | 5.5 5.6 7.0 7.1 |   7.0 7.1 7.2 7.3   |     8.0      |
+| MySQL          | 5.5 5.6 |     5.5 5.6 5.7     | 5.6 5.7 8.0  |
+| Symfony        | 2.8 |         2.8         |      6       |
+ | Maintened      | No | Security fixes only |     Yes      |
+
+
+Requirements
+------------
+
+* PHP
+  * Required extensions :
+    * PDO_Mysql
+    * openssl
+    * intl
+    * gd
+    * curl
+    * dom
+  * safe_mode off
+  * memory_limit at least 128M, preferably 256M.
+  * post\_max\_size 20M
+  * upload\_max\_filesize 2M
+  * date.timezone must be defined
+* Web Server Apache 2 or Nginx
