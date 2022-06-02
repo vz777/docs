@@ -64,7 +64,7 @@ I want to display all products which are in promo for the current category displ
 
 ## Sorting possible values {#product-order-possible-values}
 
-| Ascending value | Descending value | Field                                                                     |
+| Ascending value | Descending value | Sorted fields                                                             |
 |-----------------|------------------|:--------------------------------------------------------------------------|
 | alpha           | alpha_reverse    | Title                                                                     |
 | created         | created_reverse  | Creation date                                                             |

@@ -7,7 +7,7 @@ module.exports = {
   baseUrl: '/thelia_doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.jpg',
+  favicon: 'img/favicon.png',
   organizationName: 'real-goatoo', // Usually your GitHub org/user name.
   projectName: 'thelia_doc', // Usually your repo name.
   plugins: [
@@ -15,15 +15,11 @@ module.exports = {
   ],
   themeConfig: {
     colorMode: {
-      respectPrefersColorScheme: true,
-      switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: '🌙',
-        lightIcon: '☀'
-      }
+      respectPrefersColorScheme: true
     },
     algolia: {
-      apiKey: '4fc5100cca8dc75708da13ec6d76050a',
+      appId: 'N53EJ84B0K',
+      apiKey: '7a72e182944899177af61d6f9f9c5623',
       indexName: 'thelia',
       contextualSearch: false,
       searchParameters: {
@@ -35,6 +31,7 @@ module.exports = {
       logo: {
         alt: 'Thelia',
         src: 'img/logo.png',
+        srcDark: 'img/logoDark.png',
       },
       items: [
         {

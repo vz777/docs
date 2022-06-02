@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 
 If you have installed Thelia following the instructions before, you can update Thelia by just updating the skeleton :
 

@@ -1,5 +1,6 @@
 ---
 title: Nginx configuration
+sidebar_position: 5
 ---
 
 Only the ```web``` directory has to be accessible :

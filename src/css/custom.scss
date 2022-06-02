@@ -7,20 +7,20 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #ef7427;
-  --ifm-color-primary-dark: #e96411;
-  --ifm-color-primary-darker: #dc5f10;
-  --ifm-color-primary-darkest: #b54e0d;
-  --ifm-color-primary-light: #f18541;
-  --ifm-color-primary-lighter: #f28d4e;
-  --ifm-color-primary-lightest: #f5a675;
+  --ifm-color-primary: #db3017;
+  --ifm-color-primary-dark: #E04E38;
+  --ifm-color-primary-darker: #E56B59;
+  --ifm-color-primary-darkest: #EA897A;
+  --ifm-color-primary-light: #F0A69C;
+  --ifm-color-primary-lighter: #F5C4BD;
+  --ifm-color-primary-lightest: #FAE1DE;
   --ifm-code-font-size: 95%;
   --ifm-container-width: 1600px;
 }
 
 ::selection {
   color: white !important;
-  background-color: #ef7427 !important;
+  background-color: #db3017 !important;
 }
 
 .docusaurus-highlight-code-line {
@@ -56,8 +56,8 @@
   border: 1px solid whitesmoke;
   transition: color .1s ease,border-color .1s ease;
   &:focus{
-    //border: 2px solid #ef7427;
-    box-shadow: 0 0 0 1px #ef7427, 0 0 0 2px #ef7427;
+    //border: 2px solid #db3017;
+    box-shadow: 0 0 0 1px #db3017, 0 0 0 2px #db3017;
   }
 }
 
@@ -86,9 +86,9 @@
 }
 
 .theliaModule {
-  box-shadow: 0 0 0 0px #4d4d4d, 0 2px 0 0 #ef7427, 0 0 1px 0 #252731;
+  box-shadow: 0 0 0 0px #E56B59, 0 2px 0 0 #E04E38, 0 0 1px 0 #252731;
   h2 {
-    color: #ef7427;
+    color: #E04E38;
   }
   .abandoned {
     text-align: center;
@@ -103,7 +103,7 @@
   .buttonCopy {
     color: white;
     border-radius: 50%;
-    background-color: #ef7427;
+    background-color: #db3017;
     height: 2.5em;
     width: 2.5em;
     padding-top: 0.3em;
@@ -127,8 +127,8 @@ html[data-theme='dark'] {
     background: rgb(99, 99, 99);
     border: 1px solid #4d4d4d;
     &:focus{
-      //border: 2px solid #ef7427;
-      box-shadow: 0 0 0 1px #ef7427, 0 0 0 2px #ef7427;
+      //border: 2px solid #db3017;
+      box-shadow: 0 0 0 1px #db3017, 0 0 0 2px #db3017;
     }
   }
   .header-github-link:before {

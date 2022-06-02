@@ -1,5 +1,6 @@
 ---
 title: Dockerize your Thelia
+sidebar_position: 6
 ---
 
 Since version 2.2, a docker configuration is provided in the repository of Thelia. It uses docker-compose. You can copy it for older version of Thelia it will works exactly.

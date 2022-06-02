@@ -1,8 +1,5 @@
 ---
-title: Introduction to loops
-sidebar_position: 2
-sidebar_label: Easy
-sidebar_class_name: green
+title: Loops
 ---
 
 Loops are the most convenient feature in Thelia for front developers. Already there in Thelia's first version, they deserved a makeover for Thelia v2.
