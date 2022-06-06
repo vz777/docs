@@ -18,6 +18,8 @@ Product sale elements loop lists product sale elements from your shop. You may n
 | promo         | A boolean value. If true, returns only product sale elements for which new is on. The reverse with 'false'  |  |  promo="yes" |
 | visible       | A boolean value, or * (the default) for ignoring this filter  | * |  visible="no" |
 
+Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+
 ## Outputs
 
 | Variable | Value
@@ -38,7 +40,7 @@ Product sale elements loop lists product sale elements from your shop. You may n
 | $TAXED_PROMO_PRICE	| the product sale element taxed promo price |
 | $WEIGHT	| the product sale element weight |
 
-
+Plus the [global outputs](./global_arguments)
 
 ## Examples
 
