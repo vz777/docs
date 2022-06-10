@@ -30,34 +30,34 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 
 ## Outputs
 
-| Variable | Value | with_prev_next_info | need_count_child | need_product_count |
-| :------------------------------ | :------------------------------ | :-----------------------------------: | :-----------------------------------: | :-----------------------------------: |
-| $CHAPO  | the category chapo |  'true' =>  ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅   | 'true' => ✅ <br/> 'false' => ✅ |
-| $CHILD_COUNT | Number of subcategories contained by the current category. |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => 🚫   |  'true' => ✅ <br/> 'false' => ✅  |
-| $CREATE_DATE | the category create date | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $DESCRIPTION | the category description | 'true' => ✅ <br/> 'false' => ✅   | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $HAS_NEXT	   | true if a category exists after this one in the current parent category, following categories positions.  | 'true' => ✅ <br/> 'false' => 🚫   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $HAS_PREVIOUS	   | true if a category exists before this one in the current parent category, following categories positions. | 'true' => ✅ <br/> 'false' => 🚫   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $ID	   | the category id | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  | 'true' => ✅ <br/> 'false' => ✅  |
-| $IS_TRANSLATED	   | check if the category is translated or not | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $LOCALE	   | the locale used for this loop | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $META_DESCRIPTION	   | the category meta description | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅ |
-| $META_KEYWORD	   | the category meta keyword | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  | 'true' => ✅ <br/> 'false' => ✅  |
-| $META_TITLE	   | the category meta title | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $NEXT	   | The ID of category after this one in the current parent category, following categories positions, or null if none exists. | 'true' => ✅ <br/> 'false' => 🚫   |  'true' => ✅ <br/> 'false' => ✅  | 'true' => ✅ <br/> 'false' => ✅  |
-| $PARENT	   | the parent category | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $POSITION	   | the category position | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $POSTSCRIPTUM	   | the category postscriptum | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅ |
-| $PREVIOUS	   | The ID of category before this one in the current parent category, following categories positions, or null if none exists. | 'true' => ✅ <br/> 'false' => 🚫   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $PRODUCT_COUNT	   | Number of visible products contained by the current category. |'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => 🚫  |
-| $TEMPLATE	   | the template id associated to this category | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $TITLE	   | the category title | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $UPDATE_DATE	   | the category update date | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $URL	   | the category URL | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅ |  'true' => ✅ <br/> 'false' => ✅  |
-| $VERSION	   | the category version | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $VERSION_AUTHOR	   | the category version author | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $VERSION_DATE	   | the category version date | 'true' => ✅ <br/> 'false' => ✅   | 'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
-| $VISIBLE	   | Return if the category is visible or not | 'true' => ✅ <br/> 'false' => ✅   |  'true' => ✅ <br/> 'false' => ✅  |  'true' => ✅ <br/> 'false' => ✅  |
+| Variable           | Value                                                                                                                                                                                        |
+|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| $ID	               | the category id                                                                                                                                                                              |
+| $TITLE	            | the category title                                                                                                                                                                           |
+| $CHAPO             | the category chapo                                                                                                                                                                           |
+| $CREATE_DATE       | the category create date                                                                                                                                                                     |
+| $DESCRIPTION       | the category description                                                                                                                                                                     |
+| $IS_TRANSLATED	    | check if the category is translated or not                                                                                                                                                   |
+| $LOCALE	           | the locale used for this loop                                                                                                                                                                |
+| $META_DESCRIPTION	 | the category meta description                                                                                                                                                                |
+| $META_KEYWORD	     | the category meta keyword                                                                                                                                                                    |
+| $META_TITLE	       | the category meta title                                                                                                                                                                      |
+| $PARENT	           | the parent category                                                                                                                                                                          |
+| $POSITION	         | the category position                                                                                                                                                                        |
+| $POSTSCRIPTUM	     | the category postscriptum                                                                                                                                                                    |
+| $TEMPLATE	         | the template id associated to this category                                                                                                                                                  |
+| $UPDATE_DATE	      | the category update date                                                                                                                                                                     |
+| $URL	              | the category URL                                                                                                                                                                             |
+| $VERSION	          | the category version                                                                                                                                                                         |
+| $VERSION_AUTHOR	   | the category version author                                                                                                                                                                  |
+| $VERSION_DATE	     | the category version date                                                                                                                                                                    |
+| $VISIBLE	          | Return if the category is visible or not                                                                                                                                                     |
+| $PRODUCT_COUNT	    | Number of visible products contained by the current category. <br/> ** Only available if "need_product_child" is set to true **                                                              |
+| $CHILD_COUNT       | Number of subcategories contained by the current category.<br/> ** Only available if "need_count_child" is set to true **                                                                    |
+| $HAS_NEXT	         | true if a category exists after this one in the current parent category, following categories positions.<br/> ** Only available if "with_prev_next_info" is set to true **                   |
+| $NEXT	             | The ID of category after this one in the current parent category, following categories positions, or null if none exists.<br/> ** Only available if "with_prev_next_info" is set to true **  |
+| $HAS_PREVIOUS	     | true if a category exists before this one in the current parent category, following categories positions.<br/> ** Only available if "with_prev_next_info" is set to true **                  |
+| $PREVIOUS	         | The ID of category before this one in the current parent category, following categories positions, or null if none exists.<br/> ** Only available if "with_prev_next_info" is set to true ** |
 
 Plus the [global outputs](./global_arguments)
 
