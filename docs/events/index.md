@@ -1,5 +1,5 @@
 ---
-title: How it works
+title: Events
 ---
 
 As in Thelia 1 you can use an action in order to create a new account, add a product in you cart and many more.
