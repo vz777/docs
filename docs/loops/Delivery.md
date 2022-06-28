@@ -2,7 +2,7 @@
 title: Delivery
 ---
 
-delivery loop displays delivery modules information.
+delivery loop displays delivery modules information.   
 `{loop type="delivery" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#delivery-arguments}

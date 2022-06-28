@@ -2,7 +2,7 @@
 title: Country
 ---
 
-Country loop lists countries.
+Country loop lists countries.   
 `{loop type="country" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#country-arguments}

@@ -2,7 +2,7 @@
 title: Export
 ---
 
-Export loop lists all defined exports.
+Export loop lists all defined exports.   
 `{loop type="export" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#export-arguments}

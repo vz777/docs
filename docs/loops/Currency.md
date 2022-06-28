@@ -2,7 +2,7 @@
 title: Currency
 ---
 
-Currency loop lists currencies.
+Currency loop lists currencies.   
 `{loop type="currency" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#currency-arguments}

@@ -2,7 +2,7 @@
 title: Document
 ---
 
-The document loop process, cache and display products, categories, contents and folders documents.
+The document loop process, cache and display products, categories, contents and folders documents.   
 `{loop type="document" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#document-arguments}

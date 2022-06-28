@@ -2,7 +2,7 @@
 title: Coupon
 ---
 
-Return coupons information
+Return coupons information   
 `{loop type="coupon" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#coupon-arguments}

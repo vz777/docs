@@ -2,7 +2,7 @@
 title: Customer
 ---
 
-Customer loop displays customers information.
+Customer loop displays customers information.   
 `{loop type="customer" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#customer-arguments}
