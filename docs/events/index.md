@@ -2,7 +2,7 @@
 title: Events
 ---
 
-As in Thelia 1 you can use an action in order to create a new account, add a product in you cart and many more.
+You can use an action in order to create a new account, add a product in you cart and many more.
 
 Many Action are native and, of course, you can create your own using modules. But the new part in Thelia 2 is that you
 can override all native actions and replace them with your own actions.
