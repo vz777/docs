@@ -2,11 +2,8 @@
 title: Loops
 ---
 
-Loops are the most convenient feature in Thelia for front developers. Already there in Thelia's first version, they deserved a makeover for Thelia v2.
-
-Loops allow to get data from your shop back-end and display them in your front view. In Thelia v2, loops are a <a href="http://www.smarty.net" target="_blank">Smarty v3</a> plugin.
-
-From Thelia 2.4.0, when an unknown loop type is found in a template, no exeption is thrown in production mode, and an error is added to the log. In development mode, the exception is thrown as before. This way, disabling a module will no longer break a front office where this plugin's loops are used.
+Loops are the most convenient feature in Thelia for front developers.     
+Loops allow to get data from your shop back-end and display them in your front view. In Thelia loops are a Smarty plugin.
 
 ### Classic loop
 
@@ -36,30 +33,30 @@ Here is a piece of html code which intends to list 4 random products from your s
     </div>
 </div>
 ```
-&nbsp;
+    
 
-How to make this piece of code dynamic ? Gathering the products you set up in your Thelia v2 back-office ?
+How to make this piece of code dynamic ? Gathering the products you set up in your Thelia back-office ?
 
 Just use a Thelia product loop :
 
 ```smarty
 <div>
     {loop type="product" name="my_product_loop" limit="4" order="random"}
-    <div class="product-block">
-        {$TITLE} (ref : {$REF})<br />
-        {$DESCRIPTION}<br />
-        <strong>
-            {if $IS_PROMO == 1}
-                Afford it for only {$PROMO_PRICE} € (instead of {$PRICE}) !
-            {else}
-                Afford it for {$PRICE} €
-            {/if}
-        </strong>
-    </div>
+        <div class="product-block">
+            {$TITLE} (ref : {$REF})<br />
+            {$DESCRIPTION}<br />
+            <strong>
+                {if $IS_PROMO == 1}
+                    Afford it for only {$PROMO_PRICE} € (instead of {$PRICE}) !
+                {else}
+                    Afford it for {$PRICE} €
+                {/if}
+            </strong>
+        </div>
     {/loop}
 </div>
 ```
-&nbsp;
+    
 
 And what if you want only the products you tagged as new ? And which are from category 3 and 5 ? And whose price is at least 100 € ?
 
@@ -68,30 +65,29 @@ No problem ! Here you are :
 ```smarty
 <div>
     {loop type="product" name="my_product_loop" limit="4" order="random" new="true" category="3,5" min_price="100"}
-    <div class="product-block">
-        [...]
-    </div>
+        <div class="product-block">
+            [...]
+        </div>
     {/loop}
 </div>
 ```
-&nbsp;
 
 You can of course use a loop into another loop and pass a loop output to another loop parameter
 
 ```smarty
-{loop type="category" name="my_category_loop"}
-    <h2>{$TITLE}</h2>
+<div>
+    {loop type="category" name="my_category_loop"}
+        <h2>{$TITLE}</h2>
         {loop type="product" name="my_product_loop" category="{$ID}"}
-        <div class="product-block">
-            [...]
-        </div>
+            <div class="product-block">
+                [...]
+            </div>
         {/loop}
-{/loop}
+    {/loop}
 </div>
 ```
-&nbsp;
 
-Thelia 2 provides a lot of loop types. You can see all the loops and their parameters / outputs in the <strong>Loops</strong> sidebar menu.
+Thelia  provides a lot of loop types. You can see all the loops and their parameters / outputs in the <strong>Loops</strong> sidebar menu.
 
 ### Conditional loop
 
@@ -212,80 +208,27 @@ List of output parameters :
 </div>
 ```
 
-
-## Declare your loops
-
-```xml
-<loops>
-    <loop name="mymodule_product" class="MyModule\Loop\Product" />
-    <loop name="mymodule_myloop" class="MyModule\Loop\MyLoop" />
-</loops>
-```
-
-You have to create as many loop node as loop you have into the loops node. In this example there is 2 loops. Name and
-class properties are mandatory. The name is the loop name used into the template ( like in Thelia v1 : ```<THELIA_name
-type="MyModule_Product">...</THELIA_name>```), class property is the class executed by the template engine. This
-class must extends the Thelia\Core\Template\Element\BaseLoop abstract class, if not an exception is thrown.
-**If you name your loop like a default loop (eg : product), your loop will replace the default loop.**
-
 ## Implement your loops
 
-Your loop can be anywhere (Thanks to namespace) in your module but it's better to create a Loop directory and put all your loops in this directory.
+Your loop can be anywhere (Thanks to namespace) in your module, but it's better to create a Loop directory and put all your loops in this directory.
 
-You have to extends the Thelia\Core\Template\Element\BaseLoop abstract class and implement either Thelia\Core\Template\Element\PropelSearchLoopInterface or Thelia\Core\Template\Element\ArraySearchLoopInterface. Therefore you will have to create *getArgDefinitions*, *parseResults* and either *buildModelCriteria* or *buildArray* methods.
+The only thing to do is create a new class that to extend the `Thelia\Core\Template\Element\BaseLoop` class and implement one of these interfaces :     
+- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)     
+- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).     
 
-NB : You can also extend BaseI18nLoop which itself extends BaseLoop. This will provide tools to manage i18n in your loop.
+NB : Instead of `BaseLoop` you can also extend `BaseI18nLoop`. This will provide tools to manage i18n in your loop.
 
-### What's the difference betwen *PropelSearchLoopInterface* and *ArraySearchLoopInterface*
+The type of your loop will be the class name in snake_case for example the `type` of `MyLoop.php` will be `my_loop`  
+So to call it in template `{loop type="my_loop" name="a_loop_name"}{/loop}`
 
-It's a matter of data type. If the data your loop returns come from the database you must implement *PropelSearchLoopInterface* and create *buildModelCriteria* method which return a *Propel\Runtime\ActiveQuery\ModelCriteria*. Conversely if your loop displays data from an array you must implement *ArraySearchLoopInterface* and create *buildArray* method which return an array.
-
-The *parseResults* method is used to render the template. It must return a Thelia\Core\Template\Element\LoopResult instance.
-
-The getArgDefinitions method defines all args used in your loop. Args can be mandatory, optional, with default value, etc. This method must return an Thelia\Core\Template\Loop\Argument\ArgumentCollection. ArgumentCollection contains Thelia\Core\Template\Loop\Argument which contains a Thelia\Type\TypeCollection. Types in the collection must implement Thelia\Type\TypeInterface.
-
-If you don't define your arguments here, you can't use them in your new loop. All arguments are accessible in the ```parseResults``` method.
-
-Baseloop class declares 3 public properties you might overload in your new loop.
-
+## Array loop
+If data in your loop doesn't come directly from a model use an array loop.   
+3 functions must be implemented :
+- `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
+- `buildArray` who gather the data for the defined parameters
+- `parseResults` to assign data to smarty variables for each loop iteration
 ```php
-public $countable = true;
-public $timestampable = false;
-public $versionable = false;
-```
-
-With these properties set to true, the loop will automatically render - or not - the following outputs :
-
-```php
-if($countable === true)
-```
-
-* LOOP_COUNT
-* LOOP_TOTAL
-
-```php
-if($timestampable === true) //available if your table is timestampable
-```
-
-* CREATE_DATE
-* CREATE_UPDATE
-
-### Example 1
-
-Here an example for my module "MyModule" and my loops in the loop directory. This is the architecture :
-
- ```
- \local
-   \modules
-     \MyModule
-       ...
-       \Loop
-         MyLoop.php
- ```
-
-MyLoop.php file :
-
- ```php
+ <?php
  namespace MyModule\Loop;
 
  use Thelia\Core\Template\Element\BaseLoop;
@@ -303,6 +246,7 @@ MyLoop.php file :
 
      public function getArgDefinitions()
      {
+         // Always return an ArgumentCollection
          return new ArgumentCollection(
              Argument::createIntListTypeArgument('start', 0),
              Argument::createIntListTypeArgument('stop', null, true)
@@ -311,59 +255,157 @@ MyLoop.php file :
 
      public function buildArray()
      {
-         $items = array();
+         $items = [];
 
+         // These magics methods will get the loop arguments "start" and "stop"
          $start = $this->getStart();
          $stop = $this->getStop();
 
-         for($i=$start; $i<=$stop; $i++ {
-            $items[] = $i;
+         // Get the data from where you want
+         for ( $i = $start; $i <= $stop; $i++) {
+            $items[] = [
+                'number' => $i,
+                'numberNext' => $i + 1
+            ];
          }
 
          return $items;
-
      }
 
      public function parseResults(LoopResult $loopResult)
      {
+         // "getResultDataCollection" return an iterator that contain the items given by "buildArray"
          foreach ($loopResult->getResultDataCollection() as $item) {
-
+             // Create a new result
              $loopResultRow = new LoopResultRow();
 
-             $loopResultRow->set("MY_OUTPUT", $item);
+             // Assign variable that will be accessible in smarty by $CURRENT_NUMBER for example
+             $loopResultRow->set("CURRENT_NUMBER", $item['number']);
+             $loopResultRow->set("NEXT_NUMBER", $item['numberNext']);
 
+             // Add the result to loop result list
              $loopResult->addRow($loopResultRow);
          }
 
          return $loopResult;
      }
  }
+```
 
- ```
+## Propel loop
+If data in your loop come directly from a model use a Propel loop.   
+3 functions must be implemented :
+- `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
+- `buildModelCriteria` who build a Propel query to execute
+- `parseResults` to assign data to smarty variables for each loop iteration
+```php
+<?php
+namespace Thelia\Core\Template\Loop;
 
-Of course you can use all classes you want in your own loop class, like model class. All Thelia's model classes are in the
-namespace Thelia\Model
+use Propel\Runtime\ActiveQuery\Criteria;
+use Thelia\Core\Template\Element\BaseLoop;
+use Thelia\Core\Template\Element\LoopResult;
+use Thelia\Core\Template\Element\LoopResultRow;
+use Thelia\Core\Template\Element\PropelSearchLoopInterface;
+use Thelia\Core\Template\Loop\Argument\Argument;
+use Thelia\Core\Template\Loop\Argument\ArgumentCollection;
+use Thelia\Model\Admin as AdminModel;
+use Thelia\Model\AdminQuery;
 
-So if I want to add some search in my DB and return results from product table I can use something like this :
-
- ```php
-public function buildModelCriteria()
+class Admin extends BaseLoop implements PropelSearchLoopInterface
 {
-    return ProductQuery::create();
-}
-
-public function parseResults(LoopResult $loopResult)
-{
-     foreach ($loopResult->getResultDataCollection() as $product) {
-
-        $loopResultRow = new LoopResultRow($product);
-
-        $loopResultRow->set("REF", $product->getRef());
-
-        $loopResult->addRow($loopResultRow);
+    protected function getArgDefinitions()
+    {
+         // Always return an ArgumentCollection
+        return new ArgumentCollection(
+            Argument::createIntListTypeArgument('id'),
+            Argument::createIntListTypeArgument('profile')
+        );
     }
 
-    return $loopResult;
+    public function buildModelCriteria()
+    {
+        $search = AdminQuery::create();
+
+         // This magic method will get the loop argument "id"
+        $id = $this->getId();
+        if (null !== $id) {
+            $search->filterById($id, Criteria::IN);
+        }
+
+        $profile = $this->getProfile();
+        if (null !== $profile) {
+            $search->filterByProfileId($profile, Criteria::IN);
+        }
+
+        $search->orderByFirstname(Criteria::ASC);
+
+        // Don't execute the query, only return it
+        return $search;
+    }
+
+    public function parseResults(LoopResult $loopResult)
+    {
+        /** @var AdminModel $admin */
+        foreach ($loopResult->getResultDataCollection() as $admin) {
+             // Create a new result
+            $loopResultRow = new LoopResultRow($admin);
+            
+             // Assign variable that will be accessible in smarty by $PROFILE for example
+            $loopResultRow->set('ID', $admin->getId())
+                ->set('PROFILE', $admin->getProfileId())
+                ->set('FIRSTNAME', $admin->getFirstname())
+                ->set('LASTNAME', $admin->getLastname())
+                ->set('LOGIN', $admin->getLogin())
+                ->set('LOCALE', $admin->getLocale())
+                ->set('EMAIL', $admin->getEmail())
+            ;
+            $this->addOutputFields($loopResultRow, $admin);
+
+             // Add the result to loop result list
+            $loopResult->addRow($loopResultRow);
+        }
+
+        return $loopResult;
+    }
 }
 ```
 
+## Argument types
+In `Argument` class you have multiple static function that will help you to specify which argument is expected
+
+| function                               | argument accepted                                    |
+|:---------------------------------------|:-----------------------------------------------------|
+| createAnyTypeArgument()              | Anything                                             |
+| createIntTypeArgument()              | Only an integer                                      |
+| createFloatTypeArgument()            | Only a float                                         |
+| createBooleanTypeArgument()          | Only a boolean                                       |
+| createBooleanOrBothTypeArgument()    | A boolean or "*" for both                            |
+| createIntListTypeArgument()          | A list of integers separated by a comma              |
+| createAnyListTypeArgument()          | A list of anythings separated by a comma             |
+| createAlphaNumStringTypeArgument()   | An alpha numeric string                              |
+| createAlphaNumStringListTypeArgument() | A list of alpha numeric strings separated by a comma |
+
+## Options
+Baseloop class declares 3 public properties you might overload in your new loop.
+
+```php
+public $countable = true;
+public $timestampable = false;
+```
+
+With these properties set to true, the loop will automatically render - or not - the following outputs :
+
+```php
+if($countable === true)
+```
+
+* `LOOP_COUNT` The current iteration number (start from 1) 
+* `LOOP_TOTAL` Total of elements in current loop
+
+```php
+if($timestampable === true) //available if your table is timestampable
+```
+
+* `CREATE_DATE`  Date of creation
+* `UPDATE_DATE`  Date of last update
