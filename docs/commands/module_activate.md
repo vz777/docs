@@ -3,7 +3,7 @@ title: module:activate
 ---
 
 ## Description
-Activates a module
+Activate a module
 
 ## Usage
 ```shell
