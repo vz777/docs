@@ -91,7 +91,7 @@ Thelia  provides a lot of loop types. You can see all the loops and their parame
 
 ### Conditional loop
 
-Conditional loops allow to define a different behaviour depending on if the a classic loop displays something or not.
+Conditional loops are used to define a different behaviour depending on whether a classic loop displays something or not.
 
 A conditional loop is therefore linked to a classic loop using the ```rel``` attribute which must match a classic loop ```name``` attribute.
 
