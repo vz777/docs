@@ -82,7 +82,7 @@ It will check all these directories in this order :
 
 #### Loops
 
-Loops allow to get data from your shop back-end and display them in your front view. More documentation can be found [here](../loops).
+Loops allow to get data from your shop back-end and display them in your front view. More documentation can be found [here](./loops).
 
 #### Smarty plugins
 
