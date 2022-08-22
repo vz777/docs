@@ -3,13 +3,15 @@ title: Hooks
 toc_max_heading_level: 5
 ---
 
-The Hooks are an entry points in the templates at which modules can insert their own code, add new features and change the appearance of the site.
+The Hooks are an entry points in the templates at which modules can insert their own code, add new features and change the appearance of the site.   
+
 
 ## How hooks work
 
 The principle of hooks is simple. The template includes a hook function or block in the Smarty code. When Smarty parses this function/block an event is created and dispatched to methods of modules that listen to this hook event.    
 The modules that listen for these events generate content and add it directly to the event. When the event is finished, the content is injected in place of the function/block as rendered markup.
-There are two distinct types of hooks you can extend: the basic hook function and the hookblock.
+There are two distinct types of hooks you can extend: the basic hook function and the hookblock.    
+You can see what hook are present in every page by adding the query parameter `SHOW_HOOK=1` in url (this parameter only work if the debug mode is enabled) or see below for the list of all [natives hooks](#default-hook-list).
 
 ## Hook listener
 To insert data in hooks you have to create a class that extend `BaseHook` and implement a method `getSubscribedHooks` to define which hooks you want to listen.

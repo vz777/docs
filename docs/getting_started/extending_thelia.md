@@ -4,7 +4,7 @@ sidebar_position: 2
 toc_max_heading_level: 6
 ---
 
-## Create a module
+# Create a module
 
 :::caution
 
@@ -16,6 +16,8 @@ The only reason to create a separate module is if you want to share it with the 
 To extend to Thelia you need to create a module in general for the main module we call it with the same name as the project.
 
 A command can help you to create the base files :
+
+## Structure
 
 ```bash
 php Thelia module:generate MyProject
@@ -46,7 +48,7 @@ Once the module is created you can go to your shop back-office and active it in 
 ## Base file (MyProject.php)
 
 This file must extend the `Thelia\Module\BaseModule` class (except for payments and deliveries modules)
-During the lifecycle of a module theses function are called and allow you to apply your own logic by overwritting them :
+During the lifecycle of a module these function are called and allow you to apply your own logic by overwriting them :
 - `install(ConnectionInterface $con = null);` This method is called when the plugin is installed for the first time.
 - `preActivation(ConnectionInterface $con = null);` This method is called before the module activation, and may prevent it by returning false.
 - `postActivation(ConnectionInterface $con = null);` This method is called after was successfully activated.
@@ -54,230 +56,262 @@ During the lifecycle of a module theses function are called and allow you to app
 - `postDeactivation(ConnectionInterface $con = null);` This method is called after was successfully deactivated.
 - `update($currentVersion, $newVersion, ConnectionInterface $con = null);` This method is called on a module refresh if the previous version in module.xml is different than the current version
 
-## Extend the database
-
-
-
-### Describing schema
-
-To describe your schema please refer to [propel documentation](http://propelorm.org/documentation/reference/schema.html).
-
-
-#### Add a column to native Thelia table
-
-In Thelia it is **not** possible to modify the native tables.    
-The best practice to add columns is to create a new table with a foreign key attached to the base table.
-
-```xml
-    <table name="extend_customer_data" namespace="MyProject\Model">
-        <column name="id" primaryKey="true" required="true" type="INTEGER" />
-        <column name="additional_column" type="VARCHAR" size="255" />
-        <foreign-key foreignTable="customer" name="fk_extend_customer_data_customer_id" onDelete="CASCADE" onUpdate="CASCADE">
-            <reference foreign="id" local="id" />
-        </foreign-key>
-        ...
-    </table>
-```
-
-### Generate Sql / Model from schema
-
-To generate Sql request and associated model class from schema use this command
-
-```bash
-php Thelia module:generate:model --generate-sql MyProject 
-```
-
-This command will generate a TheliaMain.sql file at `local/modules/MyProject/Confif/TheliaMain.sql` don't modify it, it will be erased each time this command is executed.  
-It will also generate [Model](http://propelorm.org/documentation/reference/active-record.html) and [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) file for each table, in these files you and add your own function or property, they will not be erased as they are just empty class that extend the real propel Model located in propel cache. 
-
-### Execute Sql
-
-#### At module initialization
-If you want to execute the sql at the first module activation add this function to your module's base file :
-
-```php
-    public function postActivation(ConnectionInterface $con = null): void
-    {
-        // Look if module has already been activated 
-        if (!self::getConfigValue('is_initialized', false)) {
-            $database = new Database($con);
-            // Insert generated file
-            $database->insertSql(null, [__DIR__.'/Config/TheliaMain.sql']);
-            
-            // Set module as initialized
-            self::setConfigValue('is_initialized', true);
-        }
-    }
-```
-
-#### On module update
-If your module has already been activated you must go through the update system.
-For now there is no way to get directly the sql request needed to update your database, you need to extract it from the generated TheliaMain.sql.
-
-For example if at module initialization you have this sql generated :
-
-```sql
-DROP TABLE IF EXISTS `block_group`;
-
-CREATE TABLE `block_group`
-(
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `slug` VARCHAR(50),
-    `created_at` DATETIME,
-    `updated_at` DATETIME,
-    PRIMARY KEY (`id`),
-    UNIQUE INDEX `slug_unique` (`slug`)
-) ENGINE=InnoDB;
-``` 
-
-And later you want to add a new boolean column named "visible" to you table you will add it to your shema.xml and get this sql :
-
-```sql
-DROP TABLE IF EXISTS `block_group`;
-
-CREATE TABLE `block_group`
-(
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `slug` VARCHAR(50),
-    `visible` TINYINT DEFAULT 0 NOT NULL,
-    `created_at` DATETIME,
-    `updated_at` DATETIME,
-    PRIMARY KEY (`id`),
-    UNIQUE INDEX `slug_unique` (`slug`)
-) ENGINE=InnoDB;
-``` 
-
-So you have to extract only the difference like this 
-
-```sql
-ALTER TABLE `block_group` ADD `visible` TINYINT DEFAULT 0 NOT NULL;
-```
-
-Then put this extracted requests on a new file located here `local/modules/MyProject/Config/update/` the name of the file must be the next version of your module for example if the version of your module is `1.0.6` and the next version is `1.1.0` create this file `local/modules/MyProject/Config/update/1.1.0.sql` and put the sql in it and change the `<version></version>` in module.xml.   
-Check that you have this function in your base file : 
-
-```php
-    /**
-     * Execute sql files in Config/update/ folder named with module version (ex: 1.0.1.sql).
-     *
-     * @param $currentVersion
-     * @param $newVersion
-     * @param ConnectionInterface $con
-     */
-    public function update($currentVersion, $newVersion, ConnectionInterface $con = null): void
-    {
-        $finder = Finder::create()
-            ->name('*.sql')
-            ->depth(0)
-            ->sortByName()
-            ->in(__DIR__.DS.'Config'.DS.'update');
-
-        $database = new Database($con);
-
-        /** @var \SplFileInfo $file */
-        foreach ($finder as $file) {
-            if (version_compare($currentVersion, $file->getBasename('.sql'), '<')) {
-                $database->insertSql(null, [$file->getPathname()]);
-            }
-        }
-    }
-```
-
-if not you will have to add it.
-This function is called when Thelia refresh module list (either in the admin page oy by command) and detect that the next version of your module is different than the current.
-And she will search and execute all sql files between two versions.
-
-## Routing
-
-Routing in Thelia work like [Symfony routing](https://symfony.com/doc/current/routing.html#creating-routes).
-A specificity in Thelia is that there is 2 types of Controller :
+## Controllers
+Controllers work the same as Symfony controllers except that in Thelia there is 2 types of Controllers :
 - Front controllers which extends `BaseFrontController` and when you call a render in it Thelia will search template in frontOffice directory
-- Admin controllers which extend `BaseAdminController`  when you call a render in it Thelia will search template in backOffice directory, and all routes in these controllers are automatically secured and only logged admins can call them. 
+- Admin controllers which extend `BaseAdminController`  when you call a render in it Thelia will search template in backOffice directory, and all routes in these controllers are automatically secured and only logged admins can call them.
 
-## Templating
+## Delivery modules
 
-The template engine used in Thelia is [Smarty](https://smarty-php.github.io/smarty/).
-There is 4 types of templates :
-- frontOffice : for templates rendered from a controller that extent `BaseFrontController`
-- backOffice : for templates rendered from a controller that extent `BaseAdminController`
-- pdf : for pdf documents like invoices
-- mail : for mail sent by Thelia
+### Implementing a delivery module
 
-For each of this types you can choose an active template. Either by the configuration page in back office or by these environment variables: 
-```
-ACTIVE_FRONT_TEMPLATE    
-ACTIVE_ADMIN_TEMPLATE    
-ACTIVE_MAIL_TEMPLATE   
-ACTIVE_PDF_TEMPLATE   
-``` 
-:::caution
-We advised to never modify the defaults templates but copy and rename it with the name of your project.    
-Like this you can always update Thelia and the defaults templates without loosing your changes
-:::
+For a delivery module the main class should extends the ```Thelia\Module\AbstractDeliveryModule``` interface and implement the ```getPostage``` and ```isValidDelivery``` methods.
 
-### Templates structure
+#### `isValidDelivery()`
 
-Thelia Smarty templates are located in the templates sub-directory.
+This method should return a `boolean`.    
+If `true`, the delivery module is displayed on the front office by the delivery loop. If `false`, the module is not displayed.
 
-```
-\templates
-  \frontOffice
-    \default
-    \myTemplate
-  \backOffice
-    \default
-    ...  
-  \pdf
-    \default
-    ...  
-  \mail
-    \default
-    ...
+This is useful if the delivery solution have some limitations and can't be used. For example, Colissimo can't be used if the total weight of the customer cart is greater than 30 Kg.
+
+You may also use this method to restrict access to your module to some IP addresses the during test phase.
+
+```php
+/**
+ * This method is called by the Delivery loop, to check if the current module has to be displayed to the customer.
+ * Override it to implements your delivery rules/
+ *
+ * If you return true, the delivery method will de displayed to the customer
+ * If you return false, the delivery method will not be displayed
+ *
+ * @param Country $country the country to deliver to.
+ *
+ * @return boolean
+ */
+public abstract function isValidDelivery(Country $country)
+{
+    // Retrieve the cart weight
+    $cartWeight = $this->getRequest()->getSession()->getCart()->getWeight();
+
+    return $cartWeight <= 30;
+}
 ```
 
-This is the structure of all Thelia templates, it can be located either at the root of your project or in each module folder.
-If same file are in multiple templates location Thelia apply this priority to know which as to be rendered (the first file found is the file rendered)
-1. In the active template in root templates directory
-2. In the active template in each module subdirectory located in root templates directory
-3. In the active template in each module templates directory
-4. In the default template in root templates directory
-5. In the default template in each module subdirectory located in root templates directory
-6. In the default template in each module templates directory
+#### `getPostage()`
 
-For example if you have this structure :
+This method have an argument : The country for which the delivery price should be calculated.
+
+If the module can't calculate the price for some reasons, it should throw a DeliveryException, with a internationalized message which describes the problem.
+
+```php
+/**
+ * Calculate and return delivery price in the shop's default currency
+ *
+ * @param Country $country the country to deliver to.
+ *
+ * @return float the delivery price
+ * @throws DeliveryException if the postage price cannot be calculated.
+ */
+public function getPostage(Country $country)
+{
+    if (! $this->isValidDelivery($country)) {
+        throw new DeliveryException(
+            Translator::getInstance()->trans("This module cannot be used on the current cart.")
+        );
+    }
+
+    $postage = $this->giveMeThePriceOfTheDeliveryInThisCountry($country);
+
+    return $postage;
+}
 ```
-\local
-    \modules
-        \MyProject
-            \templates
-                \frontOffice
-                    \default
-                        template.html
-\templates
-  \frontOffice
-    \default
-        template.html
-    \myTemplate
-        template.html
-        \modules
-            \myproject
-                template.html
+
+## Payment modules
+
+### Payment process
+
+Once the customer has put some products in his cart, logged-in (or created his account) and selected a delivery method, the payment  becomes possible. Here is a typical payment process :
+
+1. The customer selects the Payment module
+2. The customer trigger the payment (by clicking a "Pay" button on the front office
+3. The pay() method of the selected payment module is called by the Thelia core
+4. The pay() method manages the payment process, which could consists in :
+    - Invoking a web service or a platform specific API.
+    - Submitting a form that contains payment parameters to a payment gateway.
+    - Nothing (like in Cheque or Bank Transfer).
+    - Other specific stuff.
+5. If the payment is successful, the customer is redirected to a "thank you" page.
+6. If the payment fails, the customer is redirected to a "oops, sorry" page.
+
+### Standard templates
+
+In the standard front-office template, three template files provides a common and standard way to interact with the customer :
+
+- `order-placed.html`, to tell the customer his payment is successful.
+- `order-failed.html`, to tell the customer his payment failed, and offer a way to try again.
+- `order-payment-gateway.html`, to provide a standard template to submit data to the payment gateway. This template file is not used by modules that do not send form-data to payment gateway.
+
+These templates allow an immediate module integration in a shop template, but it's always possible for a module to provide its own templates.
+
+### Implementing a payment module
+
+For a payment module the main class should extend the `Thelia\Module\AbstractPaymentModule` interface and implement the  ```isValidPayment``` and ```pay``` methods.
+
+#### `isValidPayment()`
+
+This method should return a `boolean`. If `true`, the payment module is displayed on the front office by the payment loop. If `false`, the module is not displayed.
+
+This is useful if the payment solution have some limitations and can't be used. For example, PayPal can't be used if there are more than 10 products in customer's cart and/or if total order amount is greater than 8000 €.
+
+You may also use this method to restrict access to your module to some IP addresses the during test phase.
+
+```php
+/**
+*
+* This method is called by the Payment loop.
+*
+* If you return true, the payment method will be displayed
+* If you return false, the payment method will not be displayed
+*
+* @return boolean
+*/
+public function isValidPayment()
+{
+    // At this point, the order does not exist yet in the database. We have to get
+    // item count from the customer cart.
+
+    /** @var Session $session */
+    $session = $this->getRequest()->getSession();
+
+    /** @var Cart $cart */
+    $cart = $session->getCart();
+
+    $cartContentCount = $cart->countCartItems();
+
+    // BaseModule::getCurrentOrderTotalAmount() is a convenient methods 
+    // to get order total from the current customer cart.
+
+    $orderTotal = $this->getCurrentOrderTotalAmount();
+
+    return $cartContentCount <= 10 && $orderTotal < 8000;
+}
 ```
 
-It will check all these directories in this order :
-1. `\templates\frontOffice\myTemplate\`
-2. `\templates\frontOffice\myTemplate\modules\myproject` * this for each activated modules
-3. `\local\modules\MyProject\templates\frontOffice\myTemplate` * this for each activated modules
-4. `\templates\frontOffice\default\`
-5. `\templates\frontOffice\default\modules\myproject` * this for each activated modules
-6. `\local\modules\MyProject\templates\frontOffice\default` * this for each activated modules
+#### `pay()`
 
-### Features
+The `pay()` method is the most useful method of a payment module: it performs the payment of the current order, accordingly to the payment system requirements:
 
-#### Loops
+- submit a form that directs the customer to the payment gateway,
+- invoke a web service, a specific API, etc. to perform the payment from inside the method, and redirects the user to the result (success / failure) ant the end of the process
+- start a specific process, managed by a module controller
+- whatever your requirements are :)
 
-Loops allow to get data from your shop back-end and display them in your front view. More documentation can be found [here](../loops).
+The current order is passed as a parameter to the `pay()` method.
 
-#### Smarty plugins
+The method should return a ```Thelia\Core\HttpFoundation\Response``` object. Alternatively, depending on your specific needs, you can redirect the customer to another URL.
 
-Smarty plugins are used to execute some function from templates
+To use the standard `order-payment-gateway.html` template, just generate an array of (name, value) couples with the , and send it the template along with the payment gateway URL using the `generateGatewayFormResponse($order, $gateway_url, $form_data)` method.
+The form will be automatically submitted, and the customer will be directed to the payment gateway.
+
+Example for the Payzen payment module :
+
+```php
+/**
+ * Payment gateway invocation
+ *
+ * @param  Order $order processed order
+ * @return Response the payment form
+ */
+protected function pay(Order $order)
+{
+    $payzen_params = $this->getPayzenParameters($order, 'SINGLE');
+
+    // Convert files into standard var => value array
+    $html_params = array();
+
+    /** @var PayzenField $field */
+    foreach($payzen_params as $name => $field)
+        $html_params[$name] = $field->getValue();
+
+    // Be sure to have a valid platform URL, otherwise give up
+    if (false === $platformUrl = PayzenConfigQuery::read('platform_url', false)) {
+        throw new \InvalidArgumentException(Translator::getInstance()->trans("The platform URL is not defined, please check Payzen module configuration."));
+    }
+
+    // Generate the form
+    return $this->generateGatewayFormResponse($order, $platformUrl, $html_params);
+}
+```
+
+If you have a specific API, call it with the required parameters, and depending on the result, redirect to the success or failure page.
+
+```php
+/**
+ * Payment gateway invocation
+ *
+ * @param  Order $order processed order
+ * @return Response the payment form
+ */
+protected function pay(Order $order)
+{
+    $api = new SamplePaymentApi();
+
+    // Invoke API
+    $result = $api->performPayment($with_some_parameters);
+
+    $returnUrl = $result === API::SUCCESS ? $this->getPaymentSuccessPageUrl(): $this->getPaymentFailurePageUrl();
+
+    Redirect::exec($returnUrl);
+ }
+```
+
+#### `manageStockOnCreation()`
+
+You can decide with this function if your payment module decrease stock when the order is created or when the order status change to "paid" by default it's `true`.
+
+Return true for decrementing stock on order creation.    
+Return false for decrementing stock when order status change to "paid".
+
+```php
+/**
+* Decrement stock on order creation
+**/
+public function manageStockOnCreation()
+{
+    return true;
+}
+```
+
+```php
+/**
+* Decrement stock when status change to paid
+**/
+public function manageStockOnCreation()
+{
+    return false;
+}
+```
+
+### Processing of payment system callback
+
+Most payment platforms offers a callback system, to notify your module of the payment result. The callback often consists in calling an URL on your server, the Return URL.
+
+#### Create a payment callback route
+
+The callback URL will invoke a method in your payment controller. This controller may extend the abstract `Thelia\Modules\BasePaymentModuleController` class, which provides useful methods for payment confirmation:
+
+- `getLog()` : returns a `Tlog` instance to a module specific log file. The file name is *module_code*.log, and is located in the log directory. For example, the Payzen module log file is `payzen.log`.
+
+- `confirmPayment($orderId)` : call this method to confirm the payment of the order with ID `$orderId`. The method updates the order status to PAID, and dispatch the required events.
+
+- `cancelPayment($orderId)` : Some payment systems may notify a cancellation of an already paid order through the return URL. Call this method in this case, to cancel the payment of an already paid order with ID `$orderId`. The order status will be set to `NOT_PAID`, and the required events will be dispatched.
+
+- `getOrder($orderId)` : returns the Order object for order ID `$orderId`, or log an error the order can't be found.
+
+- `redirectToSuccessPage($orderId)` : redirects the customer to the standard successful payment page. Use it only if your controller is invoked in the customer request scope.
+
+- `redirectToFailurePage($orderId)` :  redirects the customer to the standard failed payment page. Use it only if your controller is invoked in the customer request scope.
+
+Your controller should implement the `getModuleCode()` method, which returns your module code, that is the name of the module main class. For example "Payzen" for the Payzen module.
+
+Your controller should perform all required check before calling `confirmPayment()`, to be sure that the customer payment is valid.

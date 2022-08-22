@@ -3,8 +3,8 @@ title: Events
 ---
 
 Thelia dispatch a lot of events during various workflows : account creation, order process, ...    
-You can listen any of this event to add or replace logic.    
-More info for Event dispatcher compoenent can be found on [Symfony documentation](https://symfony.com/doc/current/components/event_dispatcher.html)
+You can listen any of this event to add or replace logic. Or add your own events that can be listened by other modules.    
+More info for Event dispatcher component can be found on [Symfony documentation](https://symfony.com/doc/current/components/event_dispatcher.html)
 
 To do this you have to create an event subscriber, it's just a simple class that implement the `EventSubscriberInterface` with a `getSubscribedEvents` function to choose what event to listen :
 ```php
