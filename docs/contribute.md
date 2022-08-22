@@ -2,11 +2,10 @@
 title: Contribute
 ---
 
-<div class="page-header">
-    <h1>How to contribute ?</h1>
-</div>
+## How to contribute ?
 
-Thelia project is hosted on [GitHub](https://github.com/thelia/thelia). For contributing you just have to fork the project
+Thelia is hosted on [GitHub](https://github.com/thelia/thelia).     
+For contributing you just have to fork the project
 and submit [Pull Request](https://help.github.com/articles/using-pull-requests) or [Issues](https://github.com/thelia/thelia)
 
 ## Coding Standard
@@ -18,27 +17,28 @@ must follow this rules. Don't worry, you can use some tools for doing this like 
 ## Pull Request
 
 [Creating a Pull request](https://help.github.com/articles/creating-a-pull-request) is the better way for submitting a
-patch but there are some rules to follow. First of all, fork [Thelia](https://github.com/thelia/thelia) repo and create
-a new branch, never work on the master branch, use it only for syncing with [Thelia](https://github.com/thelia/thelia) repo.
+patch but there are some rules to follow.     
+First of all, fork [Thelia](https://github.com/thelia/thelia) repo and create
+a new branch, never work on the `main` branch, use it only for syncing with [Thelia](https://github.com/thelia/thelia) repo
 
 ```
-$ git checkout -b new-branch master
+$ git checkout -b new-branch main
 ```
 
 After finishing your modification you have to rebase your branch and push it to your repo
 
 ```
 $ git remote add upstream https://github.com/thelia/thelia.git
-$ git checkout master
-$ git pull --ff-only upstream master
+$ git checkout main
+$ git pull --ff-only upstream main
 $ git checkout new-branch
-$ git rebase master
+$ git rebase main
 $ git push origin new-branch
 ```
 
-Next and last step, submit a Pull Request as indicated in the [GitHub documentation](https://help.github.com/articles/creating-a-pull-request).
+Next and last step, submit a Pull Request as indicated in the [GitHub documentation](https://help.github.com/articles/creating-a-pull-request)
 
-If you want to do more, read this usefull blog post : [http://williamdurand.fr/2013/11/20/on-creating-pull-requests/](http://williamdurand.fr/2013/11/20/on-creating-pull-requests/)
+If you want to do more, read this useful [blog post](http://williamdurand.fr/2013/11/20/on-creating-pull-requests/)
 
 
 ## SQL scripts modification
@@ -121,7 +121,7 @@ If you want to contribute to translation or want to discuss specific translation
 
 If you would like to help out with translating or adding a language that isn’t yet translated, here’s what to do:
 
-- Visit the [Thelia project page](http://translate.thelia.net/).
+- Visit the [Thelia page](http://translate.thelia.net/).
 - Sign up at  [Crowdin](http://crowdin.com) or log in if you already have an account.
 - On the Thelia project page, click the **Join Translation Project** button.
 - Choose the language you want to work on, or – in case the language doesn’t exist yet – request a new language by clicking on the **Contact** link of one of the managers of the project.
