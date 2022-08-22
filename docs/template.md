@@ -17,7 +17,7 @@ ACTIVE_MAIL_TEMPLATE
 ACTIVE_PDF_TEMPLATE   
 ``` 
 :::caution
-We advised to never modify the defaults templates but copy and rename it with the name of your project.    
+It's strongly recommended to never modify the defaults templates but copy and rename it with the name of your project.    
 Like this you can always update Thelia and the defaults templates without loosing your changes
 :::
 
