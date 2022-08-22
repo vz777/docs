@@ -86,4 +86,4 @@ Loops allow to get data from your shop back-end and display them in your front v
 
 #### Smarty plugins
 
-Smarty plugins are used to execute some function from templates
+Smarty plugins are used to execute functions from templates
