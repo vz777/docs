@@ -1,6 +1,6 @@
 ---
 title: Update
-sidebar_position: 3
+sidebar_position: 14
 ---
 
 ## Update components

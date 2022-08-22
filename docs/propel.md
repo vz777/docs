@@ -1,5 +1,6 @@
 ---
 title: Propel
+sidebar_position: 4
 ---
 
 Thelia use the [Propel 2](http://propelorm.org/) orm to interact with database.

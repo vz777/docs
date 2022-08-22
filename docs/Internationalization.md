@@ -1,4 +1,7 @@
-# Internationalization
+---
+title: Internationalization
+sidebar_position: 13
+---
 
 ## In templates
 

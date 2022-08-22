@@ -1,5 +1,6 @@
 ---
 title: Template
+sidebar_position: 5
 ---
 
 The template engine used in Thelia is [Smarty](https://smarty-php.github.io/smarty/).

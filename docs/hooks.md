@@ -1,5 +1,6 @@
 ---
 title: Hooks
+sidebar_position: 8
 toc_max_heading_level: 5
 ---
 
