@@ -222,7 +222,7 @@ The type of your loop will be the class name in snake_case for example the `type
 So to call it in template `{loop type="my_loop" name="a_loop_name"}{/loop}`
 
 ## Array loop
-If data in your loop doesn't come directly from a model use an array loop.   
+If data in your loop doesn't come directly from a model, use an array loop.   
 3 functions must be implemented :
 - `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
 - `buildArray` who gather the data for the defined parameters
@@ -293,7 +293,7 @@ If data in your loop doesn't come directly from a model use an array loop.
 ```
 
 ## Propel loop
-If data in your loop come directly from a model use a Propel loop.   
+If data in your loop comes directly from a model, use a Propel loop.   
 3 functions must be implemented :
 - `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
 - `buildModelCriteria` who build a Propel query to execute
