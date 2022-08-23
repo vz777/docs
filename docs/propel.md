@@ -5,28 +5,11 @@ sidebar_position: 4
 
 Thelia use the [Propel 2](http://propelorm.org/) orm to interact with database.
 
-### Describing schema
+## Describing schema
 
-To describe your schema please refer to [propel documentation](http://propelorm.org/documentation/reference/schema.html).
+To add new table in Thelia you have to describe it in your schema located here `MyModule/Config/schema.xml` please refer to [propel documentation](http://propelorm.org/documentation/reference/schema.html) to know how to do it.
 
-
-#### Add a column to native Thelia table
-
-In Thelia it is **not** possible to modify the native tables.    
-The best practice to add columns is to create a new table with a foreign key attached to the base table.
-
-```xml
-    <table name="extend_customer_data" namespace="MyProject\Model">
-        <column name="id" primaryKey="true" required="true" type="INTEGER" />
-        <column name="additional_column" type="VARCHAR" size="255" />
-        <foreign-key foreignTable="customer" name="fk_extend_customer_data_customer_id" onDelete="CASCADE" onUpdate="CASCADE">
-            <reference foreign="id" local="id" />
-        </foreign-key>
-        ...
-    </table>
-```
-
-### Generate Sql / Model from schema
+## Generate Sql / Model from schema
 
 To generate Sql request and associated model class from schema use this command
 
@@ -37,9 +20,9 @@ php Thelia module:generate:model --generate-sql MyProject
 This command will generate a TheliaMain.sql file at `local/modules/MyProject/Confif/TheliaMain.sql` don't modify it, it will be erased each time this command is executed.  
 It will also generate [Model](http://propelorm.org/documentation/reference/active-record.html) and [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) file for each table, in these files you and add your own function or property, they will not be erased as they are just empty class that extend the real propel Model located in propel cache.
 
-### Execute Sql
+## Execute Sql
 
-#### At module initialization
+### At module initialization
 If you want to execute the sql at the first module activation add this function to your module's base file :
 
 ```php
@@ -57,7 +40,7 @@ If you want to execute the sql at the first module activation add this function 
     }
 ```
 
-#### On module update
+### On module update
 If your module has already been activated you must go through the update system.
 For now there is no way to get directly the sql request needed to update your database, you need to extract it from the generated TheliaMain.sql.
 
@@ -133,3 +116,20 @@ Check that you have this function in your base file :
 if not you will have to add it.
 This function is called when Thelia refresh module list (either in the admin page oy by command) and detect that the next version of your module is different than the current.
 And she will search and execute all sql files between two versions.
+
+
+## Add a column to native Thelia table
+
+In Thelia it is **not** possible to modify the native tables.    
+The best practice to add columns is to create a new table with a foreign key attached to the base table.
+
+```xml
+    <table name="extend_customer_data" namespace="MyProject\Model">
+        <column name="id" primaryKey="true" required="true" type="INTEGER" />
+        <column name="additional_column" type="VARCHAR" size="255" />
+        <foreign-key foreignTable="customer" name="fk_extend_customer_data_customer_id" onDelete="CASCADE" onUpdate="CASCADE">
+            <reference foreign="id" local="id" />
+        </foreign-key>
+        ...
+    </table>
+```
