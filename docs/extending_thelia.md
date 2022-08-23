@@ -13,11 +13,11 @@ The only reason to create a separate module is if you want to share it with the 
 
 :::
 
-To extend to Thelia you need to create a module in general for the main module we call it with the same name as the project.
-
-A command can help you to create the base files :
+To extend Thelia you need to create a module. Usually, for the main module, we call it with the same name as the project.
 
 ## Structure
+
+A command can help you to create the base files :
 
 ```bash
 php Thelia module:generate MyProject
@@ -38,28 +38,28 @@ This will generate this structure in the directory `local\modules`
 
 - `MyProject.php` is the base file of your module it will help you to set up some behaviour  
 - `module.xml` contains information about module like version of the module, compatibility and dependencies with other modules, author, ...    
-- `config.xml` to declare your services, event listener, loops, forms, commands or hooks. But thanks to symfony autowiring most of the time you won't need to do this.
-- `routing.xml` to list your application's routes, like config.xml this file is not very useful anymore because we can put the routes directly in the controllers.
+- `config.xml` to declare your services, event listener, loops, forms, commands or hooks. But thanks to autowiring most of the time you won't need to do this.
+- `routing.xml` to list your application's routes, like config.xml this file is not very useful anymore because we can declare the routes directly in the controllers.
 - `schema.xml` to describe the database table related to your module.
 - `composer.json` help you to share your module with the community
 
-Once the module is created you can go to your shop back-office and active it in the module list.
+Once the module is created you can go to the module list in your back-office and activate it.
 
 ## Base file (MyProject.php)
 
-This file must extend the `Thelia\Module\BaseModule` class (except for payments and deliveries modules)
-During the lifecycle of a module these function are called and allow you to apply your own logic by overwriting them :
+This file must extend the `Thelia\Module\BaseModule` class (except for [deliveries](#delivery-modules) and [payments](#payment-modules) modules)
+During the lifecycle of a module these function are called and allows you to apply your own logic by overwriting them :
 - `install(ConnectionInterface $con = null);` This method is called when the plugin is installed for the first time.
-- `preActivation(ConnectionInterface $con = null);` This method is called before the module activation, and may prevent it by returning false.
+- `preActivation(ConnectionInterface $con = null);` This method is called before the module activation, and may cancel the activation by returning false.
 - `postActivation(ConnectionInterface $con = null);` This method is called after was successfully activated.
-- `preDeactivation(ConnectionInterface $con = null);` This method is called before the module deactivation, and may prevent it by returning false.
+- `preDeactivation(ConnectionInterface $con = null);` This method is called before the module deactivation, and may cancel the deactivation it by returning false.
 - `postDeactivation(ConnectionInterface $con = null);` This method is called after was successfully deactivated.
 - `update($currentVersion, $newVersion, ConnectionInterface $con = null);` This method is called on a module refresh if the previous version in module.xml is different than the current version
 
 ## Controllers
-Controllers work the same as Symfony controllers except that in Thelia there is 2 types of Controllers :
-- Front controllers which extends `BaseFrontController` and when you call a render in it Thelia will search template in frontOffice directory
-- Admin controllers which extend `BaseAdminController`  when you call a render in it Thelia will search template in backOffice directory, and all routes in these controllers are automatically secured and only logged admins can call them.
+Controllers work the same as Symfony's controllers except that in Thelia there is 2 types of Controllers :
+- Front controllers which extends `BaseFrontController` when you call a render in it, Thelia will search template in frontOffice directory
+- Admin controllers which extend `BaseAdminController`  when you call a render in it, Thelia will search template in backOffice directory and all routes in these controllers are automatically secured so that only logged admins can access them.
 
 ## Delivery modules
 
@@ -99,9 +99,9 @@ public abstract function isValidDelivery(Country $country)
 
 #### `getPostage()`
 
-This method have an argument : The country for which the delivery price should be calculated.
+This method have an argument : the country for which the delivery price should be calculated.
 
-If the module can't calculate the price for some reasons, it should throw a DeliveryException, with a internationalized message which describes the problem.
+If the module can't calculate the price for some reasons, it should throw a `DeliveryException`, with an internationalized message which describes the problem.
 
 ```php
 /**
@@ -130,18 +130,19 @@ public function getPostage(Country $country)
 
 ### Payment process
 
-Once the customer has put some products in his cart, logged-in (or created his account) and selected a delivery method, the payment  becomes possible. Here is a typical payment process :
+The payment is available once a customer is logged, has products in his cart and has selected a delivery method. 
+Here is a typical payment process :
 
-1. The customer selects the Payment module
-2. The customer trigger the payment (by clicking a "Pay" button on the front office
-3. The pay() method of the selected payment module is called by the Thelia core
-4. The pay() method manages the payment process, which could consists in :
+1. The customer selects the payment module
+2. The customer triggers the payment (by clicking "Pay" button on the front office)
+3. The pay() method of the selected payment module is called by Thelia
+4. The pay() method manages the payment process, which could consists (depending on the module) in :
     - Invoking a web service or a platform specific API.
     - Submitting a form that contains payment parameters to a payment gateway.
     - Nothing (like in Cheque or Bank Transfer).
-    - Other specific stuff.
-5. If the payment is successful, the customer is redirected to a "thank you" page.
-6. If the payment fails, the customer is redirected to a "oops, sorry" page.
+    - Other specific logic.
+5. If the payment is successful, the customer is redirected to a "Thank you" page.
+6. If the payment fails, the customer is redirected to a "Oops, sorry" page.
 
 ### Standard templates
 
@@ -201,17 +202,17 @@ public function isValidPayment()
 
 The `pay()` method is the most useful method of a payment module: it performs the payment of the current order, accordingly to the payment system requirements:
 
-- submit a form that directs the customer to the payment gateway,
-- invoke a web service, a specific API, etc. to perform the payment from inside the method, and redirects the user to the result (success / failure) ant the end of the process
+- submit a form that redirects the customer to the payment gateway,
+- invoke a web service, a specific API, etc. to perform the payment from inside the method, and redirects the user to the result (success / failure) at the end of the process
 - start a specific process, managed by a module controller
-- whatever your requirements are :)
+- whatever your requirements are 
 
 The current order is passed as a parameter to the `pay()` method.
 
 The method should return a ```Thelia\Core\HttpFoundation\Response``` object. Alternatively, depending on your specific needs, you can redirect the customer to another URL.
 
-To use the standard `order-payment-gateway.html` template, just generate an array of (name, value) couples with the , and send it the template along with the payment gateway URL using the `generateGatewayFormResponse($order, $gateway_url, $form_data)` method.
-The form will be automatically submitted, and the customer will be directed to the payment gateway.
+To use the standard `order-payment-gateway.html` template, just generate an array of (name, value) couples with the data required by the bank gateway. Then, send it to the template along with the payment gateway URL using the `generateGatewayFormResponse($order, $gatewayUrl, $formData)` method.
+The form will be automatically submitted, and the customer will be redirected to the payment gateway.
 
 Example for the Payzen payment module :
 
@@ -230,8 +231,9 @@ protected function pay(Order $order)
     $html_params = array();
 
     /** @var PayzenField $field */
-    foreach($payzen_params as $name => $field)
+    foreach($payzen_params as $name => $field) {
         $html_params[$name] = $field->getValue();
+    }
 
     // Be sure to have a valid platform URL, otherwise give up
     if (false === $platformUrl = PayzenConfigQuery::read('platform_url', false)) {
