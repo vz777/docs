@@ -1,5 +1,5 @@
 The `{navigate}` function is a convenient way to generate URLs pointing to common locations.     
-This function has only one parameter `to which may take one of the following values:
+This function has only one parameter `to` which may take one of the following values:
 
 | Name         | Description                                                                                                                                   |
 |:-------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
