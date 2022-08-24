@@ -60,7 +60,7 @@ Propel dispatch several events during model lifecycle :
 | PRE_DELETE    | Before deleting the object in database |
 | POST_DELETE   | After deleting the object in database  |
 
-This constant are accessible to the class of model name suffixed by Event.    
+Those constants are accessible to the class of model name suffixed by Event.    
 For example to listen product update use this event `ProductEvent::POST_UPDATE`
 
 ```php
