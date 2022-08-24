@@ -16,7 +16,7 @@ must follow this rules. Don't worry, you can use some tools for doing this like 
 
 ## Pull Request
 
-[Creating a Pull request](https://help.github.com/articles/creating-a-pull-request) is the better way for submitting a
+[Creating a Pull request](https://help.github.com/articles/creating-a-pull-request) is the best way for submitting a
 patch but there are some rules to follow.     
 First of all, fork [Thelia](https://github.com/thelia/thelia) repo and create
 a new branch, never work on the `main` branch, use it only for syncing with [Thelia](https://github.com/thelia/thelia) repo
@@ -95,11 +95,11 @@ Keep attention on brackets `{` or `}` that is used by smarty. You can use `{ldel
 
 To translate the new string, you can use the translation page in the back office.
 
-I you modify templates you have to regenerate all sql files, you can use this Thelia command : `php Thelia generate:sql`
+If you modify templates, you will have to regenerate all sql files. You can use this Thelia command : `php Thelia generate:sql`
 
 You can also limit to a specific list of locales if you use `locales` parameter.
 
-Actually, as all languages are not fully translated we use this command line to generate SQL files :
+Currently, as all languages are not fully translated, we use this command line to generate SQL files :
 
 ```sh
 php Thelia generate:sql --locales='de_DE,en_US,es_ES,fr_FR'
