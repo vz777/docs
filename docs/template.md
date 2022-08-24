@@ -43,13 +43,13 @@ Thelia Smarty templates are located in the templates sub-directory.
 ```
 
 This is the structure of all Thelia templates, it can be located either at the root of your project or in each module folder.
-If same file are in multiple templates location Thelia apply this priority to know which as to be rendered (the first file found is the file rendered)
-1. In the active template in root templates directory
-2. In the active template in each module subdirectory located in root templates directory
-3. In the active template in each module templates directory
-4. In the default template in root templates directory
-5. In the default template in each module subdirectory located in root templates directory
-6. In the default template in each module templates directory
+If same file are in multiple templates location, Thelia apply this priority to know which has to be rendered (the first file found is the file rendered)
+1. In the `active` template in root templates directory
+2. In the `active` template in each module subdirectory located in root templates directory
+3. In the `active` template in each module templates directory
+4. In the "default" template in root templates directory
+5. In the "default" template in each module subdirectory located in root templates directory
+6. In the "default" template in each module templates directory
 
 For example if you have this structure :
 ```
@@ -87,4 +87,4 @@ Loops allow to get data from your shop back-end and display them in your front v
 
 #### Smarty plugins
 
-Smarty plugins are used to execute functions from templates
+Smarty plugins are used to execute functions from templates. More documentation can be found [here](./smarty_plugins).
