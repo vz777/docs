@@ -18,7 +18,7 @@ php Thelia module:generate:model --generate-sql MyProject
 ```
 
 This command will generate a TheliaMain.sql file at `local/modules/MyProject/Confif/TheliaMain.sql` don't modify it, it will be erased each time this command is executed.  
-It will also generate [Model](http://propelorm.org/documentation/reference/active-record.html) and [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) file for each table, in these files you and add your own function or property, they will not be erased as they are just empty class that extend the real propel Model located in propel cache.
+It will also generate [Model](http://propelorm.org/documentation/reference/active-record.html) and [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) file for each table, in these files you can add your own functions or properties, they will not be erased as they are just empty class that extend the real propel Model located in propel cache.
 
 ## Execute Sql
 
@@ -83,8 +83,8 @@ So you have to extract only the difference like this
 ALTER TABLE `block_group` ADD `visible` TINYINT DEFAULT 0 NOT NULL;
 ```
 
-Then put this extracted requests on a new file located here `local/modules/MyProject/Config/update/` the name of the file must be the next version of your module for example if the version of your module is `1.0.6` and the next version is `1.1.0` create this file `local/modules/MyProject/Config/update/1.1.0.sql` and put the sql in it and change the `<version></version>` in module.xml.   
-Check that you have this function in your base file :
+Then put this extracted requests on a new file located here `local/modules/MyProject/Config/update/` the name of the file must be the next version of your module. For instance, if the version of your module is `1.0.6` and the next version is `1.1.0`, create this file `local/modules/MyProject/Config/update/1.1.0.sql` and put the sql in it and change the `<version></version>` in module.xml.   
+Make sure that you have this function in your base file :
 
 ```php
     /**
@@ -115,7 +115,7 @@ Check that you have this function in your base file :
 
 if not you will have to add it.
 This function is called when Thelia refresh module list (either in the admin page oy by command) and detect that the next version of your module is different than the current.
-And she will search and execute all sql files between two versions.
+And it will search and execute all sql files between two versions.
 
 
 ## Add a column to native Thelia table
