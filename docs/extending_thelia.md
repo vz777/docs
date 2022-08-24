@@ -269,10 +269,10 @@ protected function pay(Order $order)
 
 #### `manageStockOnCreation()`
 
-You can decide with this function if your payment module decrease stock when the order is created or when the order status change to "paid" by default it's `true`.
+You can decide with this function if your payment module decrease stock when the order is created or when the order status change to "paid".
 
-Return true for decrementing stock on order creation.    
-Return false for decrementing stock when order status change to "paid".
+Return `true` for decrementing stock on order creation. This is the default return value.
+Return `false` for decrementing stock when order status change to "paid".
 
 ```php
 /**
