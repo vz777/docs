@@ -87,7 +87,7 @@ First of all you have to call the form you need by using the form block :
         ...
     {/form}
 ```
-The form reference is now available in the $form variable.
+The form reference is now available in the `$form` variable.
 
 ### Display it
 ```smarty
@@ -101,7 +101,7 @@ The form reference is now available in the $form variable.
 ### Displaying a form field
 
 #### Custom form field
-For displaying a field, you have to use the {form_field} block, and put the name of the field you want to display in the “field” parameter :
+For displaying a field, you have to use the `{form_field}` block, and put the name of the field you want to display in the “field” parameter :
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
@@ -122,7 +122,7 @@ For displaying a field, you have to use the {form_field} block, and put the name
     </form>
 {/form}
 ```
-Values available in the {form_field} block :
+Values available in the `{form_field}` block :
 
 -    `$name` : field’s name used in the name part of your input
 -    `$value` : default value to display
@@ -156,7 +156,7 @@ To speed up writing form in templates Thelia provide a Smarty plugin `render_for
 ```
 
 ### Display errors
-If your form contains some errors, it automatically displays the value already sent by the user and then can display a message for each fields containing errors. The {form_field_error} is used, and it works like the {form_field} block. You can call it outside the {form_field} block :
+If your form contains some errors, it automatically displays the value already sent by the user and then can display a message for each fields containing errors. The `{form_field_error}` is used, and it works like the `{form_field}` block. You can call it outside the `{form_field}` block :
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
