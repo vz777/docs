@@ -52,7 +52,7 @@ The resource argument may be useful in the back office. There is the list of the
 - admin.tools
 
 ## module
-Name of the module(s) which the user must have access. Example:
+Name of the module which the user must have access to. Example:
 ```
     {check_auth role="ADMIN" module="Carousel" access="UPDATE" login_tpl="login"}
 ```
