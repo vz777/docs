@@ -1,9 +1,9 @@
 ---
 title: Smarty plugins
----
+--- 
 
-To create plugin Smarty in Thelia just create a new class that extend `TheliaSmarty\Template\AbstractSmartyPlugin`, then create function called `getPluginDescriptors`
-that list and describe all the plugin you want to create (you can create many plugins as you want in one class).     
+To create plugin Smarty in Thelia, just create a new class that extend `TheliaSmarty\Template\AbstractSmartyPlugin`, then create function called `getPluginDescriptors`
+that lists and describes all the plugin you want to create (you can create as many plugins as you want in one class).     
 A smarty plugin is described like this :
 ```php
 new SmartyPluginDescriptor(
@@ -14,12 +14,10 @@ new SmartyPluginDescriptor(
 )
 ```
 
-First parameter is the type of the plugin more information [here](https://smarty-php.github.io/smarty/programmers/plugins.html)    
-Second parameter is the name you have to put in your templates to call you plugin    
-Third parameter is where is the function you want to call, in general it's `$this` because you write function in the same class as the description    
+First parameter is the type of the plugin, more information [here](https://smarty-php.github.io/smarty/programmers/plugins.html).    
+Second parameter is the name you have to put in your templates to call your plugin.     
+Third parameter is location of the Class of your function, in general it's `$this` because you write function in the same class as the declaration.    
 Fourth parameter is the name of the function you want to call.
-
-Example :
 
 Declaration of your plugins :
 ```php 
