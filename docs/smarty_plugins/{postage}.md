@@ -1,9 +1,9 @@
 The postage Smarty block retrieves the postage amount of the current cart if it exists.
 
-Thelia uses the following rules to select the country (first valid is taken) :
-1. The country of the delivery address of the customer related to the cart if it exists
-2. The country saved in cookie if customer have changed the default country
-3. The default country for the shop if it exists
+The delivery country is choosen with the first available value :
+1. Either the country of the delivery address of the customer related to the cart if it exists
+2. Or the country saved in cookie if customer have changed the default country
+3. Or the default country for the shop if it exists
 
 The function select the cheapest delivery for this country.
 
