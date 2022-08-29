@@ -59,8 +59,8 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Thelia documentation`}
+      description="Your OpenSource E-commerce tool">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -68,28 +68,33 @@ function Home() {
           <div className={styles.buttons}>
             <Link
               className={clsx(
-                'button button--outline button--secondary button--lg',
+                'button button--secondary',
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>
               Get Started
             </Link>
+            <Link
+              className={clsx(
+                'button button--info',
+                styles.getStarted,
+              )}
+              to={"https://demo.thelia.net"}>
+              View demo
+            </Link>
+              <span className={styles.indexCtasGitHubButtonWrapper}>
+                <iframe
+                    className={styles.indexCtasGitHubButton}
+                    src="https://ghbtns.com/github-btn.html?user=thelia&amp;repo=thelia&amp;type=star&amp;count=true&amp;size=large"
+                    width={160}
+                    height={30}
+                    title="GitHub Stars"
+                />
+              </span>
           </div>
         </div>
       </header>
-      <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-      </main>
+
     </Layout>
   );
 }
