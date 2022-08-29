@@ -14,6 +14,12 @@ sidebar_position: 1
 
 Thelia is an open source tool for creating e-business websites and managing online content. This software is published under LGPL.
 
+:::caution
+
+This is the documentaion for Thelia version >= 2.5.0, if you are using a previous version, check the [Legacy documentation](http://thelia.github.io).
+
+:::
+
 Compatibility
 ------------
 
