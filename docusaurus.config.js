@@ -42,7 +42,7 @@ module.exports = {
         },
         {to: 'modules', label: 'Modules', position: 'left'},
         {
-          href: 'https://legacy_doc.thelia.net',
+          href: 'http://thelia.github.io/',
           className: 'header-link',
           'aria-label': 'Legacy doc',
           label: 'Legacy doc',

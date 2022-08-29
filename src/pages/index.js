@@ -76,15 +76,14 @@ function Home() {
             </Link>
             <Link
               className={clsx(
-                'button button--info',
+                'button button--outline button--secondary',
                 styles.getStarted,
               )}
               to={"https://demo.thelia.net"}>
               View demo
             </Link>
-              <span className={styles.indexCtasGitHubButtonWrapper}>
+              <span className={styles.githubStars}>
                 <iframe
-                    className={styles.indexCtasGitHubButton}
                     src="https://ghbtns.com/github-btn.html?user=thelia&amp;repo=thelia&amp;type=star&amp;count=true&amp;size=large"
                     width={160}
                     height={30}
