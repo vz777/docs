@@ -73,8 +73,8 @@ class OrderDeliveryForm extends BaseForm
 For more information about field types you can refer to [Symfony form type documentation](https://symfony.com/doc/current/reference/forms/types.html)
 
 ## Usage in templates
-To display the form in your template you will need the form name, it is the full namespace and the class of your form in snake_case.
-For example the form name for `YourModule\Form\SomethingForm.php` will be `your_module_form_something_form`
+To display the form in your template you will need the form name, it is the name of your module in lowercase + full namespace and the class of your form in snake_case.
+For example the form name for `YourModule\Form\SomethingForm.php` will be `yourmodule_form_something_form`
 It can be modified with the static function `getName` but we do not advise to do that, 
 because it's more simple to guess a form name by reading is namespace than going in to the class and looking the method. 
 It also guarantees a unique name for your form.
@@ -83,7 +83,7 @@ It also guarantees a unique name for your form.
 
 First of all you have to call the form you need by using the form block :
 ```smarty
-    {form name="thelia_form_order_delivery_form"}
+    {form name="yourmodule_form_something_form"}
         ...
     {/form}
 ```
@@ -91,7 +91,7 @@ The form reference is now available in the `$form` variable.
 
 ### Display it
 ```smarty
-    {form name="thelia_form_order_delivery_form"}
+    {form name="yourmodule_form_something_form"}
         <form method="post" action="{url path='your/target'}" {form_enctype form=$form}>
         ...
         </form>
