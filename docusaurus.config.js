@@ -4,7 +4,7 @@ module.exports = {
   title: 'Thelia documentation',
   tagline: 'Your OpenSource E-commerce tool',
   url: 'https://thelia.github.io',
-  baseUrl: '/docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
@@ -45,7 +45,7 @@ module.exports = {
           href: 'https://legacy_doc.thelia.net',
           className: 'header-link',
           'aria-label': 'Legacy doc',
-          label: 'Legacy docs',
+          label: 'Legacy doc',
           position: 'right',
         },
         {
