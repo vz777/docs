@@ -18,8 +18,8 @@ module.exports = {
       respectPrefersColorScheme: true
     },
     algolia: {
-      appId: 'N53EJ84B0K',
-      apiKey: '7a72e182944899177af61d6f9f9c5623',
+      appId: 'AOX4BR07WS',
+      apiKey: '89985cee3d1d322cb050cd172db4a161',
       indexName: 'thelia',
       contextualSearch: false,
       searchParameters: {
