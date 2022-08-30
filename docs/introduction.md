@@ -29,7 +29,7 @@ Compatibility
 | PHP            | 5.5 / 5.6 / 7.0 / 7.1 | 7.0 / 7.1 / 7.2 / 7.3 | 8.0.2       /     8.1 |
 | MySQL          |       5.5 / 5.6       |    5.5 / 5.6 / 5.7    |    5.6 / 5.7 / 8.0    |
 | Symfony        |          2.8          |          2.8          |      6.0  / 6.1       |
- | Maintened      |          No           |  Security fixes only  |          Yes          |
+ | Maintained     |          No           |  Security fixes only  |          Yes          |
 
 
 Requirements
