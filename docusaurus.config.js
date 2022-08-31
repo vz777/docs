@@ -21,10 +21,7 @@ module.exports = {
       appId: 'AOX4BR07WS',
       apiKey: '89985cee3d1d322cb050cd172db4a161',
       indexName: 'thelia',
-      contextualSearch: false,
-      searchParameters: {
-        'facetFilters': [['type:content', 'type:lvl1']]
-      },
+      contextualSearch: true
     },
     navbar: {
       title: '',
