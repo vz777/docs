@@ -24,6 +24,7 @@ Plus the [global arguments](./global_arguments)
 | $DESCRIPTION               | the order product description                                  |
 | $EAN_CODE                  | the product ean code                                           |
 | $ID                        | the order product id                                           |
+| $PRODUCT_ID                | the product id                                           |
 | $PARENT                    | the parent product in the cart, if the current product has one |
 | $POSTSCRIPTUM              | the order product postscriptum                                 |
 | $PRICE                     | the order product price (unit price)                           |
