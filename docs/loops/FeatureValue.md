@@ -13,9 +13,9 @@ Feature value loop lists feature availabilities.
 | exclude_free_text            | A boolean value to return only features with free text value (no feature availability). |         | exclude_free_text="1" or exclude_free_text="true" |
 | feature *                    | A single feature id.                                                                    |         | feature="2"                                       |
 | feature_availability         | A single or a list of feature availability ids.                                         |         | feature_availability="2,5"                        |
-| free_text                    | A single or a list of strings. (2.2)                                                    |         | free_text="some text,some other text"             |
+| free_text                    | A single or a list of strings.                                                    |         | free_text="some text,some other text"             |
 | order                        | A list of values see [sorting possible values](#feature-order-possible-values)          | manual  | order="alpha_reverse"                             |
-| product                      | A single product id. (no longer mandatory since 2.2)                                    |         | product="9"                                       |
+| product                      | A single product id.                                |         | product="9"                                       |
 
 Plus the [global arguments](./global_arguments)
 
