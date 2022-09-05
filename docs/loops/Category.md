@@ -13,7 +13,7 @@ Category loop lists categories from your shop.
 | current      | A boolean value which allows either to exclude current category from results either to match only this category |              | current="yes" |
 | exclude      | A single or a list of category ids. |              | exclude="2", exclude="1,4,7" |
 | exclude_parent      | A single or list of categories id to exclude. |              | exclude_parent="12,22" |
-| exclude_product      | A single or list (since 2.3) product id to exclude. |              |  exclude_product="3" |
+| exclude_product      | A single or list product id to exclude. |              |  exclude_product="3" |
 | id      | A single or a list of category ids. |              |   id="2", id="1,4,7" |
 | lang      | A lang id |              |   lang="1" |
 | need_count_child      | A boolean. If set to true, count how many subcategories contains the current category | false | need_count_child="yes" |
@@ -21,7 +21,7 @@ Category loop lists categories from your shop.
 | not_empty      | (**not implemented yet**) A boolean value. If true, only the categories which contains at least a visible product (either directly or through a subcategory) are returned | no | not_empty="yes" |
 | order       | A list of values <br/> [Expected values](#category-order-possible-values) | manual | order="random" |
 | parent       | A single or a list of category ids. |  | parent="3", parent="2,5,8" |
-| product       | A single or list (since 2.3) of product IDs. |  | product="3" |
+| product       | A single or list of product IDs. |  | product="3" |
 | return_url       | A boolean value which allows the urls generation. | yes | return_url="no" |
 | visible       | A boolean value. | yes | visible="no" |
 | with_prev_next_info       | A boolean. If set to true, $PREVIOUS and $NEXT output arguments are available. | false | with_prev_next_info="yes" |
