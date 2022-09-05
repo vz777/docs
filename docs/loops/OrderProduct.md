@@ -29,6 +29,7 @@ Plus the [global arguments](./global_arguments)
 | $POSTSCRIPTUM              | the order product postscriptum                                 |
 | $PRICE                     | the order product price (unit price)                           |
 | $PRICE_TAX                 | the order product taxes (unit price)                           |
+| $PRODUCT_SALE_ELEMENTS_ID  | the order product sale elements id                      |
 | $PRODUCT_SALE_ELEMENTS_REF | the order product sale elements reference                      |
 | $PROMO_PRICE               | the order product in promo price (unit price)                  |
 | $PROMO_PRICE_TAX           | the order product in promo price taxes (unit price)            |
