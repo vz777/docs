@@ -34,7 +34,7 @@ That's all, your Thelia is now installed, but depending your web server you may 
 Now if you want a demo data with fake but realistic products execute
 
 ```bash
-php setup/import.php
+php local/setup/import.php
 ```
 
 ### Create an admin account
