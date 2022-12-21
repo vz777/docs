@@ -4,7 +4,7 @@ slug: /
 sidebar_position: 1
 ---
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/thelia/thelia/test?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/thelia/thelia/test.yml?branch=main&style=flat-square)
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/thelia/thelia?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/thelia/thelia?style=flat-square)
 ![Last commit](https://img.shields.io/github/last-commit/thelia/thelia.svg?style=flat-square)
