@@ -2,7 +2,7 @@
 title: Generic
 ---
 
-Generic loop can return any table present in your database and configured with propel. This loop is often useful on your own module table because most of the Thelia table already have dedicated loop. 
+Generic loop can return any table present in your database and configured with propel. This loop is often useful on your own module table because most of the Thelia table already have dedicated loop.     
 `{loop type="generic" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#area-arguments}
