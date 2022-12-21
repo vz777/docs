@@ -24,7 +24,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE	     | the category title  |
 | $URL	         | the category URL    |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Examples
 

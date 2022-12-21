@@ -25,4 +25,4 @@ Plus the [global arguments](./global_arguments)
 | $LOGIN	      | the admin login       |
 | $PROFILE	      | the admin profile id  |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

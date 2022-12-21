@@ -29,7 +29,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE        | The export title                                                   |
 | $URL          | the URL to start this export in the admin export page              |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#export-order-possible-values}
 [Arguments](#export-arguments)

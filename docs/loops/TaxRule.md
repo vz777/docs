@@ -26,7 +26,7 @@ Plus the [global arguments](./global_arguments)
 | $LOCALE        | The locale used for this research   |
 | $TITLE         | Tax title                           |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#tax-order-possible-values}
 [Arguments](#tax-arguments)

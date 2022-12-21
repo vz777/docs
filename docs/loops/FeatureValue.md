@@ -37,7 +37,7 @@ Plus the [global arguments](./global_arguments)
 | $PRODUCT_ID      | (2.2) the id of the product                                                                 |
 | $TITLE           | the feature availability title, or the feature value text for free text features.           |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#feature-order-possible-values}
 [Arguments](#feature-arguments)

@@ -39,7 +39,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $SPONSOR            | the customer sponsor which might be use in another   [customer loop](./Customer)                                                                                                |
 | $TITLE              | the customer title which might be use in [title loop](./Title)                                                                                                                  |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#customer-order-possible-values}
 [Arguments](#customer-arguments)

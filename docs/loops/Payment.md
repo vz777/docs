@@ -28,7 +28,7 @@ Plus the [global arguments](./global_arguments)
 | $POSTSCRIPTUM | the payment module postscriptum      |
 | $TITLE        | the payment module title             |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#payment-order-possible-values}
 [Arguments](#payment-arguments)

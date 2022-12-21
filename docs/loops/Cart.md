@@ -35,4 +35,4 @@ Plus the [global arguments](./global_arguments)
 | $TOTAL_PROMO_TAXED_PRICE	   | the product sale elements in promo price including taxes (total price)|
 | $TOTAL_TAXED_PRICE	       | the product sale elements price including taxes (total price)         |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

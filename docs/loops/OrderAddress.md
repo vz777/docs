@@ -32,4 +32,4 @@ Plus the [global arguments](./global_arguments)
 | $ZIPCODE   | the order address zipcode                                                 |
 
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

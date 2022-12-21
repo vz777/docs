@@ -23,4 +23,4 @@ Plus the [global arguments](./global_arguments)
 | $POSITION | the title position                      |
 | $SHORT    | the short title                         |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

@@ -37,7 +37,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE         | the module title                        |
 | $TYPE          | The module type                         |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#module-order-possible-values}
 [Arguments](#module-arguments)

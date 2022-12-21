@@ -24,4 +24,4 @@ Plus the [global arguments](./global_arguments)
 | $TITLE       | The feed item title                     |
 | $URL         | the feed item URL                       |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

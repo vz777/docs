@@ -27,7 +27,7 @@ Plus the [global arguments](./global_arguments)
 | $NAME	     | the accessory name                     |
 | $POSTAGE	 |  |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#area-order-possible-values}
 [Arguments](#area-arguments)

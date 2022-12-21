@@ -34,7 +34,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE	                                                                |  	The config variable title               |
 | $VALUE	                                                                |  	the config variable value               |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#conf-order-possible-values}
 [Arguments](#conf-arguments)

@@ -43,7 +43,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $URL	|  the brand URL     | ✅  | ✅ |
 | $VISIBLE	|  true if the product is visible or not, false otherwise    | ✅  | ✅ |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#brand-order-possible-values}
 [Arguments](#brand-arguments)

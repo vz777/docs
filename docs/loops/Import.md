@@ -29,7 +29,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE        | The import title                                                   |
 | $URL          | the URL to start this import in the admin import page              |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#import-order-possible-values}
 [Arguments](#import-arguments)

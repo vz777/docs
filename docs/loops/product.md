@@ -91,7 +91,7 @@ The product loop has a specific behaviour with the parameter `complex` if set to
 | $VISIBLE          | Return if the product is visible or not | ✅ |  ✅  |
 | $WEIGHT          | the default product sale elements weight | 🚫 |  ✅  |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Examples
 

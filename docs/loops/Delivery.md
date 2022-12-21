@@ -36,7 +36,7 @@ Plus the [global arguments](./global_arguments)
 | $POSTSCRIPTUM           | the delivery module postscriptum                                    |
 | $TITLE                  | the delivery module title                                           |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#delivery-order-possible-values}
 [Arguments](#delivery-arguments)

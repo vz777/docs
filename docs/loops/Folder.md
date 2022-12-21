@@ -56,7 +56,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $VERSION_DATE     | the folder version date                                                                                             |               ✅               |               ✅                |                                                                                |
 | $VISIBLE          | the folder visibility                                                                                               |               ✅               |               ✅                |                                                                                |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#folder-order-possible-values}
 [Arguments](#folder-arguments)

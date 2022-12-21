@@ -29,4 +29,4 @@ Plus the [global arguments](./global_arguments)
 | $ID                                  | the order product attribute combination ID            |
 | $ORDER_PRODUCT_ID                    | the related order product ID                          |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

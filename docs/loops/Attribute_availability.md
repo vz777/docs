@@ -32,7 +32,7 @@ Plus the [global arguments](./global_arguments)
 | $POSTSCRIPTUM  | the attribute availability postscriptum                     |
 | $TITLE	     | the attribute availability title                            |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#attribute-av-order-possible-values}
 [Arguments](#attribute-av-arguments)

@@ -23,4 +23,4 @@ Plus the [global arguments](./global_arguments)
 | $PROMO_AMOUNT | Tax amount of the promo price |
 | $TITLE        | Tax title                     |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

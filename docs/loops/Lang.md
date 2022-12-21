@@ -36,7 +36,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE               | lang title                                                    |
 | $URL                 | the lang URL, only if a specific URL is defined for each lang |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#lang-order-possible-values}
 [Arguments](#lang-arguments)

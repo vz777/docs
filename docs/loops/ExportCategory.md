@@ -24,7 +24,7 @@ Plus the [global arguments](./global_arguments)
 | $REF      | The export category reference, as defined in a config.xml file |
 | $TITLE    | The export category title                                      |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#export-order-possible-values}
 [Arguments](#export-arguments)

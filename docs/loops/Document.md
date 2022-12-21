@@ -42,7 +42,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE                  | the document title                                                                        |
 | $VISIBLE                | true if the document is visible. False otherwise                                          |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#document-order-possible-values}
 [Arguments](#document-arguments)

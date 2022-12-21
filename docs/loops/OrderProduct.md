@@ -50,4 +50,4 @@ Plus the [global arguments](./global_arguments)
 | $WAS_NEW                   | whatever the order product sale elements was new or not        |
 | $WEIGHT                    | the order product sale elements weight                         |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

@@ -40,7 +40,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $TAXED_PROMO_PRICE	| the product sale element taxed promo price |
 | $WEIGHT	| the product sale element weight |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Examples
 

@@ -63,7 +63,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $VIRTUAL                  | the order has at least one product which is a virtual product                                               |                      ✅                       |                       ✅                       |
 | $WEIGHT                   | The total weight of the order                                                                         |                      ✅                       |                       ✅                       |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#order-order-possible-values}
 [Arguments](#order-arguments)

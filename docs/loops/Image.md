@@ -55,7 +55,7 @@ Plus the [global arguments](./global_arguments)
 | $TITLE               | the image title                                                                                                   |
 | $VISIBLE             | true if the image is visible. False otherwise                                                                     |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Examples
 

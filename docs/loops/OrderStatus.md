@@ -30,7 +30,7 @@ Plus the [global arguments](./global_arguments)
 | $PROTECTED_STATUS | 1 if the order status is protected             |
 | $TITLE            | the order status title                         |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#order-possible-values}
 [Arguments](#order-arguments)

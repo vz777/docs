@@ -24,7 +24,7 @@ Plus the [global arguments](./global_arguments)
 | $REF      | The import category reference, as defined in a config.xml file |
 | $TITLE    | the import category title                                      |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#import-order-possible-values}
 [Arguments](#import-arguments)

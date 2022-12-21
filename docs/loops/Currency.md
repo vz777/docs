@@ -31,7 +31,7 @@ Plus the [global arguments](./global_arguments)
 | $RATE          | the currency rate                               |
 | $SYMBOL        | the ISO numeric currency symbol                 |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#currency-order-possible-values}
 [Arguments](#currency-arguments)

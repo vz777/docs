@@ -59,7 +59,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $HAS_PREVIOUS	     | true if a category exists before this one in the current parent category, following categories positions.<br/> ** Only available if "with_prev_next_info" is set to true **                  |
 | $PREVIOUS	         | The ID of category before this one in the current parent category, following categories positions, or null if none exists.<br/> ** Only available if "with_prev_next_info" is set to true ** |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#category-order-possible-values}
 [Arguments](#category-arguments)

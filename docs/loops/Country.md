@@ -43,7 +43,7 @@ Plus the [global arguments](./global_arguments)
 | $VISIBLE         | true if the country is visible. False otherwise                                                    |
 | $ZIP_CODE_FORMAT | The format of the zip code for this country where N is a digit, L a letter and C a state ISO code. |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#country-order-possible-values}
 [Arguments](#country-arguments)

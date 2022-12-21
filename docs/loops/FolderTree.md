@@ -29,4 +29,4 @@ Plus the [global arguments](./global_arguments)
 | $URL         | the folder URL                         |
 | $VISIBLE     | whatever the folder is visible or not  |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

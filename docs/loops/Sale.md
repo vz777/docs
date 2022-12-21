@@ -40,7 +40,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $START_DATE            | the sale start date                                                           |
 | $TITLE                 | the sale title                                                                |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#sale-order-possible-values}
 [Arguments](#sale-arguments)

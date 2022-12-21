@@ -44,7 +44,7 @@ Plus the [global arguments](./global_arguments)
 | TOOLTIP                          | The coupon short description                                             |
 | USAGE_LEFT                       | number of usages left                                                    |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#coupon-order-possible-values}
 [Arguments](#coupon-arguments)

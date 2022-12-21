@@ -30,7 +30,7 @@ Plus the [global arguments](./global_arguments)
 | $URL	              |  the category URL                        |
 | $VISIBLE	          |  whatever the category is visible or not |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Examples
 

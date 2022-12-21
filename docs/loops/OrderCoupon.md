@@ -31,4 +31,4 @@ Plus the [global arguments](./global_arguments)
 | $SHORT_DESCRIPTION                | the coupon short description                                                                                  |
 | $TITLE                            | the coupon title                                                                                              |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)

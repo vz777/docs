@@ -48,7 +48,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $TITLE	                                                                | the content title | ✅ | ✅ |
 | $URL	                                                                | the content URL | ✅ | ✅ |
 
-Plus the [global outputs](./global_arguments)
+Plus the [global outputs](./global_outputs)
 
 ## Order possible values {#content-order-possible-values}
 [Arguments](#content-arguments)
