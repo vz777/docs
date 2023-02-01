@@ -28,7 +28,7 @@ I want to display all products visible and not virtual sorted by creation date (
 
 ```smarty
 <ul>
-    {loop type="generic" name="my_product_loop" filters="visible:1|virtual:0" orders="created_at:DESC"}
+    {loop type="generic" name="my_product_loop" table_name="product" filters="visible:1|virtual:0" orders="created_at:DESC"}
         <li>{$ID} {$TITLE} ({$REF})</li>
     {/loop}
 </ul>
