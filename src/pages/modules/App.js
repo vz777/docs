@@ -84,7 +84,7 @@ export default class App extends Component {
                     <SearchInput doSearch={this.doSearch} defaulValue={this.state.search}/>
                 </div>
                 <div className="row">
-                    {modules.map((module, index) => <Module {...module} />)}
+                    {modules.map((module, index) => <Module key={module.name} {...module} />)}
                 </div>
                 <div className="row">
                     {nextPageLink !== null ? <button className="button button--block button--secondary" onClick={() => {this.getModules(nextPageLink)}}>See more</button> : null} 
