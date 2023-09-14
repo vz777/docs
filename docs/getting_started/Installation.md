@@ -15,7 +15,7 @@ If you want to use **docker** please follow [this](./docker) way.
 
 ### Download the project
 ```
-composer create-project thelia/thelia-project YourProject 2.5.0
+composer create-project thelia/thelia-project YourProject 2.5.3
 ```
 
 ### Launch the database installation
