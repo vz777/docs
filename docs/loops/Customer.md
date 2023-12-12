@@ -9,8 +9,8 @@ Customer loop displays customers information.
 
 | Argument            | Description                                                                                                                                         | Default  | Example                               |
 |---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:--------------------------------------|
-| current             | A boolean value which must be set to false if you need to display not authenticated customers information, typically if `sponsor` parameter is set. |   yes    | current="false"                       |                                                    |           | product="2"                 |
-| id                  | A single or a list of customers ids.                                                                                                                |          | id="2", id="1,4,7"                    |                                                                |         | is_enabled="true"                               |
+| current             | A boolean value which must be set to false if you need to display not authenticated customers information, typically if `sponsor` parameter is set. |   yes    | current="false"                       |
+| id                  | A single or a list of customers ids.                                                                                                                |          | id="2", id="1,4,7"                    |
 | order               | A list of values see [sorting possible values](#customer-order-possible-values)                                                                     | lastname | order="firstname, lastname"           |
 | ref                 | A single or a list of customer references.                                                                                                          |          | ref="1231231241", ref="123123,789789" |
 | reseller            | A boolean value.                                                                                                                                    |          | reseller="yes"                        |
@@ -36,7 +36,7 @@ Plus the [global arguments](./global_arguments) and [search arguments](./search_
 | $PREVIOUS           | ID of the previous customer, or null if non exists. Only available if <strong>with_prev_next_info</strong> parameter is set to true                                             |
 | $REF                | the customer reference                                                                                                                                                          |
 | $RESELLER           | return if the customer is a reseller                                                                                                                                            |
-| $SPONSOR            | the customer sponsor which might be use in another   [customer loop](./Customer)                                                                                                |
+| $SPONSOR            | the customer sponsor which might be use in   [customer loop](./Customer)                                                                                                        |
 | $TITLE              | the customer title which might be use in [title loop](./Title)                                                                                                                  |
 
 Plus the [global outputs](./global_outputs)

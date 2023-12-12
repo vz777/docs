@@ -16,7 +16,7 @@ Feature loop lists features.
 | order            | A list of values see [sorting possible values](#feature-order-possible-values)                      | manual  | order="alpha_reverse" |
 | product          | A single or a list of product ids.                                                                  |         | id="2", id="1,4,7"    |
 | template         | A single or a list of template ids. Only features attached to these templates will be returned.     |         | id="2", id="1,4,7"    |
-| title            | A a string title                                                                                    |         | title="foo"           |
+| title            | A string title                                                                                      |         | title="foo"           |
 | visible          | A boolean value.                                                                                    |   yes   | visible="no"          |
 
 Plus the [global arguments](./global_arguments)

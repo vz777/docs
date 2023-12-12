@@ -10,7 +10,7 @@ Currency Substitution provides current currency in session.
 | `code`         | 	       ISO 4217 Code. eg.: EUR                                                                        |
 | ` symbol `     | 	 	                	The currency symbol: €, $, ...                                                     |
 | ` rate `       | 	 	 	                                The rate relative to euro.                                        |
-| ` by_default ` | 	 	 	`true` if the category is the default currency, `false` otherwise                                 |
+| ` by_default ` | 	 	 	`true` if the currency is the default, `false` otherwise                                 |
 | ` position `   | 	 	 	                                                                                                  |
 | ` createdAt `  | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
 | ` updatedAt `  | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |

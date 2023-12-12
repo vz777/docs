@@ -16,7 +16,7 @@ Thelia is an open source tool for creating e-business websites and managing onli
 
 :::caution
 
-This is the documentaion for Thelia version >= 2.5.0, if you are using a previous version, check the [Legacy documentation](http://thelia.github.io).
+This is the documentation for Thelia version >= 2.5.0, if you are using a previous version, check the [Legacy documentation](http://thelia.github.io).
 
 :::
 
@@ -24,12 +24,12 @@ Compatibility
 ------------
 
 
-| Thelia version |          2.3          |          2.4          |          2.5          |
-|----------------|:---------------------:|:---------------------:|:---------------------:|
+| Thelia version |          2.3          |          2.4          |             2.5             |
+|----------------|:---------------------:|:---------------------:|:---------------------------:|
 | PHP            | 5.5 / 5.6 / 7.0 / 7.1 | 7.0 / 7.1 / 7.2 / 7.3 | 8.0.2       /     8.1 / 8.2 |
-| MySQL          |       5.5 / 5.6       |    5.5 / 5.6 / 5.7    |    5.6 / 5.7 / 8.0    |
-| Symfony        |          2.8          |          2.8          |      6.0  / 6.3       |
- | Maintained     |          No           |  Security fixes only  |          Yes          |
+| MySQL          |       5.5 / 5.6       |    5.5 / 5.6 / 5.7    |       5.6 / 5.7 / 8.0       |
+| Symfony        |          2.8          |          2.8          |         6.0  / 6.3          |
+| Maintained     |          No           |  Security fixes only  |             Yes             |
 
 
 Requirements

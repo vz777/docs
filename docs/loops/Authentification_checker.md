@@ -10,7 +10,7 @@ You may check in the front office if an administrator is logged in, and perform 
 
 | Argument | Description | Default | Example |
 | ------------- |:-------------| :-------------: | :-------------|
-| access      | A comma separated list of access, . If empty or missing, the authorization is checked against the roles only <br/> [Expected values](#auth-access-possible-values) |  |  |
+| access      | A comma separated list of access, if empty or missing, the authorization is checked against the roles only <br/> [Expected values](#auth-access-possible-values) |  |  |
 | module       | A comma separated list of modules |  |  |
 | resource       | A comma separated list of resources |  |  |
 | role *       | A comma separated list of user roles |  |  role="ADMIN" or can be role="CUSTOMER" |

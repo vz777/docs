@@ -2,7 +2,7 @@
 title: Folder
 ---
 
-Folder loop lists folders from your shop.   
+Folder loop lists folders from your shop.
 `{loop type="folder" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#folder-arguments}
@@ -22,7 +22,7 @@ Folder loop lists folders from your shop.
 | parent                | A single folder id.                                                                                                                                                              |                                   | folder="3"                   |
 | return_url            | A boolean value which allows the urls generation.                                                                                                                                |                yes                | return_url="no"              |
 | visible               | A boolean value.                                                                                                                                                                 |                yes                | visible="no"                 |
-| with_prev_next_info   | A boolean. If set to true, $PREVIOUS and $NEXT output arguments are available.                                                                                                   |               false               | with_prev_next_info="yes"    |
+| with_prev_next_info   | A boolean. If set to true, `$PREVIOUS` and `$NEXT` output arguments are available.                                                                                               |               false               | with_prev_next_info="yes"    |
 
 Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
 

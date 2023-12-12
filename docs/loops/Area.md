@@ -24,7 +24,7 @@ Plus the [global arguments](./global_arguments)
 | Variable   | Value                                  |
 | :--------  | :------------------------------------- |
 | $ID	     | the shipping zone id                   |
-| $NAME	     | the accessory name                     |
+| $NAME	     | the area name                     |
 | $POSTAGE	 |  |
 
 Plus the [global outputs](./global_outputs)

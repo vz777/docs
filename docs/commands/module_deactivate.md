@@ -14,7 +14,7 @@ module:deactivate [options] [--] <module>
 - `module`                    module to deactivate
 
 ## Options
-- `--with-dependencies`  activate module recursively
+- `--with-dependencies`  deactivate module recursively
 -  `-y`, `--assume-yes`         Assume to deactivate a mandatory module
 
 

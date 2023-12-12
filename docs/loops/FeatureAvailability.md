@@ -2,7 +2,9 @@
 title: Feature availability
 ---
 
-Feature availability loop lists feature availabilities.   
+Feature availability loop lists predefined feature values to choose from in a dropdown list.
+Each possible value is referred to as "Feature availability."
+It is the equivalent of the "CARACDISP loop" in Thelia 1.
 `{loop type="feature-availability" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#feature-arguments}

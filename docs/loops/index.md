@@ -2,7 +2,7 @@
 title: Loops
 ---
 
-Loops are the most convenient feature in Thelia for front developers.     
+Loops are the most convenient feature in Thelia for front developers.
 Loops allow to get data from your shop back-end and display them in your front view. In Thelia loops are a Smarty plugin.
 
 ### Classic loop
@@ -33,7 +33,7 @@ Here is a piece of html code which intends to list 4 random products from your s
     </div>
 </div>
 ```
-    
+
 
 How to make this piece of code dynamic ? Gathering the products you set up in your Thelia back-office ?
 
@@ -56,7 +56,7 @@ Just use a Thelia product loop :
     {/loop}
 </div>
 ```
-    
+
 
 And what if you want only the products you tagged as new ? And which are from category 3 and 5 ? And whose price is at least 100 € ?
 
@@ -212,17 +212,17 @@ List of output parameters :
 
 Your loop can be anywhere (Thanks to namespace) in your module, but it's better to create a Loop directory and put all your loops in this directory.
 
-The only thing to do is create a new class that to extend the `Thelia\Core\Template\Element\BaseLoop` class and implement one of these interfaces :     
-- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)     
-- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).     
+The only thing to do is create a new class that to extend the `Thelia\Core\Template\Element\BaseLoop` class and implement one of these interfaces :
+- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)
+- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).
 
-NB : Instead of `BaseLoop` you can also extend `BaseI18nLoop`. This will provide tools to manage i18n in your loop.
+NB : Instead of `BaseLoop` you can extend `BaseI18nLoop`. This will provide tools to manage i18n in your loop.
 
-The type of your loop will be the class name in snake_case for example the `type` of `MyLoop.php` will be `my_loop`  
+The type of your loop will be the class name in snake_case. For example the `type` of `MyLoop.php` will be `my_loop`
 So to call it in template `{loop type="my_loop" name="a_loop_name"}{/loop}`
 
 ## Array loop
-If data in your loop doesn't come directly from a model, use an array loop.   
+If data in your loop doesn't come directly from a model, use an array loop.
 3 functions must be implemented :
 - `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
 - `buildArray` who gather the data for the defined parameters
@@ -293,7 +293,7 @@ If data in your loop doesn't come directly from a model, use an array loop.
 ```
 
 ## Propel loop
-If data in your loop comes directly from a model, use a Propel loop.   
+If data in your loop comes directly from a model, use a Propel loop.
 3 functions must be implemented :
 - `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
 - `buildModelCriteria` who build a Propel query to execute
@@ -350,7 +350,7 @@ class Admin extends BaseLoop implements PropelSearchLoopInterface
         foreach ($loopResult->getResultDataCollection() as $admin) {
              // Create a new result
             $loopResultRow = new LoopResultRow($admin);
-            
+
              // Assign variable that will be accessible in smarty by $PROFILE for example
             $loopResultRow->set('ID', $admin->getId())
                 ->set('PROFILE', $admin->getProfileId())
@@ -376,14 +376,14 @@ In `Argument` class you have multiple static function that will help you to spec
 
 | function                               | argument accepted                                    |
 |:---------------------------------------|:-----------------------------------------------------|
-| createAnyTypeArgument()              | Anything                                             |
-| createIntTypeArgument()              | Only an integer                                      |
-| createFloatTypeArgument()            | Only a float                                         |
-| createBooleanTypeArgument()          | Only a boolean                                       |
-| createBooleanOrBothTypeArgument()    | A boolean or "*" for both                            |
-| createIntListTypeArgument()          | A list of integers separated by a comma              |
-| createAnyListTypeArgument()          | A list of anythings separated by a comma             |
-| createAlphaNumStringTypeArgument()   | An alpha numeric string                              |
+| createAnyTypeArgument()                | Anything                                             |
+| createIntTypeArgument()                | Only an integer                                      |
+| createFloatTypeArgument()              | Only a float                                         |
+| createBooleanTypeArgument()            | Only a boolean                                       |
+| createBooleanOrBothTypeArgument()      | A boolean or "*" for both                            |
+| createIntListTypeArgument()            | A list of integers separated by a comma              |
+| createAnyListTypeArgument()            | A list of anythings separated by a comma             |
+| createAlphaNumStringTypeArgument()     | An alpha numeric string                              |
 | createAlphaNumStringListTypeArgument() | A list of alpha numeric strings separated by a comma |
 
 ## Options
@@ -400,7 +400,7 @@ With these properties set to true, the loop will automatically render - or not -
 if($countable === true)
 ```
 
-* `LOOP_COUNT` The current iteration number (start from 1) 
+* `LOOP_COUNT` The current iteration number (start from 1)
 * `LOOP_TOTAL` Total of elements in current loop
 
 ```php

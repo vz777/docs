@@ -2,18 +2,18 @@
 title: Delivery
 ---
 
-delivery loop displays delivery modules information.   
+delivery loop displays delivery modules information.
 `{loop type="delivery" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#delivery-arguments}
 
 | Argument     | Description                                                                     | Default | Example                    |
 |--------------|:--------------------------------------------------------------------------------|:-------:|:---------------------------|
-| address      | An address id.                                                                  |         | address=21                 |                                                    |           | product="2"                 |
+| address      | An address id.                                                                  |         | address=21                 |
 | code         | A module code.                                                                  |         | code='Atos'                |
 | country      | A country id.                                                                   |         | country=2                  |
-| exclude      | A list of module IDs to exclude from the results                                |         | exclude="12, 21"           |
-| exclude_code | A list of module codes to exclude from the results                              |         | exclude_code="Cheque,Atos" |
+| exclude      | A single ID, or a list of module IDs to exclude from the results                |         | exclude="12, 21"           |
+| exclude_code | A single code or a list of module codes to exclude from the results             |         | exclude_code="Cheque,Atos" |
 | id           | A module id.                                                                    |         | module=4                   |
 | order        | A list of values see [sorting possible values](#delivery-order-possible-values) | manual  | order="id_reverse"         |
 | state        | A state id.                                                                     |         | state=12                   |

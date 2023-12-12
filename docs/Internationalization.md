@@ -240,7 +240,7 @@ Translator::getInstance()
     ->trans("A string that need to be translated with %variable", ['%variable' => $myVariable]);
 ```
 
-Third parameter of the tans function is the domain so if you are in a module file the best is to take the global module domain present in a constant of base class :
+Third parameter of the trans function is the domain so if you are in a module file the best is to take the global module domain present in a constant of base class :
 ```php
 Translator::getInstance()
     ->trans(

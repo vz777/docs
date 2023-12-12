@@ -43,7 +43,7 @@ class LogoutListener implements EventSubscriberInterface
 ```
 
 ### Native events
-Thelia native events are all listed in `TheliaEvents` class
+Thelia native events are all listed in `TheliaEvents` class.
 
 
 ### Propel events

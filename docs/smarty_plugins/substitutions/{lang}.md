@@ -17,7 +17,7 @@ Lang Substitution provides current lang in session.
 | ` time_format `         | 	 	 	The time format. The syntax used is identical to the PHP date() function. eg: H:i:s  	            |
 | ` datetime_format `     | 	  The date time format. The syntax used is identical to the PHP date() function. eg: d/m/y H:i:s 	 	  |
 | ` position `            | 	 	 	                                                                                                  |
-| ` by_default `          | 	 	 	`true` if the category is the default currency, `false` otherwise                                 |
+| ` by_default `          | 	 	 	`true` if the lang is the default lang, `false` otherwise                                 |
 | ` createdAt `           | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
 | ` updatedAt `           | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
 

@@ -18,7 +18,7 @@ hook:clean [options] [--] [<module>]
 
 
 ## Example
-To clean the hok of Carousel without asking for confirmation
+To clean the hook of Carousel without asking for confirmation
 ```shell
 php Thelia hook:clean -y Carousel
 ```

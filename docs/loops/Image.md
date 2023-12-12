@@ -2,7 +2,7 @@
 title: Image
 ---
 
-The image loop process, cache and display images, categories, contents and folders images.   
+The image loop process, cache and display images, categories, contents and folders images.
 `{loop type="image" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#image-arguments}
@@ -46,7 +46,7 @@ Plus the [global arguments](./global_arguments)
 | $IMAGE_URL           | The absolute URL to the generated image.                                                                          |
 | $LOCALE              | The locale used for this research                                                                                 |
 | $OBJECT_ID           | The object ID                                                                                                     |
-| $OBJECT_TYPE         | The object type (e.g., produc, category, etc. see 'source' parameter for possible values)                         |
+| $OBJECT_TYPE         | The object type (e.g., product, category, etc). see 'source' parameter for possible values)                       |
 | $ORIGINAL_IMAGE_PATH | The absolute path to the original image file                                                                      |
 | $ORIGINAL_IMAGE_URL  | The absolute URL to the original image                                                                            |
 | $POSITION            | the position of this image in the object's image list                                                             |
@@ -59,9 +59,9 @@ Plus the [global outputs](./global_outputs)
 
 ## Examples
 
-Example 1   
+Example 1
 
-Resize category images the 200x100, adding (white) borders if required.   
+Resize category images the 200x100, adding (white) borders if required.
 
 ```smarty
 {loop type="image" name="image_test" category="$ID" width="200" height="100" resize_mode="borders"}
@@ -69,7 +69,7 @@ Resize category images the 200x100, adding (white) borders if required.
 {/loop}
 ```
 
-Same behaviour, using the “source” style parameters   
+Same behaviour, using the “source” style parameters
 
 ```smarty
 {loop type="image" name="image_test" source="category" source_id="$ID" width="200" height="100" resize_mode="borders"}
@@ -77,9 +77,9 @@ Same behaviour, using the “source” style parameters
 {/loop}
 ```
 
-Example 2   
+Example 2
 
-Resize 1 category images the 200x100, cropping id necessary, and transforming the image in grayscale, with a gamma razised to 1.1   
+Resize 1 category images the 200x100, cropping id necessary, and transforming the image in grayscale, with a gamma razised to 1.1
 
 ```smarty
 ="grayscale,gamma:1.1" limit="1"}
@@ -91,11 +91,11 @@ Resize 1 category images the 200x100, cropping id necessary, and transforming th
 ## Order possible values {#image-order-possible-values}
 [Arguments](#image-arguments)
 
-| Ascending value | Descending value | Sorted fields        |
-|-----------------|------------------|:---------------------|
-| alpha           | alpha_reverse    | Title                |
-| manual          | manual-reverse   | position             |
-| random          |                  | pseudo-random order  |
+| Ascending value | Descending value | Sorted fields       |
+|-----------------|------------------|:--------------------|
+| alpha           | alpha_reverse    | Title               |
+| manual          | manual-reverse   | position            |
+| random          |                  | pseudo-random order |
 
 ## effects expected values {#image-effects-expected-values}
 [Arguments](#image-arguments)

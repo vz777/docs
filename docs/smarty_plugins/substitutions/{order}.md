@@ -1,5 +1,5 @@
-Lang Substitution provides current lang in session. 
-`{lang attr="one_of_the_following"}`
+Order substitutions provides current lang in session. 
+`{order attr="one_of_the_following"}`
 
 ## Attributes
 
@@ -9,7 +9,7 @@ Lang Substitution provides current lang in session.
 | `title`                 |                                                                                                        |
 | `code`                  | 	      ISO 639-1 Code                                                                                  |
 | ` locale `              | 	 	The language locale code eg: fr_FR, en_US, ...  	 	                                                 |
-| ` url `                 | 	  Custom URL for language 	 	                                                                         |
+| ` url `                 | 	  Custom URL for order 	 	                                                                         |
 | ` decimals `            | 	 	 	Decimal places  	                                                                                 |
 | ` decimal_separator `   | 	The separator for the decimal point  	 	                                                              |
 | ` thousands_separator ` | 	  	The thousands separator 	 	                                                                        |
