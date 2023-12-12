@@ -17,7 +17,7 @@ La boucle Feature value répertorie les valeurs de caractéristique a texte libr
 | order                        | Une liste de valeurs voir [sorting possible values](#feature-order-possible-values)                              | manual  | order="alpha_reverse"                             |
 | product                      | L'ID d'un seul produit.                                                                                          |         | product="9"                                       |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -37,7 +37,7 @@ Plus les [global arguments](./global_arguments)
 | $PRODUCT_ID      | (2.2) l'id du produit                                                                                          |
 | $TITLE           | Le titre de la feature av, ou le texte de la caractéristique pour les caractéristiques de type texte libre.    |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#feature-order-possible-values}
 [Arguments](#feature-arguments)

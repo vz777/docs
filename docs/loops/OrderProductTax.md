@@ -11,7 +11,7 @@ La boucle product tax affiche les taxes disponibles.
 |-----------------|:---------------------------------|:-------:|:------------------|
 | order_product * | Le product id d'un seul produit. |         | order_product="2" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -23,4 +23,4 @@ Plus les [global arguments](./global_arguments)
 | $PROMO_AMOUNT | Montant de la taxe du prix promo |
 | $TITLE        | Titre de la taxe                 |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

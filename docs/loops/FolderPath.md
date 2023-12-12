@@ -13,7 +13,7 @@ La boucle Folder path fournit le chemin dans le catalogue vers un dossier donné
 | folder * | L'ID d'un seul dossier.               |        | folder="2"          |
 | visible  | afficher les dossiers masqués ou non. |  true  | visible="false"     |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -24,4 +24,4 @@ Plus les [global arguments](./global_arguments)
 | $TITLE   | le titre du dossier  |
 | $URL     | l'URL du dossier     |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

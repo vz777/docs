@@ -9,7 +9,7 @@ dépendances, etc.
 
 :::info
 
-Si vous souhaitez utiliser **docker**, veuillez suivre ceci [this](./docker).
+Si vous souhaitez utiliser **docker**, veuillez suivre [ceci](./docker).
 
 :::
 

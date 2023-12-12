@@ -1,5 +1,5 @@
 ---
-title: Global Sorties
+title: Paramètres de sorties communs
 sidebar_position: 3
 ---
 

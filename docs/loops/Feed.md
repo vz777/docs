@@ -12,7 +12,7 @@ Obtenez des données à partir d'un flux Atom ou RSS.
 | timeout  | Délai en secondes après lequel la boucle ferme la connexion avec le serveur distant |         | timeout=10                             |
 | url      | Une URL de flux Atom ou RSS.                                                        |         | url='http://thelia.net/feeds/?lang=en' |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -24,4 +24,4 @@ Plus les [global arguments](./global_arguments)
 | $TITLE       | le titre de l'élément du flux                           |
 | $URL         | l'URL de l'élément du flux                              |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

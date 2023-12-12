@@ -1,5 +1,5 @@
 ---
-title: Dockerize your Thelia
+title: Dockerizer votre Thelia
 sidebar_position: 6
 ---
 
@@ -41,7 +41,7 @@ Vous pouvez maintenant utiliser Thelia exactement comme si vous aviez toute la p
 
 ## Comment changer la configuration
 
-Toute la configuration peut être personnalisée pour votre propre projet. Elle utilise l'image officielle de PHP [php image](https://hub.docker.com/_/php/) fournie par Docker, vous pouvez donc changer la version de PHP comme vous le souhaitez.
+Toute la configuration peut être personnalisée pour votre propre projet. Elle utilise l'image officielle de [PHP](https://hub.docker.com/_/php/) fournie par Docker, vous pouvez donc changer la version de PHP comme vous le souhaitez.
 Vous pouvez également installer toutes les extensions que vous souhaitez.
 
 Chaque fois que vous modifiez la configuration, vous devez reconstruire les conteneurs : ```docker-composer build --no-cache```

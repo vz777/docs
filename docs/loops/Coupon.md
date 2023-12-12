@@ -15,7 +15,7 @@ Retourne les informations sur les coupons.
 | is_enabled | Si vrai, seuls les coupons activés sont renvoyés. Si faux, seuls les coupons désactivés sont renvoyés.                                                                             |        | is_enabled="true"                               |
 | order      | Une liste de valeurs voir [sorting possible values](#coupon-order-possible-values)                                                                                                 | manual | order="alpha_reverse"                           |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -44,7 +44,7 @@ Plus les [global arguments](./global_arguments)
 | TOOLTIP                          | The coupon short description                                               |
 | USAGE_LEFT                       | le nombre d'utilisations restantes du coupon                               |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#coupon-order-possible-values}
 [Arguments](#coupon-arguments)

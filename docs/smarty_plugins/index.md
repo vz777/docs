@@ -14,7 +14,7 @@ new SmartyPluginDescriptor(
 )
 ```
 
-Le premier paramètre est le type de plugin ; vous pouvez trouver plus d'informations [here](https://smarty-php.github.io/smarty/programmers/plugins.html).
+Le premier paramètre est le type de plugin ; vous pouvez trouver plus d'informations [ici](https://smarty-php.github.io/smarty/programmers/plugins.html).
 Le deuxième paramètre est le nom que vous devez utiliser dans vos modèles pour appeler votre plugin.
 Le troisième paramètre est l'emplacement de la classe de votre fonction. En général, c'est `$this` car vous écrivez la fonction dans la même classe que la déclaration.
  Le quatrième paramètre est le nom de la fonction que vous souhaitez appeler.

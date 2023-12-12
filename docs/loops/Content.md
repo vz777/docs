@@ -18,13 +18,13 @@ La boucle Content liste les contenus de votre boutique.
 | folder_default      | Un ou plusieurs ids de dossiers permettant de récupérer tous les contenus ayant ce paramètre comme dossier par défaut.                                                                                                                                                                                |         | folder_default="2", folder_default="1,4,7" |
 | id                  | Un ou plusieurs ids de contenus.                                                                                                                                                                                                                                                                      |         | id="2", id="1,4,7"                         |
 | lang                | Un id de langue                                                                                                                                                                                                                                                                                       |         | lang="1"                                   |
-| order               | Une liste de valeurs <br/> [Expected values](#content-order-possible-values)                                                                                                                                                                                                                          |  alpha  | order="random"                             |
+| order               | Une liste de valeurs <br/> [Valeurs attendues](#content-order-possible-values)                                                                                                                                                                                                                        |  alpha  | order="random"                             |
 | return_url          | Booléen qui permet la génération d'URL.                                                                                                                                                                                                                                                               |   yes   | return_url="no"                            |
 | title               | Une chaîne de titre                                                                                                                                                                                                                                                                                   |         | title="foo"                                |
 | visible             | Booléen.                                                                                                                                                                                                                                                                                              |   yes   | visible="no"                               |
 | with_prev_next_info | Booléen. Si définie sur true, les arguments de sortie `$PREVIOUS` et `$NEXT` sont disponibles.                                                                                                                                                                                                        |  false  | with_prev_next_info="yes"                  |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -48,7 +48,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $TITLE            | le titre du contenu                                                                                                                |               ✅               |               ✅                |
 | $URL              | l'URL du contenu                                                                                                                   |               ✅               |               ✅                |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#content-order-possible-values}
 [Arguments](#content-arguments)

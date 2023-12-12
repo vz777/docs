@@ -7,16 +7,16 @@ La boucle config permet d'accéder aux variables de configuration.
 
 ## Arguments {#conf-arguments}
 
-| Argument | Description                                                               | Defaut | Exemple                      |
-|----------|:--------------------------------------------------------------------------|:------:|:-----------------------------|
-| exclude  | Un ou plusieurs IDs de configs.                                           |        | exclude="2", exclude="1,4,7" |
-| hidden   | Booléen                                                                   |        | hidden="no"                  |
-| id       | Un seul id de config.                                                     |        | id="2"                       |
-| order    | Une liste de valeurs <br/> [Expected values](#conf-order-possible-values) | manual | order="id_reverse"           |
-| secured  | Booléen                                                                   |        | secured="no"                 |
-| variable | Nom d'une variable de config                                              |        | variable="rewriting_enable"  |
+| Argument | Description                                                                 | Defaut | Exemple                      |
+|----------|:----------------------------------------------------------------------------|:------:|:-----------------------------|
+| exclude  | Un ou plusieurs IDs de configs.                                             |        | exclude="2", exclude="1,4,7" |
+| hidden   | Booléen                                                                     |        | hidden="no"                  |
+| id       | Un seul id de config.                                                       |        | id="2"                       |
+| order    | Une liste de valeurs <br/> [Valeurs attendues](#conf-order-possible-values) | manual | order="id_reverse"           |
+| secured  | Booléen                                                                     |        | secured="no"                 |
+| variable | Nom d'une variable de config                                                |        | variable="rewriting_enable"  |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -34,7 +34,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE         | Le titre de la variable de config              |
 | $VALUE         | La valeur de la variable de config             |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#conf-order-possible-values}
 [Arguments](#conf-arguments)

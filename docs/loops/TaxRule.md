@@ -13,7 +13,7 @@ Boucle affichant les règles de taxe créées.
 | id       | Un ou plusieurs ids de règles de taxe                                          |        | id="2", id="1,4"           |
 | order    | Une liste de valeurs see [sorting possible values](#tax-order-possible-values) | alpha  | order="random"             |
 
-Plus les [global arguments](./global_arguments) 
+Ainsi que les [arguments communs](./global_arguments) 
 
 ## Sorties
 
@@ -26,7 +26,7 @@ Plus les [global arguments](./global_arguments)
 | $LOCALE        | la locale utilisée pour cette recherche |
 | $TITLE         | Titre de la taxe                        |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#tax-order-possible-values}
 [Arguments](#tax-arguments)

@@ -13,10 +13,10 @@ La boucle Attribute availability listes les déclinaisons (e.g., attribute value
 | exclude   | A single or a list of attribute availability ids to exclude.                                              |         | exclude="456,123"     |
 | id        | A single or a list of attribute availability ids.                                                         |         | id="2", id="1,4,7"    |
 | lang      | Un id de langue                                                                                           |         | lang="1"              |
-| order     | Une liste de valeurs <br/> [Expected values](#attribute-av-order-possible-values)                         | manual  | order="alpha_reverse" |
+| order     | Une liste de valeurs <br/> [Valeurs attendues](#attribute-av-order-possible-values)                       | manual  | order="alpha_reverse" |
 | product   | A product ID. If present, only attribute values that are part of this product's combinations are returned |         | product="279"         |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -32,7 +32,7 @@ Plus les [global arguments](./global_arguments)
 | $POSTSCRIPTUM  | the attribute availability postscriptum                     |
 | $TITLE         | the attribute availability title                            |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#attribute-av-order-possible-values}
 [Arguments](#attribute-av-arguments)

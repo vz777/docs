@@ -34,7 +34,7 @@ $ git push origin new-branch
 
 Ensuite, la dernière étape consiste à soumettre une Pull Request comme indiqué dans la documentation GitHub.
 
-Si vous souhaitez en faire plus, lisez ce billet de blog utile [blog post](http://williamdurand.fr/2013/11/20/on-creating-pull-requests/).
+Si vous souhaitez en faire plus, lisez cet utile [article de blog](http://williamdurand.fr/2013/11/20/on-creating-pull-requests/).
 
 
 ## Modification des scripts SQL

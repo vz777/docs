@@ -19,7 +19,7 @@ La boucle Feature répertorie les caractéristiques.
 | title            | Une chaîne de caractères titre                                                                             |         | title="foo"           |
 | visible          | Booléen                                                                                                    |   yes   | visible="no"          |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -34,7 +34,7 @@ Plus les [global arguments](./global_arguments)
 | $POSTSCRIPTUM  | Le postscriptum de la caractéristique                                                                                                                                                                                          |
 | $TITLE         | Le titre de la caractéristique                                                                                                                                                                                                 |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#feature-order-possible-values}
 [Arguments](#feature-arguments)

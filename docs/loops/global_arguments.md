@@ -1,5 +1,5 @@
 ---
-title: Global arguments
+title: Arguments communs
 sidebar_position: 1
 ---
 

@@ -24,7 +24,7 @@ La boucle Folder répertorie les dossiers de votre boutique.
 | visible               | Booléen.                                                                                                                                                                         |                yes                | visible="no"                 |
 | with_prev_next_info   | Booléen. Si définie sur true, les arguments de sortie `$PREVIOUS` et `$NEXT` sont disponibles.                                                                                   |               false               | with_prev_next_info="yes"    |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -56,7 +56,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $VERSION_DATE     | la date de la version du dossier                                                                                                      |               ✅               |               ✅                |                                                                                               |
 | $VISIBLE          | la visibilité du dossier                                                                                                              |               ✅               |               ✅                |                                                                                               |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#folder-order-possible-values}
 [Arguments](#folder-arguments)

@@ -11,7 +11,7 @@ La boucle Order address affiche sur les addresses de commandes.
 |----------|:--------------------------|:-------:|:--------|
 | id *     | A single order address id |         | id="2"  |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -32,4 +32,4 @@ Plus les [global arguments](./global_arguments)
 | $ZIPCODE   | le code postal de l'adresse de commande                                                        |
 
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

@@ -13,7 +13,7 @@ La boucle de produits de commande affiche des informations sur les produits des 
 | order *  | L'ID d'une seule commande                  |         | order="2"          |
 | virtual  | Booléen.                                   |         | new="yes"          |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -50,4 +50,4 @@ Plus les [global arguments](./global_arguments)
 | $WAS_NEW                   | indique si les déclinaisons (PSE) du produit étaient nouveaux ou non     |
 | $WEIGHT                    | le poids des déclinaisons (PSE) du produit                               |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

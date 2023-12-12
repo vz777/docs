@@ -19,14 +19,14 @@ La boucle Catégorie liste les catégories de votre boutique.
 | need_count_child    | Booléen. Si défini sur true, compte le nombre de sous-catégories contenues dans la catégorie actuelle.                                                                           |  false  | need_count_child="yes"       |
 | need_product_count  | Booléen. Si définie sur true, compte le nombre de produits contenus dans la catégorie actuelle.                                                                                  |  false  | need_product_count="yes"     |
 | not_empty           | (**not implemented yet**) Booléen. Si défini sur true, seules les catégories qui contiennent au moins un produit visible (directement ou via une sous-catégorie) sont renvoyées. |   no    | not_empty="yes"              |
-| order               | Une liste de valeurs <br/> [Expected values](#category-order-possible-values)                                                                                                    | manual  | order="random"               |
+| order               | Une liste de valeurs <br/> [Valeurs attendues](#category-order-possible-values)                                                                                                  | manual  | order="random"               |
 | parent              | Un ou plusieurs IDs de catégories parentes.                                                                                                                                      |         | parent="3", parent="2,5,8"   |
 | product             | Un ou plusieurs IDs de produits.                                                                                                                                                 |         | product="3"                  |
 | return_url          | Booléen qui permet la génération des URL.                                                                                                                                        |   yes   | return_url="no"              |
 | visible             | Booléen                                                                                                                                                                          |   yes   | visible="no"                 |
 | with_prev_next_info | Booléen. Si définie sur true, les arguments de sortie $PREVIOUS et $NEXT sont disponibles.                                                                                       |  false  | with_prev_next_info="yes"    |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) et [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -59,7 +59,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $HAS_PREVIOUS     | true si une catégorie existe avant celle-ci dans la catégorie parente actuelle, suivant les positions des catégories. <br/> ** Uniquement disponible si "with_prev_next_info" est défini sur true **                                   |
 | $PREVIOUS         | L'identifiant de la catégorie avant celle-ci dans la catégorie parente actuelle, suivant les positions des catégories, ou null s'il n'en existe aucune. <br/> ** Uniquement disponible si "with_prev_next_info" est défini sur true ** |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#category-order-possible-values}
 [Arguments](#category-arguments)

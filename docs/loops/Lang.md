@@ -17,7 +17,7 @@ Boucle Lang.
 | locale          | Une ou plusieurs locale.                                                         |          | code="fr_FR", code="fr_FR,fr_CA" |
 | order           | Une liste de valeurs voir [sorting possible values](#lang-order-possible-values) | position | order="alpha_reverse"            |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -36,7 +36,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE               | le titre de la langue                                                               |
 | $URL                 | l'URL de la langue, uniquement si une URL spécifique est définie pour chaque langue |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#lang-order-possible-values}
 [Arguments](#lang-arguments)

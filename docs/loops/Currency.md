@@ -15,7 +15,7 @@ La boucle Currency retourne la liste des devises.
 | lang         | Un id de langue                                                                      |         | lang="1"                     |
 | order        | Une liste de valeurs voir [sorting possible values](#currency-order-possible-values) | manual  | order="id_reverse"           |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -31,7 +31,7 @@ Plus les [global arguments](./global_arguments)
 | $RATE          | le taux de change de devise                   |
 | $SYMBOL        | Le symbole de devise numérique ISO            |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#currency-order-possible-values}
 [Arguments](#currency-arguments)

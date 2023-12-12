@@ -15,7 +15,7 @@ La boucle payment affiche les information concernant les modules de paiements.
 | id           | Un id de module                                                                    |         | module=4                   |
 | order        | Une liste de valeurs see [sorting possible values](#payment-order-possible-values) | manual  | order=" id_reverse"        |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -28,7 +28,7 @@ Plus les [global arguments](./global_arguments)
 | $POSTSCRIPTUM | le postscriptum du module de paiement |
 | $TITLE        | le title du module de paiement        |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#payment-order-possible-values}
 [Arguments](#payment-arguments)

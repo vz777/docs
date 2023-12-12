@@ -11,7 +11,7 @@ Récupère les informations sur les coupons de commande pour une commande donné
 |----------|:-------------------|:-------:|:----------|
 | order *  | A single order id. |         | order="2" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -31,4 +31,4 @@ Plus les [global arguments](./global_arguments)
 | $SHORT_DESCRIPTION                | la short description du coupon                                                                                         |
 | $TITLE                            | le titre du coupon                                                                                                     |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

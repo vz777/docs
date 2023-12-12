@@ -6,7 +6,7 @@ sidebar_position: 9
 
 Thelia déclenche un grand nombre d'événements au cours de différents process : création de compte, traitement des commandes, ...
 Vous pouvez écouter n'importe lequel de ces événements pour ajouter ou remplacer de la logique. Ou ajouter vos propres événements qui peuvent être écoutés par d'autres modules.
-Plus d'informations sur le composant Event dispatcher peuvent être trouvées sur [Symfony documentation](https://symfony.com/doc/current/components/event_dispatcher.html)
+Plus d'informations sur le composant Event dispatcher peuvent être trouvées sur [la documentation Symfony](https://symfony.com/doc/current/components/event_dispatcher.html)
 
 
 Pour faire cela, vous devez créer un observateur d'événement, c'est juste une classe simple qui implémente l'interface `EventSubscriberInterface` avec une fonction `getSubscribedEvents` pour choisir l'événement à écouter :

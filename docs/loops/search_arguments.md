@@ -1,5 +1,5 @@
 ---
-title: Search arguments
+title: Arguments de recherche
 sidebar_position: 2
 ---
 

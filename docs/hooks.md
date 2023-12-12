@@ -12,7 +12,7 @@ Les Hooks sont des points d'entrée dans les templates où les modules peuvent i
 Le principe des hooks est simple. Le template inclut une fonction ou un bloc de hook dans le code Smarty. Lorsque Smarty analyse cette fonction/bloc, un événement est créé et envoyé aux méthodes des modules qui écoutent cet événement.
 Les modules qui écoutent ces événements génèrent du contenu et l'ajoutent directement à l'événement. Lorsque l'événement est terminé, le contenu est injecté à la place de la fonction/du bloc sous forme de balises rendues.
 Il existe deux types distincts de hooks que vous pouvez étendre : la fonction de hooks de base et le hookbloc.
-Vous pouvez voir quels hooks sont présents dans une page en ajoutant le paramètre de requête `SHOW_HOOK=1` dans l'url (ce paramètre ne fonctionne que si le mode debug est activé) ou voir ci-dessous pour la liste de tous les [natives hooks](#default-hook-list).
+Vous pouvez voir quels hooks sont présents dans une page en ajoutant le paramètre de requête `SHOW_HOOK=1` dans l'url (ce paramètre ne fonctionne que si le mode debug est activé) ou voir ci-dessous pour la liste de tous les [hooks natifs](#liste-de-hook-par-défaut).
 
 ## Ecouteur de hooks
 Pour insérer des données dans les hooks, vous devez créer une classe qui étend `BaseHook` et implémenter une méthode `getSubscribedHooks` pour définir quels hooks vous voulez écouter.
@@ -49,8 +49,8 @@ class FrontHook extends BaseHook
 }
 ```
 
-Ensuite, la fonction associée à l'écouteur dépend si vous écoutez une [Fonction de hook](#fonction-de-hook) ou un [Bloc de hook](#bloc-de-hook).
-Then the function associated with the listener depend if you listen a [Hook function](#hook-function) or a [Hook block](#hook-block)
+Ensuite, la fonction associée à l'écouteur dépend si vous écoutez une [Fonction de hook](#fonction-de-hook) ou un [Hook Block](#hook-block).
+
 
 
 ## Fonction de hook

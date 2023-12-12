@@ -15,7 +15,7 @@ Boucle affichant les taxes disponibles.
 | id               | Un ou plusieurs ids de taxes                     |         | id="2", id="1,4"                             |
 | tax_rule         | Un ou plusieurs ids de règles de taxes           |         | tax_rule="2", tax_rule="1,4"                 |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -30,4 +30,4 @@ Plus les [global arguments](./global_arguments)
 | $TITLE         | Titre de la taxe                                                                                                           |
 | $TYPE          | Le type de la taxe                                                                                                         |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

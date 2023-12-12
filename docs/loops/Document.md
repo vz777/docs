@@ -18,11 +18,11 @@ La boucle Document traite, met en cache et affiche les documents associés aux p
 | lang        | Un id de langue, pour spécifier la langue dans laquelle les informations sur le document seront retournées |         |                       |
 | order       | Une liste de valeurs voir [sorting possible values](#document-order-possible-values)                       | manual  | order="alpha_reverse" |
 | product **  | Un id de produit. La boucle retournera les documents de ce produit.                                        |         | product="2"           |
-| source **   | voir [Expected values](#document-source-expected-values)                                                   |         | source="category"     |
+| source **   | voir [Valeurs attendues](#document-source-expected-values)                                                 |         | source="category"     |
 | source_id   | L'id de l'objet fourni dans le paramètre "source". Seulement considéré si l'argument "source" est présent  |         | source_id="2"         |
 | visible     | Booléen.                                                                                                   |   yes   | visible="no"          |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -42,7 +42,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE                  | le titre du document                                                                      |
 | $VISIBLE                | vrai si le document est visible. Faux sinon                                               |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#document-order-possible-values}
 [Arguments](#document-arguments)
@@ -53,7 +53,7 @@ Plus les [global Sorties](./global_Sorties)
 | manual            | manual-reverse      | position            |
 | random            |                     | pseudo-random order |
 
-## Souce expected values {#document-source-expected-values}
+## Souce Valeurs attendues {#document-source-expected-values}
 [Arguments](#document-arguments)
 
 | value    |

@@ -7,12 +7,12 @@ La boucle Order status affiche des informations sur les statuts de commande.
 
 ## Arguments {#order-arguments}
 
-| Argument | Description                                                        | Default | Exemple            |
-|----------|:-------------------------------------------------------------------|:-------:|:-------------------|
-| id       | Un ou plusieurs de statut de commande.                             |         | id="2", id="1,4,7" |
-| order    | Une liste de valeurs see [Expected values](#order-possible-values) | manual  | order="random"     |
+| Argument | Description                                                          | Default | Exemple            |
+|----------|:---------------------------------------------------------------------|:-------:|:-------------------|
+| id       | Un ou plusieurs de statut de commande.                               |         | id="2", id="1,4,7" |
+| order    | Une liste de valeurs see [Valeurs attendues](#order-possible-values) | manual  | order="random"     |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -30,7 +30,7 @@ Plus les [global arguments](./global_arguments)
 | $PROTECTED_STATUS | 1 si le statut de commande est protégé                             |
 | $TITLE            | le titre du statut de commande                                     |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#order-possible-values}
 [Arguments](#order-arguments)

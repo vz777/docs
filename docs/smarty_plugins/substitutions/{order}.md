@@ -18,11 +18,11 @@ Les substitutions de commandes fournissent les données sur les commandes.
 | ` datetime_format `     | Format de la date et de l'heure. La syntaxe utilisée est identique à celle de la fonction date() en PHP. Par exemple : d/m/y H:i:s |
 | ` position `            |                                                                                                                                    |
 | ` by_default `          | `true` if the category is the default currency, `false` otherwise                                                                  |
-| ` createdAt `           | La date de création formatée par  [Date time parameter](#date-time-optional-parameters)                                            |
-| ` updatedAt `           | La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters)                            |
+| ` createdAt `           | La date de création formatée par  [le paramètre date/heure ](#paramètres-optionnels-de-date-et-dheure)                             |
+| ` updatedAt `           | La date de la dernière modification formatée par  [le paramètre date/heure ](#paramètres-optionnels-de-date-et-dheure)             |
 
 ### Paramètres optionnels de date et d'heure
-| Paramètre | Description                                                                                                                                           |
-|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                   |
-| `format`  | Prend un [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |
+| Paramètre | Description                                                                                                                                              |
+|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                      |
+| `format`  | Prend un [format de date php](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

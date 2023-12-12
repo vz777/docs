@@ -11,7 +11,7 @@ La boucle Title répértorie les titres
 |----------|:-----------------------------|:-------:|:-------------------|
 | id       | Un ou plusieurs ids de titre |         | id="2", id="1,4,7" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -23,4 +23,4 @@ Plus les [global arguments](./global_arguments)
 | $POSITION | la position du titre                      |
 | $SHORT    | le titre court                            |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

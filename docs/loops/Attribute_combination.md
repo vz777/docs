@@ -7,11 +7,11 @@ La boucle Attribute combination répertorie les combinaisons d'attributs.
 
 ## Arguments {#pse-arguments}
 
-| Argument                 | Description                                                                    | Default | Exemple               |
-|--------------------------|:-------------------------------------------------------------------------------|:-------:|:----------------------|
-| lang                     | Un id de langue                                                                |         | lang="1"              |
-| order                    | Une liste de valeurs <br/> [Expected values](#accessory-order-possible-values) |  alpha  | order="alpha_reverse" |
-| product_sale_elements \* | A single product sale elements id.                                             |         | product="2"           |
+| Argument                 | Description                                                                      | Default | Exemple               |
+|--------------------------|:---------------------------------------------------------------------------------|:-------:|:----------------------|
+| lang                     | Un id de langue                                                                  |         | lang="1"              |
+| order                    | Une liste de valeurs <br/> [Valeurs attendues](#accessory-order-possible-values) |  alpha  | order="alpha_reverse" |
+| product_sale_elements \* | A single product sale elements id.                                               |         | product="2"           |
 
 ## Sorties
 

@@ -8,12 +8,12 @@ Vous pouvez vérifier dans le front office si un administrateur est connecté et
 
 ## Arguments {#auth-arguments}
 
-| Argument | Description                                                                                                                                                                           | Defaut | Exemple                               |
-|----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|:--------------------------------------|
-| access   | Une liste séparée par des virgules, si elle est vide ou manquante, l'autorisation est vérifiée uniquement concernantg les rôles <br/> [Expected values](#auth-access-possible-values) |        |                                       |
-| module   | Une liste de modules séparée par des virgules                                                                                                                                         |        |                                       |
-| resource | Une liste de ressource séparée par des virgules                                                                                                                                       |        |                                       |
-| role *   | Une liste de rôles utilisateurs séparée par des virgules                                                                                                                              |        | role="ADMIN" ou sinon role="CUSTOMER" |
+| Argument | Description                                                                                                                                                                             | Defaut | Exemple                               |
+|----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|:--------------------------------------|
+| access   | Une liste séparée par des virgules, si elle est vide ou manquante, l'autorisation est vérifiée uniquement concernantg les rôles <br/> [Valeurs attendues](#auth-access-possible-values) |        |                                       |
+| module   | Une liste de modules séparée par des virgules                                                                                                                                           |        |                                       |
+| resource | Une liste de ressource séparée par des virgules                                                                                                                                         |        |                                       |
+| role *   | Une liste de rôles utilisateurs séparée par des virgules                                                                                                                                |        | role="ADMIN" ou sinon role="CUSTOMER" |
 
 ## Exemples
 

@@ -40,4 +40,4 @@ Vous pouvez maintenant tester les résultats à l'aide des outils de ligne de co
 php Thelia hello:world
 ```
 
-Thelia utilise toutes les fonctionnalités du composant "command" de Symfony. Vous pouvez donc vous référer à,[this component documentation](https://symfony.com/doc/current/console.html#creating-a-command) pour créer vos commandes Thelia.
+Thelia utilise toutes les fonctionnalités du composant "command" de Symfony. Vous pouvez donc vous référer à ce [composant](https://symfony.com/doc/current/console.html#creating-a-command) pour créer vos commandes Thelia.

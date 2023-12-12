@@ -19,7 +19,7 @@ La boucle Country liste les pays.
 | visible      | Booléen pour retourner les pays visibles ou non visibles (valeurs possibles : yes, no or *). |  yes   | visible="no"                              |
 | with_area    | Booléen pour retourner soit les pays dont la zone est définie, soit tous les autres.         |        | with_area="true"                          |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -43,7 +43,7 @@ Plus les [global arguments](./global_arguments)
 | $VISIBLE         | true si le pays est visible. False sinon                                                            |
 | $ZIP_CODE_FORMAT | Le format du code postal pour ce pays où N est un chiffre, L une lettre et C le code ISO de l'État. |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#country-order-possible-values}
 [Arguments](#country-arguments)

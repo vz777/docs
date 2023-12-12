@@ -19,7 +19,7 @@ Vous devrez peut être utiliser la boucle attribute combination dans la boucle P
 | promo    | Booléen. Si true, renvoie uniquement les éléments de vente de produit pour lesquels la promo est activée. L'inverse avec 'false' |         | promo="yes"             |
 | visible  | Un booléen, ou * (la valeur par défaut) pour ignorer ce filtre                                                                   |    *    | visible="no"            |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -41,7 +41,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $TAXED_PROMO_PRICE | le prix en promo taxé de l'élément de vente de produit        |
 | $WEIGHT            | le poids de la déclinaison                                    |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Exemples
 

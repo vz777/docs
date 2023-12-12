@@ -15,7 +15,7 @@ La boucle Category tree permet d'obtenir une arborescence de catégories à part
 | return_url | Booléen permettant la génération des URL.                  |  yes   | return_url="no" |
 | visible    | Afficher ou non les catégories masquées.                   |  true  | visible="false" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -30,7 +30,7 @@ Plus les [global arguments](./global_arguments)
 | $URL         | l'URL de la catégorie                   |
 | $VISIBLE     | whatever the category is visible or not |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Exemples
 

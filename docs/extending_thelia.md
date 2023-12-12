@@ -1,5 +1,5 @@
 ---
-title: Extending Thelia
+title: Enrichir Thelia
 sidebar_position: 3
 toc_max_heading_level: 6
 ---

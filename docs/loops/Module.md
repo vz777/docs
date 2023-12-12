@@ -18,7 +18,7 @@ La boucle du module récupère les informations du module
 | order       | Une liste de valeurs see [sorting possible values](#module-order-possible-values)                                                                   | manual | order="alpha_reverse"        |
 | profile     | Un ou plusieurs ids de profile.                                                                                                                     |        | profile="2", profile="1,4,7" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -37,7 +37,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE         | le titre du module                          |
 | $TYPE          | le type du module                           |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#module-order-possible-values}
 [Arguments](#module-arguments)

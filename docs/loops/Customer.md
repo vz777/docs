@@ -17,7 +17,7 @@ La boucle Customer affiche les informations sur les clients.
 | sponsor             | L'identifiant du parrain pour lequel vous souhaitez la liste des clients affiliés.                                                                                       |          | sponsor="1"                           |
 | with_prev_next_info | Booléen, si vrai, les variables de sorties $HAS_PREVIOUS, $HAS_NEXT, $PREVIOUS, et $NEXT sont disponibles                                                                |  false   | with_prev_next_info="yes"             |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -39,7 +39,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $SPONSOR            | le parrain du client qui peut être utilisé dans [customer loop](./Customer)                                                                                                                          |
 | $TITLE              | le titre du client qui peut être utilisé dans une [title loop](./Title)                                                                                                                              |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#customer-order-possible-values}
 [Arguments](#customer-arguments)

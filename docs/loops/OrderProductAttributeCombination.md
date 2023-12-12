@@ -12,7 +12,7 @@ La boucle product attribute combination répertorie les combinaisons d'attributs
 | order           | Une liste de valeurs <br/> Valeurs attendues : <br/> - alpha : Ordre alphabétique sur le titre de order product attribute <br/> - alpha_reverse : Ordre alphabétique inverse sur le titre order product attribute |  alpha  | order="alpha_reverse" |
 | order_product * | L'id d'un seul order product id.                                                                                                                                                                                  |         | order_product="2"     |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -29,4 +29,4 @@ Plus les [global arguments](./global_arguments)
 | $ID                                  | the order product attribute combination ID            |
 | $ORDER_PRODUCT_ID                    | the related order product ID                          |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

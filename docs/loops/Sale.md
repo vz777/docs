@@ -16,7 +16,7 @@ La boucle Sale offre un accès aux opérations de promotion définies dans votre
 | order    | Une liste de valeurs see [sorting possible values](#sale-order-possible-values)                                                |             manual             | order=" random"    |
 | product  | Un ou plusieurs ids de produits. Si spécifié, la boucle renverra les promotions dans lesquelles ces produits sont sélectionnés |                                | id="2", id="1,4,7" |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -40,7 +40,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $START_DATE            | la date de début de la promo                                                                               |
 | $TITLE                 | le titre de la promo                                                                                       |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#sale-order-possible-values}
 [Arguments](#sale-arguments)

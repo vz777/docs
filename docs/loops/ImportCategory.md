@@ -13,7 +13,7 @@ La boucle Import category répertorie toutes les catégories d'importation défi
 | order    | Une liste de valeurs see [sorting possible values](#import-order-possible-values) | manual | order="alpha"                                                                   |
 | ref      | Une ou plusieurs refs de categorie d'import.                                      |        | ref="thelia.import.products", id="thelia.import.products,thelia.import.modules" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -24,7 +24,7 @@ Plus les [global arguments](./global_arguments)
 | $REF      | La ref d'importation, telle que définie dans un fichier config.xml |
 | $TITLE    | le titre de la catégorie d'importation                             |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#import-order-possible-values}
 [Arguments](#import-arguments)

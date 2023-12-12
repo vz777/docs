@@ -18,7 +18,7 @@ La boucle Order affiche des informations sur les commandes.
 | status_code         | Un ou plusieurs codes de statut de commande ou le mot-clé `*` pour tous. Les codes d'état valides sont not_paid, paid, processing, sent, canceled, ou tout autre état personnalisé qui peut être défini. |                     | status="*", status="not_paid,canceled" |
 | with_prev_next_info | Booléen. Si définie sur true, les arguments de sortie `$PREVIOUS` et `$NEXT` sont disponibles.                                                                                                           |        false        | with_prev_next_info="yes"              |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -63,7 +63,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $VIRTUAL                  | la commande contient au moins un produit virtuel      ✅                                                                               |                      ✅                       |                                               |
 | $WEIGHT                   | Le poids total de la commande                                                                                                         |                      ✅                       |                       ✅                       |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#order-order-possible-values}
 [Arguments](#order-arguments)

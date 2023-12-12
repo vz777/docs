@@ -214,8 +214,8 @@ Liste des paramètres de sortie :
 Votre boucle peut être n'importe où (grâce à l'espace de noms) dans votre module, mais il est préférable de créer un répertoire Loop et d'y mettre toutes vos boucles.
 
 La seule chose à faire est de créer une nouvelle classe qui étend la classe `Thelia\Core\Template\Element\BaseLoop` et d'implémenter l'une de ces interfaces :
-- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)
-- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).
+- `Thelia\Core\Template\Element\ArraySearchLoopInterface` pour une [Boucle de tableau](#boucle-de-tableau)
+- `Thelia\Core\Template\Element\PropelSearchLoopInterface` pour une [Boucle Propel](#boucle-propel).
 
 NB : Au lieu de `BaseLoop` vous pouvez étendre `BaseI18nLoop`. Cela fournira des outils pour gérer l'internationalisation dans votre boucle.
 
@@ -225,7 +225,7 @@ Ainsi, pour l'appeler dans le template : `{loop type="my_loop" name="a_loop_name
 ## Boucle de tableau
 Si les données de votre boucle ne proviennent pas directement d'un model, utilisez une boucle de tableau.
 Trois fonctions doivent être implémentées :
-- `getArgDefinitions` pour décrire quels [arguments](#argument-types) sont disponibles pour votre boucle
+- `getArgDefinitions` pour décrire quels [arguments](#types-darguments) sont disponibles pour votre boucle
 - `buildArray` qui rassemble les données pour les paramètres définis
 - `parseResults` pour attribuer des données à des variables Smarty pour chaque itération de boucle
 ```php
@@ -296,7 +296,7 @@ Trois fonctions doivent être implémentées :
 ## Boucle Propel
 Si les données de votre boucle proviennent directement d'un model, utilisez une boucle Propel.
 Trois fonctions doivent être implémentées :
-- `getArgDefinitions` pour décrire quels [arguments](#argument-types) sont disponibles pour votre boucle
+- `getArgDefinitions` pour décrire quels [arguments](#types-darguments) sont disponibles pour votre boucle
 - `buildModelCriteria` qui construit une requête Propel à exécuter
 - `parseResults` pour attribuer des données à des variables Smarty pour chaque itération de boucle
 ```php

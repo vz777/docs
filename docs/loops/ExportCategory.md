@@ -13,7 +13,7 @@ La boucle Exportation de Catégorie répertorie toutes les catégories d'exporta
 | order    | Une liste de valeurs voir [sorting possible values](#export-order-possible-values) | manual | order="alpha"                                                                    |
 | ref      | Une ou plusieurs ref d'export category.                                            |        | ref="thelia.export.customer", id="thelia.export.customer,thelia.export.products" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -24,7 +24,7 @@ Plus les [global arguments](./global_arguments)
 | $REF      | La ref de la catégorie d'exportation, telle que définie dans config.xml |
 | $TITLE    | Le titre de catégorie d'exportation                                     |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#export-order-possible-values}
 [Arguments](#export-arguments)

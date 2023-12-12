@@ -3,11 +3,11 @@ title: Propel
 sidebar_position: 4
 ---
 
-Thelia utilise [Propel 2](http://propelorm.org/) orm pour interagir avec la base de données.
+Thelia utilise l'orm [Propel 2](http://propelorm.org/) pour interagir avec la base de données.
 
 ## Décrire le schema
 
-Pour ajouter une nouvelle table dans Thelia, vous devez la décrire dans votre schéma qui se trouve ici `MyModule/Config/schema.xml` veuillez regarder la [propel documentation](http://propelorm.org/documentation/reference/schema.html) pour savoir comment faire.
+Pour ajouter une nouvelle table dans Thelia, vous devez la décrire dans votre schéma qui se trouve ici `MyModule/Config/schema.xml` veuillez regarder la [documentation de propel](http://propelorm.org/documentation/reference/schema.html) pour savoir comment faire.
 
 ## Génerer Sql / Model à partir du schema
 

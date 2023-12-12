@@ -13,13 +13,13 @@ La boucle Generic peut renvoyer n'importe quelle table présente dans votre base
 | order      | Une ou plusieurs valeurs de tri à appliquer sur les colonnes dans ce format  <code>column_name:DESC&#124;other_column:ASC</code>    |                                  | order="id:DESC&#124;created_at:ASC" |
 | locale     | La locale pour les colonnes traduites                                                                                               | La locale actuelle de la session |                                     |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
 Cette boucle renverra chaque colonne de la table sélectionnée et les colonnes de la table i18n associée si la table est traduisible. Les champs sont en MAJUSCULES.
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Exemples
 

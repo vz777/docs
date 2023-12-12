@@ -14,7 +14,7 @@ La boucle Import répertorie toutes les importations définies.
 | order    | Une liste de valeurs voir [sorting possible values](#import-order-possible-values) | manual  | order="alpha"                                                           |
 | ref      | Un ou plusieurs refs d'import.                                                     |         | ref="thelia.import.price", id="thelia.import.price,thelia.import.stock" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -29,7 +29,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE        | le titre de l'importation                                                 |
 | $URL          | l'URL pour démarrer cette importation dans la page d'importation d'admin  |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#import-order-possible-values}
 [Arguments](#import-arguments)

@@ -14,7 +14,7 @@ La boucle Export liste tous les exports définis
 | order    | Une liste de valeurs voir [sorting possible values](#export-order-possible-values) | manual | order="alpha"                                                                  |
 | ref      | Une ou plusieurs ref d'export.                                                     |        | ref="thelia.export.customer", id="thelia.export.customer,thelia.export.orders" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -29,7 +29,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE        | Le titre de l'export                                                   |
 | $URL          | L'URL pour démarrer cette exportation dans la page d'admin des exports |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#export-order-possible-values}
 [Arguments](#export-arguments)

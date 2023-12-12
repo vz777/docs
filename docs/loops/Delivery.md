@@ -18,7 +18,7 @@ La boucle Delivery affiche les informations sur les modules de livraison.
 | order        | Une liste de valeurs voir [sorting possible values](#delivery-order-possible-values) | manual  | order="id_reverse"         |
 | state        | Un ID d'état.                                                                        |         | state=12                   |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -36,7 +36,7 @@ Plus les [global arguments](./global_arguments)
 | $POSTSCRIPTUM           | la postscriptum du module de livraison                                               |
 | $TITLE                  | la titre du module de livraison                                                      |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#delivery-order-possible-values}
 [Arguments](#delivery-arguments)

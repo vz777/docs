@@ -11,14 +11,14 @@ La boucle Brand répertorie les marques définies dans votre boutique.
 |---------------------|:--------------------------------------------------------------------------------------------------------------|:------:|:--------------------------|
 | current             | Booléen qui permet soit d'exclure la marque actuelle des résultats, soit de ne correspondre qu'à cette marque |        | current="yes"             |
 | id                  | Un id de marque unique ou une liste d'ids de marques.                                                         |        | id="2", id="1,4,7"        |
-| order               | Une liste de valeurs <br/> [Expected values](#brand-order-possible-values)                                    | manual | order="random"            |
+| order               | Une liste de valeurs <br/> [Valeurs attendues](#brand-order-possible-values)                                  | manual | order="random"            |
 | product             | L'ID d'un seul produit.                                                                                       |        | product="2"               |
 | return_url          | Booléen qui permet la génération des URL.                                                                     |  yes   | return_url="no"           |
 | title               | Une chaîne de caractères représentant le titre de la marque                                                   |        | title="foo"               |
 | visible             | Booléen.                                                                                                      |  yes   | visible="no"              |
 | with_prev_next_info | Booléen. Si elle est définie sur true, les arguments de sortie $PREVIOUS et $NEXT sont disponibles.           | false  | with_prev_next_info="yes" |
 
-Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Ainsi que les [arguments communs](./global_arguments) and [arguments de recherche](./search_arguments)
 
 ## Sorties
 
@@ -43,7 +43,7 @@ Plus les [global arguments](./global_arguments) and [search arguments](./search_
 | $URL              | l'URL de la marque                                                                                |               ✅               |               ✅                |
 | $VISIBLE          | vrai si la marque est visible, sinon faux                                                         |               ✅               |               ✅                |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Valeurs possibles de tri {#brand-order-possible-values}
 [Arguments](#brand-arguments)

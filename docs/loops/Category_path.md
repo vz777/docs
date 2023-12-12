@@ -13,7 +13,7 @@ La boucle Category path fournit le chemin dans le catalogue vers une catégorie 
 | depth      | La profondeur maximale                   |        | depth="5"       |
 | visible    | afficher les catégories masquées ou non. |  true  | visible="false" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -24,7 +24,7 @@ Plus les [global arguments](./global_arguments)
 | $TITLE   | le titre de la catégorie |
 | $URL     | l'URL de la catégorie    |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
 
 ## Exemples
 

@@ -1,1 +1,1 @@
-Toutes les informations sur le plugin {intl} peuvent être trouvées dans la [internationalization part](../internationalization)
+Toutes les informations sur le plugin {intl} peuvent être trouvées sur la page [internationalization](../internationalization)

@@ -11,7 +11,7 @@ La boucle Cart affiche les informations du panier.
 |----------|:------------------------------------------------------------------------------------------------------------|:-------:|:----------------|
 | order    | Une liste de valeurs <br/> Valeurs attendues : <br/> - reverse : inverse l'ordre chronologique des éléments | reverse | order="reverse" |
 
-Plus les [global arguments](./global_arguments)
+Ainsi que les [arguments communs](./global_arguments)
 
 ## Sorties
 
@@ -35,4 +35,4 @@ Plus les [global arguments](./global_arguments)
 | $TOTAL_PROMO_TAXED_PRICE  | le prix en promotion du PSE incluant les taxes (prix total) |
 | $TOTAL_TAXED_PRICE        | le prix du PSE incluant les taxes (prix total)              |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)

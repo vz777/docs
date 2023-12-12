@@ -27,4 +27,4 @@ La boucle Folder tree, pour obtenir une arborescence de dossiers d'un dossier do
 | $URL         | l'URL du dossier                 |
 | $VISIBLE     | si le dossier est visible ou non |
 
-Plus les [global Sorties](./global_Sorties)
+Plus les [paramètres de sorties communs](./global_outputs)
