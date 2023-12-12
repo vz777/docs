@@ -1,22 +1,22 @@
-The function `check_auth` can be used to know if the user is granted to view something.
+La fonction `check_auth` peut être utilisée pour déterminer si l'utilisateur est autorisé à voir quelque chose.
 
 ```
 {check_auth role="CUSTOMER" login_tpl="login"}
 
 {check_auth resource="admin.address" access="VIEW" login_tpl="login"}
-``` 
+```
 
 
-## role
-A user can only have one of these two roles:
- - ADMIN : an administrator of the site
- - CUSTOMER : a registed and logged in customer
+## rôle
+Un utilisateur peut avoir uniquement l'un de ces deux rôles :
+ - ADMIN : un administrateur du site
+ - CUSTOMER : un client enregistré et connecté
 
 ## login_tpl
-This argument is the name of the view name (the login page is “login”). If the user is not granted and this argument is defined, it redirects to this view.
+Cet argument est le nom de la vue (la page de connexion est “login”). Si l'utilisateur n'est pas autorisé et que cet argument est défini, il est redirigé vers cette vue.
 
 ## resource
-The resource argument may be useful in the back office. There is the list of the available resources in Thelia 2:
+L'argument resource peut être utile dans le back-office. Voici la liste des ressources disponibles dans Thelia 2 :
 - admin.address
 - admin.configuration.administrator
 - admin.configuration.advanced
@@ -52,18 +52,18 @@ The resource argument may be useful in the back office. There is the list of the
 - admin.tools
 
 ## module
-Name of the module which the user must have access to. Example:
+Nom du module auquel l'utilisateur doit avoir accès. Exemple :
 ```
     {check_auth role="ADMIN" module="Carousel" access="UPDATE" login_tpl="login"}
 ```
 
 ## access
 
-There is 4 types of access to a resource:
+Il existe 4 types d'accès à une ressource :
 
-- CREATE : create a new entry 
-- VIEW : view the resource 
-- UPDATE : update the resource 
-- DELETE : delete the resource
+- CREATE : créer une nouvelle entrée
+- VIEW : voir la ressource
+- UPDATE : mettre à jour la ressource
+- DELETE : supprimer la ressource
 
-Those accesses can be configured from the back office, tab “Configuration”, on “Administration Profile”.
+Ces accès peuvent être configurés depuis le back-office, onglet "Configuration", sur "Profils d'administration".

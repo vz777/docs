@@ -3,7 +3,7 @@ title: module:generate:model
 ---
 
 ## Description
-Generate model for a specific module
+Génèrer le model pour un module spécifique
 
 ## Usage
 ```shell
@@ -11,13 +11,13 @@ module:generate:model [options] [--] <name>
 ```
 
 ## Arguments
-- `name`                   Module name
+- `name`                   Nom du module
 
 ## Options
-- `--generate-sql`  With this option generate sql file at the same time
+- `--generate-sql`  Avec cette option, génère le fichier SQL en même temps
 
 
-## Example
-To generate the model and sql for your module `MyModule`
+## Exemple
+Pour générer le modèle et le SQL pour votre module `MyModule`
 ```shell
 php Thelia module:generate:model --generate-sql MyModule

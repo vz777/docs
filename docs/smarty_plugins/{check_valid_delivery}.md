@@ -1,1 +1,1 @@
-Check if the delivery module and address are valid, redirects to the route “order.delivery” if not.
+Vérifiez si le module de livraison et l'adresse sont valides, redirigez vers la route "order.delivery" sinon.

@@ -2,57 +2,57 @@
 title: Brand
 ---
 
-Brand loop lists brands defined in your shop.     
+La boucle Brand répertorie les marques définies dans votre boutique.
 `{loop type="brand" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#brand-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| current     | A boolean value which allows either to exclude current brand from results, or match only this brand  |   | current="yes" |
-| id     | A single or a list of brand ids.  |   |  id="2", id="1,4,7" |
-| order       | A list of values <br/> [Expected values](#brand-order-possible-values) | manual | order="random" |
-| product       | A single product id. |  | product="2" |
-| return_url       | A boolean value which allows the urls generation. | yes | return_url="no" |
-| title       | A title string |  | title="foo" |
-| visible       | A boolean value. | yes | visible="no" |
-| with_prev_next_info       | A boolean. If set to true, $PREVIOUS and $NEXT output arguments are available. | false | with_prev_next_info="yes" |
+| Argument            | Description                                                                                                   | Defaut | Exemple                   |
+|---------------------|:--------------------------------------------------------------------------------------------------------------|:------:|:--------------------------|
+| current             | Booléen qui permet soit d'exclure la marque actuelle des résultats, soit de ne correspondre qu'à cette marque |        | current="yes"             |
+| id                  | Un id de marque unique ou une liste d'ids de marques.                                                         |        | id="2", id="1,4,7"        |
+| order               | Une liste de valeurs <br/> [Expected values](#brand-order-possible-values)                                    | manual | order="random"            |
+| product             | L'ID d'un seul produit.                                                                                       |        | product="2"               |
+| return_url          | Booléen qui permet la génération des URL.                                                                     |  yes   | return_url="no"           |
+| title               | Une chaîne de caractères représentant le titre de la marque                                                   |        | title="foo"               |
+| visible             | Booléen.                                                                                                      |  yes   | visible="no"              |
+| with_prev_next_info | Booléen. Si elle est définie sur true, les arguments de sortie $PREVIOUS et $NEXT sont disponibles.           | false  | with_prev_next_info="yes" |
 
-Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
 
-## Outputs
+## Sorties
 
-| Variable | Value | If with_prev_next_info='true' | If with_prev_next_info='false' |
-| :------------------------------------------------------------------------ | :------------------------------ |:---------:|:------------:|
-| $CHAPO	                                                                | the brand chapo | ✅   |  ✅  |
-| $DESCRIPTION	                                                                        | the brand description                | ✅   |  ✅  |
-| $HAS_NEXT	| true if a brand exists after this one, following brands positions.     | ✅  | 🚫 |
-| $HAS_PREVIOUS	|  true if a brand exists before this one following brands positions     | ✅  | 🚫 |
-| $ID	|  the brand id     | ✅  | ✅ |
-| $IS_TRANSLATED	|  check if the brand is translated     | ✅  | ✅ |
-| $LOCALE	|  The locale used for this research     | ✅  | ✅ |
-| $LOGO_IMAGE_ID	|  ID of the brand logo image, among the brand images     | ✅  | ✅ |
-| $META_DESCRIPTION	|  the brand meta description     | ✅  | ✅ |
-| $META_KEYWORDS	|  the brand meta keywords     | ✅  | ✅ |
-| $META_TITLE	|  the brand meta title     | ✅  | ✅ |
-| $NEXT	|  The ID of brand after this one, following brands positions, or null if none exists     | ✅  | 🚫 |
-| $POSITION	|  the brand position     | ✅  | ✅ |
-| $POSTSCRIPTUM	|  the brand postscriptum     | ✅  | ✅ |
-| $PREVIOUS	|  The ID of brand before this one, following brands positions, or null if none exists.     | ✅  | 🚫 |
-| $TITLE	|  the brand title     | ✅  | ✅ |
-| $URL	|  the brand URL     | ✅  | ✅ |
-| $VISIBLE	|  true if the product is visible or not, false otherwise    | ✅  | ✅ |
+| Variable          | Valeur                                                                                            | SI with_prev_next_info='true' | Si with_prev_next_info='false' |
+|:------------------|:--------------------------------------------------------------------------------------------------|:-----------------------------:|:------------------------------:|
+| $CHAPO            | le chapo de la marque                                                                             |               ✅               |               ✅                |
+| $DESCRIPTION      | la description de la marque                                                                       |               ✅               |               ✅                |
+| $HAS_NEXT         | vrai si une marque existe après celle-ci, en suivant les positions des marques.                   |               ✅               |               🚫               |
+| $HAS_PREVIOUS     | vrai si une marque existe avant celle-ci en suivant les positions des marques                     |               ✅               |               🚫               |
+| $ID               | id de la marque                                                                                   |               ✅               |               ✅                |
+| $IS_TRANSLATED    | vérifie si la marque est traduite                                                                 |               ✅               |               ✅                |
+| $LOCALE           | la locale utilisée pour cette recherche                                                           |               ✅               |               ✅                |
+| $LOGO_IMAGE_ID    | ID de l'image du logo de la marque, parmi les images de la marque                                 |               ✅               |               ✅                |
+| $META_DESCRIPTION | la meta-description de la marque                                                                  |               ✅               |               ✅                |
+| $META_KEYWORDS    | la meta keywords de la marque                                                                     |               ✅               |               ✅                |
+| $META_TITLE       | la meta title de la marque                                                                        |               ✅               |               ✅                |
+| $NEXT             | l'ID de la marque suivante, en suivant les positions des marques, ou null s'il n'y en a aucune    |               ✅               |               🚫               |
+| $POSITION         | la position de la marque                                                                          |               ✅               |               ✅                |
+| $POSTSCRIPTUM     | le postscriptum de la marque                                                                      |               ✅               |               ✅                |
+| $PREVIOUS         | L'ID de la marque précédente, en suivant les positions des marques, ou null s'il n'y en a aucune. |               ✅               |               🚫               |
+| $TITLE            | le title de la marque                                                                             |               ✅               |               ✅                |
+| $URL              | l'URL de la marque                                                                                |               ✅               |               ✅                |
+| $VISIBLE          | vrai si la marque est visible, sinon faux                                                         |               ✅               |               ✅                |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#brand-order-possible-values}
+## Valeurs possibles de tri {#brand-order-possible-values}
 [Arguments](#brand-arguments)
 
-| Ascending value | Descending value  | Sorted fields                 |
-|-----------------|-------------------|:------------------------------|
-| alpha           | alpha-reverse     | title                         |
-| created         | created-reverse   | date of brand creation        |
-| id              | id-reverse        | ID order                      |
-| manual          | manual-reverse    | order position                |
-| random          |                   |                               |
-| updated         | updated-reverse   | order on date of brand update |
+| Valeur croissante | Valeur décroissante | Champs triés                  |
+|-------------------|---------------------|:------------------------------|
+| alpha             | alpha-reverse       | title                         |
+| created           | created-reverse     | date of brand creation        |
+| id                | id-reverse          | ID order                      |
+| manual            | manual-reverse      | order position                |
+| random            |                     |                               |
+| updated           | updated-reverse     | order on date of brand update |

@@ -2,39 +2,39 @@
 title: Payment
 ---
 
-payment loop displays payment modules information.   
+La boucle payment affiche les information concernant les modules de paiements.
 `{loop type="payment" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#payment-arguments}
 
-| Argument     | Description                                                                    | Default | Example                    |
-|--------------|:-------------------------------------------------------------------------------|:-------:|:---------------------------|
-| code         | A module code.                                                                 |         | code='Atos'                |
-| exclude      | A list of module IDs to exclude from the results                               |         | exclude="12,21"            |
-| exclude_code | A list of module codes to exclude from the results                             |         | exclude_code="Cheque,Atos" |
-| id           | A module id.                                                                   |         | module=4                   |
-| order        | A list of values see [sorting possible values](#payment-order-possible-values) | manual  | order=" id_reverse"        |
+| Argument     | Description                                                                        | Default | Exemple                    |
+|--------------|:-----------------------------------------------------------------------------------|:-------:|:---------------------------|
+| code         | Un code de module                                                                  |         | code='Atos'                |
+| exclude      | Une liste des IDs de module à exclure des résultats                                |         | exclude="12,21"            |
+| exclude_code | Une liste de codes de module à exclure des résultats                               |         | exclude_code="Cheque,Atos" |
+| id           | Un id de module                                                                    |         | module=4                   |
+| order        | Une liste de valeurs see [sorting possible values](#payment-order-possible-values) | manual  | order=" id_reverse"        |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable      | Value                                |
-|:--------------|:-------------------------------------|
-| $CHAPO        | the payment module short description |
-| $CODE         | the module code                      |
-| $DESCRIPTION  | the payment module description       |
-| $ID           | the payment module id                |
-| $POSTSCRIPTUM | the payment module postscriptum      |
-| $TITLE        | the payment module title             |
+| Variable      | Value                                 |
+|:--------------|:--------------------------------------|
+| $CHAPO        | le chapo du module de paiement        |
+| $CODE         | le code du module                     |
+| $DESCRIPTION  | la description du module de paiement  |
+| $ID           | l'id du module de paiement            |
+| $POSTSCRIPTUM | le postscriptum du module de paiement |
+| $TITLE        | le title du module de paiement        |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#payment-order-possible-values}
+## Valeurs possibles de tri {#payment-order-possible-values}
 [Arguments](#payment-arguments)
 
-| Ascending value | Descending value | Sorted fields |
-|-----------------|------------------|:--------------|
-| alpha           | alpha_reverse    | title         |
-| id              | id_reverse       | id            |
-| manual          | manual_reverse   | position      |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| alpha             | alpha_reverse       | title        |
+| id                | id_reverse          | id           |
+| manual            | manual_reverse      | position     |

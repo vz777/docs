@@ -2,51 +2,51 @@
 title: Module
 ---
 
-The module loop retrieve module informations   
+La boucle du module récupère les informations du module
 `{loop type="module" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#module-arguments}
 
-| Argument    | Description                                                                                                                                    | Default | Example                      |
-|-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:-----------------------------|
-| active      | A boolean value.                                                                                                                               |         | active="no"                  |
-| area        | A single or a list of area ids. Only modules assigned to this area will be returned.                                                           |         | area="5", profile="3,2,17"   |
-| code        | Module code                                                                                                                                    |         | code="Foo"                   |
-| exclude     | A single or a list of module ids to exclude.                                                                                                   |         | exclude="2", exclude="1,4,7" |
-| id          | A single or a list of module ids.                                                                                                              |         | id="2", id="1,4,7"           |
-| module_type | Module type (classic, payment or delivery) <br/> Expected values : <br/> 1 : classic module <br/> 2 : delivery module <br/> 3 : payment module |         | module_type="1"              |
-| order       | A list of values see [sorting possible values](#module-order-possible-values)                                                                  | manual  | order="alpha_reverse"        |
-| profile     | A single or a list of profile ids.                                                                                                             |         | profile="2", profile="1,4,7" |
+| Argument    | Description                                                                                                                                         | Defaut | Exemple                      |
+|-------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:------:|:-----------------------------|
+| active      | Booléen.                                                                                                                                            |        | active="no"                  |
+| area        | Un ou plusieurs ids de zones. Seuls les modules assignés à cette zone seront renvoyés.                                                              |        | area="5", profile="3,2,17"   |
+| code        | Module code                                                                                                                                         |        | code="Foo"                   |
+| exclude     | Un ou plusieurs ids de module à exclure.                                                                                                            |        | exclude="2", exclude="1,4,7" |
+| id          | Un ou plusieurs ids de module.                                                                                                                      |        | id="2", id="1,4,7"           |
+| module_type | Type de module (classic, payment or delivery) <br/> Valeurs attendues : <br/> 1 : classic module <br/> 2 : delivery module <br/> 3 : payment module |        | module_type="1"              |
+| order       | Une liste de valeurs see [sorting possible values](#module-order-possible-values)                                                                   | manual | order="alpha_reverse"        |
+| profile     | Un ou plusieurs ids de profile.                                                                                                                     |        | profile="2", profile="1,4,7" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable       | Value                                   |
-|:---------------|:----------------------------------------|
-| $ACTIVE        | check if the module is activated or not |
-| $CHAPO         | the module chapo                        |
-| $CLASS         | The full namespace for the module class |
-| $CODE          | The module code                         |
-| $DESCRIPTION   | the module description                  |
-| $ID            | the module ID                           |
-| $IS_TRANSLATED | return true if the module is translated |
-| $LOCALE        | The locale used for this research       |
-| $POSITION      | the position of this module             |
-| $POSTSCRIPTUM  | the module postscriptum                 |
-| $TITLE         | the module title                        |
-| $TYPE          | The module type                         |
+| Variable       | Value                                       |
+|:---------------|:--------------------------------------------|
+| $ACTIVE        | vérifie si le module est activé ou non      |
+| $CHAPO         | le chapo du module                          |
+| $CLASS         | le namespace complet de la classe du module |
+| $CODE          | le code du module                           |
+| $DESCRIPTION   | la description du module                    |
+| $ID            | l'ID du module                              |
+| $IS_TRANSLATED | renvoie true si le module est traduit       |
+| $LOCALE        | la locale utilisée pour cette recherche     |
+| $POSITION      | la position de ce module                    |
+| $POSTSCRIPTUM  | le postscriptum du module                   |
+| $TITLE         | le titre du module                          |
+| $TYPE          | le type du module                           |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#module-order-possible-values}
+## Valeurs possibles de tri {#module-order-possible-values}
 [Arguments](#module-arguments)
 
-| Ascending value | Descending value | Sorted fields  |
-|-----------------|------------------|:---------------|
-| code            | code_reverse     | code           |
-| enabled         | enabled_reverse  | enabled status |
-| id              | id_reverse       | Id             |
-| manual          | manual_reverse   | position       |
-| title           | title_reverse    | title          |
-| type            | type_reverse     | type           |
+| Valeur croissante | Valeur décroissante | Champs triés   |
+|-------------------|---------------------|:---------------|
+| code              | code_reverse        | code           |
+| enabled           | enabled_reverse     | enabled status |
+| id                | id_reverse          | Id             |
+| manual            | manual_reverse      | position       |
+| title             | title_reverse       | title          |
+| type              | type_reverse        | type           |

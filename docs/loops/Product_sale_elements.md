@@ -2,49 +2,50 @@
 title: Product sale elements
 ---
 
-Product sale elements loop lists product sale elements from your shop. You may need to use the attribute combination loop inside your product sale elements loop.   
+La boucle Product sale elements affiche les déclinaisons de produit de votre magasin.
+Vous devrez peut être utiliser la boucle attribute combination dans la boucle Product sale elements.
 `{loop type="product_sale_elements" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#pse-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| currency      | A currency id |              | currency="1" |
-| default       | A boolean value. If true, returns only the default product sale elements. If false, the default product sale element is not returned | | default="yes" |
-| id            | A comma separated list of product sale elements id. Mandatory if the 'product' parameter is not present | | id="1,3,8" |
-| new           | A boolean value. If true, returns only product sale elements for which promo is on. The reverse with 'false' | | new="yes" |
-| order         | A list of values see [sorting possible values](#pse-order-possible-values)  | random | order="promo,min_price" |
-| product       | A single product id. Mandatory if the 'id' parameter is not present  |  |  product="2" |
-| promo         | A boolean value. If true, returns only product sale elements for which new is on. The reverse with 'false'  |  |  promo="yes" |
-| visible       | A boolean value, or * (the default) for ignoring this filter  | * |  visible="no" |
+| Argument | Description                                                                                                                      | Default | Exemple                 |
+|----------|:---------------------------------------------------------------------------------------------------------------------------------|:-------:|:------------------------|
+| currency | Un ID de devise                                                                                                                  |         | currency="1"            |
+| default  | Booléen. Si true, renvoie uniquement les PSE du produit par défaut. Si false, le PSE par défaut n'est pas renvoyé                |         | default="yes"           |
+| id       | Une liste d'IDs de PSE séparés par des virgules. Obligatoire si le paramètre 'product' n'est pas présent                         |         | id="1,3,8"              |
+| new      | Booléen. Si true, renvoie uniquement les éléments de vente de produit pour lesquels new est activée. L'inverse avec 'false'      |         | new="yes"               |
+| order    | Une liste de valeurs see [sorting possible values](#pse-order-possible-values)                                                   | random  | order="promo,min_price" |
+| product  | Un id de produit unique.  Obligatoire si le paramètre 'id' n'est pas présent                                                     |         | product="2"             |
+| promo    | Booléen. Si true, renvoie uniquement les éléments de vente de produit pour lesquels la promo est activée. L'inverse avec 'false' |         | promo="yes"             |
+| visible  | Un booléen, ou * (la valeur par défaut) pour ignorer ce filtre                                                                   |    *    | visible="no"            |
 
-Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
 
-## Outputs
+## Sorties
 
-| Variable | Value
-| :------------- | :------------- |
-| $EAN_CODE	| the product sale element EAN Code |
-| $ID	| the product sale element id |
-| $IS_DEFAULT	| returns if the product sale element is the default product sale element for the product |
-| $IS_NEW	| returns if the product sale element is new |
-| $IS_PROMO	| returns if the product sale element is in promo |
-| $PRICE	| the product sale element price |
-| $PRICE_TAX	| the product sale element price tax |
-| $PRODUCT_ID	| the related product id |
-| $PROMO_PRICE	| the product sale element promo price |
-| $PROMO_PRICE_TAX	| the product sale element promo price tax |
-| $QUANTITY	| the product sale element stock quantity |
-| $REF	| the product sale element reference |
-| $TAXED_PRICE	| the product sale element taxed price |
-| $TAXED_PROMO_PRICE	| the product sale element taxed promo price |
-| $WEIGHT	| the product sale element weight |
+| Variable           | Value                                                         |
+|:-------------------|:--------------------------------------------------------------|
+| $EAN_CODE          | le code EAN de la déclinaison                                 |
+| $ID                | L'ID de la déclinaison                                        |
+| $IS_DEFAULT        | renvoi si la déclinaison est celle par défaut pour ce produit |
+| $IS_NEW            | renvoie si la déclinaison est new                             |
+| $IS_PROMO          | renvoie si la déclinaison est en promo                        |
+| $PRICE             | le prix de la déclinaison                                     |
+| $PRICE_TAX         | la taxe sur la déclinaison                                    |
+| $PRODUCT_ID        | l'id du produit associé                                       |
+| $PROMO_PRICE       | le prix en promo de la déclinaison                            |
+| $PROMO_PRICE_TAX   | la taxe sur le prix promo de la déclinaison                   |
+| $QUANTITY          | la quantité en stock de la déclinaison                        |
+| $REF               | la ref de la declinaison                                      |
+| $TAXED_PRICE       | le prix taxé de l'élément de vente de produit                 |
+| $TAXED_PROMO_PRICE | le prix en promo taxé de l'élément de vente de produit        |
+| $WEIGHT            | le poids de la déclinaison                                    |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Examples
+## Exemples
 
-I want to display all products sale elements for current product and show all the attribute combinations which matched it.   
+Je veux afficher tous les éléments de vente de produits pour le produit actuel et afficher toutes les combinaisons d'attributs qui correspondent.
 ```smarty
 {loop name="pse" type="product_sale_elements" product="$PRODUCT_ID"}
     <div>
@@ -65,16 +66,16 @@ I want to display all products sale elements for current product and show all th
 {/loop}
 ```
 
-## Order possible values {#pse-order-possible-values}
+## Valeurs possibles de tri {#pse-order-possible-values}
 [Arguments](#pse-arguments)
 
-| Ascending value | Descending value | Sorted fields                                                             |
-|-----------------|------------------|:--------------------------------------------------------------------------|
-| id              | id_reverse       | Id                                                                        |
-| max_price       | min_price        | Price                                                                     |
-| new             |                  | new products first                                                        |
-| promo           |                  | promo products first                                                      |
-| quantity        | quantity_reverse | quantity                                                                  |
-| random          |                  |                                                                           |
-| ref             | ref_reverse      |  reference                                                                |
-| weight          | weight_reverse   |  weight                                                                   |
+| Valeur croissante | Valeur décroissante | Champs triés         |
+|-------------------|---------------------|:---------------------|
+| id                | id_reverse          | Id                   |
+| max_price         | min_price           | Price                |
+| new               |                     | new products first   |
+| promo             |                     | promo products first |
+| quantity          | quantity_reverse    | quantity             |
+| random            |                     |                      |
+| ref               | ref_reverse         | reference            |
+| weight            | weight_reverse      | weight               |

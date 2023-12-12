@@ -1,26 +1,26 @@
-Product Substitutions provide current product, identified by `product_id` parameter (either GET or POST).    
+Les substitutions de produit fournissent des informations sur le produit actuel, identifié par le paramètre product_id (soit GET, soit POST).
 `{product attr="one_of_the_following"}`
 
-## Attributes
+## Attributs
 
-| Attribute name   | Data returned                                                                                          |
-|:-----------------|:-------------------------------------------------------------------------------------------------------|
-| `id`             | 	                                                                                                      |
-| `ref`            | 	                                                                                                      |
-| `title`          |                                                                                                        |
-| `chapo`          | 	                                                                                                      |
-| ` description `  | 	 	                                                                                                    |
-| ` postscriptum ` | 	 	 	                                                                                                  |
-| ` tax_rule_id `  | 	 	 	                                                                                                  |
-| ` brand_id `     | 	 	 	                                                                                                  |
-| ` visible `      | 	 	 	`true` if the product is active, `false` otherwise                                                |
-| ` parent `       | 	 	 	The id of default parent category                                                                 |
-| ` position `     | 	 	 	The position number in default parent category                                                    |
-| ` createdAt `    | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
-| ` updatedAt `    | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
+| Nom de l'attribut | Données renvoyées                                                                                       |
+|:------------------|:--------------------------------------------------------------------------------------------------------|
+| `id`              |                                                                                                         |
+| `ref`             |                                                                                                         |
+| `title`           |                                                                                                         |
+| `chapo`           |                                                                                                         |
+| ` description `   |                                                                                                         |
+| ` postscriptum `  |                                                                                                         |
+| ` tax_rule_id `   |                                                                                                         |
+| ` brand_id `      |                                                                                                         |
+| ` visible `       | `true` si le produit est actif, `false` sinon                                                           |
+| ` parent `        | L'ID de la catégorie parente par défaut                                                                 |
+| ` position `      | Le numéro de position dans la catégorie parente par défaut                                              |
+| ` createdAt `     | La date de création formatée par  [Date time parameter](#date-time-optional-parameters)                 |
+| ` updatedAt `     | La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters) |
 
-### Date Time optional parameters
-| Parameter | Description                                                                                                                                             |
-|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Take `date`, `datetime` or `time` as value to select the return type                                                                                    |
-| `format`  | Take a [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  the format for the current locale will be used if this parameter is empty |
+### Paramètres optionnels de date et d'heure
+| Paramètre | Description                                                                                                                                           |
+|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                   |
+| `format`  | Prend un [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

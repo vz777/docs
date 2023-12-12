@@ -1,24 +1,25 @@
-The postage Smarty block retrieves the postage amount of the current cart if it exists.
+Le bloc Smarty postage récupère le montant des frais de port du panier actuel s'il existe.
 
-The delivery country is choosen with the first available value :
-1. Either the country of the delivery address of the customer related to the cart if it exists
-2. Or the country saved in cookie if customer have changed the default country
-3. Or the default country for the shop if it exists
+Le pays de livraison est choisi avec la première valeur disponible :
 
-The function select the cheapest delivery for this country.
+1. Soit le pays de l'adresse de livraison du client liée au panier s'il existe
+2. Soit le pays enregistré dans le cookie si le client a changé le pays par défaut
+3. Soit le pays par défaut de la boutique s'il existe
 
-## Outputs
-Inside the postage block these variables are defined :
+La fonction sélectionne la livraison la moins chère pour ce pays.
 
-| Parameter name     | Description                                                                                                    |
-|:-------------------|:---------------------------------------------------------------------------------------------------------------|
-| `$country_id`      | The country id or `null`                                                                                       |
-| `$delivery_id`     | The delivery id or `null` 	 	                                                                                  |
-| `$postage`         | The postage amount or `0.0` 	 	 	                                                                              |
-| `$is_customizable` | Indicate if the postage can be customized. False When customer is signed and have a valid delivery address 	 	 |
+## Sorties
+À l'intérieur du bloc postage, ces variables sont définies :
+
+| Nom du paramètre   | Description                                                                                                                        |
+|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------|
+| `$country_id`      | L'ID du pays ou `null`                                                                                                             |
+| `$delivery_id`     | L'ID de la livraison ou `null`                                                                                                     |
+| `$postage`         | Le montant des frais de port ou  `0.0`                                                                                             |
+| `$is_customizable` | Indique si les frais de port peuvent être personnalisés. False lorsque le client est connecté et a une adresse de livraison valide |
 
 
-## An implementation for the default front office template
+## Une implémentation pour le modèle front office par défaut
 ```smarty
     <tbody>
         {postage}

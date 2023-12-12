@@ -2,22 +2,22 @@
 title: Authentification checker
 ---
 
-The Auth loop perform authorisation checks against the current user. This loop returns nothing if the authorization fails, or the loop contents if it succeeds.   
-You may check in the front office if an administrator is logged in, and perform specific functions in your front-office template (such as direct editing, for example).   
+La boucle Auth effectue des vérifications d'autorisation par rapport à l'utilisateur actuel. Cette boucle ne renvoie rien si l'autorisation échoue, ou le contenu de la boucle si elle réussit.
+Vous pouvez vérifier dans le front office si un administrateur est connecté et effectuer des fonctions spécifiques dans votre modèle de front office (comme l'édition directe, par exemple).
 `{loop type="auth" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#auth-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| access      | A comma separated list of access, . If empty or missing, the authorization is checked against the roles only <br/> [Expected values](#auth-access-possible-values) |  |  |
-| module       | A comma separated list of modules |  |  |
-| resource       | A comma separated list of resources |  |  |
-| role *       | A comma separated list of user roles |  |  role="ADMIN" or can be role="CUSTOMER" |
+| Argument | Description                                                                                                                                                                           | Defaut | Exemple                               |
+|----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------:|:--------------------------------------|
+| access   | Une liste séparée par des virgules, si elle est vide ou manquante, l'autorisation est vérifiée uniquement concernantg les rôles <br/> [Expected values](#auth-access-possible-values) |        |                                       |
+| module   | Une liste de modules séparée par des virgules                                                                                                                                         |        |                                       |
+| resource | Une liste de ressource séparée par des virgules                                                                                                                                       |        |                                       |
+| role *   | Une liste de rôles utilisateurs séparée par des virgules                                                                                                                              |        | role="ADMIN" ou sinon role="CUSTOMER" |
 
-## Examples
+## Exemples
 
-I want to check if current administrator is allowed tu use the back-office search function.
+Je veux vérifier si l'administrateur actuel est autorisé à utiliser la fonction de recherche du back-office.
 ```smarty
 {loop type="auth" name="can_create" role="ADMIN" resource="admin.administrator" access="CREATE"}
     <a title="{intl l='Create a new administrator'}" href="#administrator_create_dialog" data-toggle="modal">
@@ -26,7 +26,7 @@ I want to check if current administrator is allowed tu use the back-office searc
 {/loop}
 ```
 
-The role is ADMIN, which mean that the current user should have the "ADMIN" role. The permission is "admin.administrator", which is the identifier of the administrator permission. According to the access attribute, the current user should have the CREATE permission.
+Le rôle est ADMIN, ce qui signifie que l'utilisateur actuel doit avoir le rôle "ADMIN". L'autorisation est "admin.administrator", qui est l'identifiant de l'autorisation d'administrateur. Selon l'attribut d'accès, l'utilisateur actuel doit avoir l'autorisation CREATE.
 I want to check if the customer is logged in, or not.
 ```smarty
 {loop type="auth" name="customer_info_block" role="CUSTOMER"}

@@ -2,31 +2,29 @@
 title: Folder tree
 ---
 
-Folder tree loop, to get a folder tree from a given folder to a given depth.   
+La boucle Folder tree, pour obtenir une arborescence de dossiers d'un dossier donné à une profondeur donnée.
 `{loop type="folder-tree" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#folder-arguments}
 
-| Argument   | Description                                             | Default | Example             |
-|------------|:--------------------------------------------------------|:-------:|:--------------------|
-| depth      | The max depth                                           |         | example : depth="5" |
-| exclude    | A single or a list of folder ids to exclude for result. |         | exclude="5,72"      |
-| folder *   | A single folder id.                                     |         | folder="2"          |
-| return_url | A boolean value which allows the urls generation.       |   yes   | return_url="no"     |
-| visible    | Whatever we consider hidden folder or not.              |  true   | visible="false"     |
+| Argument   | Description                                                | Default | Exemple             |
+|------------|:-----------------------------------------------------------|:-------:|:--------------------|
+| depth      | La profondeur maximale.                                    |         | Exemple : depth="5" |
+| exclude    | Un ou plusieurs ids de catégories à exclure des résultats. |         | exclude="5,72"      |
+| folder *   | A single folder id.                                        |         | folder="2"          |
+| return_url | Booléen qui permet la génération d'URL.                    |   yes   | return_url="no"     |
+| visible    | Afficher ou non les dossiers masquées.                     |  true   | visible="false"     |
 
-Plus the [global arguments](./global_arguments)
+## Sorties
 
-## Outputs
+| Variable     | Value                            |
+|:-------------|:---------------------------------|
+| $CHILD_COUNT |                                  |
+| $ID          | l'id du dossier                  |
+| $LEVEL       |                                  |
+| $PARENT      | le dossier parent                |
+| $TITLE       | le titre du dossier              |
+| $URL         | l'URL du dossier                 |
+| $VISIBLE     | si le dossier est visible ou non |
 
-| Variable     | Value                                  |
-|:-------------|:---------------------------------------|
-| $CHILD_COUNT |                                        |
-| $ID          | the folder id                          |
-| $LEVEL       |                                        |
-| $PARENT      | the parent folder                      |
-| $TITLE       | the folder title                       |
-| $URL         | the folder URL                         |
-| $VISIBLE     | whatever the folder is visible or not  |
-
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

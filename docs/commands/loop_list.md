@@ -3,14 +3,14 @@ title: loop:list
 ---
 
 ## Description
-List all the loops of your Thelia the natives and these added by modules
+Lister toutes les boucles de votre Thelia les natives et celles ajoutées par les modules
 
 ## Usage
-```shell 
+```shell
 loop:list
 ```
 
-## Example
+## Exemple
 ```shell
 php Thelia loop:list
 ```

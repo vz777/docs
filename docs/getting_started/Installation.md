@@ -3,46 +3,47 @@ title: Installation
 sidebar_position: 1
 ---
 
-You need to follow the requirements and have composer installed.
-With this installation you can manage easily your Thelia version with composer, require new
-dependencies, etc.
+Vous devez suivre les prérequis et avoir Composer installé.
+Avec cette installation, vous pouvez gérer facilement votre version de Thelia avec Composer, installer de nouvelles
+dépendances, etc.
 
 :::info
 
-If you want to use **docker** please follow [this](./docker) way.
+Si vous souhaitez utiliser **docker**, veuillez suivre ceci [this](./docker).
 
 :::
 
-### Download the project
+### Téléchargez le projet
 ```
 composer create-project thelia/thelia-project YourProject 2.5.3
 ```
 
-### Launch the database installation
+### Lancez l'installation de la base de données
 
 ```bash
 cd YourProject
 php Thelia thelia:install
 ```
 
-That's all, your Thelia is now installed, but depending your web server you may need to do come configuration : 
-- Guide for [Apache](./apache_configuration)
-- Guide for [Nginx](./nginx_configuration)
+C'est tout, votre Thelia est maintenant installé. Cependant, selon votre serveur web, vous devrez peut-être effectuer quelques configurations :
+- Guide pour [Apache](./apache_configuration)
+- Guide pour [Nginx](./nginx_configuration)
 
 
-### Insert demo data
-Now if you want a demo data with fake but realistic products execute
+### Insérez des données de démo
+
+Maintenant, si vous souhaitez des données de démo avec des produits fictifs mais réalistes, exécutez
 
 ```bash
 php local/setup/import.php
 ```
 
-### Create an admin account
+### Créez un compte administrateur
 
 ```bash
 php Thelia admin:create
 ```
 
-### Require existing modules
-If you want to add a module made by our community you can browse [this](../../modules) list and execute the `composer require` command attached to it to download it.
-After that you can enable and disable the module in the modules pages in your store back-office.
+### Ajouter un module
+Si vous souhaitez ajouter un module créé par notre communauté, vous pouvez parcourir [this](../../modules) et exécuter la commande `composer require` qui y est associée pour le télécharger.
+Ensuite, vous pouvez activer et désactiver le module dans les pages des modules de votre back-office.

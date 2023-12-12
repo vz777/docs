@@ -2,33 +2,33 @@
 title: Category path
 ---
 
-Category path loop provides the path through the catalog to a given category. For example if we have an "alpha" category standing in an "alpha_father" category which itseflf belong to "root" category. Category path loop for category "alpha" will return "root" then "alpha_father" then "alpha".      
+La boucle Category path fournit le chemin dans le catalogue vers une catégorie donnée. Par exemple, si nous avons une catégorie "alpha" se trouvant dans une catégorie "alpha_père" qui appartient elle-même à la catégorie "racine". La boucle Chemin de catégorie pour la catégorie "alpha" renverra "racine", puis "alpha_père", puis "alpha".
 `{loop type="category-path" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| category *      | A single category id. |              | category="2" |
-| depth       | The max depth |  | depth="5" |
-| visible            | Whatever we consider hidden category or not. | true |  visible="false" |
+| Argument   | Description                              | Defaut | Exemple         |
+|------------|:-----------------------------------------|:------:|:----------------|
+| category * | L'id d'une seule categorie.              |        | category="2"    |
+| depth      | La profondeur maximale                   |        | depth="5"       |
+| visible    | afficher les catégories masquées ou non. |  true  | visible="false" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable       | Value               |
-| :------------- | :------------------ |
-| $ID	         | the category id     |
-| $PARENT	     | the parent category |
-| $TITLE	     | the category title  |
-| $URL	         | the category URL    |
+| Variable | Valeur                   |
+|:---------|:-------------------------|
+| $ID      | l'id de la catégorie     |
+| $PARENT  | la catégorie parente     |
+| $TITLE   | le titre de la catégorie |
+| $URL     | l'URL de la catégorie    |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Examples
+## Exemples
 
-I want to display a breadcrumb with parent categories.
+Je veux afficher un fil d'Ariane avec les catégories parentes.
 ```smarty
 <ul class="breadcrumb">
     {loop name="category_path" type="category-path" category="{category attr="id"}"}

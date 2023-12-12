@@ -2,47 +2,47 @@
 title: Feature value
 ---
 
-Feature value loop lists feature availabilities.   
+La boucle Feature value répertorie les valeurs de caractéristique a texte libre
 `{loop type="feature_value" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#feature-arguments}
 
-| Argument                     | Description                                                                             | Default | Example                                           |
-|------------------------------|:----------------------------------------------------------------------------------------|:-------:|:--------------------------------------------------|
-| exclude_feature_availability | A boolean value to return only features with feature availability (no personal value).  |         | feature_availability="true"                       |
-| exclude_free_text            | A boolean value to return only features with free text value (no feature availability). |         | exclude_free_text="1" or exclude_free_text="true" |
-| feature *                    | A single feature id.                                                                    |         | feature="2"                                       |
-| feature_availability         | A single or a list of feature availability ids.                                         |         | feature_availability="2,5"                        |
-| free_text                    | A single or a list of strings.                                                    |         | free_text="some text,some other text"             |
-| order                        | A list of values see [sorting possible values](#feature-order-possible-values)          | manual  | order="alpha_reverse"                             |
-| product                      | A single product id.                                |         | product="9"                                       |
+| Argument                     | Description                                                                                                      | Default | Exemple                                           |
+|------------------------------|:-----------------------------------------------------------------------------------------------------------------|:-------:|:--------------------------------------------------|
+| exclude_feature_availability | Booléen pour ne retourner que les caractéristiques avec une feature availability (pas de free text).             |         | feature_availability="true"                       |
+| exclude_free_text            | Booléen pour ne retourner que les caractéristiques avec une feature a texte libre (pas de feature availability). |         | exclude_free_text="1" or exclude_free_text="true" |
+| feature *                    | L'ID d'une seule caractéristique.                                                                                |         | feature="2"                                       |
+| feature_availability         | Un ou plusieurs ids feature availability.                                                                        |         | feature_availability="2,5"                        |
+| free_text                    | Une ou plusieurs chaînes.                                                                                        |         | free_text="some text,some other text"             |
+| order                        | Une liste de valeurs voir [sorting possible values](#feature-order-possible-values)                              | manual  | order="alpha_reverse"                             |
+| product                      | L'ID d'un seul produit.                                                                                          |         | product="9"                                       |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable         | Value                                                                                       |
-|:-----------------|:--------------------------------------------------------------------------------------------|
-| $CHAPO           | the feature value chapo                                                                     |
-| $DESCRIPTION     | the feature value description                                                               |
-| $FEATURE_AV_ID   | the feature av. ID. Null if the feature ha no feature av. Use FREE_TEXT_VALUE in this case. |
-| $FREE_TEXT_VALUE | 1 if this feature is free text, 0 otherwise. Deprecated in 2.4                              |
-| $ID              | the feature value id                                                                        |
-| $IS_FEATURE_AV   | 1 if this feature is feature av., 0 otherwise.                                              |
-| $IS_FREE_TEXT    | 1 if this feature is free text, 0 otherwise.                                                |
-| $LOCALE          | 	the locale of returned results                                                             |
-| $POSITION        | the feature value position                                                                  |
-| $POSTSCRIPTUM    | the feature availability postscriptum                                                       |
-| $PRODUCT         | the id of the product. Deprecated, please use $PRODUCT_ID instead                           |
-| $PRODUCT_ID      | (2.2) the id of the product                                                                 |
-| $TITLE           | the feature availability title, or the feature value text for free text features.           |
+| Variable         | Value                                                                                                          |
+|:-----------------|:---------------------------------------------------------------------------------------------------------------|
+| $CHAPO           | le chapo de la feature value                                                                                   |
+| $DESCRIPTION     | la description de la feature value                                                                             |
+| $FEATURE_AV_ID   | L'id de la feature av. Null si la caractéristique n'a pas de feature av. Utilisez FREE_TEXT_VALUE dans ce cas. |
+| $FREE_TEXT_VALUE | 1 si cette caractéristique est un free text, 0 sinon. Obsolète en 2.4                                          |
+| $ID              | l'id de la feature value                                                                                       |
+| $IS_FEATURE_AV   | 1 si cette caractéristique est une feature av, 0 sinon                                                         |
+| $IS_FREE_TEXT    | 1 si cette caractéristique est un free text, 0 sinon                                                           |
+| $LOCALE          | la locale des des résultats retournés                                                                          |
+| $POSITION        | la position de la feature value                                                                                |
+| $POSTSCRIPTUM    | le postscriptum de la feature value                                                                            |
+| $PRODUCT         | l'id du produit. Obsolète, veuillez utiliser $PRODUCT_ID à la place                                            |
+| $PRODUCT_ID      | (2.2) l'id du produit                                                                                          |
+| $TITLE           | Le titre de la feature av, ou le texte de la caractéristique pour les caractéristiques de type texte libre.    |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#feature-order-possible-values}
+## Valeurs possibles de tri {#feature-order-possible-values}
 [Arguments](#feature-arguments)
 
-| Ascending value | Descending value | Sorted fields |
-|-----------------|------------------|:--------------|
-| alpha           | alpha-reverse    | title         |
-| manual          | manual_reverse   | position      |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| alpha             | alpha-reverse       | title        |
+| manual            | manual_reverse      | position     |

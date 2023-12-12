@@ -2,37 +2,37 @@
 title: Area
 ---
 
-Area loop returns shipping zones information.   
+La boucle area renvoie des informations sur les zones de livraison.
 `{loop type="area" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#area-arguments}
 
-| Argument | Description | Default | Example |
+| Argument | Description | Default | Exemple |
 | ------------- |:-------------| :-------------: | :-------------|
-| country      | A list of country IDs. Only zones including these countries will be returned |              | |
-| id       | A single or a list of shipping zones ids. |  | id="2", id="1,4,7" |
-| module_id            | A comma separated list of module IDs. If not empty, only zones for the specified modules are returned. | | |
-| order            | A list of values <br/> [Expected values](#area-order-possible-values) | manual | order="alpha" |
-| unassigned            | If true, returns shipping zones not assigned to any delivery module. |  |  |
-| with_zone            | A module ID. Returns shipping zones which are assigned to this module ID |  |  |
-| without_zone            | A module ID. Returns shipping zones which are not assigned to this module ID |  |  |
+| country      | Une liste d'ids de pays. Seules les zones incluant ces pays seront renvoyées |              | |
+| id       | Un id de zone de livraison ou une liste d'ids de zones de livraison. |  | id="2", id="1,4,7" |
+| module_id            | Une liste d'ids de modules séparés par des virgules. Si elle n'est pas vide, seules les zones pour les modules spécifiés sont renvoyées. | | |
+| order            | 	Une liste de valeurs  <br/> [Expected values](#area-order-possible-values) | manual | order="alpha" |
+| unassigned            | Si vrai, renvoie les zones de livraison non attribuées à un module de livraison. |  |  |
+| with_zone            |	Un id de module. Renvoie les zones de livraison qui sont attribuées à cet id. |  |  |
+| without_zone            | Un id de module. Renvoie les zones de livraison qui ne sont pas attribuées à cet id de module. |  |  |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
 | Variable   | Value                                  |
 | :--------  | :------------------------------------- |
-| $ID	     | the shipping zone id                   |
-| $NAME	     | the accessory name                     |
+| $ID	     | l'id de la zone de livraison           |
+| $NAME	     | le nom de la zone de livraison         |
 | $POSTAGE	 |  |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#area-order-possible-values}
+## Valeurs possibles de tri {#area-order-possible-values}
 [Arguments](#area-arguments)
 
-| Ascending value | Descending value  | Sorted fields |
+| Valeur croissante | Valeur décroissante  | Champs triés |
 |-----------------|-------------------|:--------------|
 | alpha           | alpha-reverse     | title         |
 | id              | id-reverse        |  ID order     |

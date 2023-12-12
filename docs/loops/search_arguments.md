@@ -3,10 +3,10 @@ title: Search arguments
 sidebar_position: 2
 ---
 
-These arguments can be set on all loops that are searchable
+Ces arguments peuvent être définis sur toutes les boucles qui sont recherchables
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------:|-------------:|-------------:|
-| search_in  | A comma separated list of fields in which the search is performed. Possible values : ref, title, chapo, description, postscriptum. | | search_in="title" |
-| search_mode  | The search mode : `any_word` (search any word separeted by a space), `sentence` (the sentence, anywhere in the field) or `strict_sentence` (the exact sentence). | strict_sentence | search_mode="strict_sentence" |
-| search_term  | The term to search. | 0 | search_term="my product" |
+| Argument    |                                                                                        Description                                                                                        |          Defaut |                       Exemple |
+|-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|----------------:|------------------------------:|
+| search_in   |                 Une liste séparée par des virgules des champs dans lesquels la recherche est effectuée. Valeurs possibles : ref, title, chapo, description, postscriptum.                 |                 |             search_in="title" |
+| search_mode | Le mode de recherche :  : `any_word` (recherche de n'importe quel mot séparé par un espace), `sentence` (la phrase, n'importe où dans le champ) ou  `strict_sentence` (la phrase exacte). | strict_sentence | search_mode="strict_sentence" |
+| search_term |                                                                                  Le terme à rechercher.                                                                                   |               0 |      search_term="my product" |

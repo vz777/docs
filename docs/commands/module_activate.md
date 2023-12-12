@@ -3,7 +3,7 @@ title: module:activate
 ---
 
 ## Description
-Activate a module
+Activer un module
 
 ## Usage
 ```shell
@@ -11,15 +11,15 @@ module:activate [options] [--] <module>
 ```
 
 ## Arguments
-- `module`                    module to activate
+- `module`                    module à activer
 
 ## Options
-- `--with-dependencies`  activate module recursively
-- `-s`, `--silent`             Don't throw exception on error
+- `--with-dependencies`  Activer le module de manière récursive
+- `-s`, `--silent`             Ne lève pas d'exception en cas d'erreur
 
 
-## Example
-To activate silently TheliaLibrary module   
+## Exemple
+Pour activer silencieusement le module TheliaLibrary
 ```shell
 php Thelia module:activate -s TheliaLibrary
 ```

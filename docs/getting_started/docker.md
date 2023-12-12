@@ -3,23 +3,23 @@ title: Dockerize your Thelia
 sidebar_position: 6
 ---
 
-A docker configuration is provided in the repository of Thelia. It uses docker-compose. 
+Une configuration Docker est fournie dans le dépôt de Thelia. Elle utilise docker-compose.
 
-It requires obviously [docker](https://docker.com/) and [docker-compose](http://docs.docker.com/compose/)
+Elle nécessite évidemment [docker](https://docker.com/) et [docker-compose](http://docs.docker.com/compose/)
 
-## start the containers
+## Démarrer les conteneurs
 
-Simply run : 
+Exécutez simplement :
 
 ```
 docker-compose up -d
 ```
 
-tip : create an alias for docker-compose, it's boring to write it all the time
+Astuce : créez un alias pour docker-compose, c'est pénible de l'écrire à chaque fois
 
-## How to use it
+## Comment l'utiliser
 
-All the script are launched through docker. For examples : 
+Tous les scripts sont lancés via Docker. Par exemple :
 
 ```
 docker exec -it thelia_web_1 php Thelia cache:clear
@@ -28,20 +28,20 @@ docker exec -it thelia_web_1 unit-tests.sh
 docker exec -it thelia_web_1 php composer.phar install
 ```
 
-```thelia_web_1``` is the name of your main container. run ```docker-compose``` if your container name is different.
+```thelia_web_1``` est le nom de votre conteneur principal. Exécutez ```docker-compose``` si le nom de votre conteneur est différent.
 
-You can now use Thelia exactly as if you have all the php/apache/mysql stack installed on your machine. This configuration contains xdebug so you can also use the ste by step feature.
+Vous pouvez maintenant utiliser Thelia exactement comme si vous aviez toute la pile php/apache/mysql installée sur votre machine. Cette configuration contient xdebug, vous pouvez donc également utiliser la fonction pas à pas.
 
-## Database information
+## Informations sur la base de données
 
 * host : mariaDB
 * login : root
 * password : toor
 
 
-## How to change the configuration
+## Comment changer la configuration
 
-All the configuration can be customize for your own project. It uses the official [php image](https://hub.docker.com/_/php/) provided by docker so you can change the php version as you want.
-You can also install all the extension you want.
+Toute la configuration peut être personnalisée pour votre propre projet. Elle utilise l'image officielle de PHP [php image](https://hub.docker.com/_/php/) fournie par Docker, vous pouvez donc changer la version de PHP comme vous le souhaitez.
+Vous pouvez également installer toutes les extensions que vous souhaitez.
 
-Each time you modify the configuration, you have to rebuild the containers : ```docker-composer build --no-cache```
+Chaque fois que vous modifiez la configuration, vous devez reconstruire les conteneurs : ```docker-composer build --no-cache```

@@ -3,4 +3,4 @@ title: API
 sidebar_position: 12
 ---
 
-Coming soon, we are completely revamping our API, it will be based OpenApi specification and the ApiPlatform library.
+Prochainement, nous repensons entièrement notre API. Elle sera basée sur la spécification OpenAPI et la bibliothèque ApiPlatform.

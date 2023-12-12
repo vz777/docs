@@ -2,49 +2,49 @@
 title: Customer
 ---
 
-Customer loop displays customers information.   
+La boucle Customer affiche les informations sur les clients.
 `{loop type="customer" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#customer-arguments}
 
-| Argument            | Description                                                                                                                                         | Default  | Example                               |
-|---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:--------------------------------------|
-| current             | A boolean value which must be set to false if you need to display not authenticated customers information, typically if `sponsor` parameter is set. |   yes    | current="false"                       |                                                    |           | product="2"                 |
-| id                  | A single or a list of customers ids.                                                                                                                |          | id="2", id="1,4,7"                    |                                                                |         | is_enabled="true"                               |
-| order               | A list of values see [sorting possible values](#customer-order-possible-values)                                                                     | lastname | order="firstname, lastname"           |
-| ref                 | A single or a list of customer references.                                                                                                          |          | ref="1231231241", ref="123123,789789" |
-| reseller            | A boolean value.                                                                                                                                    |          | reseller="yes"                        |
-| sponsor             | The sponsor ID which you want the list of affiliated customers                                                                                      |          | sponsor="1"                           |
-| with_prev_next_info | A boolean. If set to true, $HAS_PREVIOUS, $HAS_NEXT, $PREVIOUS, and $NEXT output variables are available.                                           |  false   | with_prev_next_info="yes"             |
+| Argument            | Description                                                                                                                                                              |  Defaut  | Exemple                               |
+|---------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:--------------------------------------|
+| current             | Booléen qui doit être définie sur false si vous souhaitez afficher les informations sur les clients non authentifiés, généralement si le paramètre `sponsor` est défini. |   yes    | current="false"                       |
+| id                  | Un ou plusieurs IDs de client.                                                                                                                                           |          | id="2", id="1,4,7"                    |
+| order               | Une liste de valeurs voir [sorting possible values](#customer-order-possible-values)                                                                                     | lastname | order="firstname, lastname"           |
+| ref                 | Une ou plusieurs ref de client.                                                                                                                                          |          | ref="1231231241", ref="123123,789789" |
+| reseller            | Booléen.                                                                                                                                                                 |          | reseller="yes"                        |
+| sponsor             | L'identifiant du parrain pour lequel vous souhaitez la liste des clients affiliés.                                                                                       |          | sponsor="1"                           |
+| with_prev_next_info | Booléen, si vrai, les variables de sorties $HAS_PREVIOUS, $HAS_NEXT, $PREVIOUS, et $NEXT sont disponibles                                                                |  false   | with_prev_next_info="yes"             |
 
-Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
 
-## Outputs
+## Sorties
 
-| Variable            | Value                                                                                                                                                                           |
-|:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| $CONFIRMATION_TOKEN | the customer registration confirmation token, used when email confirmation of registration is enabled (see <strong>customer_email_confirmation</strong> configuration variable) |
-| $DISCOUNT           | the customer discount                                                                                                                                                           |
-| $EMAIL              | the customer email                                                                                                                                                              |
-| $FIRSTNAME          | the customer firstname                                                                                                                                                          |
-| $HAS_NEXT           | true if a customer exists after the current one, regarding the curent order. Only available if <strong>with_prev_next_info</strong> parameter is set to true                    |
-| $HAS_PREVIOUS       | true if a customer exists before the current one, regarding the curent order. Only available if <strong>with_prev_next_info</strong> parameter is set to true                   |
-| $ID                 | the customer id                                                                                                                                                                 |
-| $LASTNAME           | the customer lastname                                                                                                                                                           |
-| $NEWSLETTER         | true if the customer is registered in the newsletter table, false otherwise                                                                                                     |
-| $NEXT               | ID of the next customer, or null if non exists. Only available if <strong>with_prev_next_info</strong> parameter is set to true                                                 |
-| $PREVIOUS           | ID of the previous customer, or null if non exists. Only available if <strong>with_prev_next_info</strong> parameter is set to true                                             |
-| $REF                | the customer reference                                                                                                                                                          |
-| $RESELLER           | return if the customer is a reseller                                                                                                                                            |
-| $SPONSOR            | the customer sponsor which might be use in another   [customer loop](./Customer)                                                                                                |
-| $TITLE              | the customer title which might be use in [title loop](./Title)                                                                                                                  |
+| Variable            | Value                                                                                                                                                                                                |
+|:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| $CONFIRMATION_TOKEN | le jeton de confirmation d'inscription du client, utilisé lorsque la confirmation par e-mail de l'inscription est activée (voir <strong>customer_email_confirmation</strong> configuration variable) |
+| $DISCOUNT           | la remise client                                                                                                                                                                                     |
+| $EMAIL              | l'email du client                                                                                                                                                                                    |
+| $FIRSTNAME          | Le prénom du client                                                                                                                                                                                  |
+| $HAS_NEXT           | vrai si un client existe après le client actuel, en fonction de la commande actuelle. Disponible uniquement si le paramètre <strong>with_prev_next_info</strong> est défini sur true                 |
+| $HAS_PREVIOUS       | vrai si un client existe avant le client actuel, en fonction de la commande actuelle. Disponible uniquement si le paramètre <strong>with_prev_next_info</strong> est défini sur true                 |
+| $ID                 | l'id client                                                                                                                                                                                          |
+| $LASTNAME           | le nom du client                                                                                                                                                                                     |
+| $NEWSLETTER         | vrai si le client est inscrit à la newsletter, faux sinon                                                                                                                                            |
+| $NEXT               | ID du client suivant, ou null s'il n'existe pas. Disponible uniquement si le paramètre  <strong>with_prev_next_info</strong>  est défini sur true                                                    |
+| $PREVIOUS           | ID du client précédent, ou null s'il n'existe pas. Disponible uniquement si le paramètre  <strong>with_prev_next_info</strong> est défini sur true                                                   |
+| $REF                | la ref du client                                                                                                                                                                                     |
+| $RESELLER           | renvoie si le client est un revendeur                                                                                                                                                                |
+| $SPONSOR            | le parrain du client qui peut être utilisé dans [customer loop](./Customer)                                                                                                                          |
+| $TITLE              | le titre du client qui peut être utilisé dans une [title loop](./Title)                                                                                                                              |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#customer-order-possible-values}
+## Valeurs possibles de tri {#customer-order-possible-values}
 [Arguments](#customer-arguments)
 
-| Ascending value            | Descending value           | Sorted fields     |
+| Valeur croissante          | Valeur décroissante        | Champs triés      |
 |----------------------------|----------------------------|:------------------|
 | firstname                  | firstname_reverse          | firstname         |
 | id                         | id_reverse                 | ID                |

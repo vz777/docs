@@ -3,12 +3,11 @@ title: Commands
 sidebar_position: 11
 ---
 
-Commands use the helpfull console Symfony component. In your module you can define you own command that can be used
-with command CLI.
+Les commandes utilisent le très pratique, composant console de Symfony. Dans votre module, vous pouvez définir votre propre commande qui peut être utilisée avec la ligne de commande (CLI).
 
-To create a Command in Thelia just create a new class that extend `Thelia\Command\ContainerAwareCommand` and create these functions:
-- `configure()` to give a name and optionally a description and parameters
-- `execute()` where go the code to execute
+Pour créer une commande dans Thelia, créez simplement une nouvelle classe qui étend `Thelia\Command\ContainerAwareCommand` et créez ces fonctions :
+- `configure()` pour donner un nom et éventuellement une description et des paramètres
+- `execute()` où se trouve le code à exécuter
 
 ```php
 <?php
@@ -36,9 +35,9 @@ class HelloWorld extends ContainerAwareCommand
 }
 ```
 
-You can now test the results using Thelia CLI tools. Go to your Thelia root directory and use this command :
+Vous pouvez maintenant tester les résultats à l'aide des outils de ligne de commande Thelia. Allez dans le répertoire racine de votre Thelia et utilisez cette commande :
 ```shell
 php Thelia hello:world
 ```
 
-Thelia uses all the features of the Symfony “command” component, so you can refer to [this component documentation](https://symfony.com/doc/current/console.html#creating-a-command) to create your Thelia commands.
+Thelia utilise toutes les fonctionnalités du composant "command" de Symfony. Vous pouvez donc vous référer à,[this component documentation](https://symfony.com/doc/current/console.html#creating-a-command) pour créer vos commandes Thelia.

@@ -2,28 +2,28 @@
 title: Accessory
 ---
 
-The accessory loop lists products accessories. As an accessory is itself a product, this loop behaves like a product loop. Therefore you can use all [product loop](./product) arguments and outputs.   
+La boucle d'accessoire répertorie les accessoires des produits. Comme un accessoire est lui-même un produit, cette boucle se comporte comme une boucle de produit. Par conséquent, vous pouvez utiliser tous les arguments et les sorties de la [product loop](./product).
 `{loop type="accessory" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#pse-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| all [product loop](./product) arguments      |  |              | order="min_price", max_price="100" |
-| order       | A list of values <br/> [Expected values](#accessory-order-possible-values) | accessory | order="accessory,max_price" |
-| product \*            | A single product id. | | product="2" |
+| Argument                                | Description                                                                    |  Defaut   | Exemple                            |
+|-----------------------------------------|:-------------------------------------------------------------------------------|:---------:|:-----------------------------------|
+| all [product loop](./product) arguments |                                                                                |           | order="min_price", max_price="100" |
+| order                                   | Une liste de valeurs <br/> [Expected values](#accessory-order-possible-values) | accessory | order="accessory,max_price"        |
+| product \*                              | L'ID d'un seul produit.                                                        |           | product="2"                        |
 
-## Outputs
+## Paramètres de sorties
 
-| Variable                                                                      | Value                           |
-| :---------------------------------------------------------------------------  | :------------------------------ |
-| $ACCESSORY_ID	                                                                | The product ID of the accessory |
-| $ID	                                                                        | the accessory id                |
-| all [product loop](./product) outputs, except ID, which is the accessory ID	|                                 |
+| Variable                                                                                 | Value                         |
+|:-----------------------------------------------------------------------------------------|:------------------------------|
+| $ACCESSORY_ID                                                                            | Le product ID de l'accessoire |
+| $ID                                                                                      | l'ID de l'accessoire          |
+| toutes les sorties de la [product loop](./product) sauf ID, qui est l'ID de l'accessoire |                               |
 
-## Examples
+## Exemples
 
-I want to display all accessories which are in category 1, order by ascending price, for all products in category 2.
+Je veux afficher tous les accessoires qui sont dans la catégorie 1, triés par prix croissant, pour tous les produits de la catégorie 2.
 ```smarty
 <ul>
 {loop type="product" name="products_in_category_2" category="2"}
@@ -34,10 +34,10 @@ I want to display all accessories which are in category 1, order by ascending pr
 </ul>
 ```
 
-## Order possible values {#accessory-order-possible-values}
+## Valeurs possibles de tri {#accessory-order-possible-values}
 [Arguments](#pse-arguments)
 
-| Ascending value                      | Descending value  | Sorted fields |
-|--------------------------------------|-------------------|:--------------|
-| accessory                            | accessory_reverse | accessory     |
-| all [product loop](./product) orders |                   |               |
+| Valeur croissante                    | Valeur décroissante | Champs triés |
+|--------------------------------------|---------------------|:-------------|
+| accessory                            | accessory_reverse   | accessory    |
+| all [product loop](./product) orders |                     |              |

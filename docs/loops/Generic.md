@@ -2,29 +2,28 @@
 title: Generic
 ---
 
-Generic loop can return any table present in your database and configured with propel. This loop is often useful on your own module table because most of the Thelia table already have dedicated loop.     
-`{loop type="generic" name="the-loop-name" [argument="value"], [...]}`
+La boucle Generic peut renvoyer n'importe quelle table présente dans votre base de données et configurée avec Propel. Cette boucle est souvent utile sur votre propre table de module car la plupart des tables de Thelia ont déjà des boucles dédiées.`{loop type="generic" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#area-arguments}
 
-| Argument   | Description                                                                                                                     |            Default             | Example                             |
-|------------|:--------------------------------------------------------------------------------------------------------------------------------|:------------------------------:|:------------------------------------|
-| table_name | The table name you want query                                                                                                   |                                |                                     |
-| filters    | A single or a list of filters to apply on columns in this format <code>column_name:value1,value2&#124;other_column:value</code> |                                | filters="id:1,3&#124;visible:1"     |
-| order      | A single or a list of orders to apply on columns  in this format <code>column_name:DESC&#124;other_column:ASC</code>            |                                | order="id:DESC&#124;created_at:ASC" |
-| locale     | The locale for translated columns                                                                                               | The current locale for session |                                     |
+| Argument   | Description                                                                                                                         |             Default              | Exemple                             |
+|------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------:|:------------------------------------|
+| table_name | Le nom de la table que vous souhaitez interroger                                                                                    |                                  |                                     |
+| filters    | Un ou plusieurs filtres à appliquer sur les colonnes dans ce format  <code>column_name:value1,value2&#124;other_column:value</code> |                                  | filters="id:1,3&#124;visible:1"     |
+| order      | Une ou plusieurs valeurs de tri à appliquer sur les colonnes dans ce format  <code>column_name:DESC&#124;other_column:ASC</code>    |                                  | order="id:DESC&#124;created_at:ASC" |
+| locale     | La locale pour les colonnes traduites                                                                                               | La locale actuelle de la session |                                     |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-This loop will output every column of the selected table and the columns of i18n table associated if the table is translatable. The fields are in UPPERCASE.
+Cette boucle renverra chaque colonne de la table sélectionnée et les colonnes de la table i18n associée si la table est traduisible. Les champs sont en MAJUSCULES.
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Examples
+## Exemples
 
-I want to display all products visible and not virtual sorted by creation date (just for example, normally it is better to use a dedicated product loop)
+Je veux afficher tous les produits visibles et non virtuels triés par date de création (juste pour l'exemple, normalement il est préférable d'utiliser une boucle de produit dédiée)
 
 ```smarty
 <ul>
@@ -32,4 +31,4 @@ I want to display all products visible and not virtual sorted by creation date (
         <li>{$ID} {$TITLE} ({$REF})</li>
     {/loop}
 </ul>
-``` 
+```

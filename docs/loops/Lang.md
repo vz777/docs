@@ -2,47 +2,47 @@
 title: Lang
 ---
 
-Lang loop.   
+Boucle Lang.
 `{loop type="lang" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#lang-arguments}
 
-| Argument        | Description                                                                 |  Default  | Example                          |
-|-----------------|:----------------------------------------------------------------------------|:---------:|:---------------------------------|
-| code            | A single or list of lang code.                                              |           | code="fr", code="fr,en"          |
-| default_only    | returns only the default language                                           |   false   | default_only="true"              |
-| exclude         | A single or list of lang ids.                                               |           | exclude="2", exclude="1,3"       |
-| exclude_default | exclude the default language from results                                   |   false   | exclude_default="true"           |
-| id              | A single or list of lang ids.                                               |           | id="2"                           |
-| locale          | A single or list of lang locale.                                            |           | code="fr_FR", code="fr_FR,fr_CA" |
-| order           | A list of values see [sorting possible values](#lang-order-possible-values) | position  | order="alpha_reverse"            |
+| Argument        | Description                                                                      | Default  | Exemple                          |
+|-----------------|:---------------------------------------------------------------------------------|:--------:|:---------------------------------|
+| code            | Un ou plusieurs code de langue.                                                  |          | code="fr", code="fr,en"          |
+| default_only    | Retourne uniquement la langue par défaut.                                        |  false   | default_only="true"              |
+| exclude         | Un ou plusieurs ids de langue.                                                   |          | exclude="2", exclude="1,3"       |
+| exclude_default | Exclut la langue par défaut des résultats.                                       |  false   | exclude_default="true"           |
+| id              | Un ou plusieurs code de langue.                                                  |          | id="2"                           |
+| locale          | Une ou plusieurs locale.                                                         |          | code="fr_FR", code="fr_FR,fr_CA" |
+| order           | Une liste de valeurs voir [sorting possible values](#lang-order-possible-values) | position | order="alpha_reverse"            |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable             | Value                                                         |
-|:---------------------|:--------------------------------------------------------------|
-| $CODE                | lang code, example : fr                                       |
-| $DATE_FORMAT         | the lang date format                                          |
-| $DECIMAL_COUNT       | the number of digits after the decimal separator              |
-| $DECIMAL_SEPARATOR   | the lang decimal separator, such as , or .                    |
-| $ID                  | the order id                                                  |
-| $IS_DEFAULT          | check if the current result is the default one                |
-| $LOCALE              | lang locale, example : fr_FR                                  |
-| $POSITION            | lang position                                                 |
-| $THOUSANDS_SEPARATOR | the lang thousangs separator                                  |
-| $TIME_FORMAT         | the lang time format                                          |
-| $TITLE               | lang title                                                    |
-| $URL                 | the lang URL, only if a specific URL is defined for each lang |
+| Variable             | Value                                                                               |
+|:---------------------|:------------------------------------------------------------------------------------|
+| $CODE                | le code de la langue, Exemple : fr                                                  |
+| $DATE_FORMAT         | format de date de la langue                                                         |
+| $DECIMAL_COUNT       | le nombre de chiffres après le séparateur décimal                                   |
+| $DECIMAL_SEPARATOR   | le séparateur décimal de la langue, tel que , ou .                                  |
+| $ID                  | l'id de la langue                                                                   |
+| $IS_DEFAULT          | vérifie si le résultat actuel est la langue par défaut                              |
+| $LOCALE              | la locale, Exemple : fr_FR                                                          |
+| $POSITION            | la position de la langue                                                            |
+| $THOUSANDS_SEPARATOR | le séparateur de milliers de la langue                                              |
+| $TIME_FORMAT         | format de l'heure de la langue                                                      |
+| $TITLE               | le titre de la langue                                                               |
+| $URL                 | l'URL de la langue, uniquement si une URL spécifique est définie pour chaque langue |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#lang-order-possible-values}
+## Valeurs possibles de tri {#lang-order-possible-values}
 [Arguments](#lang-arguments)
 
-| Ascending value | Descending value  | Sorted fields |
-|-----------------|-------------------|:--------------|
-| alpha           | alpha_reverse     | title         |
-| id              | id_reverse        | Id            |
-| position        | position_reverse  | position      |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| alpha             | alpha_reverse       | title        |
+| id                | id_reverse          | Id           |
+| position          | position_reverse    | position     |

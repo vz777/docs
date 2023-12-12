@@ -3,13 +3,13 @@ title: module:refresh
 ---
 
 ## Description
-Refresh modules list and apply update function if needed
+Actualise la liste des modules et applique la fonction de mise à jour si nécessaire
 
 ## Usage
 ```shell
 module:refresh
 ```
 
-## Example
+## Exemple
 ```shell
 php Thelia module:refresh

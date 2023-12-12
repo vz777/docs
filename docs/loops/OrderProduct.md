@@ -2,52 +2,52 @@
 title: Order product
 ---
 
-Order product loop displays Order products information.   
+La boucle de produits de commande affiche des informations sur les produits des commandes.
 `{loop type="order_product" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#order-arguments}
 
-| Argument | Description                              | Default | Example            |
-|----------|:-----------------------------------------|:-------:|:-------------------|
-| id       | A single or a list of order product ids. |         | id="2", id="1,4,7" |
-| order *  | A single order id.                       |         | order="2"          |
-| virtual  | A boolean value.                         |         | new="yes"          |
+| Argument | Description                                | Default | Exemple            |
+|----------|:-------------------------------------------|:-------:|:-------------------|
+| id       | Un ou plusieurs ids de produits commandés. |         | id="2", id="1,4,7" |
+| order *  | L'ID d'une seule commande                  |         | order="2"          |
+| virtual  | Booléen.                                   |         | new="yes"          |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable                   | Value                                                          |
-|:---------------------------|:---------------------------------------------------------------|
-| $CART_ITEM_ID              | The related Cart Item ID of this order product                 |
-| $CHAPO                     | the order product short description                            |
-| $DESCRIPTION               | the order product description                                  |
-| $EAN_CODE                  | the product ean code                                           |
-| $ID                        | the order product id                                           |
-| $PRODUCT_ID                | the product id                                           |
-| $PARENT                    | the parent product in the cart, if the current product has one |
-| $POSTSCRIPTUM              | the order product postscriptum                                 |
-| $PRICE                     | the order product price (unit price)                           |
-| $PRICE_TAX                 | the order product taxes (unit price)                           |
-| $PRODUCT_SALE_ELEMENTS_ID  | the order product sale elements id                      |
-| $PRODUCT_SALE_ELEMENTS_REF | the order product sale elements reference                      |
-| $PROMO_PRICE               | the order product in promo price (unit price)                  |
-| $PROMO_PRICE_TAX           | the order product in promo price taxes (unit price)            |
-| $QUANTITY                  | the order product ordered quantity                             |
-| $REF                       | the order product reference                                    |
-| $TAXED_PRICE               | the order product price including taxes (unit price)           |
-| $TAXED_PROMO_PRICE         | the order product in promo price including taxes (unit price)  |
-| $TAX_RULE_DESCRIPTION      | the tax rule description for this item                         |
-| $TAX_RULE_TITLE            | the tax rule title for this item                               |
-| $TITLE                     | the order product title                                        |
-| $TOTAL_PRICE               | the order product price (total price)                          |
-| $TOTAL_PROMO_PRICE         | the order product in promo price (total price)                 |
-| $TOTAL_TAXED_PRICE         | the order product price including taxes (total price)          |
-| $TOTAL_TAXED_PROMO_PRICE   | the order product in promo price including taxes (total price) |
-| $VIRTUAL                   | whatever the order product is a virtual product or not         |
-| $VIRTUAL_DOCUMENT          | the name of the file if the product is virtual.                |
-| $WAS_IN_PROMO              | whatever the order product sale elements was in promo or not   |
-| $WAS_NEW                   | whatever the order product sale elements was new or not        |
-| $WEIGHT                    | the order product sale elements weight                         |
+| Variable                   | Value                                                                    |
+|:---------------------------|:-------------------------------------------------------------------------|
+| $CART_ITEM_ID              | L'ID de Cart Item associé à ce produit de commande                       |
+| $CHAPO                     | le chapo du produit                                                      |
+| $DESCRIPTION               | la description du produit commandé                                       |
+| $EAN_CODE                  | le code EAN du produit commandé                                          |
+| $ID                        | l'id du produit commandé                                                 |
+| $PRODUCT_ID                | le product id du produit                                                 |
+| $PARENT                    | le produit parent dans le panier, s'il y en a un                         |
+| $POSTSCRIPTUM              | le postscriptum du produit                                               |
+| $PRICE                     | le prix du produit (prix unitaire)                                       |
+| $PRICE_TAX                 | les taxes du produit (prix unitaire)                                     |
+| $PRODUCT_SALE_ELEMENTS_ID  | l'ID de la déclinaison (PSE) du produit                                  |
+| $PRODUCT_SALE_ELEMENTS_REF | la ref de la déclinaison (PSE) du produit                                |
+| $PROMO_PRICE               | le prix du produit en promo (prix unitaire)                              |
+| $PROMO_PRICE_TAX           | le prix du produit avec les taxes (prix unitaire)                        |
+| $QUANTITY                  | la quantité du produit commandée                                         |
+| $REF                       | la ref du produit commandé                                               |
+| $TAXED_PRICE               | le prix du produit incluant les taxes (prix unitaire)                    |
+| $TAXED_PROMO_PRICE         | le prix du produit en promo incluant les taxes (prix unitaire)           |
+| $TAX_RULE_DESCRIPTION      | la description de la règle de taxes pour cet article                     |
+| $TAX_RULE_TITLE            | la titre de la règle de taxes pour cet article                           |
+| $TITLE                     | le titre du produit                                                      |
+| $TOTAL_PRICE               | le prix total du produit (prix total)                                    |
+| $TOTAL_PROMO_PRICE         | le prix total du produit en promo (prix total)                           |
+| $TOTAL_TAXED_PRICE         | le prix total du produit incluant les taxes (prix total)                 |
+| $TOTAL_TAXED_PROMO_PRICE   | le prix total du produit incluant les taxes (prix total)                 |
+| $VIRTUAL                   | indique si le produit de commande est virtuel ou non                     |
+| $VIRTUAL_DOCUMENT          | le nom du fichier si le produit est virtuel.                             |
+| $WAS_IN_PROMO              | indique si les déclinaisons (PSE) du produit étaient en promotion ou non |
+| $WAS_NEW                   | indique si les déclinaisons (PSE) du produit étaient nouveaux ou non     |
+| $WEIGHT                    | le poids des déclinaisons (PSE) du produit                               |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

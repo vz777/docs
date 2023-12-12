@@ -2,12 +2,13 @@
 title: Loops
 ---
 
-Loops are the most convenient feature in Thelia for front developers.     
-Loops allow to get data from your shop back-end and display them in your front view. In Thelia loops are a Smarty plugin.
+Les boucles sont la fonctionnalité la plus pratique dans Thelia pour les développeurs front-end. Les boucles permettent d'obtenir des données depuis votre back-office de boutique et de les afficher dans votre vue frontale. Dans Thelia, les boucles sont un plugin Smarty.
 
-### Classic loop
 
-Here is a piece of html code which intends to list 4 random products from your shop.
+
+### Boucle classique
+
+Voici un extrait de code HTML qui a l'intention de répertorier 4 produits aléatoires de votre boutique.
 
 ```html
 <div>
@@ -33,11 +34,11 @@ Here is a piece of html code which intends to list 4 random products from your s
     </div>
 </div>
 ```
-    
 
-How to make this piece of code dynamic ? Gathering the products you set up in your Thelia back-office ?
 
-Just use a Thelia product loop :
+Comment rendre ce morceau de code dynamique ? Rassembler les produits que vous avez configurés dans votre back-office Thelia ?
+
+Il suffit d'utiliser une boucle de produits Thelia :
 
 ```smarty
 <div>
@@ -56,11 +57,11 @@ Just use a Thelia product loop :
     {/loop}
 </div>
 ```
-    
 
-And what if you want only the products you tagged as new ? And which are from category 3 and 5 ? And whose price is at least 100 € ?
 
-No problem ! Here you are :
+Et si vous ne voulez que les produits que vous avez étiquetés comme nouveaux ? Et qui sont de la catégorie 3 et 5 ? Et dont le prix est d'au moins 100 € ?
+
+Pas de problème ! Voici comment faire :
 
 ```smarty
 <div>
@@ -72,7 +73,7 @@ No problem ! Here you are :
 </div>
 ```
 
-You can of course use a loop into another loop and pass a loop output to another loop parameter
+Vous pouvez bien sûr utiliser une boucle dans une autre boucle et transmettre la sortie d'une boucle à un autre paramètre de boucle.
 
 ```smarty
 <div>
@@ -87,15 +88,15 @@ You can of course use a loop into another loop and pass a loop output to another
 </div>
 ```
 
-Thelia  provides a lot of loop types. You can see all the loops and their parameters / outputs in the <strong>Loops</strong> sidebar menu.
+Thelia propose de nombreux types de boucles. Vous pouvez voir toutes les boucles et leurs paramètres / sorties dans le menu latéral <strong>Loops</strong>.
 
-### Conditional loop
+### Boucle conditionnelle
 
-Conditional loops are used to define a different behaviour depending on whether a classic loop displays something or not.
+Les boucles conditionnelles sont utilisées pour définir un comportement différent en fonction de la manière dont une boucle classique affiche quelque chose ou non.
 
-A conditional loop is therefore linked to a classic loop using the ```rel``` attribute which must match a classic loop ```name``` attribute.
+Une boucle conditionnelle est donc liée à une boucle classique à l'aide de l'attribut ```rel```, qui doit correspondre à l'attribut ```name``` d'une boucle classique.
 
-For example, you want to display all the associated content of a product in an unorder list (ul). If the product has no associated contents you won't display empty ```<ul></ul>```. And you want a message to inform there is no available content. You can use a conditional loop to do this.
+Par exemple, vous voulez afficher tout le contenu associé d'un produit dans une liste non ordonnée (ul). Si le produit n'a pas de contenu associé, vous ne souhaitez pas afficher de ```<ul></ul>``` vide. Et vous voulez un message pour indiquer qu'il n'y a pas de contenu disponible. Vous pouvez utiliser une boucle conditionnelle pour cela.
 
 ```smarty
 {ifloop rel="my_associated_content_loop"}
@@ -114,15 +115,15 @@ For example, you want to display all the associated content of a product in an u
 ```
 &nbsp;
 
-### Page loop
+### Boucle de page
 
-Page loops can be use on any classic loop which has ```page``` parameter. Page loops list all the pages the classic loop needs to display all it's returns.
+Les boucles de page peuvent être utilisées sur n'importe quelle boucle classique qui a le paramètre ```page```. Les boucles de page répertorient toutes les pages nécessaires à la boucle classique pour afficher tous ses résultats.
 
-A page loop is therefore linked to a classic loop using the ```rel``` attribute which must match a classic loop ```name``` attribute.
+Une boucle de page est donc liée à une boucle classique à l'aide de l'attribut ```rel```, qui doit correspondre à l'attribut ```name``` d'une boucle classique.
 
-By default, 10 pages are displayed. You can change this value using ```limit``` parameter.
+Par défaut, 10 pages sont affichées. Vous pouvez modifier cette valeur à l'aide du paramètre ```limit```.
 
-List of output parameters :
+Liste des paramètres de sortie :
 
 <div class="table-responsive">
     <table class="table table-striped table-bordered">
@@ -208,25 +209,25 @@ List of output parameters :
 </div>
 ```
 
-## Implement your loops
+## Implémenter vos boucles
 
-Your loop can be anywhere (Thanks to namespace) in your module, but it's better to create a Loop directory and put all your loops in this directory.
+Votre boucle peut être n'importe où (grâce à l'espace de noms) dans votre module, mais il est préférable de créer un répertoire Loop et d'y mettre toutes vos boucles.
 
-The only thing to do is create a new class that to extend the `Thelia\Core\Template\Element\BaseLoop` class and implement one of these interfaces :     
-- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)     
-- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).     
+La seule chose à faire est de créer une nouvelle classe qui étend la classe `Thelia\Core\Template\Element\BaseLoop` et d'implémenter l'une de ces interfaces :
+- `Thelia\Core\Template\Element\ArraySearchLoopInterface` for an [Array loop](#array-loop)
+- `Thelia\Core\Template\Element\PropelSearchLoopInterface` for a [Propel loop](#propel-loop).
 
-NB : Instead of `BaseLoop` you can also extend `BaseI18nLoop`. This will provide tools to manage i18n in your loop.
+NB : Au lieu de `BaseLoop` vous pouvez étendre `BaseI18nLoop`. Cela fournira des outils pour gérer l'internationalisation dans votre boucle.
 
-The type of your loop will be the class name in snake_case for example the `type` of `MyLoop.php` will be `my_loop`  
-So to call it in template `{loop type="my_loop" name="a_loop_name"}{/loop}`
+Le type de votre boucle sera le nom de classe en snake_case. Par exemple, le `type` de `MyLoop.php` sera `my_loop`
+Ainsi, pour l'appeler dans le template : `{loop type="my_loop" name="a_loop_name"}{/loop}`
 
-## Array loop
-If data in your loop doesn't come directly from a model, use an array loop.   
-3 functions must be implemented :
-- `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
-- `buildArray` who gather the data for the defined parameters
-- `parseResults` to assign data to smarty variables for each loop iteration
+## Boucle de tableau
+Si les données de votre boucle ne proviennent pas directement d'un model, utilisez une boucle de tableau.
+Trois fonctions doivent être implémentées :
+- `getArgDefinitions` pour décrire quels [arguments](#argument-types) sont disponibles pour votre boucle
+- `buildArray` qui rassemble les données pour les paramètres définis
+- `parseResults` pour attribuer des données à des variables Smarty pour chaque itération de boucle
 ```php
  <?php
  namespace MyModule\Loop;
@@ -279,7 +280,7 @@ If data in your loop doesn't come directly from a model, use an array loop.
              // Create a new result
              $loopResultRow = new LoopResultRow();
 
-             // Assign variable that will be accessible in smarty by $CURRENT_NUMBER for example
+             // Assign variable that will be accessible in smarty by $CURRENT_NUMBER for Exemple
              $loopResultRow->set("CURRENT_NUMBER", $item['number']);
              $loopResultRow->set("NEXT_NUMBER", $item['numberNext']);
 
@@ -292,12 +293,12 @@ If data in your loop doesn't come directly from a model, use an array loop.
  }
 ```
 
-## Propel loop
-If data in your loop comes directly from a model, use a Propel loop.   
-3 functions must be implemented :
-- `getArgDefinitions` to describe what [arguments](#argument-types) are available for your loop
-- `buildModelCriteria` who build a Propel query to execute
-- `parseResults` to assign data to smarty variables for each loop iteration
+## Boucle Propel
+Si les données de votre boucle proviennent directement d'un model, utilisez une boucle Propel.
+Trois fonctions doivent être implémentées :
+- `getArgDefinitions` pour décrire quels [arguments](#argument-types) sont disponibles pour votre boucle
+- `buildModelCriteria` qui construit une requête Propel à exécuter
+- `parseResults` pour attribuer des données à des variables Smarty pour chaque itération de boucle
 ```php
 <?php
 namespace Thelia\Core\Template\Loop;
@@ -350,8 +351,8 @@ class Admin extends BaseLoop implements PropelSearchLoopInterface
         foreach ($loopResult->getResultDataCollection() as $admin) {
              // Create a new result
             $loopResultRow = new LoopResultRow($admin);
-            
-             // Assign variable that will be accessible in smarty by $PROFILE for example
+
+             // Assign variable that will be accessible in smarty by $PROFILE for Exemple
             $loopResultRow->set('ID', $admin->getId())
                 ->set('PROFILE', $admin->getProfileId())
                 ->set('FIRSTNAME', $admin->getFirstname())
@@ -371,41 +372,41 @@ class Admin extends BaseLoop implements PropelSearchLoopInterface
 }
 ```
 
-## Argument types
-In `Argument` class you have multiple static function that will help you to specify which argument is expected
+## Types d'arguments
+Dans la classe `Argument`, vous avez plusieurs fonctions statiques qui vous aideront à spécifier le type d'argument attendu.
 
-| function                               | argument accepted                                    |
-|:---------------------------------------|:-----------------------------------------------------|
-| createAnyTypeArgument()              | Anything                                             |
-| createIntTypeArgument()              | Only an integer                                      |
-| createFloatTypeArgument()            | Only a float                                         |
-| createBooleanTypeArgument()          | Only a boolean                                       |
-| createBooleanOrBothTypeArgument()    | A boolean or "*" for both                            |
-| createIntListTypeArgument()          | A list of integers separated by a comma              |
-| createAnyListTypeArgument()          | A list of anythings separated by a comma             |
-| createAlphaNumStringTypeArgument()   | An alpha numeric string                              |
-| createAlphaNumStringListTypeArgument() | A list of alpha numeric strings separated by a comma |
+| function                               | argument accepted                                             |
+|:---------------------------------------|:--------------------------------------------------------------|
+| createAnyTypeArgument()                | N'importe quoi                                                |
+| createIntTypeArgument()                | Seulement un int                                              |
+| createFloatTypeArgument()              | Seulement un float                                            |
+| createBooleanTypeArgument()            | Seulement un booléen                                          |
+| createBooleanOrBothTypeArgument()      | Un booléen ou "*" pour les deux                               |
+| createIntListTypeArgument()            | Une liste d'int séparés par une virgule                       |
+| createAnyListTypeArgument()            | Une liste de n'importe quoi séparée par une virgule           |
+| createAlphaNumStringTypeArgument()     | Une chaîne alphanumérique                                     |
+| createAlphaNumStringListTypeArgument() | Une liste de chaînes alphanumériques séparées par une virgule |
 
 ## Options
-Baseloop class declares 3 public properties you might overload in your new loop.
+La classe BaseLoop déclare 3 propriétés publiques que vous pouvez surcharger dans votre nouvelle boucle.
 
 ```php
 public $countable = true;
 public $timestampable = false;
 ```
 
-With these properties set to true, the loop will automatically render - or not - the following outputs :
+Avec ces propriétés définies sur true, la boucle rendra automatiquement - ou non - les Sorties suivantes :
 
 ```php
 if($countable === true)
 ```
 
-* `LOOP_COUNT` The current iteration number (start from 1) 
-* `LOOP_TOTAL` Total of elements in current loop
+* `LOOP_COUNT` Le numéro d'itération actuel (commence à partir de 1)
+* `LOOP_TOTAL` Total des éléments dans la boucle actuelle
 
 ```php
 if($timestampable === true) //available if your table is timestampable
 ```
 
-* `CREATE_DATE`  Date of creation
-* `UPDATE_DATE`  Date of last update
+* `CREATE_DATE`  Date de création
+* `UPDATE_DATE`  Date de la dernière mise à jour

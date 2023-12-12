@@ -2,41 +2,41 @@
 title: Import
 ---
 
-Import loop lists all defined imports.   
+La boucle Import répertorie toutes les importations définies.
 `{loop type="import" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#import-arguments}
 
-| Argument | Description                                                                   | Default | Example                                                                 |
-|----------|:------------------------------------------------------------------------------|:-------:|:------------------------------------------------------------------------|
-| category | A single or a list of import category ids.                                    |         | category="2", category="1,4"                                            |
-| id       | A single or a list of import ids.                                             |         | id="2", id="1,4,7"                                                      |
-| order    | A list of values see [sorting possible values](#import-order-possible-values) | manual  | order="alpha"                                                           |
-| ref      | A single or a list of import references.                                      |         | ref="thelia.import.price", id="thelia.import.price,thelia.import.stock" |
+| Argument | Description                                                                        | Default | Exemple                                                                 |
+|----------|:-----------------------------------------------------------------------------------|:-------:|:------------------------------------------------------------------------|
+| category | Un ou plusieurs ids de categorie d'import.                                         |         | category="2", category="1,4"                                            |
+| id       | Un ou plusieurs ids d'import.                                                      |         | id="2", id="1,4,7"                                                      |
+| order    | Une liste de valeurs voir [sorting possible values](#import-order-possible-values) | manual  | order="alpha"                                                           |
+| ref      | Un ou plusieurs refs d'import.                                                     |         | ref="thelia.import.price", id="thelia.import.price,thelia.import.stock" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable      | Value                                                              |
-|:--------------|:-------------------------------------------------------------------|
-| $CATEGORY_ID  | the import category id                                             |
-| $DESCRIPTION  | the import description                                             |
-| $HANDLE_CLASS | The fully qualified name of the class which implements this import |
-| $ID           | the import id                                                      |
-| $POSITION     | the import position in the containing category                     |
-| $REF          | The import reference, as defined in a config.xml file              |
-| $TITLE        | The import title                                                   |
-| $URL          | the URL to start this import in the admin import page              |
+| Variable      | Value                                                                     |
+|:--------------|:--------------------------------------------------------------------------|
+| $CATEGORY_ID  | l'id de la catégorie de l'import                                          |
+| $DESCRIPTION  | la description de l'importation                                           |
+| $HANDLE_CLASS | Le nom entièrement qualifié de la classe qui implémente cette importation |
+| $ID           | l'id de l'importation                                                     |
+| $POSITION     | la position de l'importation dans sa catégorie                            |
+| $REF          | La ref d'importation, telle que définie dans un fichier config.xml        |
+| $TITLE        | le titre de l'importation                                                 |
+| $URL          | l'URL pour démarrer cette importation dans la page d'importation d'admin  |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#import-order-possible-values}
+## Valeurs possibles de tri {#import-order-possible-values}
 [Arguments](#import-arguments)
 
-| Ascending value | Descending value | Sorted fields |
-|-----------------|------------------|:--------------|
-| alpha           | alpha_reverse    | title         |
-| id              | id_reverse       | Id            |
-| manual          | manual_reverse   | position      |
-| ref             | ref_reverse      | reference     |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| alpha             | alpha_reverse       | title        |
+| id                | id_reverse          | Id           |
+| manual            | manual_reverse      | position     |
+| ref               | ref_reverse         | reference    |

@@ -2,31 +2,31 @@
 title: Associated content
 ---
 
-Associated content loop lists associated contents of a product or a category. It behaves like a content loop therefore you might use all [content loop](./Content) arguments and outputs.   
+La boucle Associated content répertorie les contenus associés à un produit ou à une catégorie. Elle se comporte comme une boucle de contenu, vous pouvez donc utiliser tous les arguments et sorties de [content loop](./Content).
 `{loop type="associated_content" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#ass-content-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| all [content loop](./Content) arguments      |  |              | exclude_folder="1,2,9" |
-| category \*\*      | A single category id. | | category="5" |
-| exclude_category   | A single or a list of category ids. If a content is in multiple categories which are not all excluded it will not be excluded. | | exclude_category="5" |
-| exclude_product   | A single or a list of product ids. If a content is in multiple products which are not all excluded it will not be excluded. | | exclude_product="5"|
-| order       | A list of values <br/> [Expected values](#ass-content-order-possible-values) | associated_content | order="associated_content" |
-| product \*\*       | A single product id. | | product="2" |
+| Argument                                     | Description                                                                                                                                  |       Defaut       | Exemple                    |
+|----------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|:------------------:|:---------------------------|
+| tous les [content loop](./Content) arguments |                                                                                                                                              |                    | exclude_folder="1,2,9"     |
+| category \*\*                                | L'id d'une seule category.                                                                                                                   |                    | category="5"               |
+| exclude_category                             | Un ou plusieurs ids de catégories. Si un contenu est présent dans plusieurs catégories qui ne sont pas toutes exclues, il ne sera pas exclu. |                    | exclude_category="5"       |
+| exclude_product                              | Un ou plusieurs ids de produits. Si un contenu est présent dans plusieurs produits qui ne sont pas tous exclus, il ne sera pas exclu.        |                    | exclude_product="5"        |
+| order                                        | Une liste de valeurs <br/> [Expected values](#ass-content-order-possible-values)                                                             | associated_content | order="associated_content" |
+| product \*\*                                 | L'ID d'un seul produit.                                                                                                                      |                    | product="2"                |
 
-## Outputs
+## Sorties
 
-| Variable                                                                           | Value                           |
-| :--------------------------------------------------------------------------------  | :------------------------------ |
-| $CONTENT_ID	                                                                     | the associated content id       |
-| all [content loop](./Content) outputs, except ID, which is the ID of the relation. |                                 |
+| Variable                                                                              | Value                   |
+|:--------------------------------------------------------------------------------------|:------------------------|
+| $CONTENT_ID                                                                           | l'id du contenu associé |
+| toutes les sorties de [content loop](./Content) sauf ID, qui est l'id de la relation. |                         |
 
-## Order possible values {#ass-content-order-possible-values}
+## Valeurs possibles de tri {#ass-content-order-possible-values}
 [Arguments](#ass-content-arguments)
 
-| Ascending value                      | Descending value           | Sorted fields      |
-|--------------------------------------|----------------------------|:-------------------|
-| associated_content                   | associated_content_reverse | associated content |
-| all [content loop](./Content) orders |                            |                    |
+| Valeur croissante                                      | Valeur décroissante        | Champs triés       |
+|--------------------------------------------------------|----------------------------|:-------------------|
+| associated_content                                     | associated_content_reverse | associated content |
+| toutes les valeurs de tri de [content loop](./Content) |                            |                    |

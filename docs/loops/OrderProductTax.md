@@ -2,25 +2,25 @@
 title: Order product tax
 ---
 
-Order product tax loop displays taxes available.   
+La boucle product tax affiche les taxes disponibles.
 `{loop type="order_product_tax" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#order-arguments}
 
-| Argument         | Description                 | Default | Example            |
-|------------------|:----------------------------|:-------:|:-------------------|
-| order_product *  | A single order product id.  |         | order_product="2"  |
+| Argument        | Description                      | Default | Exemple           |
+|-----------------|:---------------------------------|:-------:|:------------------|
+| order_product * | Le product id d'un seul produit. |         | order_product="2" |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable      | Value                         |
-|:--------------|:------------------------------|
-| $AMOUNT       | Tax amount                    |
-| $DESCRIPTION  | Tax description               |
-| $ID           | Tax id                        |
-| $PROMO_AMOUNT | Tax amount of the promo price |
-| $TITLE        | Tax title                     |
+| Variable      | Value                            |
+|:--------------|:---------------------------------|
+| $AMOUNT       | Montant de la taxe               |
+| $DESCRIPTION  | Description de la taxe           |
+| $ID           | Id de la taxe                    |
+| $PROMO_AMOUNT | Montant de la taxe du prix promo |
+| $TITLE        | Titre de la taxe                 |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

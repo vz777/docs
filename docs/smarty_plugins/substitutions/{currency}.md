@@ -1,22 +1,22 @@
-Currency Substitution provides current currency in session.  
-`{currency attr="one_of_the_following"}`
+Les substitutions de devises fournissent la devise actuelle en session.
+`{currency attr="une_des_options_suivantes"}`
 
-## Attributes
+## Attributs
 
-| Attribute name | Data returned                                                                                          |
-|:---------------|:-------------------------------------------------------------------------------------------------------|
-| `id`           | 	                                                                                                      |
-| `name`         |                                                                                                        |
-| `code`         | 	       ISO 4217 Code. eg.: EUR                                                                        |
-| ` symbol `     | 	 	                	The currency symbol: €, $, ...                                                     |
-| ` rate `       | 	 	 	                                The rate relative to euro.                                        |
-| ` by_default ` | 	 	 	`true` if the category is the default currency, `false` otherwise                                 |
-| ` position `   | 	 	 	                                                                                                  |
-| ` createdAt `  | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
-| ` updatedAt `  | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
+| Nom de l'attribut | Données renvoyées                                                                                       |
+|:------------------|:--------------------------------------------------------------------------------------------------------|
+| `id`              |                                                                                                         |
+| `name`            |                                                                                                         |
+| `code`            | Code ISO 4217. ex. : EUR                                                                                |
+| ` symbol `        | Symbole de la devise : €, $, ...                                                                        |
+| ` rate `          | Taux par rapport à l'euro.                                                                              |
+| ` by_default `    | `true`  si la devise est celle par défaut, `false` sinon                                                |
+| ` position `      |                                                                                                         |
+| ` createdAt `     | La date de création formatée par  [Date time parameter](#date-time-optional-parameters)                 |
+| ` updatedAt `     | La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters) |
 
-### Date Time optional parameters
-| Parameter | Description                                                                                                                                             |
-|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Take `date`, `datetime` or `time` as value to select the return type                                                                                    |
-| `format`  | Take a [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  the format for the current locale will be used if this parameter is empty |
+### Paramètres optionnels de date et d'heure
+| Paramètre | Description                                                                                                                                           |
+|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                   |
+| `format`  | Prend un [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

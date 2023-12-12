@@ -3,13 +3,13 @@ title: module:list
 ---
 
 ## Description
-List the modules
+Lister les modules
 
 ## Usage
 ```shell
 module:list
 ```
 
-## Example
+## Exemple
 ```shell
 php Thelia module:list

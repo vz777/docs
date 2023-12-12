@@ -3,27 +3,27 @@ title: thelia:config
 ---
 
 ## Description
-Manage configuration variables
+Gèrer les variables de configuration
 
 ## Usage
-```shell 
+```shell
 thelia:config [options] [--] <COMMAND> [<name> [<value>]]
 ```
 
 ## Arguments
-- `COMMAND`    Command : list, get, set, delete
-- `name`    The variable name
-- `value`   The variable value
+- `COMMAND`    Commande : list, get, set, delete
+- `name`    Le nom de la variable
+- `value`   La valeur de la variable
 
 
 ## Options
-- `--secured`  When setting a new variable tell variable is secured.
-- `--visible`  When setting a new variable tell variable is visible.
+- `--secured`  Lors de la définition d'une nouvelle variable, indique que la variable est sécurisée.
+- `--visible`  Lors de la définition d'une nouvelle variable, indique que la variable est visible.
 
 
-## Example
+## Exemple
 
-Example to change value of config `url_site` and keep it visible 
+Exemple pour changer la valeur de la configuration `url_site` et la garder visible
 ```shell
 php Thelia thelia:config set url_site "https://thelia.net" --visible
 ```

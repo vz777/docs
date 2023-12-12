@@ -2,27 +2,27 @@
 title: Admin
 ---
 
-Admin loop displays admins information.      
+La boucle d'administrateur affiche les informations sur les administrateurs.
 `{loop type="admin" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#pse-arguments}
 
-| Argument | Description                        | Default | Example                      |
-| -------- |:---------------------------------- | :-----: | :--------------------------- |
-| id       | A single or a list of admin ids.   |         | id="2", id="1,4,7"           |
-| profile  | A single or a list of profile ids. |         | profile="2", profile="1,4,7" |
+| Argument | Description                                                  | Defaut | Exemple                      |
+| -------- |:------------------------------------------------------------ | :-----: | :--------------------------- |
+| id       | Un id d'administrateur ou une liste d'ids d'administrateurs. |         | id="2", id="1,4,7"           |
+| profile  | Un id de profil ou une liste d'ids de profils.               |         | profile="2", profile="1,4,7" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
 | Variable        | Value                 |
 | :-------------  | :-------------------- |
-| $FIRSTNAME	  | the admin firstname   |
-| $ID	          | the admin id          |
-| $LASTNAME	      | the admin lastname    |
-| $LOCALE	      | the admin locale      |
-| $LOGIN	      | the admin login       |
-| $PROFILE	      | the admin profile id  |
+| $FIRSTNAME	  | le prénom de l'admin   |
+| $ID	          | l'id de l'admin          |
+| $LASTNAME	      | le nom de l'admin    |
+| $LOCALE	      | la locale de l'admin      |
+| $LOGIN	      | le login de l'admin       |
+| $PROFILE	      | l'id de profil de l'admin  |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

@@ -3,11 +3,13 @@ title: Events
 sidebar_position: 9
 ---
 
-Thelia dispatch a lot of events during various workflows : account creation, order process, ...    
-You can listen any of this event to add or replace logic. Or add your own events that can be listened by other modules.    
-More info for Event dispatcher component can be found on [Symfony documentation](https://symfony.com/doc/current/components/event_dispatcher.html)
 
-To do this you have to create an event subscriber, it's just a simple class that implement the `EventSubscriberInterface` with a `getSubscribedEvents` function to choose what event to listen :
+Thelia déclenche un grand nombre d'événements au cours de différents process : création de compte, traitement des commandes, ...
+Vous pouvez écouter n'importe lequel de ces événements pour ajouter ou remplacer de la logique. Ou ajouter vos propres événements qui peuvent être écoutés par d'autres modules.
+Plus d'informations sur le composant Event dispatcher peuvent être trouvées sur [Symfony documentation](https://symfony.com/doc/current/components/event_dispatcher.html)
+
+
+Pour faire cela, vous devez créer un observateur d'événement, c'est juste une classe simple qui implémente l'interface `EventSubscriberInterface` avec une fonction `getSubscribedEvents` pour choisir l'événement à écouter :
 ```php
 <?php
 
@@ -42,26 +44,27 @@ class LogoutListener implements EventSubscriberInterface
 }
 ```
 
-### Native events
-Thelia native events are all listed in `TheliaEvents` class
+### Événements natifs
+Les événements natifs de Thelia sont tous listés dans la classe `TheliaEvents`.
 
 
-### Propel events
-Propel dispatch several events during model lifecycle :
+### Événements Propel
+Propel déclenche plusieurs événements pendant le cycle de vie du modèle :
 
-| Constant name | Description                            |
-|:--------------|:---------------------------------------|
-| PRE_SAVE      | Before persisting the object           |
-| POST_SAVE     | After persisting the object            |
-| PRE_INSERT    | Before inserting to database           |
-| POST_INSERT   | After inserting to database            |
-| PRE_UPDATE    | Before updating the object in database |
-| POST_UPDATE   | After updating the object in database  |
-| PRE_DELETE    | Before deleting the object in database |
-| POST_DELETE   | After deleting the object in database  |
 
-Those constants are accessible to the class of model name suffixed by Event.    
-For example to listen product update use this event `ProductEvent::POST_UPDATE`
+| Nom de la constante                                                    | Description                                             |
+|:-----------------------------------------------------------------------|:--------------------------------------------------------|
+| PRE_SAVE                                                               | Avant la persistance de l'objet                         |
+| POST_SAVE                                                              | Après la persistance de l'objet                         |
+| PRE_INSERT                                                             | Avant l'insertion dans la base de données               |
+| POST_INSERT                                                            | Après l'insertion dans la base de données               |
+| PRE_UPDATE                                                             | Avant la mise à jour de l'objet dans la base de données |
+| POST_UPDATE                                                            | Après la mise à jour de l'objet dans la base de données |
+| PRE_DELETE                                                             | Avant la suppression de l'objet dans la base de données |
+| POST_DELETE - Après la suppression de l'objet dans la base de données. |                                                         |
+
+Ces constantes sont accessibles pour la classe dont le nom de modèle est suffixé par Event.
+Par exemple, pour écouter la mise à jour d'un produit, utilisez l'événement `ProductEvent::POST_UPDATE`
 
 ```php
 <?php

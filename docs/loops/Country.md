@@ -2,55 +2,55 @@
 title: Country
 ---
 
-Country loop lists countries.   
+La boucle Country liste les pays.
 `{loop type="country" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#country-arguments}
 
-| Argument     | Description                                                                                        | Default | Example                                   |
-|--------------|:---------------------------------------------------------------------------------------------------|:-------:|:------------------------------------------|
-| area         | A single or a list of area ids.                                                                    |         | area="10,9", area: "500"                  |                                                    |           | product="2"                 |
-| exclude      | A single or a list of country ids to exclude from the results.                                     |         | exclude="2", exclude="1,4,7"              |
-| exclude_area | A single or list of area IDs. Countries which belongs to these areas are excluded from the results |         | exclude_area="7", exclude_area="3,102,14" |
-| has_states   | A boolean value to return countries that have states or not (possible values : yes, no or *).      |    *    | has_states="no"                           |
-| id           | A single or a list of country ids.                                                                 |         | id="2", id="1,4,7"                        |
-| lang         | A lang id                                                                                          |         | lang="1"                                  |
-| order        | A list of values see [sorting possible values](#country-order-possible-values)                     |   id    | order="alpha_reverse"                     |
-| visible      | A boolean value to return visible or not visible countries (possible values : yes, no or *).       |   yes   | visible="no"                              |
-| with_area    | A boolean value to return either countries whose area is defined either all the others.            |         | with_area="true"                          |
+| Argument     | Description                                                                                  | Defaut | Exemple                                   |
+|--------------|:---------------------------------------------------------------------------------------------|:------:|:------------------------------------------|
+| area         | Un ou plusieurs IDs de zone.                                                                 |        | area="10,9", area: "500"                  |
+| exclude      | Un ou plusieurs IDs de pays à exclure.                                                       |        | exclude="2", exclude="1,4,7"              |
+| exclude_area | Un ou plusieurs IDs de zone. Les pays appartenant à ces zones sont exclus des résultats.     |        | exclude_area="7", exclude_area="3,102,14" |
+| has_states   | Booléen pour retourner les pays qui ont des États ou non (valeurs possibles : yes, no or *). |   *    | has_states="no"                           |
+| id           | Un ou plusieurs IDs de pays                                                                  |        | id="2", id="1,4,7"                        |
+| lang         | Un id de langue                                                                              |        | lang="1"                                  |
+| order        | Une liste de valeurs voir [sorting possible values](#country-order-possible-values)          |   id   | order="alpha_reverse"                     |
+| visible      | Booléen pour retourner les pays visibles ou non visibles (valeurs possibles : yes, no or *). |  yes   | visible="no"                              |
+| with_area    | Booléen pour retourner soit les pays dont la zone est définie, soit tous les autres.         |        | with_area="true"                          |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable         | Value                                                                                              |
-|:-----------------|:---------------------------------------------------------------------------------------------------|
-| $AREA            | the area the country belongs                                                                       |
-| $CHAPO           | the country chapo                                                                                  |
-| $DESCRIPTION     | the country description                                                                            |
-| $HAS_STATES      | 1 if the country has states, 0 otherwise                                                           |
-| $ID              | the country id                                                                                     |
-| $ISOALPHA2       | the ISO 2 characters country code                                                                  |
-| $ISOALPHA3       | the ISO 3 characters country code                                                                  |
-| $ISOCODE         | the ISO numeric country code                                                                       |
-| $IS_DEFAULT      | 1 if the country is the default one, 0 otherwise                                                   |
-| $IS_SHOP_COUNTRY | 1 if the country is the shop country, 0 otherwise                                                  |
-| $IS_TRANSLATED   | check if the country is translated                                                                 |
-| $LOCALE          | The locale used for this research                                                                  |
-| $NEED_ZIP_CODE   | 1 if the country needs a zip code for address, 0 otherwise                                         |
-| $POSTSCRIPTUM    | the country postscriptum                                                                           |
-| $TITLE           | the country title                                                                                  |
-| $VISIBLE         | true if the country is visible. False otherwise                                                    |
-| $ZIP_CODE_FORMAT | The format of the zip code for this country where N is a digit, L a letter and C a state ISO code. |
+| Variable         | Value                                                                                               |
+|:-----------------|:----------------------------------------------------------------------------------------------------|
+| $AREA            | la zone à laquelle le pays appartient                                                               |
+| $CHAPO           | le chapo du pays                                                                                    |
+| $DESCRIPTION     | la description du pays                                                                              |
+| $HAS_STATES      | 1 if the country has states, 0 otherwise                                                            |
+| $ID              | l'id du pays                                                                                        |
+| $ISOALPHA2       | le code pays ISO 2 caractères                                                                       |
+| $ISOALPHA3       | le code pays ISO 3 caractères                                                                       |
+| $ISOCODE         | le code pays numérique ISO                                                                          |
+| $IS_DEFAULT      | 1 si le pays est celui par défaut, 0 sinon                                                          |
+| $IS_SHOP_COUNTRY | 1 si le pays est le pays de la boutique, 0 sinon                                                    |
+| $IS_TRANSLATED   | vérifie si le pays est traduit                                                                      |
+| $LOCALE          | la locale utilisée pour cette recherche                                                             |
+| $NEED_ZIP_CODE   | 1 si le pays a besoin d'un code postal pour l'adresse, 0 sinon                                      |
+| $POSTSCRIPTUM    | le postscriptum du pays                                                                             |
+| $TITLE           | le titre du pays                                                                                    |
+| $VISIBLE         | true si le pays est visible. False sinon                                                            |
+| $ZIP_CODE_FORMAT | Le format du code postal pour ce pays où N est un chiffre, L une lettre et C le code ISO de l'État. |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#country-order-possible-values}
+## Valeurs possibles de tri {#country-order-possible-values}
 [Arguments](#country-arguments)
 
-| Ascending value | Descending value | Sorted fields                    |
-|-----------------|------------------|:---------------------------------|
-| alpha           | alpha-reverse    | title                            |
-| id              | id_reverse       | id                               |
-| random          |                  | countries in pseudo-random order |
-| visible         | visible_reverse  | visibility                       |
+| Valeur croissante | Valeur décroissante | Champs triés                     |
+|-------------------|---------------------|:---------------------------------|
+| alpha             | alpha-reverse       | title                            |
+| id                | id_reverse          | id                               |
+| random            |                     | countries in pseudo-random order |
+| visible           | visible_reverse     | visibility                       |

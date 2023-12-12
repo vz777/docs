@@ -7,19 +7,19 @@ Attribute loop lists attributes.
 
 ## Arguments {#attribute-arguments}
 
-| Argument | Description | Default | Example |
+| Argument | Description | Default | Exemple |
 | ------------- |:-------------| :-------------: | :-------------|
 | exclude      | A single or a list of attribute ids to exclude. | | exclude="456,123" |
 | exclude_template      | A single or a list of template ids. Only features NOT attached to these templates will be returned. | |  id="2", id="1,4,7" |
 | id      | A single or a list of attribute ids. | |  id="2", id="1,4,7" |
-| lang      | A lang id | |  lang="1" |
-| order       | A list of values <br/> [Expected values](#attribute-order-possible-values) | manual | order="alpha_reverse" |
+| lang      | Un id de langue | |  lang="1" |
+| order       | Une liste de valeurs <br/> [Expected values](#attribute-order-possible-values) | manual | order="alpha_reverse" |
 | product   | A single or a list of product ids. | | id="2", id="1,4,7" |
 | template   | A single or a list of template ids. Only features attached to these templates will be returned. | | id="2", id="1,4,7" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
 | Variable       | Value                                     |
 | :------------  | :---------------------------------------- |
@@ -31,12 +31,12 @@ Plus the [global arguments](./global_arguments)
 | $POSTSCRIPTUM	 | the attribute postscriptum                |
 | $TITLE         | the attribute title                       |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#attribute-order-possible-values}
+## Valeurs possibles de tri {#attribute-order-possible-values}
 [Arguments](#attribute-arguments)
 
-| Ascending value | Descending value  | Sorted fields |
+| Valeur croissante | Valeur décroissante  | Champs triés |
 |-----------------|-------------------|:--------------|
 | alpha           | alpha_reverse     | title         |
 | manual          | manual_reverse    |               |

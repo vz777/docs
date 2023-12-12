@@ -12,31 +12,31 @@ sidebar_position: 1
 ![GitHub forks](https://img.shields.io/github/forks/thelia/thelia?style=flat-square)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/thelia/thelia?label=latest%20release&style=flat-square)
 
-Thelia is an open source tool for creating e-business websites and managing online content. This software is published under LGPL.
+Thelia est un outil open source pour la création de sites web e-business et la gestion de contenu en ligne. Ce logiciel est publié sous LGPL.
 
-:::caution
+:::attention
 
-This is the documentaion for Thelia version >= 2.5.0, if you are using a previous version, check the [Legacy documentation](http://thelia.github.io).
+Ceci est la documentation pour Thelia >= 2.5.0, si vous utilisez une précédente version, regardez [Legacy documentation](http://thelia.github.io).
 
 :::
 
-Compatibility
+Compatibilité
 ------------
 
 
-| Thelia version |          2.3          |          2.4          |          2.5          |
-|----------------|:---------------------:|:---------------------:|:---------------------:|
+| Thelia version |          2.3          |          2.4          |             2.5             |
+|----------------|:---------------------:|:---------------------:|:---------------------------:|
 | PHP            | 5.5 / 5.6 / 7.0 / 7.1 | 7.0 / 7.1 / 7.2 / 7.3 | 8.0.2       /     8.1 / 8.2 |
-| MySQL          |       5.5 / 5.6       |    5.5 / 5.6 / 5.7    |    5.6 / 5.7 / 8.0    |
-| Symfony        |          2.8          |          2.8          |      6.0  / 6.3       |
- | Maintained     |          No           |  Security fixes only  |          Yes          |
+| MySQL          |       5.5 / 5.6       |    5.5 / 5.6 / 5.7    |       5.6 / 5.7 / 8.0       |
+| Symfony        |          2.8          |          2.8          |         6.0  / 6.3          |
+| Maintained     |          No           |  Security fixes only  |             Yes             |
 
 
-Requirements
+Exigences
 ------------
 
 * PHP
-  * Required extensions :
+  * Extensions requises :
     * PDO_Mysql
     * openssl
     * intl

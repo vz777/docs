@@ -3,8 +3,8 @@ title: Forms
 sidebar_position: 10
 ---
 
-## Form definitions
-To create a new form create a new class that extend `BaseForm` then implement the method `buildForm` to describe your form.
+## Définitions des formulaires
+Pour créer un nouveau formulaire, créez une nouvelle classe qui étend `BaseForm` puis implémentez la méthode `buildForm` pour décrire votre formulaire.
 
 ```php
 <?php
@@ -70,26 +70,26 @@ class OrderDeliveryForm extends BaseForm
 }
 ```
 
-For more information about field types you can refer to [Symfony form type documentation](https://symfony.com/doc/current/reference/forms/types.html)
+Pour plus d'informations sur les types de champs, vous pouvez vous référer à [Symfony form type documentation](https://symfony.com/doc/current/reference/forms/types.html)
 
-## Usage in templates
-To display the form in your template you will need the form name, it is the name of your module in lowercase + full namespace and the class of your form in snake_case.
-For example the form name for `YourModule\Form\SomethingForm.php` will be `yourmodule_form_something_form`
-It can be modified with the static function `getName` but we do not advise to do that, 
-because it's more simple to guess a form name by reading is namespace than going in to the class and looking the method. 
-It also guarantees a unique name for your form.
+## Utilisation dans les templates
+Pour afficher le formulaire dans votre template vous aurez besoin du nom du formulaire, c'est le nom de votre module en minuscule + l'espace de nom complet et la classe de votre formulaire en snake_case (Convention de nommage des mots en minuscule, séparés par des tirets bas.).
+Par exemple, le nom du formulaire pour `VotreModule\Form\QuelquechoseForm.php` sera `votremodule_form_quelquechose_form`
+Il peut être modifié avec la fonction statique `getName` mais nous ne conseillons pas de le faire, 
+car il est plus simple de deviner le nom d'un formulaire en lisant son espace de noms que d'aller dans la classe et de chercher la méthode.
+Cela garantit également un nom unique pour votre formulaire.
 
-### Call your form
+### Appeler votre formulaire
 
-First of all you have to call the form you need by using the form block :
+Tout d'abord, vous devez appeler le formulaire dont vous avez besoin en utilisant le bloc de formulaire :
 ```smarty
     {form name="yourmodule_form_something_form"}
         ...
     {/form}
 ```
-The form reference is now available in the `$form` variable.
+La référence du formulaire est maintenant disponible dans la variable `$form`.
 
-### Display it
+### Afficher le formulaire
 ```smarty
     {form name="yourmodule_form_something_form"}
         <form method="post" action="{url path='your/target'}" {form_enctype form=$form}>
@@ -98,10 +98,10 @@ The form reference is now available in the `$form` variable.
     {/form}
 ```
 
-### Displaying a form field
+### Affichage d'un champ de formulaire
 
-#### Custom form field
-For displaying a field, you have to use the `{form_field}` block, and put the name of the field you want to display in the “field” parameter :
+#### Champ de formulaire personnalisé
+Pour afficher un champ, vous devez utiliser le bloc `{form_field}`, et mettre le nom du champ que vous voulez afficher dans le paramètre "field" :
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
@@ -115,35 +115,35 @@ For displaying a field, you have to use the `{form_field}` block, and put the na
         {form_field form=$form field="delivery_options"}
             <select name="{$name}">
                 {foreach $choices as $choice}
-                    <option value="{$choice->value}">{$choice->label}</option> 
+                    <option value="{$choice->value}">{$choice->label}</option>
                 {/foreach}
             </select>
         {/form_field}
     </form>
 {/form}
 ```
-Values available in the `{form_field}` block :
+Valeurs disponibles dans le bloc `{form_field}` :
 
--    `$name` : field’s name used in the name part of your input
--    `$value` : default value to display
--    `$data` : the form definition data attribute
--    `$type` : the field type, as defined in the form definition (choice, radio, number, text, textarea, etc.)
--    `$checked` : the checked status (true / false) of a radio or checkbox field
--    `$multiple` : true if a select field may have multiple selected values
--    `$disabled` : true if the field is disabled, false otherwise
--    `$read_only` : true if the fiedl is read only, false otherwise
--    `$max_length` : the maximum length of the field
--    `$required` : true if the field is required, false otherwise
--    `$label` : label for this field, can be used in label html tag for example
--    `$attr` : all the attributes defined in your form class, can be any HTML attributes, such as an id, or any other attribute such as HTML5 form validation for example
--    `$attr_list` : the ‘attr’ array of form definition
--    `$options` : all the options available for this field. This variable is a PHP array.
--    `$error` : true if validation error has been detected on the field
--    `$message` : the error message, defined if $error is true, empty otherwise.
--    `$choices` : an array of available choices. $choices is available only if your field has defined choices.
+-    `$name` : nom du champ utilisé dans la partie nom de votre saisie
+-    `$value` : valeur par défaut à afficher
+-    `$data` : l'attribut de données de la définition du formulaire
+-    `$type` : le type de champ, tel que défini dans la définition du formulaire (choice, radio, number, text, textarea, etc.)
+-    `$checked` : le statut de vérification (true / false) d'un champ radio ou d'une case à cocher
+-    `$multiple` : true si un champ de sélection peut avoir plusieurs valeurs sélectionnées
+-    `$disabled` : true si le champ est désactivé, false sinon
+-    `$read_only` : true si le champ est en lecture seule, false sinon
+-    `$max_length` : la longueur maximale du champ
+-    `$required` : true si le champ est obligatoire, false sinon
+-    `$label` : label pour ce champ, peut être utilisé dans la balise html label par exemple
+-    `$attr` : tous les attributs définis dans votre classe de formulaire, il peut s'agir de n'importe quel attribut HTML, comme un id, ou tout autre attribut comme la validation de formulaire HTML5 par exemple
+-    `$attr_list` : le tableau 'attr' de la définition du formulaire
+-    `$options` : toutes les options disponibles pour ce champ. Cette variable est un tableau PHP.
+-    `$error` : true si une erreur de validation a été détectée sur le champ
+-    `$message` : le message d'erreur, défini si $error est vrai, vide sinon.
+-    `$choices` : un tableau de choix disponibles. $choices n'est disponible que si votre champ a des choix définis.
 
-#### Auto form field
-To speed up writing form in templates Thelia provide a Smarty plugin `render_form_field` which automatically generates the field HTML code, and all the related code, such as formatting and error reporting.
+#### Champ de formulaire automatique
+Pour accélérer l'écriture des formulaires dans les templates, Thelia fournit un plugin Smarty `render_form_field` qui génère automatiquement le code HTML du champ, et tout le code associé, comme le formatage et le rapport d'erreur.
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
@@ -155,8 +155,8 @@ To speed up writing form in templates Thelia provide a Smarty plugin `render_for
 {/form}
 ```
 
-### Display errors
-If your form contains some errors, it automatically displays the value already sent by the user and then can display a message for each fields containing errors. The `{form_field_error}` is used, and it works like the `{form_field}` block. You can call it outside the `{form_field}` block :
+### Afficher les erreurs
+Si votre formulaire contient des erreurs, il affiche automatiquement la valeur déjà envoyée par l'utilisateur et peut ensuite afficher un message pour chaque champ contenant des erreurs. Le bloc `{form_field_error}` est utilisé et fonctionne comme le bloc `{form_field}`. Vous pouvez l'appeler en dehors du bloc `{form_field}` :
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
@@ -174,9 +174,9 @@ If your form contains some errors, it automatically displays the value already s
 {/form}
 ```
 
-### Hidden fields
-Thelia uses hidden fields internally. In order to display these fields (and all the hidden fields defined in your form), use the `form_hidden_fields` plugin.    
-Don’t forget this, as it contains the CRSF validation data :
+### Champs cachés
+Thelia utilise des champs cachés en interne. Pour afficher ces champs (et tous les champs cachés définis dans votre formulaire), utilisez le plugin `form_hidden_fields`.
+N'oubliez pas ceci, car il contient les données de validation CRSF :
 ```smarty
 {form name="thelia_form_order_delivery_form"}
     <form method="post" action="{url path='your/target'}" {form_enctype form=$form} >
@@ -186,10 +186,10 @@ Don’t forget this, as it contains the CRSF validation data :
 {/form}
 ```
 
-## Usage in controllers
-Form are useful to validate data submitted by users. This is done by two functions in controllers :
-- `createForm` that create a form object
-- `validateForm` that validate form data
+## Utilisation dans les contrôleurs
+Les formulaires sont utiles pour valider les données soumises par les utilisateurs. Ceci est fait par deux fonctions dans les contrôleurs :
+- `createForm` qui crée un objet formulaire
+- `validateForm` qui valide les données du formulaire
 
 ```php
 <?php
@@ -201,7 +201,7 @@ class OrderController extends BaseFrontController
     public function submitRoute()
     {
         $form = $this->createForm(OrderDeliveryForm::getName);
-        
+
        try {
             $data = $this->validateForm($form)->getData();
 

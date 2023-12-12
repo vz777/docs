@@ -3,10 +3,10 @@ title: thelia:install
 ---
 
 ## Description
-Install thelia using cli tools.
+Installer Thelia avec la ligne de commande (CLI)
 
 ## Usage
-```shell 
+```shell
 thelia:install [options]
 ```
 
@@ -19,9 +19,9 @@ thelia:install [options]
 
 
 
-## Example
+## Exemple
 
-Example to install Thelia in one line
+Exemple pour installer Thelia en une ligne
 ```shell
 php Thelia thelia:install --db_host localhost --db_username thelia2 --db_password StRoNgPaSsWoRd --db_name thelia --db_port 3306
 ```

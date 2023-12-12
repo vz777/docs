@@ -2,19 +2,19 @@
 title: Order product attribute combination
 ---
 
-Order product attribute combination loop lists order product attribute combinations.   
+La boucle product attribute combination répertorie les combinaisons d'attributs de produit de commande.
 `{loop type="order_product_attribute_combination" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#order-arguments}
 
-| Argument         | Description                                                                                                                                                                                      | Default | Example               |
-|------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:----------------------|
-| order            | A list of values <br/> Expected values : <br/> - alpha : alphabetical order on order product attribute title <br/> - alpha_reverse : reverse alphabetical order on order product attribute title |  alpha  | order="alpha_reverse" |
-| order_product *  | A single order product id.                                                                                                                                                                       |         | order_product="2"     |
+| Argument        | Description                                                                                                                                                                                                       | Default | Exemple               |
+|-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:----------------------|
+| order           | Une liste de valeurs <br/> Valeurs attendues : <br/> - alpha : Ordre alphabétique sur le titre de order product attribute <br/> - alpha_reverse : Ordre alphabétique inverse sur le titre order product attribute |  alpha  | order="alpha_reverse" |
+| order_product * | L'id d'un seul order product id.                                                                                                                                                                                  |         | order_product="2"     |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
 | Variable                             | Value                                                 |
 |:-------------------------------------|:------------------------------------------------------|
@@ -29,4 +29,4 @@ Plus the [global arguments](./global_arguments)
 | $ID                                  | the order product attribute combination ID            |
 | $ORDER_PRODUCT_ID                    | the related order product ID                          |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

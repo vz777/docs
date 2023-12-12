@@ -1,10 +1,9 @@
-Provides access to config variable.    
-Provides access to config variable.    
+Fournit l'accès à une variable de configuration.
 `{config key="variable_name"}`
 
 ## Parameters
 
-| Parameter name | Description                                                                              |
-|:---------------|:-----------------------------------------------------------------------------------------|
-| `key`          | 	The config name                                                                         |
-| `default`      | The default value if variable doesn't exist. By default it return an empty string	 	 	 	 |
+| Nom du paramètre | Description                                                                                  |
+|:-----------------|:---------------------------------------------------------------------------------------------|
+| `key`            | Le nom de la variable de configuration                                                       |
+| `default`        | La valeur par défaut si la variable n'existe pas. Par défaut, elle retourne une chaîne vide. |

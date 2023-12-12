@@ -3,14 +3,14 @@ title: sale:check-activation
 ---
 
 ## Description
-check the activation and deactivation dates of sales, and perform the required action depending on the current date.
+Vérifier les dates d'activation et de désactivation des promotions, et effectue l'action requise en fonction de la date actuelle.
 
 ## Usage
 ```shell
 sale:check-activation
 ```
 
-## Example
+## Exemple
 ```shell
 php Thelia sale:check-activation
 ```

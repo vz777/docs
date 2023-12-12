@@ -3,7 +3,7 @@ title: Apache configuration
 sidebar_position: 4
 ---
 
-Only the ```web``` directory has to be accessible with apache, you can configure your vhost like this :
+Seul le répertoire ```web``` doit être accessible avec Apache, vous pouvez configurer votre hôte virtuel (vhost) comme suit :
 
 ```
 <virtualhost *:80>
@@ -13,11 +13,11 @@ Only the ```web``` directory has to be accessible with apache, you can configure
 
 	<Directory "/var/www/thelia/web">
 	    AllowOverride All
-        
+
         # on apache 2.2 use :
         #Order allow,deny
         #Allow from all
-        
+
         # on apache 2.4 use :
         Require all granted
     </Directory>
@@ -31,9 +31,9 @@ Only the ```web``` directory has to be accessible with apache, you can configure
 
 ```
 
-Replace `/var/www/thelia/web` by the full path to the web directory of your project
+Remplacez `/var/www/thelia/web` par le chemin complet vers le répertoire web de votre projet.
 
-Apache write in some directories so check this directories and change their rights :
+Apache écrit dans certains répertoires, assurez-vous donc de vérifier ces répertoires et de modifier leurs permissions :
 
 * cache
 * log

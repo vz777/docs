@@ -2,65 +2,65 @@
 title: Content
 ---
 
-Content loop lists contents from your shop.     
+La boucle Content liste les contenus de votre boutique.
 `{loop type="content" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#content-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| current      | A boolean value which allows either to exclude current content from results either to match only this content  | |  current="yes" |
-| current_folder      | A boolean value which allows either to exclude current folder contents from results either to match only current folder contents. If a content is in multiple folders whose one is current it will not be excluded if current_folder="false" but will be included if current_folder="yes"  | |   current_folder="yes" |
-| depth      | A positive integer value which precise how many subfolder levels will be browse. Will not be consider if folder parameter is not set.  | 1 |   depth="2" |
-| exclude      | A single or a list of content ids.  |  |   exclude="2", exclude="1,4,7" |
-| exclude_folder      | A single or a list of folder ids. If a content is in multiple folders which are not all excluded it will not be excluded.  |  |   exclude_folder="2", exclude_folder="1,4,7" |
-| folder      | A single or a list of folder ids.  |  |   folder="3", folder="2,5,8" |
-| folder_default      | A single or a list of default folder ids allowing to retrieve all content having this parameter as default folder.  |  |   folder_default="2", folder_default="1,4,7" |
-| id      | A single or a list of content ids.  |  |  id="2", id="1,4,7" |
-| lang      | A lang id  |  |   lang="1" |
-| order       | A list of values <br/> [Expected values](#content-order-possible-values) | alpha | order="random" |
-| return_url       | A boolean value which allows the urls generation. | yes | return_url="no" |
-| title       | A title string |  | title="foo" |
-| visible       | A boolean value. | yes | visible="no" |
-| with_prev_next_info       | A boolean. If set to true, $PREVIOUS and $NEXT output arguments are available. | false | with_prev_next_info="yes" |
+| Argument            | Description                                                                                                                                                                                                                                                                                           | Default | Exemple                                    |
+|---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------:|:-------------------------------------------|
+| current             | Booléen, permet soit d'exclure le contenu actuel des résultats, soit de correspondre uniquement à ce contenu                                                                                                                                                                                          |         | current="yes"                              |
+| current_folder      | Booléen, permet soit d'exclure les contenus du dossier actuel des résultats, soit de correspondre uniquement aux contenus du dossier actuel. Si un contenu est dans plusieurs dossiers dont l'un est actuel, il ne sera pas exclu si current_folder="false", mais sera inclus si current_folder="yes" |         | current_folder="yes"                       |
+| depth               | Un int positif qui précise le nombre de niveaux de sous-dossiers à parcourir. Ne sera pas pris en compte si le paramètre du dossier n'est pas défini.                                                                                                                                                 |    1    | depth="2"                                  |
+| exclude             | Un ou plusieurs ids de contenus.                                                                                                                                                                                                                                                                      |         | exclude="2", exclude="1,4,7"               |
+| exclude_folder      | Un ou plusieurs ids de dossiers. Si un contenu est dans plusieurs dossiers dont l'un n'est pas exclu, il ne sera pas exclu.                                                                                                                                                                           |         | exclude_folder="2", exclude_folder="1,4,7" |
+| folder              | Un ou plusieurs ids de dossiers.                                                                                                                                                                                                                                                                      |         | folder="3", folder="2,5,8"                 |
+| folder_default      | Un ou plusieurs ids de dossiers permettant de récupérer tous les contenus ayant ce paramètre comme dossier par défaut.                                                                                                                                                                                |         | folder_default="2", folder_default="1,4,7" |
+| id                  | Un ou plusieurs ids de contenus.                                                                                                                                                                                                                                                                      |         | id="2", id="1,4,7"                         |
+| lang                | Un id de langue                                                                                                                                                                                                                                                                                       |         | lang="1"                                   |
+| order               | Une liste de valeurs <br/> [Expected values](#content-order-possible-values)                                                                                                                                                                                                                          |  alpha  | order="random"                             |
+| return_url          | Booléen qui permet la génération d'URL.                                                                                                                                                                                                                                                               |   yes   | return_url="no"                            |
+| title               | Une chaîne de titre                                                                                                                                                                                                                                                                                   |         | title="foo"                                |
+| visible             | Booléen.                                                                                                                                                                                                                                                                                              |   yes   | visible="no"                               |
+| with_prev_next_info | Booléen. Si définie sur true, les arguments de sortie `$PREVIOUS` et `$NEXT` sont disponibles.                                                                                                                                                                                                        |  false  | with_prev_next_info="yes"                  |
 
-Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
 
-## Outputs
+## Sorties
 
-| Variable | Value                           | If with_prev_next_info='true' | If with_prev_next_info='false' |
-| :---------------------------------------------------------------------------  | :------------------------------ | :-------: | :-------: |
-| $CHAPO	                                                                | the content chapo | ✅ | ✅ |
-| $DEFAULT_FOLDER	                                                                | the default folder id for the current content | ✅ | ✅ |
-| $DESCRIPTION	                                                                | the content description | ✅ | ✅ |
-| $HAS_NEXT	                                                                | true if a content exists after this one in the current folder, following contents positions.| ✅ | 🚫 |
-| $HAS_PREVIOUS	                                                                | true if a content exists before this one in the current folder, following contents positions.| ✅ | 🚫 |
-| $ID	                                                                | the content id | ✅ | ✅ |
-| $IS_TRANSLATED	                                                                | check if the content is translated | ✅ | ✅ |
-| $LOCALE	                                                                | The locale used for this research | ✅ | ✅ |
-| $META_DESCRIPTION	                                                                | the content meta description | ✅ | ✅ |
-| $META_KEYWORDS	                                                                | the content meta keywords | ✅ | ✅ |
-| $META_TITLE	                                                                | the content meta title | ✅ | ✅ |
-| $NEXT	                                                                | The ID of content after this one in the current folder, following contents positions, or null if none exists. | ✅ | 🚫 |
-| $POSITION	                                                                | the content position | ✅ | ✅ |
-| $POSTSCRIPTUM	                                                                | the content postscriptum | ✅ | ✅ |
-| $PREVIOUS	                                                                | The ID of content before this one in the current folder, following contents positions, or null if none exists. | ✅ | 🚫 |
-| $TITLE	                                                                | the content title | ✅ | ✅ |
-| $URL	                                                                | the content URL | ✅ | ✅ |
+| Variable          | Value                                                                                                                              | If with_prev_next_info='true' | If with_prev_next_info='false' |
+|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------:|:------------------------------:|
+| $CHAPO            | le chapo du contenu                                                                                                                |               ✅               |               ✅                |
+| $DEFAULT_FOLDER   | l'id du dossier par défaut pour le contenu actuel                                                                                  |               ✅               |               ✅                |
+| $DESCRIPTION      | la description du contenu                                                                                                          |               ✅               |               ✅                |
+| $HAS_NEXT         | true si un contenu existe après celui-ci dans le dossier actuel, en suivant les positions des contenus.                            |               ✅               |               🚫               |
+| $HAS_PREVIOUS     | true si un contenu existe avant celui-ci dans le dossier actuel, en suivant les positions des contenus.                            |               ✅               |               🚫               |
+| $ID               | l'id du contenu                                                                                                                    |               ✅               |               ✅                |
+| $IS_TRANSLATED    | vérifie si le contenu est traduit                                                                                                  |               ✅               |               ✅                |
+| $LOCALE           | la locale utilisée pour cette recherche                                                                                            |               ✅               |               ✅                |
+| $META_DESCRIPTION | la meta description du contenu                                                                                                     |               ✅               |               ✅                |
+| $META_KEYWORDS    | la meta keywords du contenu                                                                                                        |               ✅               |               ✅                |
+| $META_TITLE       | la meta title du contenu                                                                                                           |               ✅               |               ✅                |
+| $NEXT             | L'id du contenu après celui-ci dans le dossier actuel, en suivant les positions des contenus, ou null s'il n'existe aucun contenu. |               ✅               |               🚫               |
+| $POSITION         | la position du contenu                                                                                                             |               ✅               |               ✅                |
+| $POSTSCRIPTUM     | le postscriptum du contenu                                                                                                         |               ✅               |               ✅                |
+| $PREVIOUS         | L'id du contenu avant celui-ci dans le dossier actuel, en suivant les positions des contenus, ou null s'il n'existe aucun contenu. |               ✅               |               🚫               |
+| $TITLE            | le titre du contenu                                                                                                                |               ✅               |               ✅                |
+| $URL              | l'URL du contenu                                                                                                                   |               ✅               |               ✅                |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#content-order-possible-values}
+## Valeurs possibles de tri {#content-order-possible-values}
 [Arguments](#content-arguments)
 
-| Ascending value                      | Descending value  | Sorted fields |
-|--------------------------------------|-------------------|:--------------|
-| alpha                            | alpha_reverse | title     |
-| created                            | created_reverse | date of content creation     |
-| given_id                            |  | eturn the same order received in `id` argument which therefore must be set     |
-| id                            | id_reverse | ID    |
-| manual                            | manual_reverse | position, considering a given folder. `folder` argument must be set    |
-| position                            | position_reverse | position, without considering a parent folder   |
-| random                            |  |   |
-| updated                            | updated_reverse  | date of content update  |
-| visible                            | visible_reverse  | online/offline items firts  |
+| Valeur croissante | Valeur décroissante | Champs triés                                                               |
+|-------------------|---------------------|:---------------------------------------------------------------------------|
+| alpha             | alpha_reverse       | title                                                                      |
+| created           | created_reverse     | date of content creation                                                   |
+| given_id          |                     | eturn the same order received in `id` argument which therefore must be set |
+| id                | id_reverse          | ID                                                                         |
+| manual            | manual_reverse      | position, considering a given folder. `folder` argument must be set        |
+| position          | position_reverse    | position, without considering a parent folder                              |
+| random            |                     |                                                                            |
+| updated           | updated_reverse     | date of content update                                                     |
+| visible           | visible_reverse     | online/offline items firts                                                 |

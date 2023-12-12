@@ -3,7 +3,7 @@ title: module:generate:sql
 ---
 
 ## Description
-Generate the sql from schema.xml file
+Génère le SQL à partir du fichier schema.xml
 
 ## Usage
 ```shell
@@ -11,9 +11,9 @@ module:generate:sql <name>
 ```
 
 ## Arguments
-- `name`                   Module name
+- `name`                   Nom du module
 
-## Example
-To generate the sql for your module `MyModule`
+## Exemple
+Pour générer le SQL de votre module `MyModule`
 ```shell
 php Thelia module:generate:sql MyModule

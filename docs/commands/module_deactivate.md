@@ -3,7 +3,7 @@ title: module:deactivate
 ---
 
 ## Description
-Deactivate a module
+Désactiver un module
 
 ## Usage
 ```shell
@@ -11,15 +11,15 @@ module:deactivate [options] [--] <module>
 ```
 
 ## Arguments
-- `module`                    module to deactivate
+- `module`                    module à désactiver
 
 ## Options
-- `--with-dependencies`  activate module recursively
--  `-y`, `--assume-yes`         Assume to deactivate a mandatory module
+- `--with-dependencies`  désactiver un module de manière récursive
+-  `-y`, `--assume-yes`         Assumer de désactiver un module obligatoire
 
 
-## Example
-To deactivate TheliaLibrary module   
+## Exemple
+Pour désactiver le module TheliaLibrary
 ```shell
 php Thelia module:deactivate TheliaLibrary
 ```

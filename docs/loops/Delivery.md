@@ -2,47 +2,47 @@
 title: Delivery
 ---
 
-delivery loop displays delivery modules information.   
+La boucle Delivery affiche les informations sur les modules de livraison.
 `{loop type="delivery" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#delivery-arguments}
 
-| Argument     | Description                                                                     | Default | Example                    |
-|--------------|:--------------------------------------------------------------------------------|:-------:|:---------------------------|
-| address      | An address id.                                                                  |         | address=21                 |                                                    |           | product="2"                 |
-| code         | A module code.                                                                  |         | code='Atos'                |
-| country      | A country id.                                                                   |         | country=2                  |
-| exclude      | A list of module IDs to exclude from the results                                |         | exclude="12, 21"           |
-| exclude_code | A list of module codes to exclude from the results                              |         | exclude_code="Cheque,Atos" |
-| id           | A module id.                                                                    |         | module=4                   |
-| order        | A list of values see [sorting possible values](#delivery-order-possible-values) | manual  | order="id_reverse"         |
-| state        | A state id.                                                                     |         | state=12                   |
+| Argument     | Description                                                                          | Default | Exemple                    |
+|--------------|:-------------------------------------------------------------------------------------|:-------:|:---------------------------|
+| address      | Un ID d'adresse.                                                                     |         | address=21                 |
+| code         | Le code d'un module.                                                                 |         | code='Atos'                |
+| country      | Un id de pays.                                                                       |         | country=2                  |
+| exclude      | Un ou plusieurs IDs de modules à exclure                                             |         | exclude="12, 21"           |
+| exclude_code | Un ou plusieurs codes de modules à exclure.                                          |         | exclude_code="Cheque,Atos" |
+| id           | L'id d'un module                                                                     |         | module=4                   |
+| order        | Une liste de valeurs voir [sorting possible values](#delivery-order-possible-values) | manual  | order="id_reverse"         |
+| state        | Un ID d'état.                                                                        |         | state=12                   |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable                | Value                                                               |
-|:------------------------|:--------------------------------------------------------------------|
-| $CHAPO                  | the delivery module short description                               |
-| $CODE                   | the module code                                                     |
-| $DELIVERY_DATE          | the expected delivery date. This output could be empty.             |
-| $DESCRIPTION            | the delivery module description                                     |
-| $ID                     | the delivery module id                                              |
-| $POSTAGE                | the delivery price with taxes, expressed in the current currency    |
-| $POSTAGE_TAX            | The delivery price tax amount, expressed in the current currency    |
-| $POSTAGE_TAX_RULE_TITLE | The tax rule title used to get delivery price tax                   |
-| $POSTAGE_UNTAXED        | the delivery price without taxes, expressed in the current currency |
-| $POSTSCRIPTUM           | the delivery module postscriptum                                    |
-| $TITLE                  | the delivery module title                                           |
+| Variable                | Value                                                                                |
+|:------------------------|:-------------------------------------------------------------------------------------|
+| $CHAPO                  | le chapo du module de livraison                                                      |
+| $CODE                   | le code du module                                                                    |
+| $DELIVERY_DATE          | la date de livraison prévue. Cette sortie peut être vide.                            |
+| $DESCRIPTION            | la description du module de livraison                                                |
+| $ID                     | l'id du module de livraison                                                          |
+| $POSTAGE                | le prix de livraison avec taxes, exprimé dans la devise actuelle                     |
+| $POSTAGE_TAX            | le montant de la taxe sur le prix de livraison, exprimé dans la devise actuelle      |
+| $POSTAGE_TAX_RULE_TITLE | le titre de la règle de texes utilisée pour obtenir la taxe sur le prix de livraison |
+| $POSTAGE_UNTAXED        | le prix de livraison sans taxes, exprimé dans la devise actuelle                     |
+| $POSTSCRIPTUM           | la postscriptum du module de livraison                                               |
+| $TITLE                  | la titre du module de livraison                                                      |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#delivery-order-possible-values}
+## Valeurs possibles de tri {#delivery-order-possible-values}
 [Arguments](#delivery-arguments)
 
-| Ascending value | Descending value | Sorted fields                      |
-|-----------------|------------------|:-----------------------------------|
-| alpha           | alpha_reverse    | title                              |
-| id              | id_reverse       | id                                 |
-| manual          | manual_reverse   | position as defined in back-office |
+| Valeur croissante | Valeur décroissante | Champs triés                       |
+|-------------------|---------------------|:-----------------------------------|
+| alpha             | alpha_reverse       | title                              |
+| id                | id_reverse          | id                                 |
+| manual            | manual_reverse      | position as defined in back-office |

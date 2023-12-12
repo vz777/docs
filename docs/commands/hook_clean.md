@@ -3,22 +3,22 @@ title: hook:clean
 ---
 
 ## Description
-Clean hooks. It will delete all hooks, then recreate it.
+Nettoyer les hooks. Cela supprimera tous les hooks, puis le recréera.
 
 ## Usage
-```shell 
+```shell
 hook:clean [options] [--] [<module>]
 ```
 
 ## Arguments
-- `module`                   The module code to clean up
+- `module`                    Le code du module à nettoyer
 
 ## Options
-- `-y`, `--assume-yes`      Assume to answer yes to all questions
+- `-y`, `--assume-yes`      Suppose de répondre oui à toutes les questions
 
 
-## Example
-To clean the hok of Carousel without asking for confirmation
+## Exemple
+Pour nettoyer le hook du Carrousel sans demander de confirmation
 ```shell
 php Thelia hook:clean -y Carousel
 ```

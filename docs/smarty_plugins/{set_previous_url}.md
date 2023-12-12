@@ -1,11 +1,11 @@
-In most cases, Thelia automatically sets the previous URLs, so that `{navigate to='previous'}` will generate the URL to the previous page visited by your customer. 
-But in some cases, you may want to define yourself the URL of the previous page, so that your customers will go back to this specific page instead of the page they have visited before.
+Dans la plupart des cas, Thelia définit automatiquement les URL précédentes, de sorte que `{navigate to='previous'}` générera l'URL de la page précédemment visitée par votre client. Cependant, dans certains cas, vous voudrez peut-être définir vous-même l'URL de la page précédente, de sorte que vos clients reviendront à une page spécifique plutôt qu'à la page qu'ils ont visitée avant.
 
-The `{set_previous_url}` function allows setting the URLs of the page thant will become the previous page :
-`{set_previous_url path='path/to/some/page'}`    
-To get possible `{set_previous_url}` parameters, please see the [{url}](./{url}) function.    
-    
-You may also want to prevent a page to become the “previous page”. To do so, use the `ignore_current` parameter, and put this call somewhere in the page :
-`{set_previous_url ignore_current=1}`    
-    
-A typical example is the `login` and/or `register` page, where the user should go back where it was before entering its credentials (cart or order page), and not te register/login page itself.
+La fonction `{set_previous_url}` permet de définir l'URL de la page qui deviendra la page précédente :
+`{set_previous_url path='path/to/some/page'}`
+
+Pour obtenir les paramètres possibles de `{set_previous_url}`, veuillez consulter la fonction [{url}](./{url}).
+
+Vous pouvez également vouloir empêcher une page de devenir la "page précédente". Pour ce faire, utilisez le paramètre `ignore_current`, et placez cet appel quelque part dans la page :
+`{set_previous_url ignore_current=1}`
+
+Un exemple typique est la page de connexion `login` et/ou la page d'inscription `register`, où l'utilisateur doit revenir à l'endroit où il se trouvait avant d'entrer ses informations d'identification (panier ou page de commande), et non à la page d'inscription/connexion elle-même.

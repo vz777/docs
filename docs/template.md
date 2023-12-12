@@ -3,28 +3,28 @@ title: Template
 sidebar_position: 5
 ---
 
-The template engine used in Thelia is [Smarty](https://smarty-php.github.io/smarty/).
-There is 4 types of templates :
-- frontOffice : for templates rendered from a controller that extend `BaseFrontController`
-- backOffice : for templates rendered from a controller that extend `BaseAdminController`
-- pdf : for pdf documents like invoices
-- mail : for mail sent by Thelia
+Le moteur de template utilisé dans Thelia est [Smarty](https://smarty-php.github.io/smarty/).
+Il existe 4 types de modèles :
+- frontOffice : pour les modèles générés à partir d'un contrôleur qui étend `BaseFrontController`
+- backOffice : pour les modèles générés à partir d'un contrôleur qui étend `BaseAdminController`
+- pdf : pour les documents PDF tels que les factures
+- mail : pour les courriers envoyés par Thelia
 
-For each of this types you can choose an active template. Either by the configuration page in back office or by these environment variables:
+Pour chacun de ces types, vous pouvez choisir un modèle actif, soit par la page de configuration dans le back-office, soit par ces variables d'environnement :
 ```
-ACTIVE_FRONT_TEMPLATE    
-ACTIVE_ADMIN_TEMPLATE    
-ACTIVE_MAIL_TEMPLATE   
-ACTIVE_PDF_TEMPLATE   
-``` 
-:::caution
-It's strongly recommended to never modify the defaults templates but copy and rename it with the name of your project.    
-Like this you can always update Thelia and the defaults templates without loosing your changes
+ACTIVE_FRONT_TEMPLATE
+ACTIVE_ADMIN_TEMPLATE
+ACTIVE_MAIL_TEMPLATE
+ACTIVE_PDF_TEMPLATE
+```
+:::attention
+Il est fortement recommandé de ne jamais modifier les modèles par défaut, mais de les copier et de les renommer avec le nom de votre projet.
+Ainsi, vous pouvez toujours mettre à jour Thelia et les modèles par défaut sans perdre vos modifications.
 :::
 
-### Templates structure
+### Structure des modèles
 
-Thelia Smarty templates are located in the templates sub-directory.
+Les modèles Smarty de Thelia se trouvent dans le sous-répertoire "templates".
 
 ```
 \templates
@@ -33,25 +33,25 @@ Thelia Smarty templates are located in the templates sub-directory.
     \myTemplate
   \backOffice
     \default
-    ...  
+    ...
   \pdf
     \default
-    ...  
+    ...
   \mail
     \default
     ...
 ```
 
-This is the structure of all Thelia templates, it can be located either at the root of your project or in each module folder.
-If same file are in multiple templates location, Thelia apply this priority to know which has to be rendered (the first file found is the file rendered)
-1. In the `active` template in root templates directory
-2. In the `active` template in each module subdirectory located in root templates directory
-3. In the `active` template in each module templates directory
-4. In the "default" template in root templates directory
-5. In the "default" template in each module subdirectory located in root templates directory
-6. In the "default" template in each module templates directory
+C'est la structure de tous les modèles Thelia, elle peut être située soit à la racine de votre projet, soit dans le dossier de chaque module.
+Si un même fichier se trouve dans plusieurs emplacements de modèles, Thelia applique cette priorité pour déterminer lequel doit être rendu (le premier fichier trouvé est le fichier rendu) :
+1. Dans le modèle "actif" du répertoire de modèles principal
+2. Dans le modèle "actif" de chaque sous-répertoire de module situé dans le répertoire principal des templates
+3. Dans le modèle "actif" de chaque répertoire de templates de module
+4. Dans le modèle "par défaut" du répertoire principal des templates
+5. Dans le modèle "par défaut" de chaque sous-répertoire de module situé dans le répertoire principal des templates
+6. Dans le modèle "par défaut" de chaque répertoire de templates de module
 
-For example if you have this structure :
+Par exemple, si vous avez cette structure :
 ```
 \local
     \modules
@@ -71,7 +71,7 @@ For example if you have this structure :
                 template.html
 ```
 
-It will check all these directories in this order :
+Il vérifiera tous ces répertoires dans cet ordre :
 1. `\templates\frontOffice\myTemplate\`
 2. `\templates\frontOffice\myTemplate\modules\myproject` * this for each activated modules
 3. `\local\modules\MyProject\templates\frontOffice\myTemplate` * this for each activated modules
@@ -79,12 +79,12 @@ It will check all these directories in this order :
 5. `\templates\frontOffice\default\modules\myproject` * this for each activated modules
 6. `\local\modules\MyProject\templates\frontOffice\default` * this for each activated modules
 
-### Features
+### Fonctionnalités
 
-#### Loops
+#### Boucles
 
-Loops allow to get data from your shop back-end and display them in your front view. More documentation can be found [here](/loops/index.md).
+Les boucles permettent d'obtenir des données à partir de votre backend de boutique et de les afficher dans votre vue frontale. Vous trouverez plus de documentation [ici](/loops/index.md).
 
 #### Smarty plugins
 
-Smarty plugins are used to execute functions from templates. More documentation can be found [here](/smarty_plugins/index.md).
+Les plugins Smarty sont utilisés pour exécuter des fonctions depuis les template. Vous trouverez plus de documentation [ici](/smarty_plugins/index.md).

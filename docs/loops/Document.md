@@ -2,56 +2,56 @@
 title: Document
 ---
 
-The document loop process, cache and display products, categories, contents and folders documents.   
+La boucle Document traite, met en cache et affiche les documents associés aux produits, catégories, contenus et dossiers.
 `{loop type="document" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#document-arguments}
 
-| Argument    | Description                                                                                                          | Default | Example               |
-|-------------|:---------------------------------------------------------------------------------------------------------------------|:-------:|:----------------------|
-| brand **    | a brand identifier. The loop will return this brand's documents                                                      |   yes   | current="false"       |                                                    |           | product="2"                 |
-| category ** | a category identifier. The loop will return this category's documents                                                |         | category="2"          |
-| content **  | a content identifier. The loop will return this content's documents                                                  |         | content="2"           |
-| exclude     | A single or a comma-separated list of document IDs to exclude from the list.                                         |         | exclude="456,123"     |
-| folder **   | a folder identifier. The loop will return this folder's documents                                                    |         | folder="2"            |
-| id          | A single or a list of document ids.                                                                                  |         | id="2", id="1,4,7"    |
-| lang        | A language identifier, to specify the language in which the document information will be returned                    |         |                       |
-| order       | A list of values see [sorting possible values](#document-order-possible-values)                                      | manual  | order="alpha_reverse" |
-| product **  | a product identifier. The loop will return this product's documents                                                  |         | product="2"           |
-| source **   | see [Expected values](#document-source-expected-values)                                                              |         | source="category"     |
-| source_id   | The identifier of the object provided in the "source" parameter. Only considered if the "source" argument is present |         | source_id="2"         |
-| visible     | A boolean value.                                                                                                     |   yes   | visible="no"          |
+| Argument    | Description                                                                                                | Default | Exemple               |
+|-------------|:-----------------------------------------------------------------------------------------------------------|:-------:|:----------------------|
+| brand **    | Un id de marque. La boucle retournera les documents de cette marque.                                       |   yes   | current="false"       |
+| category ** | Un id de catégorie. La boucle retournera les documents de cette catégorie.                                 |         | category="2"          |
+| content **  | Un id de contenu. La boucle retournera les documents de ce contenu.                                        |         | content="2"           |
+| exclude     | Un ou plusieurs IDs de documents à exclure, séparés par des virgules .                                     |         | exclude="456,123"     |
+| folder **   | Un id de dossier. La boucle retournera les documents de ce dossier.                                        |         | folder="2"            |
+| id          | Un ou plusieurs IDs de document                                                                            |         | id="2", id="1,4,7"    |
+| lang        | Un id de langue, pour spécifier la langue dans laquelle les informations sur le document seront retournées |         |                       |
+| order       | Une liste de valeurs voir [sorting possible values](#document-order-possible-values)                       | manual  | order="alpha_reverse" |
+| product **  | Un id de produit. La boucle retournera les documents de ce produit.                                        |         | product="2"           |
+| source **   | voir [Expected values](#document-source-expected-values)                                                   |         | source="category"     |
+| source_id   | L'id de l'objet fourni dans le paramètre "source". Seulement considéré si l'argument "source" est présent  |         | source_id="2"         |
+| visible     | Booléen.                                                                                                   |   yes   | visible="no"          |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
 | Variable                | Value                                                                                     |
 |:------------------------|:------------------------------------------------------------------------------------------|
-| $CHAPO                  | the document chapo                                                                        |
-| $DESCRIPTION            | the document description                                                                  |
-| $DOCUMENT_PATH          | The absolute path to the generated document file                                          |
-| $DOCUMENT_URL           | The absolute URL to the generated document                                                |
-| $ID                     | the document ID                                                                           |
-| $LOCALE                 | the locale                                                                                |
+| $CHAPO                  | le chapo du document                                                                      |
+| $DESCRIPTION            | la description du document                                                                |
+| $DOCUMENT_PATH          | Le chemin absolu du fichier de document généré                                            |
+| $DOCUMENT_URL           | L'URL absolue du document généré                                                          |
+| $ID                     | l'id du document                                                                          |
+| $LOCALE                 | la locale                                                                                 |
 | $OBJECT_ID              | The object ID                                                                             |
 | $OBJECT_TYPE            | The object type (e.g., produc, category, etc. see 'source' parameter for possible values) |
-| $ORIGINAL_DOCUMENT_PATH | The absolute path to the original document file                                           |
-| $POSITION               | the position of this document in the object's document list                               |
-| $POSTSCRIPTUM           | the document postscriptum                                                                 |
-| $TITLE                  | the document title                                                                        |
-| $VISIBLE                | true if the document is visible. False otherwise                                          |
+| $ORIGINAL_DOCUMENT_PATH | Le chemin absolu du fichier de document original                                          |
+| $POSITION               | La position de ce document dans la liste des documents de l'objet                         |
+| $POSTSCRIPTUM           | le postscriptum du document                                                               |
+| $TITLE                  | le titre du document                                                                      |
+| $VISIBLE                | vrai si le document est visible. Faux sinon                                               |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#document-order-possible-values}
+## Valeurs possibles de tri {#document-order-possible-values}
 [Arguments](#document-arguments)
 
-| Ascending value | Descending value | Sorted fields       |
-|-----------------|------------------|:--------------------|
-| alpha           | alpha-reverse    | title               |
-| manual          | manual-reverse   | position            |
-| random          |                  | pseudo-random order |
+| Valeur croissante | Valeur décroissante | Champs triés        |
+|-------------------|---------------------|:--------------------|
+| alpha             | alpha-reverse       | title               |
+| manual            | manual-reverse      | position            |
+| random            |                     | pseudo-random order |
 
 ## Souce expected values {#document-source-expected-values}
 [Arguments](#document-arguments)

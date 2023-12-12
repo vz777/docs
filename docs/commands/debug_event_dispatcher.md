@@ -3,7 +3,7 @@ title: debug:event-dispatcher
 ---
 
 ## Description
-Displays all configured listeners
+Afficher tous les listeners configurés
 
 ## Usage
 ```shell
@@ -11,17 +11,17 @@ debug:event-dispatcher [options] [--] [<event>]
 ```
 
 ## Arguments
-- `event`        An event name or a part of the event name
+- `event`        Un nom d'évènement ou une partie de son nom
 
 ## Options
-- `--dispatcher=DISPATCHER`  To view events of a specific event dispatcher [default: "event_dispatcher"]
-- `--format=FORMAT`  The output format  (txt, xml, json, or md) [default: "txt"]
-- `--raw`  To output raw description
+- `--dispatcher=DISPATCHER`  Pour afficher les événements d'un gestionnaire d'événements spécifique [default: "event_dispatcher"]
+- `--format=FORMAT`  Le format de sortie (txt, xml, json, or md) [default: "txt"]
+- `--raw`  Pour afficher une description brute
 
 
 
-## Example
-To list all event that have "product" in name and their listeners    
+## Exemple
+Pour lister tous les évènements qui ont "product" dans leurs noms et leurs listeners
 ```shell
 php Thelia debug:event-dispatcher product
 ```

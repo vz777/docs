@@ -3,7 +3,7 @@ title: module:generate
 ---
 
 ## Description
-Generate all needed files for creating a new Module
+Génére tous les fichiers nécessaires pour créer un nouveau module
 
 ## Usage
 ```shell
@@ -11,12 +11,12 @@ module:generate [options] [--] <name>
 ```
 
 ## Arguments
-- `name`                   Name wanted for your Module
+- `name`                   Le nom que vous souhaitez pour votre Module
 
 ## Options
-- `--force`  If defined, it will update the module with missing directories and files (no overrides).
+- `--force`   Si défini, mettra à jour le module avec les répertoires et fichiers manquants (pas de remplacement).
 
-## Example
-To generate a module named `MyModule`
+## Exemple
+Pour créer un module qui s'appele `MyModule`
 ```shell
 php Thelia module:generate MyModule

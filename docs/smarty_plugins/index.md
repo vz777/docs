@@ -1,10 +1,10 @@
 ---
 title: Smarty plugins
---- 
+---
 
-To create plugin Smarty in Thelia, just create a new class that extend `TheliaSmarty\Template\AbstractSmartyPlugin`, then create function called `getPluginDescriptors`
-that lists and describes all the plugin you want to create (you can create as many plugins as you want in one class).     
-A smarty plugin is described like this :
+Pour créer un plugin smarty dans Thelia, créez une nouvelle classe qui étend
+`TheliaSmarty\Template\AbstractSmartyPlugin`, ensuite, créez une fonction appelée  `getPluginDescriptors`
+qui répertorie et décrit tous les plugins que vous souhaitez créer (vous pouvez créer autant de plugins que vous le souhaitez dans une seule classe). Un plugin Smarty est décrit comme suit :
 ```php
 new SmartyPluginDescriptor(
     'function',
@@ -14,13 +14,13 @@ new SmartyPluginDescriptor(
 )
 ```
 
-First parameter is the type of the plugin, more information [here](https://smarty-php.github.io/smarty/programmers/plugins.html).    
-Second parameter is the name you have to put in your templates to call your plugin.     
-Third parameter is location of the Class of your function, in general it's `$this` because you write function in the same class as the declaration.    
-Fourth parameter is the name of the function you want to call.
+Le premier paramètre est le type de plugin ; vous pouvez trouver plus d'informations [here](https://smarty-php.github.io/smarty/programmers/plugins.html).
+Le deuxième paramètre est le nom que vous devez utiliser dans vos modèles pour appeler votre plugin.
+Le troisième paramètre est l'emplacement de la classe de votre fonction. En général, c'est `$this` car vous écrivez la fonction dans la même classe que la déclaration.
+ Le quatrième paramètre est le nom de la fonction que vous souhaitez appeler.
 
-Declaration of your plugins :
-```php 
+Voici un exemple de déclaration de vos plugins :
+```php
 class MyProjectPlugin extends AbstractSmartyPlugin
 {
     public function getPluginDescriptors()
@@ -40,12 +40,12 @@ class MyProjectPlugin extends AbstractSmartyPlugin
             )
         ];
     }
-    
+
     public function lowerString($params)
     {
         return strtolower($params['string']);
     }
-    
+
     public function getBestProduct($params)
     {
         // Do a query to find your best product and return it
@@ -53,9 +53,9 @@ class MyProjectPlugin extends AbstractSmartyPlugin
 }
 ```
 
-Usage :
+Utilisation dans les templates Smarty :
 ```smarty
     {lower string="A String THAT need to be LOWERCASE"} // Some plugins needs params
-    
+
     {bestProduct} // Other don't
 ```

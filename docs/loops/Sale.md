@@ -2,56 +2,56 @@
 title: Sale
 ---
 
-Sale loop provides an access to sale operations defined on your shop.   
+La boucle Sale offre un accès aux opérations de promotion définies dans votre boutique.
 `{loop type="sale" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#sale-arguments}
 
-| Argument | Description                                                                                                          |          Default           | Example             |
-|----------|:---------------------------------------------------------------------------------------------------------------------|:--------------------------:|:--------------------|
-| active   | A boolean value, to get only active (1) or inactive sales (0) or both (*)                                            |             1              | active="1"          |
-| currency | A currency id, to get the price offset defined for this currency                                                     | The current shop currency  | currency="1"        |
-| exclude  | A single or a list of sale ids to excluded from results.                                                             |                            | id="2", id="1,4,7"  |
-| id       | A single or a list of sale ids.                                                                                      |                            | id="2", id="1,4,7"  |
-| order    | A list of values see [sorting possible values](#sale-order-possible-values)                                          |           manual           | order=" random"     |
-| product  | A single or a list of product IDs. If specified, the loop will return the sales in which these products are selected |                            | id="2", id="1,4,7"  |
+| Argument | Description                                                                                                                    |             Defaut             | Exemple            |
+|----------|:-------------------------------------------------------------------------------------------------------------------------------|:------------------------------:|:-------------------|
+| active   | Booléen, pour obtenir uniquement les promotions actives (1) ou inactives (0) ou les deux (*)                                   |               1                | active="1"         |
+| currency | Un identifiant de devise, pour obtenir la remise définie pour cette devise                                                     | Devise actuelle de la boutique | currency="1"       |
+| exclude  | Un ou plusieurs ids de promo à exclure des résultats.                                                                          |                                | id="2", id="1,4,7" |
+| id       | Un ou plusieurs ids de promo                                                                                                   |                                | id="2", id="1,4,7" |
+| order    | Une liste de valeurs see [sorting possible values](#sale-order-possible-values)                                                |             manual             | order=" random"    |
+| product  | Un ou plusieurs ids de produits. Si spécifié, la boucle renverra les promotions dans lesquelles ces produits sont sélectionnés |                                | id="2", id="1,4,7" |
 
-Plus the [global arguments](./global_arguments) and [search arguments](./search_arguments)
+Plus les [global arguments](./global_arguments) and [search arguments](./search_arguments)
 
-## Outputs
+## Sorties
 
-| Variable               | Value                                                                         |
-|:-----------------------|:------------------------------------------------------------------------------|
-| $ACTIVE                | true if the sale is active, false otherwise                                   |
-| $CHAPO                 | the sale chapo                                                                |
-| $DESCRIPTION           | the sale description                                                          |
-| $DISPLAY_INITIAL_PRICE | true if the products initial price should be displayed, false otherwise       |
-| $END_DATE              | the sale end date                                                             |
-| $HAS_END_DATE          | true if the sale has a end date, false otherwise                              |
-| $HAS_START_DATE        | true if the sale has a start date, false otherwise                            |
-| $ID                    | the content id                                                                |
-| $IS_TRANSLATED         | check if the content is translated                                            |
-| $LOCALE                | the locale (e.g. fr_FR) of the returned data                                  |
-| $POSTSCTIPTUM          | the sale postscriptum                                                         |
-| $PRICE_OFFSET_SYMBOL   | the offset unit symbol, % for a percentage, the currency symbol for an amount |
-| $PRICE_OFFSET_TYPE     | the price offset type, P for a percentage, A for an amount                    |
-| $PRICE_OFFSET_VALUE    | the price offset value, as a percentage (0-100) or a constant amount.         |
-| $SALE_LABEL            | the sale advertising label                                                    |
-| $START_DATE            | the sale start date                                                           |
-| $TITLE                 | the sale title                                                                |
+| Variable               | Value                                                                                                      |
+|:-----------------------|:-----------------------------------------------------------------------------------------------------------|
+| $ACTIVE                | vrai si la promotion est active, faux sinon                                                                |
+| $CHAPO                 | le chapo de la promo                                                                                       |
+| $DESCRIPTION           | la description de la promo                                                                                 |
+| $DISPLAY_INITIAL_PRICE | vrai si le prix initial des produits doit être affiché, faux sinon                                         |
+| $END_DATE              | la date de fin de la promo                                                                                 |
+| $HAS_END_DATE          | vrai si la promotion a une date de fin, faux sinon                                                         |
+| $HAS_START_DATE        | vrai si la promotion a une date de début, faux sinon                                                       |
+| $ID                    | l'id de la promo                                                                                           |
+| $IS_TRANSLATED         | vérifie si la promotion est traduite                                                                       |
+| $LOCALE                | la locale (par exemple fr_FR) des données retournées                                                       |
+| $POSTSCTIPTUM          | le postscriptum de la promo                                                                                |
+| $PRICE_OFFSET_SYMBOL   | le symbole d'unité de la réduction de prix, % pour un pourcentage, le symbole de la devise pour un montant |
+| $PRICE_OFFSET_TYPE     | le type de réduction de prix, P pour un pourcentage, A pour un montant                                     |
+| $PRICE_OFFSET_VALUE    | la valeur de la réduction, comme un pourcentage (0-100) ou un montant.                                     |
+| $SALE_LABEL            | l'étiquette publicitaire de la promotion                                                                   |
+| $START_DATE            | la date de début de la promo                                                                               |
+| $TITLE                 | le titre de la promo                                                                                       |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#sale-order-possible-values}
+## Valeurs possibles de tri {#sale-order-possible-values}
 [Arguments](#sale-arguments)
 
-| Ascending value | Descending value | Sorted fields         |
-|-----------------|------------------|:----------------------|
-| active          | active-reverse   | active                |
-| alpha           | alpha-reverse    | title                 |
-| created         | created-reverse  | date of sale creation |
-| end-date        | end-date-reverse | end date              |
-| id              | id-reverse       | id                    |
-| label           | label-reverse    | label                 |
-| start-date      | start-date       | start date            |
-| updated         | updated-reverse  | date of sale update   |
+| Valeur croissante | Valeur décroissante | Champs triés          |
+|-------------------|---------------------|:----------------------|
+| active            | active-reverse      | active                |
+| alpha             | alpha-reverse       | title                 |
+| created           | created-reverse     | date of sale creation |
+| end-date          | end-date-reverse    | end date              |
+| id                | id-reverse          | id                    |
+| label             | label-reverse       | label                 |
+| start-date        | start-date          | start date            |
+| updated           | updated-reverse     | date of sale update   |

@@ -2,34 +2,34 @@
 title: Order address
 ---
 
-Order address loop displays order addresses information.   
+La boucle Order address affiche sur les addresses de commandes.
 `{loop type="order_address" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#order-arguments}
 
-| Argument | Description                | Default | Example |
-|----------|:---------------------------|:-------:|:--------|
-| id *     | A single order address id  |         | id="2"  |
+| Argument | Description               | Default | Exemple |
+|----------|:--------------------------|:-------:|:--------|
+| id *     | A single order address id |         | id="2"  |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable   | Value                                                                     |
-|:-----------|:--------------------------------------------------------------------------|
-| $ADDRESS1  | the first order address line                                              | 
-| $ADDRESS2  | the second order address line                                             |
-| $ADDRESS3  | the third order address line                                              |
-| $CELLPHONE | the order address cellphone                                               |
-| $CITY      | the order address city                                                    |
-| $COMPANY   | the order address company                                                 |
-| $COUNTRY   | the order address country which might be use in [country loop](./Country) |
-| $FIRSTNAME | the order address firstname                                               |
-| $ID        | the order address id                                                      |
-| $LASTNAME  | the order address lastname                                                |
-| $PHONE     | the order address phone                                                   |
-| $TITLE     | the order address title which might be use in [title loop](./Title)       |
-| $ZIPCODE   | the order address zipcode                                                 |
+| Variable   | Value                                                                                          |
+|:-----------|:-----------------------------------------------------------------------------------------------|
+| $ADDRESS1  | la première ligne de l'adresse de commande                                                     |
+| $ADDRESS2  | la deuxième ligne de l'adresse de commande                                                     |
+| $ADDRESS3  | la troisième ligne de l'adresse de commande                                                    |
+| $CELLPHONE | le numéro de téléphone portable associé à l'adresse de commande                                |
+| $CITY      | la ville de l'adresse de commande                                                              |
+| $COMPANY   | le nom de la société associée à l'adresse de commande                                          |
+| $COUNTRY   | le pays de l'adresse de commande, qui peut être utilisé dans une [country loop](./Country)     |
+| $FIRSTNAME | le prénom associé à l'adresse de commande                                                      |
+| $ID        | l'id de l'adresse de commande                                                                  |
+| $LASTNAME  | le nom associé à l'adresse de commande                                                         |
+| $PHONE     | le numéro de téléphone associé à l'adresse de commande                                         |
+| $TITLE     | le titre associé à l'adresse de commande, qui peut être utilisé dans une [title loop](./Title) |
+| $ZIPCODE   | le code postal de l'adresse de commande                                                        |
 
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

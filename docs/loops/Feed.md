@@ -2,26 +2,26 @@
 title: Feed
 ---
 
-Get data from an Atom or RSS feed.   
+Obtenez des données à partir d'un flux Atom ou RSS.
 `{loop type="feed" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#feed-arguments}
 
-| Argument | Description                                                                        | Default | Example                                |
-|----------|:-----------------------------------------------------------------------------------|:-------:|:---------------------------------------|
-| timeout  | Delay in seconds after which the loop closes the connection with the remote server |         | timeout=10                             |
-| url      | An Atom or RSS feed URL.                                                           |         | url='http://thelia.net/feeds/?lang=en' |
+| Argument | Description                                                                         | Default | Exemple                                |
+|----------|:------------------------------------------------------------------------------------|:-------:|:---------------------------------------|
+| timeout  | Délai en secondes après lequel la boucle ferme la connexion avec le serveur distant |         | timeout=10                             |
+| url      | Une URL de flux Atom ou RSS.                                                        |         | url='http://thelia.net/feeds/?lang=en' |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable     | Value                                   |
-|:-------------|:----------------------------------------|
-| $AUTHOR      | The feed item author                    |
-| $DATE        | the feed item date, as a Unix timestamp |
-| $DESCRIPTION | the feed item description               |
-| $TITLE       | The feed item title                     |
-| $URL         | the feed item URL                       |
+| Variable     | Value                                                   |
+|:-------------|:--------------------------------------------------------|
+| $AUTHOR      | l'auteur de l'élément du flux                           |
+| $DATE        | la date de l'élément du flux, au format horodatage Unix |
+| $DESCRIPTION | la description de l'élément du flux                     |
+| $TITLE       | le titre de l'élément du flux                           |
+| $URL         | l'URL de l'élément du flux                              |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

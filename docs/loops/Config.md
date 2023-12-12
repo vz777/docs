@@ -2,46 +2,46 @@
 title: Config
 ---
 
-Config loop, to access configuration variables    
+La boucle config permet d'accéder aux variables de configuration.
 `{loop type="config" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#conf-arguments}
 
-| Argument      | Description                                                           | Default | Example                      |
-| ------------- |:----------------------------------------------------------------------| :-----: | :----------------------------|
-| exclude       | A single or a list of config ids.                                     |         | exclude="2", exclude="1,4,7" |
-| hidden        | A boolean value.                                                      |         | hidden="no"                  |
-| id            | A single of config id.                                                |         | id="2"                       |
-| order         | A list of values <br/> [Expected values](#conf-order-possible-values) | manual  | order="id_reverse"           |
-| secured       | A boolean value.                                                      |         |  secured="no"                |
-| variable      | Name of a variable config                                             |         |  variable="rewriting_enable" |
+| Argument | Description                                                               | Defaut | Exemple                      |
+|----------|:--------------------------------------------------------------------------|:------:|:-----------------------------|
+| exclude  | Un ou plusieurs IDs de configs.                                           |        | exclude="2", exclude="1,4,7" |
+| hidden   | Booléen                                                                   |        | hidden="no"                  |
+| id       | Un seul id de config.                                                     |        | id="2"                       |
+| order    | Une liste de valeurs <br/> [Expected values](#conf-order-possible-values) | manual | order="id_reverse"           |
+| secured  | Booléen                                                                   |        | secured="no"                 |
+| variable | Nom d'une variable de config                                              |        | variable="rewriting_enable"  |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable                                                                  | Value                                     |
-| :-----------------------------------------------------------------------  | :---------------------------------------- |
-| $CHAPO	                                                                | The config variable chapo                 |
-| $DESCRIPTION	                                                            | The config variable description           |
-| $HIDDEN	                                                                | check if the config variable is hidden    |
-| $ID	                                                                    | the config variable id                    |
-| $IS_TRANSLATED	                                                        | 	check if the config is translated       |
-| $LOCALE	                                                                |  The locale used for this research        |
-| $NAME	                                                                    |  the config variable name                 |
-| $POSTSCRIPTUM	                                                            |  	The config variable postscriptum        |
-| $SECURED	                                                                |  	check if the config variable is secured |
-| $TITLE	                                                                |  	The config variable title               |
-| $VALUE	                                                                |  	the config variable value               |
+| Variable       | Valeur                                         |
+|:---------------|:-----------------------------------------------|
+| $CHAPO         | Le chapo de la variable de config              |
+| $DESCRIPTION   | Le description de la variable de config        |
+| $HIDDEN        | Vérifie si la variable de config est cachée    |
+| $ID            | L'id de la variable de config                  |
+| $IS_TRANSLATED | Vérifie si la variable de config est traduite  |
+| $LOCALE        | la locale utilisée pour cette recherche        |
+| $NAME          | Le nom de la variable de config                |
+| $POSTSCRIPTUM  | Le postscriptum de la variable de config       |
+| $SECURED       | Vérifie si la variable de config est sécurisée |
+| $TITLE         | Le titre de la variable de config              |
+| $VALUE         | La valeur de la variable de config             |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#conf-order-possible-values}
+## Valeurs possibles de tri {#conf-order-possible-values}
 [Arguments](#conf-arguments)
 
-| Ascending value                  | Descending value  | Sorted fields |
-|----------------------------------|-------------------|:--------------|
-| id                               | id_reverse        | ID            |
-| name                             | name_reverse      | Name          |
-| title                            | title_reverse     | Title         |
-| value                            | value_reverse     | Value         |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| id                | id_reverse          | ID           |
+| name              | name_reverse        | Name         |
+| title             | title_reverse       | Title        |
+| value             | value_reverse       | Value        |

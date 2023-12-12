@@ -1,23 +1,23 @@
-Category Substitutions provide current category, identified by `category_id` parameter (either GET or POST).    
-`{category attr="one_of_the_following"}`
+Les substitutions de catégorie fournissent la catégorie actuelle, identifiée par le paramètre `category_id` (soit GET, soit POST).
+`{category attr="une_des_suivantes"}`
 
-## Attributes
+## Attributs
 
-| Attribute name   | Data returned                                                                                          |
-|:-----------------|:-------------------------------------------------------------------------------------------------------|
-| `id`             | 	                                                                                                      |
-| `title`          |                                                                                                        |
-| `chapo`          | 	                                                                                                      |
-| ` description `  | 	 	                                                                                                    |
-| ` postscriptum ` | 	 	 	                                                                                                  |
-| ` visible `      | 	 	 	`true` if the category is active, `false` otherwise                                               |
-| ` parent `       | 	 	 	The id of parent category                                                                         |
-| ` position `     | 	 	 	The position number in parent category                                                            |
-| ` createdAt `    | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
-| ` updatedAt `    | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
+| Attribute name   | Data returned                                                                                           |
+|:-----------------|:--------------------------------------------------------------------------------------------------------|
+| `id`             |                                                                                                         |
+| `title`          |                                                                                                         |
+| `chapo`          |                                                                                                         |
+| ` description `  |                                                                                                         |
+| ` postscriptum ` |                                                                                                         |
+| ` visible `      | `true` si la catégorie est active, `false` sinon                                                        |
+| ` parent `       | L'ID de la catégorie parente                                                                            |
+| ` position `     | Le numéro de position dans la catégorie parente                                                         |
+| ` createdAt `    | La date de création formatée par  [Date time parameter](#date-time-optional-parameters)                 |
+| ` updatedAt `    | La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters) |
 
-### Date Time optional parameters
-| Parameter | Description                                                                                                                                             |
-|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Take `date`, `datetime` or `time` as value to select the return type                                                                                    |
-| `format`  | Take a [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  the format for the current locale will be used if this parameter is empty |
+### Paramètres optionnels de date et d'heure
+| Paramètresz | Description                                                                                                                                        |
+|:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
+| `output`    | Prend `date`, `datetime` or `time` comme valeur pour sélectionner le type de retour                                                                |
+| `format`    | Prend [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

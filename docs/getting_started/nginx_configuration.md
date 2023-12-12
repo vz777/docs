@@ -3,7 +3,7 @@ title: Nginx configuration
 sidebar_position: 5
 ---
 
-Only the ```web``` directory has to be accessible :
+Seul le répertoire ```web``` doit être accessible :
 
 ```
 server {
@@ -27,7 +27,7 @@ server {
 
     # Php configuration
     location ~ ^/(index|index_dev)\.php(/|$) {
-        # Php-FPM Config (Socks or Network) 
+        # Php-FPM Config (Socks or Network)
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         # fastcgi_pass 127.0.0.1:9000;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
@@ -62,4 +62,4 @@ server {
 }
 ```
 
-Replace `/var/www/thelia/web` by the full path to the web directory of your project
+Remplacez `/var/www/thelia/web` par le chemin complet vers le répertoire web de votre projet.

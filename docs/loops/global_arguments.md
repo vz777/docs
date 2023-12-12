@@ -3,13 +3,13 @@ title: Global arguments
 sidebar_position: 1
 ---
 
-These arguments can be set on all loops
+Ces arguments peuvent être définis sur toutes les boucles.
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------:|-------------:|-------------:|
-| backend_context      | Determine if loop is use in backend context. | false | backend_context="on" |
-| force_return    | force return result for i18n tables even if there is no record. | false | force_return="on" |
-| limit  | The maximum number of results to display. | | limit="10" |
-| name *  | The loop name. This name must be unique and is used to reference this loop. | | name="my_name_loop" |
-| offset  |The first product to display offset. Will not be used if `page` argument is set. | 0 | offset="10" |
-| page  | The page to display. | | page="2" |
+| Argument        |                                       Description                                       | Default |              Exemple |
+|-----------------|:---------------------------------------------------------------------------------------:|--------:|---------------------:|
+| backend_context |             Déterminez si la boucle est utilisée dans un contexte backend.              |   false | backend_context="on" |
+| force_return    | forcer le résultat du retour pour les tables i18n même s'il n'y a pas d'enregistrement. |   false |    force_return="on" |
+| limit           |                       Le nombre maximum de résultats à afficher.                        |         |           limit="10" |
+| name *          |     Le nom de la boucle. Ce nom doit être unique et sert à référencer cette boucle.     |         |  name="my_name_loop" |
+| offset          |   Le premier produit à afficher. Ne sera pas utilisé si l'argument `page` est défini.   |       0 |          offset="10" |
+| page            |                                   La page à afficher.                                   |         |             page="2" |

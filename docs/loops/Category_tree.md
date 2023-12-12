@@ -2,39 +2,39 @@
 title: Category tree
 ---
 
-Category tree loop, to get a category tree from a given category to a given depth.      
+La boucle Category tree permet d'obtenir une arborescence de catégories à partir d'une catégorie donnée jusqu'à une profondeur donnée.
 `{loop type="category-tree" name="the-loop-name" [argument="value"], [...]}`
 
-## Arguments 
+## Arguments
 
-| Argument    | Description                                               | Default | Example         |
-| ----------- |:----------------------------------------------------------| :-----: | :---------------|
-| category *  | A single category id.                                     |         | category="2"    |
-| depth       | The max depth                                             |         | depth="5"       |
-| exclude     | A single or a list of category ids to exclude for result. |         | exclude="5,72"  |
-| return_url  | A boolean value which allows the urls generation.         | yes     | return_url="no" |
-| visible     | Whatever we consider hidden category or not.              | true    | visible="false" |
+| Argument   | Description                                                | Defaut | Exemple         |
+|------------|:-----------------------------------------------------------|:------:|:----------------|
+| category * | L'id d'une seule categorie.                                |        | category="2"    |
+| depth      | La profondeur maximale.                                    |        | depth="5"       |
+| exclude    | Un ou plusieurs ids de catégories à exclure des résultats. |        | exclude="5,72"  |
+| return_url | Booléen permettant la génération des URL.                  |  yes   | return_url="no" |
+| visible    | Afficher ou non les catégories masquées.                   |  true  | visible="false" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable            | Value                                    |
-| :------------------ | :--------------------------------------- |
-| $CHILD_COUNT	      |                                          |
-| $ID	              | the category id                          |
-| $LEVEL	          |                                          |
-| $PARENT	          | the parent category                      |
-| $PREV_LEVEL	      |                                          |
-| $TITLE	          |  the category title                      |
-| $URL	              |  the category URL                        |
-| $VISIBLE	          |  whatever the category is visible or not |
+| Variable     | Valeur                                  |
+|:-------------|:----------------------------------------|
+| $CHILD_COUNT |                                         |
+| $ID          | l'id de la catégorie                    |
+| $LEVEL       |                                         |
+| $PARENT      | la catégorie parente                    |
+| $PREV_LEVEL  |                                         |
+| $TITLE       | le titre de la catégorie                |
+| $URL         | l'URL de la catégorie                   |
+| $VISIBLE     | whatever the category is visible or not |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Examples
+## Exemples
 
-I want to display a select list with all visible categories.
+Je veux afficher une liste déroulante avec toutes les catégories visibles.
 ```smarty
 <select name="category">
     {loop name="categories-tree" type="category-tree" category="0"}

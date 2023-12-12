@@ -2,33 +2,33 @@
 title: Order coupon
 ---
 
-Retrieve order coupons information for a given order   
+Récupère les informations sur les coupons de commande pour une commande donnée
 `{loop type="order_coupon" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#order-arguments}
 
-| Argument | Description         | Default | Example    |
-|----------|:--------------------|:-------:|:-----------|
-| order *  | A single order id.  |         | order="2"  |
+| Argument | Description        | Default | Exemple   |
+|----------|:-------------------|:-------:|:----------|
+| order *  | A single order id. |         | order="2" |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable                          | Value                                                                                                         |
-|:----------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| $CODE                             | the coupon code                                                                                               |
-| $DAY_LEFT_BEFORE_EXPIRATION       | days left before coupon expiration                                                                            |
-| $DESCRIPTION                      | the coupon description                                                                                        |
-| $EXPIRATION_DATE                  | the coupon expiration date                                                                                    |
-| $FREE_SHIPPING_FOR_COUNTRIES_LIST | comma separated list of country IDs for which the free shipping applies                                       |
-| $FREE_SHIPPING_FOR_MODULES_LIST   | comma separated list of shipping module IDs for which the free shipping applies                               |
-| $ID                               | the coupon id                                                                                                 |
-| $IS_AVAILABLE_ON_SPECIAL_OFFERS   | true if the coupon applies to discounted products                                                             |
-| $IS_CUMULATIVE                    | true if the coupon is cumulative                                                                              |
-| $IS_REMOVING_POSTAGE              | true if the coupon provides free shipping                                                                     |
-| $IS_USAGE_CANCELED                | true if the usage of this coupon was canceled (probably when the related order was canceled), false otherwise |
-| $SHORT_DESCRIPTION                | the coupon short description                                                                                  |
-| $TITLE                            | the coupon title                                                                                              |
+| Variable                          | Value                                                                                                                  |
+|:----------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
+| $CODE                             | le code du coupon                                                                                                      |
+| $DAY_LEFT_BEFORE_EXPIRATION       | jours restants avant l'expiration du coupon                                                                            |
+| $DESCRIPTION                      | la description du coupon                                                                                               |
+| $EXPIRATION_DATE                  | la date d'expiration du coupon                                                                                         |
+| $FREE_SHIPPING_FOR_COUNTRIES_LIST | liste séparée par des virgules des identifiants de pays pour lesquels la livraison gratuite s'applique                 |
+| $FREE_SHIPPING_FOR_MODULES_LIST   | liste séparée par des virgules des identifiants de modules d'expédition pour lesquels la livraison est gratuite        |
+| $ID                               | l'id du coupon                                                                                                         |
+| $IS_AVAILABLE_ON_SPECIAL_OFFERS   | vrai si le coupon s'applique aux produits remisés                                                                      |
+| $IS_CUMULATIVE                    | vrai si le coupon peut être cumulé                                                                                     |
+| $IS_REMOVING_POSTAGE              | vrai si le coupon offre la livraison gratuite                                                                          |
+| $IS_USAGE_CANCELED                | vrai si l'utilisation de ce coupon a été annulée (probablement lorsque la commande associée a été annulée), faux sinon |
+| $SHORT_DESCRIPTION                | la short description du coupon                                                                                         |
+| $TITLE                            | le titre du coupon                                                                                                     |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

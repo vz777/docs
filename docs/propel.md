@@ -3,48 +3,48 @@ title: Propel
 sidebar_position: 4
 ---
 
-Thelia use the [Propel 2](http://propelorm.org/) orm to interact with database.
+Thelia utilise [Propel 2](http://propelorm.org/) orm pour interagir avec la base de données.
 
-## Describing schema
+## Décrire le schema
 
-To add new table in Thelia you have to describe it in your schema located here `MyModule/Config/schema.xml` please refer to [propel documentation](http://propelorm.org/documentation/reference/schema.html) to know how to do it.
+Pour ajouter une nouvelle table dans Thelia, vous devez la décrire dans votre schéma qui se trouve ici `MyModule/Config/schema.xml` veuillez regarder la [propel documentation](http://propelorm.org/documentation/reference/schema.html) pour savoir comment faire.
 
-## Generate Sql / Model from schema
+## Génerer Sql / Model à partir du schema
 
-To generate Sql request and associated model class from schema use this command
+Pour générer une requête SQL et la classe de modèle associée à partir du schéma, utilisez la commande suivante
 
 ```bash
-php Thelia module:generate:model --generate-sql MyProject 
+php Thelia module:generate:model --generate-sql MyProject
 ```
 
-This command will generate a TheliaMain.sql file at `local/modules/MyProject/Confif/TheliaMain.sql` don't modify it, it will be erased each time this command is executed.  
-It will also generate [Model](http://propelorm.org/documentation/reference/active-record.html) and [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) file for each table, in these files you can add your own functions or properties, they will not be erased as they are just empty class that extend the real propel Model located in propel cache.
+Cette commande va générer un fichier TheliaMain.sql dans `local/modules/MyProject/Confif/TheliaMain.sql` ne le modifiez pas, il sera écrsé à chaque fois que la commande sera éxecutée.
+Cela va aussi générer les fichiers [Model](http://propelorm.org/documentation/reference/active-record.html) et [ModelQuery](http://propelorm.org/documentation/reference/model-criteria.html) pour chaque table,  dans ces fichiers, vous pouvez ajouter vos propres fonctions ou propriétés, elles ne seront pas effacées car ce ne sont que des classes vides qui étendent le véritable modèle Propel situé dans le cache Propel.
 
-## Execute Sql
+## Executer Sql
 
-### At module initialization
-If you want to execute the sql at the first module activation add this function to your module's base file :
+### A l'initialization du module
+Si vous voulez éxecuter le sql à la première activation du module, ajouter cette méthode dans le fichier php à la racine du module
 
 ```php
     public function postActivation(ConnectionInterface $con = null): void
     {
-        // Look if module has already been activated 
+        // Look if module has already been activated
         if (!self::getConfigValue('is_initialized', false)) {
             $database = new Database($con);
             // Insert generated file
             $database->insertSql(null, [__DIR__.'/Config/TheliaMain.sql']);
-            
+
             // Set module as initialized
             self::setConfigValue('is_initialized', true);
         }
     }
 ```
 
-### On module update
-If your module has already been activated you must go through the update system.
-For now there is no way to get directly the sql request needed to update your database, you need to extract it from the generated TheliaMain.sql.
+### A la mise à jour du module
+Si votre module a déjà été activé, vous devez passer par le système de mise à jour.
+Pour l'instant il n'y a pas de moyen d'obtenir directement la requête sql nécessaire à la mise à jour de votre base de données, vous devez l'extraire du fichier TheliaMain.sql généré.
 
-For example if at module initialization you have this sql generated :
+Par exemple, si lors de l'initialisation du module vous avez généré ce sql :
 
 ```sql
 DROP TABLE IF EXISTS `block_group`;
@@ -58,9 +58,9 @@ CREATE TABLE `block_group`
     PRIMARY KEY (`id`),
     UNIQUE INDEX `slug_unique` (`slug`)
 ) ENGINE=InnoDB;
-``` 
+```
 
-And later you want to add a new boolean column named "visible" to you table you will add it to your shema.xml and get this sql :
+Et plus tard, vous voulez ajouter une nouvelle colonne booléenne nommée "visible" à votre table, vous l'ajouterez à votre shema.xml et vous obtiendrez ce code SQL :
 
 ```sql
 DROP TABLE IF EXISTS `block_group`;
@@ -75,16 +75,16 @@ CREATE TABLE `block_group`
     PRIMARY KEY (`id`),
     UNIQUE INDEX `slug_unique` (`slug`)
 ) ENGINE=InnoDB;
-``` 
+```
 
-So you have to extract only the difference like this
+Il faut donc extraire uniquement la différence comme suit
 
 ```sql
 ALTER TABLE `block_group` ADD `visible` TINYINT DEFAULT 0 NOT NULL;
 ```
 
-Then put this extracted requests on a new file located here `local/modules/MyProject/Config/update/` the name of the file must be the next version of your module. For instance, if the version of your module is `1.0.6` and the next version is `1.1.0`, create this file `local/modules/MyProject/Config/update/1.1.0.sql` and put the sql in it and change the `<version></version>` in module.xml.   
-Make sure that you have this function in your base file :
+Puis mettez ces requêtes extraites dans un nouveau fichier situé ici `local/modules/MyProject/Config/update/` le nom du fichier doit être la prochaine version de votre module. Par exemple, si la version de votre module est `1.0.6` et que la prochaine version est `1.1.0`, créez ce fichier `local/modules/MyProject/Config/update/1.1.0.sql` et mettez-y le sql et changez le `<version></version>` dans module.xml.
+Assurez-vous que vous avez cette méthode dans votre fichier de base :
 
 ```php
     /**
@@ -113,15 +113,15 @@ Make sure that you have this function in your base file :
     }
 ```
 
-if not you will have to add it.
-This function is called when Thelia refresh module list (either in the admin page oy by command) and detect that the next version of your module is different than the current.
-And it will search and execute all sql files between two versions.
+Si ce n'est pas le cas, vous devrez l'ajouter.
+Cette fonction est appelée lorsque Thelia rafraîchit la liste des modules (soit dans la page d'administration, soit par commande) et détecte que la prochaine version de votre module est différente de la version actuelle.
+Elle recherchera et exécutera tous les fichiers sql entre les deux versions.
 
 
-## Add a column to native Thelia table
+## Ajouter une colonne à la table native de Thelia
 
-In Thelia it is **not** possible to modify the native tables.    
-The best practice to add columns is to create a new table with a foreign key attached to the base table.
+Dans Thelia, il n'est **pas** possible de modifier les tables natives.
+La meilleure pratique pour ajouter des colonnes est de créer une nouvelle table avec une clé étrangère attachée à la table de base.
 
 ```xml
     <table name="extend_customer_data" namespace="MyProject\Model">

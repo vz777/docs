@@ -4,26 +4,26 @@ sidebar_position: 3
 toc_max_heading_level: 6
 ---
 
-# Create a module
+# Créer un module
 
-:::caution
+:::attention
 
-We advise to create only one module for all your own logic, don't create one module by feature or something else.    
-The only reason to create a separate module is if you want to share it with the community 😉
+Nous vous conseillons de créer un seul module pour toute votre logique, ne créez pas un module par fonctionnalité ou autre.
+La seule raison de créer un module séparé est si vous voulez le partager avec la communauté 😉
 
 :::
 
-To extend Thelia you need to create a module. Usually, for the main module, we call it with the same name as the project.
+Pour étendre Thelia, il faut créer un module. Généralement, pour le module principal, nous l'appelons avec le même nom que le projet.
 
 ## Structure
 
-A command can help you to create the base files :
+Une commande peut vous aider à créer les fichiers de base :
 
 ```bash
 php Thelia module:generate MyProject
 ```
 
-This will generate this structure in the directory `local\modules`
+Cela générera cette structure dans le répertoire `local\modules`
 ```
 \MyProject
   MyProject.php <- mandatory
@@ -36,45 +36,45 @@ This will generate this structure in the directory `local\modules`
   ...
 ```
 
-- `MyProject.php` is the base file of your module it will help you to set up some behaviour  
-- `module.xml` contains information about module like version of the module, compatibility and dependencies with other modules, author, ...    
-- `config.xml` to declare your services, event listener, loops, forms, commands or hooks. But thanks to autowiring most of the time you won't need to do this.
-- `routing.xml` to list your application's routes, like config.xml this file is not very useful anymore because we can declare the routes directly in the controllers.
-- `schema.xml` to describe the database table related to your module.
-- `composer.json` help you to share your module with the community
+- `MyProject.php` est le fichier de base de votre module, il vous aidera à mettre en place certains comportements.
+- `module.xml` contient des informations sur le module comme la version du module, la compatibilité et les dépendances avec d'autres modules, l'auteur, ...
+- `config.xml` pour déclarer vos services, écouteurs d'événements, boucles, formulaires, commandes ou hooks. Mais grâce à l'autowiring, la plupart du temps vous n'aurez pas besoin de le faire.
+- `routing.xml` pour lister les routes de votre application, comme config.xml ce fichier n'est plus très utile car nous pouvons déclarer les routes directement dans les contrôleurs.
+- `schema.xml` pour décrire la table de base de données liée à votre module.
+- `composer.json` pour vous aider à partager votre module avec la communauté.
 
-Once the module is created you can go to the module list in your back-office and activate it.
+Une fois le module créé, vous pouvez aller dans la liste des modules dans votre back-office et l'activer.
 
-## Base file (MyProject.php)
+## Fichier de base (MyProject.php)
 
-This file must extend the `Thelia\Module\BaseModule` class (except for [deliveries](#delivery-modules) and [payments](#payment-modules) modules)
-During the lifecycle of a module these function are called and allows you to apply your own logic by overwriting them :
-- `install(ConnectionInterface $con = null);` This method is called when the plugin is installed for the first time.
-- `preActivation(ConnectionInterface $con = null);` This method is called before the module activation, and may cancel the activation by returning false.
-- `postActivation(ConnectionInterface $con = null);` This method is called after was successfully activated.
-- `preDeactivation(ConnectionInterface $con = null);` This method is called before the module deactivation, and may cancel the deactivation it by returning false.
-- `postDeactivation(ConnectionInterface $con = null);` This method is called after was successfully deactivated.
-- `update($currentVersion, $newVersion, ConnectionInterface $con = null);` This method is called on a module refresh if the previous version in module.xml is different than the current version
+Ce fichier doit étendre la classe `Thelia\Module\BaseModule` (sauf pour les modules [deliveries](#delivery-modules) et [payments](#payment-modules)).
+Pendant le cycle de vie d'un module, ces fonctions sont appelées et vous permettent d'appliquer votre propre logique en les écrasant :
+- `install(ConnectionInterface $con = null);` Cette méthode est appelée lorsque le plugin est installé pour la première fois.
+- `preActivation(ConnectionInterface $con = null);` Cette méthode est appelée avant l'activation du module, et peut annuler l'activation en retournant false.
+- `postActivation(ConnectionInterface $con = null);` Cette méthode est appelée après que le module ait été activé avec succès.
+- `preDeactivation(ConnectionInterface $con = null);` Cette méthode est appelée avant la désactivation du module, et peut annuler la désactivation en renvoyant false.
+- `postDeactivation(ConnectionInterface $con = null);` Cette méthode est appelée après que le module ait été désactivé avec succès.
+- `update($currentVersion, $newVersion, ConnectionInterface $con = null);` Cette méthode est appelée lors d'un rafraîchissement du module si la version précédente dans module.xml est différente de la version actuelle.
 
-## Controllers
-Controllers work the same as Symfony's controllers except that in Thelia there is 2 types of Controllers :
-- Front controllers which extends `BaseFrontController` when you call a render in it, Thelia will search template in frontOffice directory
-- Admin controllers which extend `BaseAdminController`  when you call a render in it, Thelia will search template in backOffice directory and all routes in these controllers are automatically secured so that only logged admins can access them.
+## Contrôleurs
+Les contrôleurs fonctionnent de la même manière que les contrôleurs Symfony sauf que dans Thelia il y a 2 types de contrôleurs :
+- Les contrôleurs front qui étendent `BaseFrontController` lorsque vous appelez un rendu dans ce contrôleur, Thelia cherchera le template dans le répertoire frontOffice.
+- Les contrôleurs admin qui étendent `BaseAdminController` lorsque vous appelez un rendu dans celui-ci, Thelia cherchera le modèle dans le répertoire backOffice et toutes les routes dans ces contrôleurs sont automatiquement sécurisées de sorte que seuls les administrateurs connectés peuvent y accéder.
 
-## Delivery modules
+## Modules de livraison
 
-### Implementing a delivery module
+### Implémentation d'un module de livraison
 
-For a delivery module the main class should extends the ```Thelia\Module\AbstractDeliveryModule``` interface and implement the ```getPostage``` and ```isValidDelivery``` methods.
+Pour un module de livraison, la classe principale doit étendre l'interface ``Thelia\Module\AbstractDeliveryModule`` et implémenter les méthodes ``getPostage`` et ``isValidDelivery``.
 
 #### `isValidDelivery()`
 
-This method should return a `boolean`.    
-If `true`, the delivery module is displayed on the front office by the delivery loop. If `false`, the module is not displayed.
+Cette méthode doit retourner un `booléen`.
+Si `true`, le module de livraison est affiché sur le front office par la boucle de livraison. Si `false`, le module n'est pas affiché.
 
-This is useful if the delivery solution have some limitations and can't be used. For example, Colissimo can't be used if the total weight of the customer cart is greater than 30 Kg.
+Ceci est utile si la solution de livraison a des limitations et ne peut pas être utilisée. Par exemple, Colissimo ne peut pas être utilisé si le poids total du panier du client est supérieur à 30 Kg.
 
-You may also use this method to restrict access to your module to some IP addresses the during test phase.
+Vous pouvez également utiliser cette méthode pour restreindre l'accès à votre module à certaines adresses IP pendant la phase de test.
 
 ```php
 /**
@@ -99,9 +99,9 @@ public abstract function isValidDelivery(Country $country)
 
 #### `getPostage()`
 
-This method have an argument : the country for which the delivery price should be calculated.
+Cette méthode a un argument : le pays pour lequel le prix de livraison doit être calculé.
 
-If the module can't calculate the price for some reasons, it should throw a `DeliveryException`, with an internationalized message which describes the problem.
+Si le module ne peut pas calculer le prix pour certaines raisons, il doit lancer une `DeliveryException`, avec un message internationalisé qui décrit le problème.
 
 ```php
 /**
@@ -126,45 +126,45 @@ public function getPostage(Country $country)
 }
 ```
 
-## Payment modules
+## Modules de paiement
 
-### Payment process
+### Processus de paiement
 
-The payment is available once a customer is logged, has products in his cart and has selected a delivery method. 
-Here is a typical payment process :
+Le paiement est disponible une fois que le client est connecté, qu'il a des produits dans son panier et qu'il a choisi une méthode de livraison.
+Voici un processus de paiement typique :
 
-1. The customer selects the payment module
-2. The customer triggers the payment (by clicking "Pay" button on the front office)
-3. The pay() method of the selected payment module is called by Thelia
-4. The pay() method manages the payment process, which could consists (depending on the module) in :
-    - Invoking a web service or a platform specific API.
-    - Submitting a form that contains payment parameters to a payment gateway.
-    - Nothing (like in Cheque or Bank Transfer).
-    - Other specific logic.
-5. If the payment is successful, the customer is redirected to a "Thank you" page.
-6. If the payment fails, the customer is redirected to a "Oops, sorry" page.
+1. Le client sélectionne le module de paiement
+2. Le client déclenche le paiement (en cliquant sur le bouton "Payer" sur le front office)
+3. La méthode pay() du module de paiement sélectionné est appelée par Thelia
+4. La méthode pay() gère le processus de paiement, qui peut consister (en fonction du module) à :
+    - Appeler un service web ou une API spécifique à la plateforme.
+    - Soumettre un formulaire contenant des paramètres de paiement à une passerelle de paiement.
+    - Rien (comme dans le cas d'un chèque ou d'un virement bancaire).
+    - Autre logique spécifique.
+5. Si le paiement est réussi, le client est redirigé vers une page de remerciement.
+6. Si le paiement échoue, le client est redirigé vers une page "Oops, sorry".
 
-### Standard templates
+### Modèles standard
 
-In the standard front-office template, three template files provides a common and standard way to interact with the customer :
+Dans le modèle standard du front-office, trois fichiers modèles fournissent une manière commune et standard d'interagir avec le client :
 
-- `order-placed.html`, to tell the customer his payment is successful.
-- `order-failed.html`, to tell the customer his payment failed, and offer a way to try again.
-- `order-payment-gateway.html`, to provide a standard template to submit data to the payment gateway. This template file is not used by modules that do not send form-data to payment gateway.
+- `order-placed.html`, pour indiquer au client que son paiement a été effectué avec succès.
+- `order-failed.html`, pour indiquer au client que son paiement a échoué, et lui proposer de réessayer.
+- `order-payment-gateway.html`, pour fournir un template standard pour soumettre des données à la passerelle de paiement. Ce fichier de template n'est pas utilisé par les modules qui n'envoient pas de données de formulaire à la passerelle de paiement.
 
-These templates allow an immediate module integration in a shop template, but it's always possible for a module to provide its own templates.
+Ces modèles permettent une intégration immédiate du module dans un modèle de boutique, mais il est toujours possible pour un module de fournir ses propres modèles.
 
-### Implementing a payment module
+### Implémentation d'un module de paiement
 
-For a payment module the main class should extend the `Thelia\Module\AbstractPaymentModule` interface and implement the  ```isValidPayment``` and ```pay``` methods.
+Pour un module de paiement, la classe principale doit étendre l'interface `Thelia\Module\AbstractPaymentModule` et implémenter les méthodes ``isValidPayment`` et ``pay``.
 
 #### `isValidPayment()`
 
-This method should return a `boolean`. If `true`, the payment module is displayed on the front office by the payment loop. If `false`, the module is not displayed.
+Cette méthode doit retourner un booléen. Si `true`, le module de paiement est affiché sur le front office par la boucle de paiement. Si `false`, le module n'est pas affiché.
 
-This is useful if the payment solution have some limitations and can't be used. For example, PayPal can't be used if there are more than 10 products in customer's cart and/or if total order amount is greater than 8000 €.
+Ceci est utile si la solution de paiement a des limitations et ne peut pas être utilisée. Par exemple, PayPal ne peut pas être utilisé s'il y a plus de 10 produits dans le panier du client et/ou si le montant total de la commande est supérieur à 8000 €.
 
-You may also use this method to restrict access to your module to some IP addresses the during test phase.
+Vous pouvez également utiliser cette méthode pour restreindre l'accès à votre module à certaines adresses IP pendant la phase de test.
 
 ```php
 /**
@@ -189,7 +189,7 @@ public function isValidPayment()
 
     $cartContentCount = $cart->countCartItems();
 
-    // BaseModule::getCurrentOrderTotalAmount() is a convenient methods 
+    // BaseModule::getCurrentOrderTotalAmount() is a convenient methods
     // to get order total from the current customer cart.
 
     $orderTotal = $this->getCurrentOrderTotalAmount();
@@ -200,21 +200,21 @@ public function isValidPayment()
 
 #### `pay()`
 
-The `pay()` method is the most useful method of a payment module: it performs the payment of the current order, accordingly to the payment system requirements:
+La méthode `pay()` est la méthode la plus utile d'un module de paiement : elle effectue le paiement de la commande en cours, conformément aux exigences du système de paiement :
 
-- submit a form that redirects the customer to the payment gateway,
-- invoke a web service, a specific API, etc. to perform the payment from inside the method, and redirects the user to the result (success / failure) at the end of the process
-- start a specific process, managed by a module controller
-- whatever your requirements are 
+- soumettre un formulaire qui redirige le client vers la passerelle de paiement,
+- invoquer un service web, une API spécifique, etc. pour effectuer le paiement à l'intérieur de la méthode, et rediriger l'utilisateur vers le résultat (succès/échec) à la fin du processus
+- lancer un processus spécifique, géré par un contrôleur de module
+- quels que soient vos besoins
 
-The current order is passed as a parameter to the `pay()` method.
+La commande en cours est passée en paramètre à la méthode `pay()`.
 
-The method should return a ```Thelia\Core\HttpFoundation\Response``` object. Alternatively, depending on your specific needs, you can redirect the customer to another URL.
+La méthode doit retourner un objet ``Thelia\Core\HttpFoundation\NResponse``. Alternativement, en fonction de vos besoins spécifiques, vous pouvez rediriger le client vers une autre URL.
 
-To use the standard `order-payment-gateway.html` template, just generate an array of (name, value) couples with the data required by the bank gateway. Then, send it to the template along with the payment gateway URL using the `generateGatewayFormResponse($order, $gatewayUrl, $formData)` method.
-The form will be automatically submitted, and the customer will be redirected to the payment gateway.
+Pour utiliser le modèle standard `order-payment-gateway.html`, il suffit de générer un tableau de couples (nom, valeur) avec les données requises par la passerelle bancaire. Ensuite, envoyez-le au modèle avec l'URL de la passerelle de paiement en utilisant la méthode `generateGatewayFormResponse($order, $gatewayUrl, $formData)`.
+Le formulaire sera automatiquement soumis et le client sera redirigé vers la passerelle de paiement.
 
-Example for the Payzen payment module :
+Exemple pour le module de paiement Payzen :
 
 ```php
 /**
@@ -245,7 +245,7 @@ protected function pay(Order $order)
 }
 ```
 
-If you have a specific API, call it with the required parameters, and depending on the result, redirect to the success or failure page.
+Si vous avez une API spécifique, appelez-la avec les paramètres requis, et en fonction du résultat, redirigez vers la page de succès ou d'échec.
 
 ```php
 /**
@@ -269,10 +269,11 @@ protected function pay(Order $order)
 
 #### `manageStockOnCreation()`
 
-You can decide with this function if your payment module decrease stock when the order is created or when the order status change to "paid".
 
-Return `true` for decrementing stock on order creation. This is the default return value.
-Return `false` for decrementing stock when order status change to "paid".
+Vous pouvez décider avec cette fonction si votre module de paiement diminue le stock lorsque la commande est créée ou lorsque le statut de la commande passe à "paid".
+
+Retourne `true` pour décrémenter le stock à la création de la commande. C'est la valeur de retour par défaut.
+Retourne `false` pour décrémenter le stock lorsque le statut de la commande passe à "paid".
 
 ```php
 /**
@@ -294,26 +295,26 @@ public function manageStockOnCreation()
 }
 ```
 
-### Processing of payment system callback
+### Traitement des rappels du système de paiement
 
-Most payment platforms offers a callback system, to notify your module of the payment result. The callback often consists in calling an URL on your server, the Return URL.
+La plupart des plateformes de paiement proposent un système de callback, pour notifier à votre module le résultat du paiement. Le callback consiste souvent à appeler une URL sur votre serveur, l'URL de retour.
 
-#### Create a payment callback route
+#### Créer une route de rappel de paiement
 
-The callback URL will invoke a method in your payment controller. This controller may extend the abstract `Thelia\Modules\BasePaymentModuleController` class, which provides useful methods for payment confirmation:
+L'URL de rappel invoquera une méthode dans votre contrôleur de paiement. Ce contrôleur peut étendre la classe abstraite `Thelia\Modules\BasePaymentModuleController`, qui fournit des méthodes utiles pour la confirmation des paiements :
 
-- `getLog()` : returns a `Tlog` instance to a module specific log file. The file name is *module_code*.log, and is located in the log directory. For example, the Payzen module log file is `payzen.log`.
+- `getLog()` : renvoie une instance de `Tlog` vers un fichier journal spécifique au module. Le nom du fichier est *module_code*.log, et il est situé dans le répertoire log. Par exemple, le fichier journal du module Payzen est `payzen.log`.
 
-- `confirmPayment($orderId)` : call this method to confirm the payment of the order with ID `$orderId`. The method updates the order status to PAID, and dispatch the required events.
+- `confirmPayment($orderId)` : cette méthode permet de confirmer le paiement de la commande dont l'identifiant est `$orderId`. La méthode met à jour le statut de la commande à PAID, et envoie les événements nécessaires.
 
-- `cancelPayment($orderId)` : Some payment systems may notify a cancellation of an already paid order through the return URL. Call this method in this case, to cancel the payment of an already paid order with ID `$orderId`. The order status will be set to `NOT_PAID`, and the required events will be dispatched.
+- `cancelPayment($orderId)` : certains systèmes de paiement peuvent notifier l'annulation d'une commande déjà payée via l'URL de retour. Appelez cette méthode dans ce cas, pour annuler le paiement d'une commande déjà payée avec l'ID `$orderId`. Le statut de la commande sera mis à `NOT_PAID`, et les événements nécessaires seront envoyés.
 
-- `getOrder($orderId)` : returns the Order object for order ID `$orderId`, or log an error the order can't be found.
+- `getOrder($orderId)` : renvoie l'objet Order pour l'ID de la commande `$orderId`, ou génère une erreur si la commande n'a pas été trouvée.
 
-- `redirectToSuccessPage($orderId)` : redirects the customer to the standard successful payment page. Use it only if your controller is invoked in the customer request scope.
+- `redirectToSuccessPage($orderId)` : redirige le client vers la page standard de paiement réussi. Ne l'utilisez que si votre contrôleur est invoqué dans la portée de la requête du client.
 
-- `redirectToFailurePage($orderId)` :  redirects the customer to the standard failed payment page. Use it only if your controller is invoked in the customer request scope.
+- `redirectToFailurePage($orderId)` : redirige le client vers la page standard de paiement échoué. Ne l'utilisez que si votre contrôleur est invoqué dans la portée de la requête du client.
 
-Your controller should implement the `getModuleCode()` method, which returns your module code, that is the name of the module main class. For example "Payzen" for the Payzen module.
+Votre contrôleur doit implémenter la méthode `getModuleCode()`, qui renvoie le code de votre module, c'est-à-dire le nom de la classe principale du module. Par exemple, "Payzen" pour le module Payzen.
 
-Your controller should perform all required check before calling `confirmPayment()`, to be sure that the customer payment is valid.
+Votre contrôleur doit effectuer toutes les vérifications nécessaires avant d'appeler `confirmPayment()`, afin de s'assurer que le paiement du client est valide.

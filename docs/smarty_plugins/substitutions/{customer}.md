@@ -1,25 +1,25 @@
-Customer Substitutions provide logged-in customer data.    
+Les substitutions client fournissent les données pour un client connecté.
 `{customer attr="one_of_the_following"}`
 
-## Attributes
+## Attributs
 
-| Attribute name | Data returned                                                                                          |
-|:---------------|:-------------------------------------------------------------------------------------------------------|
-| `id`           | 	                                                                                                      |
-| `ref`          | 	                                                                                                      |
-| `firstname`    |                                                                                                        |
-| `lastname`     | 	                                                                                                      |
-| ` email `      | 	 	                                                                                                    |
-| ` title_id `   | 	 	 	                                                                                                  |
-| ` lang `       | 	 	The customer lang ID  	                                                                             |
-| ` reseller `   | 	 	 	   	`1` if the customer is a reseller else `0`                                                    |
-| ` sponsor `    | 	 	 	               	The customer sponsor ID                                                           |
-| ` discount `   | 	 	 	      The customer % discount                                                                     |
-| ` createdAt `  | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
-| ` updatedAt `  | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
+| Nom de l'attribut | Données renvoyées                                                                                       |
+|:------------------|:--------------------------------------------------------------------------------------------------------|
+| `id`              |                                                                                                         |
+| `ref`             |                                                                                                         |
+| `firstname`       |                                                                                                         |
+| `lastname`        |                                                                                                         |
+| ` email `         |                                                                                                         |
+| ` title_id `      |                                                                                                         |
+| ` lang `          | ID de la langue du client                                                                               |
+| ` reseller `      | `1` si le client est un revendeur, sinon  `0`                                                           |
+| ` sponsor `       | ID du parrain du client                                                                                 |
+| ` discount `      | Le % de réduction du client                                                                             |
+| ` createdAt `     | La date de création formatée par  [Date time parameter](#date-time-optional-parameters)                 |
+| ` updatedAt `     | La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters) |
 
-### Date Time optional parameters
-| Parameter | Description                                                                                                                                             |
-|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Take `date`, `datetime` or `time` as value to select the return type                                                                                    |
-| `format`  | Take a [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  the format for the current locale will be used if this parameter is empty |
+### Paramètres optionnels de date et d'heure
+| Paramètre | Description                                                                                                                                           |
+|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                   |
+| `format`  | Prend un [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

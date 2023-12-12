@@ -1,14 +1,14 @@
 ---
-title: Global outputs
+title: Global Sorties
 sidebar_position: 3
 ---
 
-These output can be got on from all loops
+Ces sorties peuvent être obtenues à partir de toutes les boucles
 
 
-| Variable        |                                  Description                                  |
-|-----------------|:-----------------------------------------------------------------------------:|
-| $LOOP_COUNT     |                  The current results index, starting from 1                   |
-| $LOOP_TOTAL     |               The total number of results returned by the loop                |
-| $CREATE_DATE    |    The creation date of the item (only available for timestampable items)     |
-| $UPDATE_DATE    | The date of last update for the item (only available for timestampable items) |
+| Variable     |                                             Description                                             |
+|--------------|:---------------------------------------------------------------------------------------------------:|
+| $LOOP_COUNT  |                          L'index actuel des résultats, en commençant par 1                          |
+| $LOOP_TOTAL  |                         Le nombre total de résultats renvoyés par la boucle                         |
+| $CREATE_DATE |        La date de création de l'élément (disponible uniquement pour les éléments horodatés)         |
+| $UPDATE_DATE | La date de la dernière mise à jour de l'élément (disponible uniquement pour les éléments horodatés) |

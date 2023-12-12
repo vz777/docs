@@ -2,36 +2,36 @@
 title: Import Category
 ---
 
-Import category loop lists all defined import categories.   
+La boucle Import category répertorie toutes les catégories d'importation définies.
 `{loop type="import-category" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#import-arguments}
 
-| Argument | Description                                                                   | Default | Example                                                                          |
-|----------|:------------------------------------------------------------------------------|:-------:|:---------------------------------------------------------------------------------|
-| id       | A single or a list of import category ids.                                    |         | id="2", id="1,4,7"                                                               |
-| order    | A list of values see [sorting possible values](#import-order-possible-values) | manual  | order="alpha"                                                                    |
-| ref      | A single or a list of import category references.                             |         | ref="thelia.import.products", id="thelia.import.products,thelia.import.modules"  |
+| Argument | Description                                                                       | Defaut | Exemple                                                                         |
+|----------|:----------------------------------------------------------------------------------|:------:|:--------------------------------------------------------------------------------|
+| id       | Un ou plusieurs ids de categorie d'import.                                        |        | id="2", id="1,4,7"                                                              |
+| order    | Une liste de valeurs see [sorting possible values](#import-order-possible-values) | manual | order="alpha"                                                                   |
+| ref      | Une ou plusieurs refs de categorie d'import.                                      |        | ref="thelia.import.products", id="thelia.import.products,thelia.import.modules" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable  | Value                                                          |
-|:----------|:---------------------------------------------------------------|
-| $ID       | the import category id                                         |
-| $POSITION | the import category position                                   |
-| $REF      | The import category reference, as defined in a config.xml file |
-| $TITLE    | the import category title                                      |
+| Variable  | Value                                                              |
+|:----------|:-------------------------------------------------------------------|
+| $ID       | l'id de la catégorie de l'import                                   |
+| $POSITION | la position de la catégorie de l'import                            |
+| $REF      | La ref d'importation, telle que définie dans un fichier config.xml |
+| $TITLE    | le titre de la catégorie d'importation                             |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
 
-## Order possible values {#import-order-possible-values}
+## Valeurs possibles de tri {#import-order-possible-values}
 [Arguments](#import-arguments)
 
-| Ascending value | Descending value | Sorted fields |
-|-----------------|------------------|:--------------|
-| alpha           | alpha_reverse    | title         |
-| id              | id_reverse       | Id            |
-| manual          | manual_reverse   | position      |
-| ref             | ref_reverse      | reference     |
+| Valeur croissante | Valeur décroissante | Champs triés |
+|-------------------|---------------------|:-------------|
+| alpha             | alpha_reverse       | title        |
+| id                | id_reverse          | Id           |
+| manual            | manual_reverse      | position     |
+| ref               | ref_reverse         | reference    |

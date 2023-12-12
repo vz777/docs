@@ -3,7 +3,7 @@ title: cache:clear
 ---
 
 ## Description
-Clear the cache
+Vider le cache
 
 ## Usage
 ```shell
@@ -11,14 +11,14 @@ cache:clear [options]
 ```
 
 ## Arguments
-- `module`                    module to activate
+- `module`                    module à activer
 
 ## Options
-- `--no-warmup`            Do not warm up the cache
-- `--no-optional-warmers`  Skip optional cache warmers (faster)
+- `--no-warmup`            Ne pas préchauffer le cache
+- `--no-optional-warmers`   Ignorer les préchauffeurs de cache facultatifs (plus rapide)
 
 
-## Example
+## Exemple
 ```shell
 php Thelia cache:clear
 ```

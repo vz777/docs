@@ -1,23 +1,23 @@
-Folder Substitutions provide current folder, identified by `folder_id` parameter (either GET or POST).    
+Les substitutions de dossier fournissent le dossier actuel, identifié par le paramètre folder_id (soit GET, soit POST).
 `{folder attr="one_of_the_following"}`
 
-## Attributes
+## Attributs
 
-| Attribute name   | Data returned                                                                                          |
-|:-----------------|:-------------------------------------------------------------------------------------------------------|
-| `id`             | 	                                                                                                      |
-| `title`          |                                                                                                        |
-| `chapo`          | 	                                                                                                      |
-| ` description `  | 	 	                                                                                                    |
-| ` postscriptum ` | 	 	 	                                                                                                  |
-| ` visible `      | 	 	 	`true` if the folder is active, `false` otherwise                                                 |
-| ` parent `       | 	 	 	The id of parent folder                                                                           |
-| ` position `     | 	 	 	The position number in parent folder                                                              |
-| ` createdAt `    | 	 	 	The date of creation formatted by  [Date time parameter](#date-time-optional-parameters)          |
-| ` updatedAt `    | 	 	 	The date of last modification formatted by  [Date time parameter](#date-time-optional-parameters) |
+| Nom de l'attribut | Données renvoyées                                                                                          |
+|:------------------|:-------------------------------------------------------------------------------------------------------|
+| `id`              | 	                                                                                                      |
+| `title`           |                                                                                                        |
+| `chapo`           | 	                                                                                                      |
+| ` description `   | 	 	                                                                                                    |
+| ` postscriptum `  | 	 	 	                                                                                                  |
+| ` visible `       | 	 	 	`true` si le dossier est actif, `false` sinon                                                 |
+| ` parent `        | 	 	 	L'ID du dossier parent                                                                           |
+| ` position `      | 	 	 	Le numéro de position dans le dossier parent                                                              |
+| ` createdAt `     | 	 	 	La date de création formatée par  [Date time parameter](#date-time-optional-parameters)          |
+| ` updatedAt `     | 	 	 	La date de la dernière modification formatée par  [Date time parameter](#date-time-optional-parameters) |
 
-### Date Time optional parameters
-| Parameter | Description                                                                                                                                             |
+### Paramètres optionnels de date et d'heure
+| Paramètre | Description                                                                                                                                             |
 |:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `output`  | Take `date`, `datetime` or `time` as value to select the return type                                                                                    |
-| `format`  | Take a [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  the format for the current locale will be used if this parameter is empty |
+| `output`  | Prend `date`, `datetime` ou `time` comme valeur pour sélectionner le type de retour                                                                                    |
+| `format`  | Prend un [PHP date format](https://www.php.net/manual/fr/datetime.format.php),  le format de la locale actuelle sera utilisé si ce paramètre est vide |

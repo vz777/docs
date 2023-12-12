@@ -1,13 +1,13 @@
-Administrator Substitutions provide logged-in administrator data. 
-`{admin attr="one_of_the_following"}`
+Les substitutions d'administrateur fournissent des données pour un administrateur connecté.
+`{admin attr="une_des_suivantes"}`
 
-## Attributes
+## Attributs
 
-| Attribute name |
-|:---------------|
-| `id`           |
-| `firstname`    |
-| `lastname`     |
-| `locale`       |
-| `login`        |
-| `profile_id`   |
+| Nom de l'attribut |
+|:------------------|
+| `id`              |
+| `firstname`       |
+| `lastname`        |
+| `locale`          |
+| `login`           |
+| `profile_id`      |

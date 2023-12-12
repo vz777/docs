@@ -1,14 +1,14 @@
-Cart Substitution provides data for the current cart in session.    
-`{cart attr="one_of_the_following"}`
+Les substitutions de panier fournissent des données pour le panier actuel en session.
+`{cart attr="une_des_suivantes"}`
 
-## Attributes
+## Attributs
 
-| Attribute name                                           | Data returned                                                                             |
+| Nom de l'attribut                                        | Données renvoyées                                                                        |
 |:---------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| `contains_virtual_product` OR `is_virtual`               | `true` if the cart contains at least one virtual product, `false` otherwise               |
-| `item_count` OR `count_item`                             | The number of items in the cart. A cart with 2 x product X and 3 x product Y have 5 items |
-| `total_price_with_discount` OR `total_price`             | Total cart amount in the current currency, without taxes, including discount              |
-| `total_price_without_discount`                           | 	Total cart amount in the current currency, without taxes, excluding discount             |
-| `total_taxed_price_with_discount` OR `total_taxed_price` | Total cart amount in the current currency with taxes, and including the discount          |
-| `total_taxed_price_without_discount`                     | 	 	Total price with discount without taxes                                                |
-| ` weight `                                               | 	 	 	The cart total weight, in kg                                                         |
+| `contains_virtual_product` OR `is_virtual`               | `true` si le panier contient au moins un produit virtuel, `false` sinon                   |
+| `item_count` OR `count_item`                             | Le nombre d'articles dans le panier. Un panier avec 2 x produit X et 3 x produit Y a 5 articles             |
+| `total_price_with_discount` OR `total_price`             | Montant total du panier dans la devise actuelle, sans taxes, y compris la remise          |
+| `total_price_without_discount`                           | Montant total du panier dans la devise actuelle, sans taxes, sans remise                  |
+| `total_taxed_price_with_discount` OR `total_taxed_price` | Montant total du panier dans la devise actuelle avec taxes, y compris la remise           |
+| `total_taxed_price_without_discount`                     | Total avec remise sans taxes                                                              |
+| ` weight `                                               | Le poids total du panier, en kg                                                           |

@@ -2,25 +2,25 @@
 title: Title
 ---
 
-Title loop lists titles.   
+La boucle Title répértorie les titres
 `{loop type="title" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#title-arguments}
 
-| Argument | Description                                                                | Default | Example             |
-|----------|:---------------------------------------------------------------------------|:-------:|:--------------------|
-| id       | A single or a list of title ids.                                           |         | id="2", id="1,4,7"  |
+| Argument | Description                  | Default | Exemple            |
+|----------|:-----------------------------|:-------:|:-------------------|
+| id       | Un ou plusieurs ids de titre |         | id="2", id="1,4,7" |
 
-Plus the [global arguments](./global_arguments) 
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable  | Value                                   |
-|:----------|:----------------------------------------|
-| $DEFAULT  | return if the title is by default title |
-| $ID       | the title id                            |
-| $LONG     | the full title                          |
-| $POSITION | the title position                      |
-| $SHORT    | the short title                         |
+| Variable  | Value                                     |
+|:----------|:------------------------------------------|
+| $DEFAULT  | retourne si le titre est celui par défaut |
+| $ID       | l'id du titre                             |
+| $LONG     | le titre complet                          |
+| $POSITION | la position du titre                      |
+| $SHORT    | le titre court                            |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)

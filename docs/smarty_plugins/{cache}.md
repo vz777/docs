@@ -1,25 +1,25 @@
-The cache block uses the `thelia.cache` service.    
+Le bloc de cache utilise le service `thelia.cache`.
 
-You can add this block on static parts (menu, footer, …) of your site to improve the generation time of your web pages
+Vous pouvez ajouter ce bloc sur des parties statiques (menu, pied de page, etc.) de votre site pour améliorer le temps de génération de vos pages web.
 
 :::info
 
-In dev mode, the cache is disabled.
+En mode développement, le cache est désactivé.
 :::
 
-## Parameters
+## Paramètres
 
-| Parameter name | Description                                                     |
-|:---------------|:----------------------------------------------------------------|
-| `key`          | (mandatory) a unique key to identify the cache                  |
-| `ttl`          | (mandatory) a time to live in seconds	 	 	 	                    |
-| `lang`         | Specific cache by lang, (default: current lang id) 	 	 	        |
-| `currency`     | Specific cache by currency, (default: current currency id)	 	 	 |
+| Nom du paramètre | Description                                                          |
+|:-----------------|:---------------------------------------------------------------------|
+| `key`            | (obligatoire) une clé unique pour identifier le cache                |
+| `ttl`            | (obligatoire) un temps de vie en secondes                            |
+| `lang`           | Cache spécifique par langue, (par défaut : id de la langue actuelle) |
+| `currency`       | Cache spécifique par devise, (par défaut : id de la devise actuelle) |
 
-You can also add as many arguments as you need. These arguments will be used to generate a unique key.
+Vous pouvez également ajouter autant d'arguments que nécessaire. Ces arguments seront utilisés pour générer une clé unique.
 
 
-## Examples
+## Exemples
 
 ### Simple
 ```
@@ -28,29 +28,29 @@ You can also add as many arguments as you need. These arguments will be used to 
 {/cache}
 ```
 
-### By customer
+### Par client
 ```
 {cache key="my-cache" ttl=600 customer_id=$CUSTOMER_ID}
     ... HTML or Smarty code specific by customer ...
 {/cache}
 ```
 
-### By admin
+### Par admin
 ```
 {cache key="my-cache" ttl=600 admin_id_=$ADMIN_ID}
     ... HTML or Smarty code specific by admin ...
 {/cache}
 ```
 
-### Disable currency specific cache
+### Désactiver le cache spécifique à la devise
 ```
 {cache key="my-cache" ttl=600 currency"no"}
     ... HTML or Smarty code same for every currency ...
 {/cache}
 ```
 
-### Conditional cache
-You can disable the caching of a block without delete it. For this, you must specify a ttl to 0.
+### Cache conditionnel
+Vous pouvez désactiver le cache d'un bloc sans le supprimer. Pour cela, vous devez spécifier un ttl à 0.
 ```
 {$ttl = 600}
 {if $myCondition}

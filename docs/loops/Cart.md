@@ -2,37 +2,37 @@
 title: Cart
 ---
 
-Cart loop displays cart information.      
+La boucle Cart affiche les informations du panier.
 `{loop type="cart" name="the-loop-name" [argument="value"], [...]}`
 
 ## Arguments {#pse-arguments}
 
-| Argument | Description | Default | Example |
-| ------------- |:-------------| :-------------: | :-------------|
-| order       | A list of values <br/> Expected values : <br/> - reverse : reverse chronological item add order | reverse | order="reverse" |
+| Argument | Description                                                                                                 | Default | Exemple         |
+|----------|:------------------------------------------------------------------------------------------------------------|:-------:|:----------------|
+| order    | Une liste de valeurs <br/> Valeurs attendues : <br/> - reverse : inverse l'ordre chronologique des éléments | reverse | order="reverse" |
 
-Plus the [global arguments](./global_arguments)
+Plus les [global arguments](./global_arguments)
 
-## Outputs
+## Sorties
 
-| Variable                     | Value                                                                 |
-| :--------------------------- | :-------------------------------------------------------------------- |
-| $IS_PROMO	                   | if the product sale elements is in promo or not                       |
-| $ITEM_ID	                   | the cart item id                                                      |
-| $PRICE	                   | the product sale elements price (unit price)                          |
-| $PRODUCT_ID	               | the product id                                                        |
-| $PRODUCT_SALE_ELEMENTS_ID	   | the product sale elements id                                          |
-| $PRODUCT_URL	               | the product url                                                       |
-| $PROMO_PRICE	               | the product sale elements in promo price (unit price)                 | 
-| $PROMO_TAXED_PRICE	       | the product sale elements in promo price including taxes (unit price) |
-| $QUANTITY	                   | the cart item quantity                                                |
-| $REF	                       | the product ref                                                       |
-| $STOCK	                   | the product sale elements available stock                             |
-| $TAXED_PRICE	               | the product sale elements price including taxes (unit price)          |
-| $TITLE	                   | the product title                                                     |
-| $TOTAL_PRICE	               | the product sale elements price (total price)                         |
-| $TOTAL_PROMO_PRICE	       | the product sale elements in promo price (total price)                |
-| $TOTAL_PROMO_TAXED_PRICE	   | the product sale elements in promo price including taxes (total price)|
-| $TOTAL_TAXED_PRICE	       | the product sale elements price including taxes (total price)         |
+| Variable                  | Valeur                                                      |
+|:--------------------------|:------------------------------------------------------------|
+| $IS_PROMO                 | si le PSE (déclinaison) du produit est en promotion ou non  |
+| $ITEM_ID                  | l'id de l'élément du panier                                 |
+| $PRICE                    | le prix du PSE du produit (prix unitaire)                   |
+| $PRODUCT_ID               | l'id du produit                                             |
+| $PRODUCT_SALE_ELEMENTS_ID | l'id du PSE                                                 |
+| $PRODUCT_URL              | l'url du produit                                            |
+| $PROMO_PRICE              | le prix en promotion du PSE (prix unitaire)                 |
+| $PROMO_TAXED_PRICE        | le prix en promotion du PSE avec les taxes (prix unitaire)  |
+| $QUANTITY                 | la quantité de l'élément du panier                          |
+| $REF                      | la ref du produit                                           |
+| $STOCK                    | le stock disponible du PSE                                  |
+| $TAXED_PRICE              | le prix du PSE incluant les taxes (prix unitaire)           |
+| $TITLE                    | le titre du produit                                         |
+| $TOTAL_PRICE              | le prix du PSE (prix total)                                 |
+| $TOTAL_PROMO_PRICE        | le prix en promotion du PSE (prix total)                    |
+| $TOTAL_PROMO_TAXED_PRICE  | le prix en promotion du PSE incluant les taxes (prix total) |
+| $TOTAL_TAXED_PRICE        | le prix du PSE incluant les taxes (prix total)              |
 
-Plus the [global outputs](./global_outputs)
+Plus les [global Sorties](./global_Sorties)
