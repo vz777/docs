@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkthelia=self.webpackChunkthelia||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/docs/blog/welcome"},{"title":"Hello","permalink":"/docs/blog/hello-world"},{"title":"Hola","permalink":"/docs/blog/hola"}]}')}}]);
