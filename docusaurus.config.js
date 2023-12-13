@@ -3,12 +3,12 @@ const remarkTooltip = require('remark-tooltip');
 module.exports = {
   title: 'Thelia documentation',
   tagline: 'Your OpenSource E-commerce tool',
-  url: 'https://thelia.github.io',
-  baseUrl: '/',
+  url: 'https://vz777.github.io',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'thelia', // Usually your GitHub org/user name.
+  organizationName: 'vz777', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   plugins: [
     'docusaurus-plugin-sass'
@@ -37,7 +37,7 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'modules', label: 'Modules', position: 'left'},
+        { to: 'modules', label: 'Modules', position: 'left' },
         {
           href: 'http://thelia.github.io/',
           className: 'header-link',
@@ -108,7 +108,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/thelia/docs/edit/main/',
+            'https://github.com/vz777/docs/edit/main/',
           remarkPlugins: [remarkTooltip]
         },
         theme: {
